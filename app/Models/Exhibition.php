@@ -21,6 +21,7 @@ class Exhibition extends Model
         'author_description',
         'description',
         'image',
+        'year',
         'start_date',
         'end_date',
         'is_active',
