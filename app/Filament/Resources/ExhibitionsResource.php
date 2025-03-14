@@ -77,7 +77,13 @@ class ExhibitionsResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('title')
+                    ->label('Título'),
+                Tables\Columns\TextColumn::make('slug')
+                    ->label('Slug'),
+                Tables\Columns\TextColumn::make('author_name')
+                    ->label('Autor'), 
+                
             ])
             ->filters([
                 //
