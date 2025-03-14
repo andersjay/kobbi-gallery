@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .jost-font {
   font-family: "Jost", sans-serif;
   font-optical-sizing: auto;

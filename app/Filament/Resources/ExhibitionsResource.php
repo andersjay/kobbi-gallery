@@ -4,8 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ExhibitionsResource\Pages;
 use App\Models\Exhibition;
-use Faker\Provider\ar_EG\Text;
-use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
@@ -39,13 +37,13 @@ class ExhibitionsResource extends Resource
                             ->label('Slug da exposição')
                             ->placeholder('titulo-da-exposicao')
                             ->required(),
-                            DatePicker::make('start_date')
+                        DatePicker::make('start_date')
                             ->label('Data de inicio')
                             ->required(),
-                            DatePicker::make('end_date')
+                        DatePicker::make('end_date')
                             ->label('Data de fim')
                             ->required(),
-                            TextInput::make('year')
+                        TextInput::make('year')
                             ->label('Ano da exposição')
                             ->placeholder('2025'),
                         FileUpload::make('image')
