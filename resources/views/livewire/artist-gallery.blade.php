@@ -14,16 +14,13 @@
         </div>
         <div class="w-full p-6 text-white text-xl">
             @if ($selectedArtist)
-
                 <div class="flex flex-wrap">
                     @foreach ($selectedArtist['gallery'] as $image)
                         <div class="w-full">
-                            <img src="{{ $image }}" class="w-full object-cover m-2 rounded-lg shadow-lg">
+                            <div id="artist-gallery"></div>
                         </div>
                     @endforeach
                 </div>
-            @else
-                <p>Selecione um artista para ver a galeria.</p>
             @endif
         </div>
     </div>

@@ -37,6 +37,8 @@ class ArtistGallery extends Component
                 ]
             ]
         ];
+
+        $this->selectedArtist = $this->artists[0];
     }
 
     public function selectArtist($index)
