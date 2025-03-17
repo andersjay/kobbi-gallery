@@ -6,7 +6,7 @@
         <div class="swiper mySwiper w-full h-full">
             <div class="swiper-wrapper">
                 @foreach ($exhibitions as $item)
-                    <div class="swiper-slide text-center text-lg h-[810px] flex items-end"
+                    <div class="swiper-slide text-center text-lg h-[510px] md:h-[810px] flex items-end px-4 md:px-0"
                         style="background: linear-gradient(to top, black, transparent 50%), 
                               linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 50%), 
                               url({{ asset('storage/' . $item->image) }}); 

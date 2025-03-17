@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Artist;
 use Livewire\Component;
 
 class ArtistGallery extends Component
@@ -11,39 +12,24 @@ class ArtistGallery extends Component
 
     public function mount()
     {
-        $this->artists = [
-            [
-                'name' => 'Antonio Saggese',
-                'gallery' => [
-                    'images/gallery/antonio.png',
-                ]
-            ],
-            [
-                'name' => 'Cristiano Xavier',
-                'gallery' => [
-                    'images/gallery/helo mello.png',
-                ]
-            ],
-            [
-                'name' => 'Eduardo Kobbi',
-                'gallery' => [
-                    'images/gallery/eduardo.png',
-                ]
-            ],
-            [
-                'name' => 'Eidi Feldon',
-                'gallery' => [
-                    'images/gallery/jean.png',
-                ]
-            ]
-        ];
-
-        $this->selectedArtist = $this->artists[0];
+        $this->artists = Artist::all();
     }
 
     public function selectArtist($index)
-    {
-        $this->selectedArtist = $this->artists[$index];
+    {   
+        $artist = Artist::find($index);
+        $images = array_map(fn($image) => [
+            'src' => asset('storage/' . $image),
+            'srct' => asset('storage/' . $image),
+            'title' => $artist->name
+        ], $artist->image);
+        
+        $this->selectedArtist = [
+            'name' => $artist->name,
+            'images' => $images,
+        ];
+
+        $this->dispatch('artistSelected', $this->selectedArtist['images']);
     }
 
     public function render()

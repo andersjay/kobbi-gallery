@@ -1,6 +1,6 @@
-<div class="pt-28 max-w-[1068px] w-full mx-auto pb-10">
+<div class="px-4 pt-28 lg:max-w-[1068px] w-full mx-auto pb-10">
     <h2 class="text-4xl text-white font-bold">NOTÍCIAS</h2>
-    <div class="grid grid-cols-2 mt-11">
+    <div class="md:grid md:grid-cols-2 mt-11">
         <a href="#" class="w-full flex flex-col gap-2">
             <div class="w-[480px] h-[300px]">
                 <img class="w-full h-full object-cover" src="{{ asset('storage/' . $highlight->image) }}" alt="">
