@@ -7,7 +7,7 @@
         <div id="gallery"></div>
     </div>
     <div class="w-full flex flex-col gap-9 mt-40">
-    <div class="w-[368px] mx-auto">
+        <div class="max-w-[368px] mx-auto">
             <img src="{{ asset('images/logo-kobbi-2x.png') }}" alt="Logo Kobbi Gallery">
         </div>
         <span class="text-center text-2xl text-white">
@@ -16,7 +16,8 @@
             imersivo, celebramos a história da fotografia enquanto exploramos suas novas possibilidades.
         </span>
         <div class="w-full flex justify-center">
-            <a href="#" class="bg-black py-3 px-6 text-white border-white rounded-md border hover:bg-white hover:text-black transition-colors">
+            <a href="#"
+                class="bg-black py-3 px-6 text-white border-white rounded-md border hover:bg-white hover:text-black transition-colors">
                 Conheça nossa história
             </a>
         </div>

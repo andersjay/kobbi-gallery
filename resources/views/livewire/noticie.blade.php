@@ -18,7 +18,7 @@
                         <span class="text-gray-500">Leia mais</span>
                     </div>
                     <div class="w-full">
-                       <div class="w-[222px] h-[143px]">
+                       <div class="w-full h-[143px]">
                             <img class="w-[222px] h-[143px] object-cover" src="{{ asset('storage/' . $notice->image) }}" alt="">
                        </div>
                     </div>
