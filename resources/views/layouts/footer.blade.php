@@ -1,30 +1,30 @@
 <footer class="">
 
-  <div class="max-w-[1068px] w-full mx-auto py-20 bg-black flex flex-col items-center px-4 md:px-0 md:grid md:grid-cols-[200px,1fr,200px] gap-11">
-      <div>
-          <img src="{{ asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery">
+  <div class="px-8 md:px-10 lg:px-6 xl:px-4 max-w-[1440px] w-full mx-auto py-20 bg-black flex flex-col items-center md:grid md:grid-cols-[100px,1fr,150px] lg:grid lg:grid-cols-[200px,1fr,150px] gap-8 lg:gap-2">
+      <div class="w-full max-w-[150px]">
+          <img class="w-full" src="{{ asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery">
       </div>
 
       <nav class="flex flex-col md:flex-row justify-center items-center gap-2">
-          <a href="#" class="text-white">ARTISTAS</a>
-          <a href="#" class="text-white">EXPOSIÇÕES</a>
-          <a href="#" class="text-white">PARCERIAS</a>
-          <a href="#" class="text-white">GALERIA</a>
-          <a href="#" class="text-white">NOTÍCIAS</a>
-          <a href="#" class="text-white">CONTATO</a>
-          <a href="#" class="text-white">LOJA</a>
+          <a href="#" class="text-white text-lg md:text-sm lg:text-lg">ARTISTAS</a>
+          <a href="#" class="text-white text-lg md:text-sm lg:text-lg">EXPOSIÇÕES</a>
+          <a href="#" class="text-white text-lg md:text-sm lg:text-lg">PARCERIAS</a>
+          <a href="#" class="text-white text-lg md:text-sm lg:text-lg">GALERIA</a>
+          <a href="#" class="text-white text-lg md:text-sm lg:text-lg">NOTÍCIAS</a>
+          <a href="#" class="text-white text-lg md:text-sm lg:text-lg">CONTATO</a>
+          <a href="#" class="text-white text-lg md:text-sm lg:text-lg">LOJA</a>
       </nav>
 
       <div class="flex items-center gap-6">
-          <a href="#">
+          <a href="https://web.whatsapp.com/send?phone=5511984202061&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Kobbi%20Gallery" target="_blank">
               <img src="{{ asset('images/link-whats.png') }}" alt="WhatsApp">
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/kobbi.gallery/">
               <img src="{{ asset('images/link-insta.png') }}" alt="Instagram">
           </a>
-          <a href="#">
+          {{-- <a href="#">
               <img src="{{ asset('images/link-email.png') }}" alt="Email">
-          </a>
+          </a> --}}
       </div>
     </div>
 

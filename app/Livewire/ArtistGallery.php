@@ -18,18 +18,25 @@ class ArtistGallery extends Component
     public function selectArtist($index)
     {   
         $artist = Artist::find($index);
-        $images = array_map(fn($image) => [
-            'src' => asset('storage/' . $image),
-            'srct' => asset('storage/' . $image),
-            'title' => $artist->name
-        ], $artist->image);
-        
+
+        // Garantir que `$artist->image` seja um array antes de iterar
+        $images = is_array($artist->image) ? 
+            array_map(fn($image) => [
+                'src' => asset('storage/' . $image),
+                'srct' => asset('storage/' . $image),
+                'title' => $artist->name
+            ], $artist->image) : 
+            [[
+                'src' => asset('storage/' . $artist->image),
+                'srct' => asset('storage/' . $artist->image),
+                'title' => $artist->name
+            ]];
+
         $this->selectedArtist = [
             'name' => $artist->name,
             'images' => $images,
-        ];
-
-        $this->dispatch('artistSelected', $this->selectedArtist['images']);
+            'id' => $artist->id
+        ];  
     }
 
     public function render()

@@ -1,12 +1,12 @@
-<div class="px-4 pt-28 lg:max-w-[1068px] w-full mx-auto pb-10">
+<div class="px-8 md:px-10 lg:px-6 xl:px-4 pt-28 lg:max-w-[1440px] w-full mx-auto pb-10">
     <h2 class="text-4xl text-white font-bold">NOTÍCIAS</h2>
-    <div class="md:grid md:grid-cols-2 mt-11">
+    <div class="md:grid md:grid-cols-2 mt-11 content-center">
         <a href="#" class="w-full flex flex-col gap-2">
-            <div class="w-[480px] h-[300px]">
+            <div class="w-full max-w-[600px] h-[300px]">
                 <img class="w-full h-full object-cover" src="{{ asset('storage/' . $highlight->image) }}" alt="">
             </div>
             <h2 class="text-2xl text-white font-bold mt-4">{{ $highlight->title }}</h2>
-            <span class="text-white text-xl">{{ $highlight->summary }}</span>
+            <span class="text-white text-xl max-w-[600px]">{{ $highlight->summary }}</span>
            <span>Leia mais</span>
         </a>
         <div class="flex flex-col gap-4">

@@ -1,43 +1,111 @@
-<div class="px-4 lg:px-0 pt-28 max-w-[1068px] w-full mx-auto bg-black">
+<div class="px-8 md:px-10 lg:px-6 xl:px-4 pt-28 max-w-[1440px] w-full mx-auto bg-black">
     <h2 class="text-4xl text-white font-bold">ARTISTAS</h2>
     <div class="lg:grid lg:grid-cols-[400px_1fr] pt-12">
         <div class="w-full lg:p-4">
-            <ul>
-                @foreach ($artists as $index => $artist)
-                    <li class="cursor-pointer font-bold text-2xl p-2 
-
-                    {{ $selectedArtist && $selectedArtist['name'] === $artist->name ? 'text-white' : 'text-gray-400' }}"
-                        wire:click="selectArtist({{ $artist->id }})">
-                        {{ $artist->name }}
+            <ul id="artist-list">
+                {{-- @foreach ($artists as $artist) --}}
+                    <li class="cursor-pointer font-bold text-2xl p-2 text-gray-400" data-id="1"
+                        onclick="selectArtist(1)">
+                        Eduardo Kobbi
                     </li>
-                @endforeach
+                {{-- @endforeach --}}
             </ul>
         </div>
+
         <div class="w-full p-6 text-white text-xl">
-            @if ($selectedArtist)
-                <div class="flex flex-wrap">
-                    @foreach ($selectedArtist['images'] as $image)
-                        <div class="w-full">
-                            <div id="artist-gallery"></div>
-                        </div>
-                    @endforeach
-                </div>
-            @endif
+            <div id="container-gallery">
+                <div id="artist-gallery"></div>
+            </div>
         </div>
     </div>
 </div>
-
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        console.log("✅ Página carregada!");
 
-        Livewire.on("artistSelected", function(artistSelected) {
-            jQuery("#artist-gallery").nanogallery2({
+        // 🔥 Mock de imagens para cada artista
+        const artistImages = {
+            1: [{
+                    src: "{{ asset('images/temp/1.jpg') }}",
+                    srct: "{{ asset('images/temp/1.jpg') }}",
+                    title: "Imagem 1"
+                },
+                {
+                    src: "{{ asset('images/temp/2.jpg') }}",
+                    srct: "{{ asset('images/temp/2.jpg') }}",
+                    title: "Imagem 2"
+                },
+                {
+                    src: "{{ asset('images/temp/3.jpg') }}",
+                    srct: "{{ asset('images/temp/3.jpg') }}",
+                    title: "Imagem 3"
+                },
+                {
+                    src: "{{ asset('images/temp/4.jpg') }}",
+                    srct: "{{ asset('images/temp/4.jpg') }}",
+                    title: "Imagem 4"
+                },
+                {
+                    src: "{{ asset('images/temp/5.jpg') }}",
+                    srct: "{{ asset('images/temp/5.jpg') }}",
+                    title: "Imagem 5"
+                },
+                {
+                    src: "{{ asset('images/temp/6.jpg') }}",
+                    srct: "{{ asset('images/temp/6.jpg') }}",
+                    title: "Imagem 6"
+                },
+                {
+                    src: "{{ asset('images/temp/7.jpg') }}",
+                    srct: "{{ asset('images/temp/7.jpg') }}",
+                    title: "Imagem 7"
+                },
+                {
+                    src: "{{ asset('images/temp/8.jpg') }}",
+                    srct: "{{ asset('images/temp/8.jpg') }}",
+                    title: "Imagem 8"
+                },
+                {
+                    src: "{{ asset('images/temp/9.jpg') }}",
+                    srct: "{{ asset('images/temp/9.jpg') }}",
+                    title: "Imagem 9"
+                },
+                {
+                    src: "{{ asset('images/temp/10.jpg') }}",
+                    srct: "{{ asset('images/temp/10.jpg') }}",
+                    title: "Imagem 10"
+                },
+                {
+                    src: "{{ asset('images/temp/11.jpg') }}",
+                    srct: "{{ asset('images/temp/11.jpg') }}",
+                    title: "Imagem 11"
+                },
+            ],
+        };
+        // 🎯 Função para mudar as imagens da galeria
+        window.selectArtist = function(artistId) {
+            console.log("🎨 Artista selecionado:", artistId);
+
+            let images = artistImages[artistId] || [];
+
+            // 🖼️ Atualizar classes de seleção
+            document.querySelectorAll("#artist-list li").forEach(li => {
+                li.classList.remove("text-white");
+                li.classList.add("text-gray-400");
+            });
+
+            let selectedArtist = document.querySelector(`[data-id='${artistId}']`);
+            if (selectedArtist) {
+                selectedArtist.classList.remove("text-gray-400");
+                selectedArtist.classList.add("text-white");
+            }
+
+            jQuery("#artist-gallery").nanogallery2('destroy');
+            // 🚀 Atualizar galeria
+            jQuery("#artist-gallery").empty().nanogallery2({
                 itemsBaseURL: '',
-                items: artistSelected[0],
-
-                // GALLERY AND THUMBNAIL LAYOUT
-                galleryMosaic: [ // default layout
-                    {
+                items: images,
+                galleryMosaic: [{
                         "w": 16,
                         "h": 18,
                         "c": 1,
@@ -68,40 +136,7 @@
                         "r": 10
                     }
                 ],
-                galleryMosaicXS: [ // layout for XS width
-                    {
-                        "w": 6,
-                        "h": 9,
-                        "c": 1,
-                        "r": 1
-                    },
-                    {
-                        "w": 4,
-                        "h": 4,
-                        "c": 9,
-                        "r": 3
-                    },
-                    {
-                        "w": 2,
-                        "h": 3,
-                        "c": 12,
-                        "r": 1
-                    },
-                    {
-                        "w": 2,
-                        "h": 3,
-                        "c": 8,
-                        "r": 5
-                    },
-                    {
-                        "w": 3,
-                        "h": 4,
-                        "c": 12,
-                        "r": 6
-                    }
-                ],
-                galleryMosaicSM: [ // layout for SM width
-                    {
+                galleryMosaicXS: [{
                         "w": 6,
                         "h": 9,
                         "c": 1,
@@ -136,7 +171,6 @@
                 galleryDisplayMode: 'rows',
                 gallerySorting: 'random',
                 thumbnailDisplayOrder: 'random',
-
                 thumbnailAlignment: 'scaled',
                 thumbnailHeight: 100,
                 thumbnailWidth: 100,
@@ -144,31 +178,15 @@
                 thumbnailGutterHeight: 0,
                 thumbnailBorderHorizontal: 0,
                 thumbnailBorderVertical: 0,
-
-                thumbnailToolbarImage: null,
-                thumbnailToolbarAlbum: null,
-
                 thumbnailLabel: {
                     display: false
                 },
-
-                // DISPLAY ANIMATION
-                galleryDisplayTransition: 'rotateX', // gallery display animation
+                galleryDisplayTransition: 'rotateX',
                 galleryDisplayTransitionDuration: 1500,
-                thumbnailDisplayTransition: 'scaleUp', // thumbnail display animation
+                thumbnailDisplayTransition: 'scaleUp',
                 thumbnailDisplayTransitionDuration: 600,
                 thumbnailDisplayInterval: 30,
-
-
-                // HOVER ANIMATION
-                thumbnailBuildInit2: '.nGY2GThumbnailAlbumTitle_border-left_5px solid #23CB99|.nGY2GThumbnailAlbumTitle_margin_20px|\
-        title_backgroundColor_rgba(200,200,200,0.8)|title_color_#000',
-                thumbnailHoverEffect2: 'image_scale_1.00_1.15_500_bounce|image_rotateZ_0deg_05deg',
-                touchAnimation: true,
-                touchAutoOpenDelay: 500,
-
-                // LIGHTBOX
-                viewerToolbar: { // bottom toolbar
+                viewerToolbar: {
                     display: true,
                     standard: 'label',
                     minimized: 'label'
@@ -177,11 +195,17 @@
                     topLeft: '',
                     topRight: 'rotateLeft, rotateRight, fullscreenButton, closeButton'
                 },
-
-                // DEEP LINKING
                 locationHash: false
             });
+        };
 
-        });
+        // Selecionar automaticamente o primeiro artista ao carregar a página
+        let firstArtist = document.querySelector("#artist-list li");
+        if (firstArtist) {
+            let firstArtistId = firstArtist.getAttribute("data-id");
+            firstArtist.classList.remove("text-gray-400");
+            firstArtist.classList.add("text-white");
+            selectArtist(firstArtistId);
+        }
     });
 </script>

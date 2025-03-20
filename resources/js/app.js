@@ -58,7 +58,9 @@ jQuery(document).ready(function () {
           thumbnailDisplayOrder: 'random',
 
           thumbnailHeight: '300', 
-          thumbnailWidth: '350',
+          thumbnailWidthXS: '100%',
+          thumbnailWidthSM: '50%',
+    
           thumbnailAlignment: 'scaled',
           thumbnailGutterWidth: 0, 
           thumbnailGutterHeight: 0,
