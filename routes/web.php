@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
+use App\Livewire\Gallery;
 use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/galeria', [GalleryController::class, 'index'])->name('gallery');
+
+//Exposicoes
+Route::get('/exposicoes', [HomeController::class, 'exhibitions']);
 Route::get('/exposicao/{id}', [HomeController::class, 'exhibition']);
 

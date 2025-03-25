@@ -3,7 +3,7 @@
 @section('content')
 
     <div class=" bg-black">
-        <div class="swiper mySwiper w-full h-full">
+        <div class="swiper mySwiper w-full h-full mb-14">
             <div class="swiper-wrapper">
                 @foreach ($exhibitions as $item)
                     <div class="swiper-slide text-center text-lg px-8 md:px-10 lg:px-6 xl:px-4 h-[510px] md:h-[810px] flex items-end"
