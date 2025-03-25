@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExhibitionController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Livewire\Gallery;
@@ -21,6 +22,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/galeria', [GalleryController::class, 'index'])->name('gallery');
 
 //Exposicoes
-Route::get('/exposicoes', [HomeController::class, 'exhibitions']);
+Route::get('/exposicoes', [ExhibitionController::class, 'index'])->name('exhibitions');
 Route::get('/exposicao/{id}', [HomeController::class, 'exhibition']);
 

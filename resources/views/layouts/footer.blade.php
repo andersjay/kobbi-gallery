@@ -6,13 +6,13 @@
       </div>
 
       <nav class="flex flex-col md:flex-row justify-center items-center gap-2">
-          <a href="#" class="text-white text-lg md:text-sm lg:text-lg">ARTISTAS</a>
-          <a href="#" class="text-white text-lg md:text-sm lg:text-lg">EXPOSIÇÕES</a>
-          <a href="#" class="text-white text-lg md:text-sm lg:text-lg">PARCERIAS</a>
-          <a href="{{ route('gallery') }}" class="text-white text-lg md:text-sm lg:text-lg">GALERIA</a>
-          <a href="#" class="text-white text-lg md:text-sm lg:text-lg">NOTÍCIAS</a>
-          <a href="#" class="text-white text-lg md:text-sm lg:text-lg">CONTATO</a>
-          <a href="#" class="text-white text-lg md:text-sm lg:text-lg">LOJA</a>
+          <a href="#" class="text-white text-lg md:text-sm lg:text-sm">ARTISTAS</a>
+          <a href="#" class="text-white text-sm md:text-sm lg:text-sm">EXPOSIÇÕES</a>
+          <a href="#" class="text-white text-sm md:text-sm lg:text-sm">PARCERIAS</a>
+          <a href="{{ route('gallery') }}" class="text-white text-sm md:text-sm lg:text-sm">GALERIA</a>
+          <a href="#" class="text-white text-sm md:text-sm lg:text-sm">NOTÍCIAS</a>
+          <a href="#" class="text-white text-sm md:text-sm lg:text-sm">CONTATO</a>
+          <a href="#" class="text-white text-sm md:text-sm lg:text-sm">LOJA</a>
       </nav>
 
       <div class="flex items-center gap-6">

@@ -6,13 +6,13 @@
       <h2 class="text-4xl text-white font-bold">GALERIA</h2>
       <div class="mt-8 w-full">
         <div>
-          <p class="text-gray-400">Fundada com a missão de explorar a fotografia e sua história, a Kobbi Gallery se estabeleceu como uma referência essencial no cenário da fotografia artística paulistana. Localizada na Vila Madalena, em São Paulo, a galeria dedica-se tanto à pesquisa quanto à realização de exposições que valorizem a potência e a singularidade de diferentes fotógrafos, posicionando-os tanto no mercado nacional quanto internacional. Trabalhando com uma variedade de artistas contemporâneos e reconhecidos, a Kobbi Gallery oferece um espaço dinâmico para a exploração de diferentes perspectivas e narrativas fotográficas.</p>
+          <p class="text-gray-400 text-lg">Fundada com a missão de explorar a fotografia e sua história, a Kobbi Gallery se estabeleceu como uma referência essencial no cenário da fotografia artística paulistana. Localizada na Vila Madalena, em São Paulo, a galeria dedica-se tanto à pesquisa quanto à realização de exposições que valorizem a potência e a singularidade de diferentes fotógrafos, posicionando-os tanto no mercado nacional quanto internacional. Trabalhando com uma variedade de artistas contemporâneos e reconhecidos, a Kobbi Gallery oferece um espaço dinâmico para a exploração de diferentes perspectivas e narrativas fotográficas.</p>
           
-          <p class="mt-4 text-gray-400">
+          <p class="mt-4 text-gray-400 text-lg">
             Dirigida por Eduardo e Cristina Kobbi, conta com um grupo de profissionais apaixonados e experientes, comprometidos em criar uma programação inovadora e relevante. Com um espaço expositivo cuidadosamente projetado, o local proporciona uma experiência imersiva e enriquecedora para os visitantes, sejam eles brasileiros ou estrangeiros, incentivando o diálogo entre a arte e o ambiente urbano.
           </p>
 
-          <p class="mt-4 text-gray-400">
+          <p class="mt-4 text-gray-400 text-lg">
             A expansão recente de sua proposta expositiva reforça seu compromisso com a promoção tanto da fotografia quanto da arte contemporânea, uma vez que destaca seu empenho com uma abordagem curatorial que se estende desde a fotografia tradicional até as novas mídias. Com o compromisso de promover a pluralidade a partir de iniciativas baseadas na criatividade e no rigor acadêmico, celebramos a rica história da fotografia, ao mesmo tempo em que exploramos as infinitas possibilidades oferecidas por esse meio artístico.
           </p>
         </div>

@@ -1,17 +1,17 @@
 <div>
-    <div class="max-w-[1440px] w-full mx-auto pt-6 lg:flex hidden gap-36 py-4 items-center {{ request()->routeIs('home') ? 'absolute left-0 right-0 z-20' : ''}}">
+    <div class="max-w-[1440px] w-full mx-auto md:px-10 lg:px-6 xl:px-4 pt-6 lg:flex lg:justify-between hidden py-4 items-center {{ request()->routeIs('home') ? 'absolute left-0 right-0 z-20' : ''}}">
         <div class="w-40">
             <img src="images/logo-kobbi.png" alt="Logo Kobbi Gallery" class="w-full">
         </div>
     
         <nav class="flex items-center gap-6">
-            <a href="#" class="text-white">ARTISTAS</a>
-            <a href="#" class="text-white">EXPOSIÇÕES</a>
-            <a href="#" class="text-white">PARCERIAS</a>
-            <a href="{{ route('gallery') }}" class="text-white">GALERIA</a>
-            <a href="#" class="text-white">NOTÍCIAS</a>
-            <a href="#" class="text-white">CONTATO</a>
-            <a href="#" class="text-white">LOJA</a>
+            <a href="#" class="text-white hover:border-b-2 transition-all text-sm">ARTISTAS</a>
+            <a href="{{ route('exhibitions') }}" class="text-white hover:border-b-2 transition-all text-sm">EXPOSIÇÕES</a>
+            <a href="#" class="text-white hover:border-b-2 transition-all text-sm">PARCERIAS</a>
+            <a href="{{ route('gallery') }}" class="text-white hover:border-b-2 transition-all text-sm">GALERIA</a>
+            <a href="#" class="text-white hover:border-b-2 transition-all text-sm">NOTÍCIAS</a>
+            <a href="#" class="text-white hover:border-b-2 transition-all text-sm">CONTATO</a>
+            <a href="#" class="text-white hover:border-b-2 transition-all text-sm">LOJA</a>
     
         </nav>
     </div>

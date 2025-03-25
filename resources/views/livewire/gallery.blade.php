@@ -10,7 +10,7 @@
         <div class="max-w-[368px] mx-auto">
             <img src="{{ asset('images/logo-kobbi-2x.png') }}" alt="Logo Kobbi Gallery">
         </div>
-        <span class="text-center text-2xl text-white">
+        <span class="text-center text-lg text-white">
             Fundada na Vila Madalena, a Kobbi Gallery é um espaço dedicado à fotografia artística, conectando
             artistas contemporâneos ao mercado nacional e internacional. Com curadoria inovadora e um ambiente
             imersivo, celebramos a história da fotografia enquanto exploramos suas novas possibilidades.
