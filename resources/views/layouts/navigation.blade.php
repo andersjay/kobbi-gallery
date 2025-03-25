@@ -16,7 +16,7 @@
         </nav>
     </div>
 
-    <div class="lg:hidden flex w-full justify-between p-4 items-center absolute left-0 right-0 z-20">
+    <div class="lg:hidden flex w-full justify-between px-8 py-4 items-center absolute left-0 right-0 z-20">
         <div class="w-40">
             <img src="images/logo-kobbi.png" alt="Logo Kobbi Gallery" class="w-full">
         </div>
@@ -48,7 +48,7 @@
                         <a href="#" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">ARTISTAS</a>
                     </li>
                     <li>
-                        <a href="#" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">EXPOSIÇÕES</a>
+                        <a href="{{ route('exhibitions') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">EXPOSIÇÕES</a>
                     </li>
                     <li>
                         <a href="#" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">PARCERIAS</a>

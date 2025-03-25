@@ -46,18 +46,40 @@ class ExhibitionsResource extends Resource
                         TextInput::make('year')
                             ->label('Ano da exposição')
                             ->placeholder('2025'),
-                        FileUpload::make('image')
-                            ->label('Imagem da exposição')
+                        Section::make('Imagens da exposição')
                             ->columnSpan(2)
-                            ->image()
-                            ->disk('public') // Define o disco onde será salvo
-                            ->directory('uploads') // Define a pasta dentro do disco
-                            ->required(),
-                        RichEditor::make('description')
-                            ->disableToolbarButtons(['attachFiles'])
-                            ->label('Descrição da exposição')
+                            ->columns(2)
+                            ->schema([
+                                FileUpload::make('image')
+                                    ->label('Imagem da exposição')
+                                    ->columnSpan(1)
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('uploads/exhibitions')
+                                    ->required(),
+                                FileUpload::make('banner')
+                                    ->label('Banner da exposição')
+                                    ->columnSpan(1)
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('uploads/exhibitions/banners')
+                                    ->required(),
+                            ]),
+                        Section::make('Descrições da exposição')
                             ->columnSpan(2)
-                            ->required(),
+                            ->columns(2)
+                            ->schema([
+                                RichEditor::make('description')
+                                    ->disableToolbarButtons(['attachFiles'])
+                                    ->label('Descrição da exposição')
+                                    ->columnSpan(1)
+                                    ->required(),
+                                RichEditor::make('summary')
+                                    ->disableToolbarButtons(['attachFiles'])
+                                    ->label('Resumo da exposição')
+                                    ->columnSpan(1)
+                                    ->required(),
+                            ]),
 
                     ]),
                 Section::make('Informações do autor')
@@ -82,8 +104,8 @@ class ExhibitionsResource extends Resource
                 Tables\Columns\TextColumn::make('slug')
                     ->label('Slug'),
                 Tables\Columns\TextColumn::make('author_name')
-                    ->label('Autor'), 
-                
+                    ->label('Autor'),
+
             ])
             ->filters([
                 //

@@ -9,7 +9,7 @@
                     <div class="swiper-slide text-center text-lg px-8 md:px-10 lg:px-6 xl:px-4 h-[510px] md:h-[810px] flex items-end"
                         style="background: linear-gradient(to top, black, transparent 50%), 
                               linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 50%), 
-                              url({{ asset('storage/' . $item->image) }}); 
+                              url({{ asset('storage/' . $item->banner) }}); 
                       background-size: cover; 
                       background-position: center; 
                       background-repeat: no-repeat;">
@@ -30,8 +30,8 @@
                     </div>
                 @endforeach
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next text-white"></div>
+            <div class="swiper-button-prev text-white"></div>
         </div>
         <livewire:artist-gallery />
         <livewire:gallery />

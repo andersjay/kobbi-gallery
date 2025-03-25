@@ -1,5 +1,4 @@
 <footer class="bg-black w-full">
-
   <div class="px-8 md:px-10 lg:px-6 xl:px-4 max-w-[1440px] w-full mx-auto py-20 bg-black flex flex-col items-center md:grid md:grid-cols-[100px,1fr,150px] lg:grid lg:grid-cols-[200px,1fr,150px] gap-8 lg:gap-2">
       <div class="w-full max-w-[150px]">
           <img class="w-full" src="{{ asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery">
@@ -7,7 +6,7 @@
 
       <nav class="flex flex-col md:flex-row justify-center items-center gap-2">
           <a href="#" class="text-white text-lg md:text-sm lg:text-sm">ARTISTAS</a>
-          <a href="#" class="text-white text-sm md:text-sm lg:text-sm">EXPOSIÇÕES</a>
+          <a href="{{ route('exhibitions') }}" class="text-white text-sm md:text-sm lg:text-sm">EXPOSIÇÕES</a>
           <a href="#" class="text-white text-sm md:text-sm lg:text-sm">PARCERIAS</a>
           <a href="{{ route('gallery') }}" class="text-white text-sm md:text-sm lg:text-sm">GALERIA</a>
           <a href="#" class="text-white text-sm md:text-sm lg:text-sm">NOTÍCIAS</a>
