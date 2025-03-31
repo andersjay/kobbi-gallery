@@ -1,8 +1,8 @@
 <div>
     <div class="max-w-[1440px] w-full mx-auto md:px-10 lg:px-6 xl:px-4 pt-6 lg:flex lg:justify-between hidden py-4 items-center {{ request()->routeIs('home') ? 'absolute left-0 right-0 z-20' : ''}}">
-        <div class="w-40">
+        <a href="{{ route('home') }}" class="w-40">
             <img src="images/logo-kobbi.png" alt="Logo Kobbi Gallery" class="w-full">
-        </div>
+        </a>
     
         <nav class="flex items-center gap-6">
             <a href="#" class="text-white hover:border-b-2 transition-all text-sm">ARTISTAS</a>
@@ -17,9 +17,9 @@
     </div>
 
     <div class="lg:hidden flex w-full justify-between px-8 py-4 items-center absolute left-0 right-0 z-20">
-        <div class="w-40">
+        <a href="{{ route('home') }}"class="w-40">
             <img src="images/logo-kobbi.png" alt="Logo Kobbi Gallery" class="w-full">
-        </div>
+        </a>
         <div x-data="{ open: false }" class="relative w-full flex justify-end">
             <!-- Botão de abrir menu -->
             <button @click="open = true" class="px-4 py-2 text-white rounded-md">
