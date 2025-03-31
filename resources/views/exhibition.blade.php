@@ -13,7 +13,7 @@
             background-repeat: no-repeat;">
 
                   <div class="max-w-[1440px] w-full mx-auto flex items-center justify-center">
-                      <div class="flex flex-col space-y-1 text-left">
+                      <div class="flex flex-col space-y-1 ">
                           <h2 class="text-white text-4xl font-bold drop-shadow-2xl"
                               style="text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);">{{ $exhibition->title }}</h2>
                           <h3 class="text-white text-xl font-bold drop-shadow-2xl text-center"
