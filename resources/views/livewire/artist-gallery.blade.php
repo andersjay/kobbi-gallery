@@ -1,4 +1,4 @@
-<div class="px-8 md:px-10 lg:px-6 xl:px-4 pt-14 mb-14 max-w-[1440px] w-full mx-auto bg-black ">
+<div class="container px-8 md:px-0 pt-14 mb-14  w-full mx-auto bg-black ">
     <h2 class="text-4xl text-white font-bold">ARTISTAS</h2>
     <div class="lg:grid lg:grid-cols-[400px_1fr] pt-12">
         <div class="w-full lg:p-4">

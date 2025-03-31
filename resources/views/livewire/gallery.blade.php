@@ -1,7 +1,7 @@
 <script>
     let galleryImages = @json($images)
 </script>
-<div class="px-8 md:px-10 lg:px-6 xl:px-4 pt-14 max-w-[1440px] w-full mx-auto pb-10 border-t border-gray-800">
+<div class="container px-8 md:px-8 pt-14 w-full mx-auto pb-10 border-t border-gray-800">
     <h2 class="text-4xl text-white font-bold">GALERIA</h2>
     <div class="mt-20">
         <div id="gallery"></div>

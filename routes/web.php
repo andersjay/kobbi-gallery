@@ -23,5 +23,5 @@ Route::get('/galeria', [GalleryController::class, 'index'])->name('gallery');
 
 //Exposicoes
 Route::get('/exposicoes', [ExhibitionController::class, 'index'])->name('exhibitions');
-Route::get('/exposicao/{id}', [HomeController::class, 'exhibition']);
+Route::get('/exposicoes/{id}', [ExhibitionController::class, 'exhibition'])->name('exhibition');
 

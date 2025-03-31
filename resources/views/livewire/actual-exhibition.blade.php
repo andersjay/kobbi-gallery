@@ -2,12 +2,12 @@
     <h2 class="mt-10 md:mt-8 lg:mt-0 text-xl text-white font-bold">EXPOSIÇÃO ATUAL</h2>
 
     <div class="w-full flex flex-col gap-2 md:gap-4 md:grid md:grid-cols-2">
-        <div class="flex justify-center md:justify-start">
-            <div class="w-full max-w-[600px] h-auto md:h-[500px]">
+        <div class="flex justify-center md:justify-start hover:scale-105 transition-all duration-300">
+            <a href="{{ route('exhibition', $actualExhibition->id) }}" class="w-full max-w-[600px] h-auto md:h-[500px]">
                 <img class="w-full h-full aspect-square md:object-contain"
                     src="{{ asset('storage/' . $actualExhibition->image) }}" 
                     alt="{{ $actualExhibition->title }}">
-            </div>
+            </a>
         </div>
         <div class="">
             <div class="md:h-auto flex flex-col gap-4">
@@ -16,7 +16,7 @@
                 <span class="text-white text-md max-w-[600px]">{!! $actualExhibition->summary !!}</span>
             </div>
             <div class="mt-4">
-                <a href="{{ route('exhibitions') }}"
+                <a href="{{ route('exhibition', $actualExhibition->id) }}"
                     class="text-md bg-white px-2 py-1 rounded-md text-black mt-4 border border-transparent 
                     hover:bg-black hover:border-white hover:text-white transition-colors">
                     Ver exposição

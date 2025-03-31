@@ -70,8 +70,8 @@ class ExhibitionsResource extends Resource
                             ->columns(2)
                             ->schema([
                                 RichEditor::make('description')
-                                    ->disableToolbarButtons(['attachFiles'])
                                     ->label('Descrição da exposição')
+                                    
                                     ->columnSpan(1)
                                     ->required(),
                                 RichEditor::make('summary')

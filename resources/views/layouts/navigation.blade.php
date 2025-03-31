@@ -1,7 +1,7 @@
 <div>
-    <div class="max-w-[1440px] w-full mx-auto md:px-10 lg:px-6 xl:px-4 pt-6 lg:flex lg:justify-between hidden py-4 items-center {{ request()->routeIs('home') ? 'absolute left-0 right-0 z-20' : ''}}">
+    <div class="container mx-auto pt-6 lg:flex lg:justify-between hidden py-4 items-center {{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'absolute left-0 right-0 z-20' : ''}}">
         <a href="{{ route('home') }}" class="w-40">
-            <img src="images/logo-kobbi.png" alt="Logo Kobbi Gallery" class="w-full">
+            <img src="/images/logo-kobbi.png" alt="Logo Kobbi Gallery" class="w-full">
         </a>
     
         <nav class="flex items-center gap-6">
@@ -18,10 +18,9 @@
 
     <div class="lg:hidden flex w-full justify-between px-8 py-4 items-center absolute left-0 right-0 z-20">
         <a href="{{ route('home') }}"class="w-40">
-            <img src="images/logo-kobbi.png" alt="Logo Kobbi Gallery" class="w-full">
+            <img src="/images/logo-kobbi.png" alt="Logo Kobbi Gallery" class="w-full">
         </a>
         <div x-data="{ open: false }" class="relative w-full flex justify-end">
-            <!-- Botão de abrir menu -->
             <button @click="open = true" class="px-4 py-2 text-white rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
                     <line x1="4" x2="20" y1="12" y2="12"/>
@@ -30,10 +29,8 @@
                 </svg>
             </button>
         
-            <!-- Overlay (fundo escuro ao abrir o menu) -->
             <div x-show="open" x-transition.opacity.duration.300ms class="fixed inset-0 bg-black bg-opacity-50 z-40" @click="open = false"></div>
-        
-            <!-- Menu dropdown ocupando a tela toda -->
+
             <div x-show="open"
                 x-transition:enter="transition transform ease-out duration-300"
                 x-transition:enter-start="opacity-0 scale-95 translate-y-[-20px]"
@@ -71,7 +68,6 @@
                     <img src="images/logo-kobbi.png" alt="Logo Kobbi Gallery" class="w-full">
                 </div>
 
-                <!-- Botão para fechar -->
                 <button @click="open = false" class="absolute top-4 right-4 p-3 text-white rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 </button>

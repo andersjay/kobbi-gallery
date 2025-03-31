@@ -14,7 +14,7 @@
                       background-position: center; 
                       background-repeat: no-repeat;">
 
-                        <div class="max-w-[1440px] w-full mx-auto flex items-start">
+                        <div class="container w-full mx-auto flex items-start">
                             <div class="flex flex-col space-y-1 text-left">
                                 <div class="flex gap-2">
                                     <h2 class="text-2xl text-white">{{ $item->year }}</h2>
