@@ -1,10 +1,10 @@
 <div class="space-y-4">
-    <h2 class="text-xl text-white font-bold">EXPOSIÇÃO ATUAL</h2>
+    <h2 class="mt-10 md:mt-8 lg:mt-0 text-xl text-white font-bold">EXPOSIÇÃO ATUAL</h2>
 
     <div class="w-full flex flex-col gap-2 md:gap-4 md:grid md:grid-cols-2">
         <div class="flex justify-center md:justify-start">
-            <div class="w-full max-w-[450px] h-auto md:max-w-[650px]">
-                <img class="w-full h-auto rounded-md object-cover"
+            <div class="w-full max-w-[600px] h-auto md:h-[500px]">
+                <img class="w-full h-full aspect-square md:object-contain"
                     src="{{ asset('storage/' . $actualExhibition->image) }}" 
                     alt="{{ $actualExhibition->title }}">
             </div>

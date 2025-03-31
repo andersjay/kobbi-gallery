@@ -98,6 +98,7 @@ class ExhibitionsResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->reorderable('sort')
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->label('Título'),

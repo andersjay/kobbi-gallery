@@ -4,15 +4,17 @@
     <div class="flex flex-col gap-10 md:grid md:grid-cols-2 xl:grid-cols-3">
         @foreach ($pastExhibitions as $pastExhibition)
         <div class="mt-4 flex flex-col gap-2 w-full">
-            <div class="w-full max-w-[500px] mx-auto">
-                <div class="w-full aspect-square overflow-hidden rounded-md">
+            <div class="w-full max-w-[400px] mx-auto">
+                <div class="w-full aspect-square overflow-hidden">
                     <img class="w-full h-full object-cover" src="{{ asset('storage/' . $pastExhibition->image) }}" alt="">
                 </div>
             </div>
+           <div class="w-full flex flex-col gap-2 max-w-[400px] mx-auto">
             <h3 class="text-lg text-white font-bold">{{ $pastExhibition->title }}</h3>
             <p class="text-sm text-gray-400">{{ $pastExhibition->author_name }}</p>
             <p class="text-sm text-gray-400">{{ \Carbon\Carbon::parse($pastExhibition->start_date)->format('d/m/Y') }}</p>
             <a href="#" class="text-gray-400">Ver exposição</a>
+           </div>
         </div>
         @endforeach
     </div>

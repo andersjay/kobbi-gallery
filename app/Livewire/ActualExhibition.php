@@ -11,7 +11,7 @@ class ActualExhibition extends Component
 
     public function mount()
     {
-        $this->actualExhibition = Exhibition::orderBy('created_at', 'desc')->first();
+        $this->actualExhibition = Exhibition::orderBy('sort')->first();
     }
 
     public function render()

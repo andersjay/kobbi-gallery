@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $exhibitions = Exhibition::all();
+        $exhibitions = Exhibition::orderBy('sort')->get();
         return view('home', compact('exhibitions'));
     }
 }

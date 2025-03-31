@@ -10,7 +10,7 @@ class PastExhibitions extends Component
     public $pastExhibitions;
     public function render()
     {
-        $this->pastExhibitions = Exhibition::latest()->skip(1)->get();
+        $this->pastExhibitions = Exhibition::orderBy('sort')->skip(1)->get();
         return view('livewire.past-exhibitions');
     }
 }
