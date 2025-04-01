@@ -2,28 +2,27 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Artist extends Model
+class Artwork extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'artists';
-
     protected $fillable = [
+        'artist_id',
         'name',
         'description',
-        'image',
+        'images'
     ];
 
     protected $casts = [
-        'image' => 'array',
+        'images' => 'array'
     ];
 
-    public function artworks()
+    public function artist()
     {
-        return $this->hasMany(Artwork::class);
+        return $this->belongsTo(Artist::class);
     }
 }

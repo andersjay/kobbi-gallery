@@ -29,16 +29,46 @@ class ArtistResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->columnSpanFull()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->label('Nome'),
                 Forms\Components\Textarea::make('description')
                     ->nullable()
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label('Descrição'),
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->multiple()
                     ->directory('artists')
                     ->columnSpanFull()
-                    ->maxSize(5120), //5MB
+                    ->maxSize(5120)
+                    ->label('Imagens do Artista'), //5MB
+                Forms\Components\Section::make('Obras')
+                    ->schema([
+                        Forms\Components\Repeater::make('artworks')
+                            ->relationship()
+                            ->schema([
+                                Forms\Components\TextInput::make('name')
+                                    ->required()
+                                    ->maxLength(255)
+                                    ->label('Nome da Obra'),
+                                Forms\Components\Textarea::make('description')
+                                    ->nullable()
+                                    ->label('Descrição da Obra'),
+                                Forms\Components\FileUpload::make('images')
+                                    ->image()
+                                    ->multiple()
+                                    ->directory('artworks')
+                                    ->maxSize(5120)
+                                    ->label('Imagens da Obra'),
+                            ])
+                            ->columns(2)
+                            ->defaultItems(1)
+                            ->reorderable(true)
+                            ->collapsible()
+                            ->cloneable()
+                            ->label('Obras do Artista')
+                    ])
+                    ->collapsible()
             ]);
     }
 
