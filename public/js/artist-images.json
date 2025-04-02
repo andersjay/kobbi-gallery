@@ -1,0 +1,874 @@
+{
+    "1": {
+        "name": "Eduardo Kobbi",
+        "images": [
+            {
+                "src": "/images/artistas/EDUARDO KOBBI/0A70C697-CC6C-491E-B176-2F3EDFB990C7.jpg",
+                "srct": "/images/artistas/EDUARDO KOBBI/0A70C697-CC6C-491E-B176-2F3EDFB990C7.jpg",
+                "title": "Eduardo Kobbi - 1"
+            },
+            {
+                "src": "/images/artistas/EDUARDO KOBBI/1AD9FAD9-D411-491F-B662-376C28D8C226.jpg",
+                "srct": "/images/artistas/EDUARDO KOBBI/1AD9FAD9-D411-491F-B662-376C28D8C226.jpg",
+                "title": "Eduardo Kobbi - 2"
+            },
+            {
+                "src": "/images/artistas/EDUARDO KOBBI/785495F3-3F8A-4DAE-B078-B467F8C3B3CE.jpg",
+                "srct": "/images/artistas/EDUARDO KOBBI/785495F3-3F8A-4DAE-B078-B467F8C3B3CE.jpg",
+                "title": "Eduardo Kobbi - 3"
+            },
+            {
+                "src": "/images/artistas/EDUARDO KOBBI/8F3F8F98-9009-4B8F-97BD-44014BBE523F.jpeg",
+                "srct": "/images/artistas/EDUARDO KOBBI/8F3F8F98-9009-4B8F-97BD-44014BBE523F.jpeg",
+                "title": "Eduardo Kobbi - 4"
+            },
+            {
+                "src": "/images/artistas/EDUARDO KOBBI/95140C9E-5705-41B4-B764-AD673947EC75.jpg",
+                "srct": "/images/artistas/EDUARDO KOBBI/95140C9E-5705-41B4-B764-AD673947EC75.jpg",
+                "title": "Eduardo Kobbi - 5"
+            },
+            {
+                "src": "/images/artistas/EDUARDO KOBBI/9A69B71F-8CFD-48E7-AD0F-4FC47FAF057E.jpg",
+                "srct": "/images/artistas/EDUARDO KOBBI/9A69B71F-8CFD-48E7-AD0F-4FC47FAF057E.jpg",
+                "title": "Eduardo Kobbi - 6"
+            },
+            {
+                "src": "/images/artistas/EDUARDO KOBBI/A362AC35-0549-4666-9571-4203555C4696.jpg",
+                "srct": "/images/artistas/EDUARDO KOBBI/A362AC35-0549-4666-9571-4203555C4696.jpg",
+                "title": "Eduardo Kobbi - 7"
+            },
+            {
+                "src": "/images/artistas/EDUARDO KOBBI/AE6DCC36-91BF-D74C-925E-7289659A9078.JPG",
+                "srct": "/images/artistas/EDUARDO KOBBI/AE6DCC36-91BF-D74C-925E-7289659A9078.JPG",
+                "title": "Eduardo Kobbi - 8"
+            },
+            {
+                "src": "/images/artistas/EDUARDO KOBBI/C08A5AA0-1B6D-46EF-9CB1-AC5C81487226.jpg",
+                "srct": "/images/artistas/EDUARDO KOBBI/C08A5AA0-1B6D-46EF-9CB1-AC5C81487226.jpg",
+                "title": "Eduardo Kobbi - 9"
+            },
+            {
+                "src": "/images/artistas/EDUARDO KOBBI/D3AAF25C-C4E9-4910-9A17-43264FD95D25.jpg",
+                "srct": "/images/artistas/EDUARDO KOBBI/D3AAF25C-C4E9-4910-9A17-43264FD95D25.jpg",
+                "title": "Eduardo Kobbi - 10"
+            },
+            {
+                "src": "/images/artistas/EDUARDO KOBBI/E8743C5D-A90B-4362-BEC6-4ABD2A30F2CA.jpg",
+                "srct": "/images/artistas/EDUARDO KOBBI/E8743C5D-A90B-4362-BEC6-4ABD2A30F2CA.jpg",
+                "title": "Eduardo Kobbi - 11"
+            }
+        ]
+    },
+    "2": {
+        "name": "Angelo Pastorello",
+        "images": [
+            {
+                "src": "/images/artistas/ANGELO PASTORELLO/105FA3B1-CAC8-D04D-9867-1CFEE53FB5FA.JPG",
+                "srct": "/images/artistas/ANGELO PASTORELLO/105FA3B1-CAC8-D04D-9867-1CFEE53FB5FA.JPG",
+                "title": "Angelo Pastorello - 1"
+            },
+            {
+                "src": "/images/artistas/ANGELO PASTORELLO/20A486AE-6BCB-724C-B166-4341841A9A86.JPG",
+                "srct": "/images/artistas/ANGELO PASTORELLO/20A486AE-6BCB-724C-B166-4341841A9A86.JPG",
+                "title": "Angelo Pastorello - 2"
+            },
+            {
+                "src": "/images/artistas/ANGELO PASTORELLO/25017063-6048-D24F-8981-E3D7E1B48766.jpg",
+                "srct": "/images/artistas/ANGELO PASTORELLO/25017063-6048-D24F-8981-E3D7E1B48766.jpg",
+                "title": "Angelo Pastorello - 3"
+            },
+            {
+                "src": "/images/artistas/ANGELO PASTORELLO/66E69C47-6F15-B34B-8A15-BF6C8858C8F2.jpg",
+                "srct": "/images/artistas/ANGELO PASTORELLO/66E69C47-6F15-B34B-8A15-BF6C8858C8F2.jpg",
+                "title": "Angelo Pastorello - 4"
+            },
+            {
+                "src": "/images/artistas/ANGELO PASTORELLO/6B0F6EA3-F60D-6C4E-8A54-2FC6F0A05BA0.jpg",
+                "srct": "/images/artistas/ANGELO PASTORELLO/6B0F6EA3-F60D-6C4E-8A54-2FC6F0A05BA0.jpg",
+                "title": "Angelo Pastorello - 5"
+            },
+            {
+                "src": "/images/artistas/ANGELO PASTORELLO/8AAC8211-DF8F-9E40-BBC1-31F88C5F551D.jpg",
+                "srct": "/images/artistas/ANGELO PASTORELLO/8AAC8211-DF8F-9E40-BBC1-31F88C5F551D.jpg",
+                "title": "Angelo Pastorello - 6"
+            },
+            {
+                "src": "/images/artistas/ANGELO PASTORELLO/973109B5-11B6-DA48-95BB-1EEDD05E2E8A.jpg",
+                "srct": "/images/artistas/ANGELO PASTORELLO/973109B5-11B6-DA48-95BB-1EEDD05E2E8A.jpg",
+                "title": "Angelo Pastorello - 7"
+            },
+            {
+                "src": "/images/artistas/ANGELO PASTORELLO/A2389B75-F5A3-4049-AF0C-55BFAF6D4004.JPG",
+                "srct": "/images/artistas/ANGELO PASTORELLO/A2389B75-F5A3-4049-AF0C-55BFAF6D4004.JPG",
+                "title": "Angelo Pastorello - 8"
+            },
+            {
+                "src": "/images/artistas/ANGELO PASTORELLO/B26E36C6-2562-E243-9A8D-850F3C372261.jpg",
+                "srct": "/images/artistas/ANGELO PASTORELLO/B26E36C6-2562-E243-9A8D-850F3C372261.jpg",
+                "title": "Angelo Pastorello - 9"
+            },
+            {
+                "src": "/images/artistas/ANGELO PASTORELLO/BF8FF940-0709-F64D-882B-074A33C1CA05.jpg",
+                "srct": "/images/artistas/ANGELO PASTORELLO/BF8FF940-0709-F64D-882B-074A33C1CA05.jpg",
+                "title": "Angelo Pastorello - 10"
+            },
+            {
+                "src": "/images/artistas/ANGELO PASTORELLO/D1477368-7058-F347-A166-CF0C18F709EF.jpg",
+                "srct": "/images/artistas/ANGELO PASTORELLO/D1477368-7058-F347-A166-CF0C18F709EF.jpg",
+                "title": "Angelo Pastorello - 11"
+            }
+        ]
+    },
+    "3": {
+        "name": "Antonio Saggese",
+        "images": [
+            {
+                "src": "/images/artistas/ANTONIO SAGGESE/06317EE8-4F3D-41EF-A654-E3F8A1AC9528.jpg",
+                "srct": "/images/artistas/ANTONIO SAGGESE/06317EE8-4F3D-41EF-A654-E3F8A1AC9528.jpg",
+                "title": "Antonio Saggese - 1"
+            },
+            {
+                "src": "/images/artistas/ANTONIO SAGGESE/348B84B7-752D-4862-BC18-FD69AF02937D.jpg",
+                "srct": "/images/artistas/ANTONIO SAGGESE/348B84B7-752D-4862-BC18-FD69AF02937D.jpg",
+                "title": "Antonio Saggese - 2"
+            },
+            {
+                "src": "/images/artistas/ANTONIO SAGGESE/54142D6F-A351-8C47-97F4-88E7A955CC38.jpg",
+                "srct": "/images/artistas/ANTONIO SAGGESE/54142D6F-A351-8C47-97F4-88E7A955CC38.jpg",
+                "title": "Antonio Saggese - 3"
+            },
+            {
+                "src": "/images/artistas/ANTONIO SAGGESE/61230E61-8F20-49BE-B130-DFC106E6A608.jpg",
+                "srct": "/images/artistas/ANTONIO SAGGESE/61230E61-8F20-49BE-B130-DFC106E6A608.jpg",
+                "title": "Antonio Saggese - 4"
+            },
+            {
+                "src": "/images/artistas/ANTONIO SAGGESE/69CE83BA-CE85-D94F-AF4C-B17A48E8BB61.jpg",
+                "srct": "/images/artistas/ANTONIO SAGGESE/69CE83BA-CE85-D94F-AF4C-B17A48E8BB61.jpg",
+                "title": "Antonio Saggese - 5"
+            },
+            {
+                "src": "/images/artistas/ANTONIO SAGGESE/6BAD2E3E-E798-9545-AF3D-E23A238555E5.jpg",
+                "srct": "/images/artistas/ANTONIO SAGGESE/6BAD2E3E-E798-9545-AF3D-E23A238555E5.jpg",
+                "title": "Antonio Saggese - 6"
+            },
+            {
+                "src": "/images/artistas/ANTONIO SAGGESE/6C0D3AA1-E45D-DE44-99D1-300834F57467.jpg",
+                "srct": "/images/artistas/ANTONIO SAGGESE/6C0D3AA1-E45D-DE44-99D1-300834F57467.jpg",
+                "title": "Antonio Saggese - 7"
+            },
+            {
+                "src": "/images/artistas/ANTONIO SAGGESE/9D014590-0183-204A-8C80-A4FC14672357.JPG",
+                "srct": "/images/artistas/ANTONIO SAGGESE/9D014590-0183-204A-8C80-A4FC14672357.JPG",
+                "title": "Antonio Saggese - 8"
+            },
+            {
+                "src": "/images/artistas/ANTONIO SAGGESE/B7465DD0-FF27-C545-A34E-E79F45EE9E8D.jpg",
+                "srct": "/images/artistas/ANTONIO SAGGESE/B7465DD0-FF27-C545-A34E-E79F45EE9E8D.jpg",
+                "title": "Antonio Saggese - 9"
+            },
+            {
+                "src": "/images/artistas/ANTONIO SAGGESE/C109B8F5-0454-4741-8FDC-B5CA84372D6F.jpg",
+                "srct": "/images/artistas/ANTONIO SAGGESE/C109B8F5-0454-4741-8FDC-B5CA84372D6F.jpg",
+                "title": "Antonio Saggese - 10"
+            },
+            {
+                "src": "/images/artistas/ANTONIO SAGGESE/EE5568A6-1DC7-4639-8FB8-A0E50EB6976E.jpg",
+                "srct": "/images/artistas/ANTONIO SAGGESE/EE5568A6-1DC7-4639-8FB8-A0E50EB6976E.jpg",
+                "title": "Antonio Saggese - 11"
+            }
+        ]
+    },
+    "4": {
+        "name": "Christiana Carvalho",
+        "images": [
+            {
+                "src": "/images/artistas/CHRISTIANA CARVALHO/10D5AF04-0041-4D42-AFF9-AE66E7D190D0.jpg",
+                "srct": "/images/artistas/CHRISTIANA CARVALHO/10D5AF04-0041-4D42-AFF9-AE66E7D190D0.jpg",
+                "title": "Christiana Carvalho - 1"
+            },
+            {
+                "src": "/images/artistas/CHRISTIANA CARVALHO/6C5E898F-856D-7449-B4B2-30C070E39061.jpg",
+                "srct": "/images/artistas/CHRISTIANA CARVALHO/6C5E898F-856D-7449-B4B2-30C070E39061.jpg",
+                "title": "Christiana Carvalho - 2"
+            },
+            {
+                "src": "/images/artistas/CHRISTIANA CARVALHO/6C6AA004-6BF9-42CC-A902-540B27F5B549.jpeg",
+                "srct": "/images/artistas/CHRISTIANA CARVALHO/6C6AA004-6BF9-42CC-A902-540B27F5B549.jpeg",
+                "title": "Christiana Carvalho - 3"
+            },
+            {
+                "src": "/images/artistas/CHRISTIANA CARVALHO/71B2F97D-0C74-2B40-8FF4-601E3A4FC988.jpg",
+                "srct": "/images/artistas/CHRISTIANA CARVALHO/71B2F97D-0C74-2B40-8FF4-601E3A4FC988.jpg",
+                "title": "Christiana Carvalho - 4"
+            },
+            {
+                "src": "/images/artistas/CHRISTIANA CARVALHO/725C1BD3-CA69-8447-AFFD-B9B9C5F9BDC3.jpg",
+                "srct": "/images/artistas/CHRISTIANA CARVALHO/725C1BD3-CA69-8447-AFFD-B9B9C5F9BDC3.jpg",
+                "title": "Christiana Carvalho - 5"
+            },
+            {
+                "src": "/images/artistas/CHRISTIANA CARVALHO/AA33A2DA-84B8-4E72-8581-6B63B48CCE84.jpg",
+                "srct": "/images/artistas/CHRISTIANA CARVALHO/AA33A2DA-84B8-4E72-8581-6B63B48CCE84.jpg",
+                "title": "Christiana Carvalho - 6"
+            },
+            {
+                "src": "/images/artistas/CHRISTIANA CARVALHO/ADA429F8-412C-C147-A188-8547D514310C.jpg",
+                "srct": "/images/artistas/CHRISTIANA CARVALHO/ADA429F8-412C-C147-A188-8547D514310C.jpg",
+                "title": "Christiana Carvalho - 7"
+            },
+            {
+                "src": "/images/artistas/CHRISTIANA CARVALHO/AE05A19A-9465-457E-8712-6EF613DB072F.jpg",
+                "srct": "/images/artistas/CHRISTIANA CARVALHO/AE05A19A-9465-457E-8712-6EF613DB072F.jpg",
+                "title": "Christiana Carvalho - 8"
+            },
+            {
+                "src": "/images/artistas/CHRISTIANA CARVALHO/BD2E23BF-0AF3-4AD8-80C7-62E3A482CDC3.jpg",
+                "srct": "/images/artistas/CHRISTIANA CARVALHO/BD2E23BF-0AF3-4AD8-80C7-62E3A482CDC3.jpg",
+                "title": "Christiana Carvalho - 9"
+            },
+            {
+                "src": "/images/artistas/CHRISTIANA CARVALHO/C7BAD624-8497-F145-8FEE-2E148844F1C1.jpg",
+                "srct": "/images/artistas/CHRISTIANA CARVALHO/C7BAD624-8497-F145-8FEE-2E148844F1C1.jpg",
+                "title": "Christiana Carvalho - 10"
+            },
+            {
+                "src": "/images/artistas/CHRISTIANA CARVALHO/FD9309C4-A256-934A-9314-696E6E6762F5.jpg",
+                "srct": "/images/artistas/CHRISTIANA CARVALHO/FD9309C4-A256-934A-9314-696E6E6762F5.jpg",
+                "title": "Christiana Carvalho - 11"
+            }
+        ]
+    },
+    "5": {
+        "name": "Cristiano Xavier",
+        "images": [
+            {
+                "src": "/images/artistas/CRISTIANO XAVIER/08.jpg",
+                "srct": "/images/artistas/CRISTIANO XAVIER/08.jpg",
+                "title": "Cristiano Xavier - 1"
+            },
+            {
+                "src": "/images/artistas/CRISTIANO XAVIER/110x74 cm.jpg",
+                "srct": "/images/artistas/CRISTIANO XAVIER/110x74 cm.jpg",
+                "title": "Cristiano Xavier - 2"
+            },
+            {
+                "src": "/images/artistas/CRISTIANO XAVIER/Floresta da peninha.jpg",
+                "srct": "/images/artistas/CRISTIANO XAVIER/Floresta da peninha.jpg",
+                "title": "Cristiano Xavier - 3"
+            },
+            {
+                "src": "/images/artistas/CRISTIANO XAVIER/LEAF9.jpg",
+                "srct": "/images/artistas/CRISTIANO XAVIER/LEAF9.jpg",
+                "title": "Cristiano Xavier - 4"
+            },
+            {
+                "src": "/images/artistas/CRISTIANO XAVIER/_K2A6240.jpg",
+                "srct": "/images/artistas/CRISTIANO XAVIER/_K2A6240.jpg",
+                "title": "Cristiano Xavier - 5"
+            },
+            {
+                "src": "/images/artistas/CRISTIANO XAVIER/_W6A1380-Edit.jpg",
+                "srct": "/images/artistas/CRISTIANO XAVIER/_W6A1380-Edit.jpg",
+                "title": "Cristiano Xavier - 6"
+            },
+            {
+                "src": "/images/artistas/CRISTIANO XAVIER/_W6A3761.jpg",
+                "srct": "/images/artistas/CRISTIANO XAVIER/_W6A3761.jpg",
+                "title": "Cristiano Xavier - 7"
+            },
+            {
+                "src": "/images/artistas/CRISTIANO XAVIER/_W6A5575.jpg",
+                "srct": "/images/artistas/CRISTIANO XAVIER/_W6A5575.jpg",
+                "title": "Cristiano Xavier - 8"
+            },
+            {
+                "src": "/images/artistas/CRISTIANO XAVIER/_W6A8188.jpg",
+                "srct": "/images/artistas/CRISTIANO XAVIER/_W6A8188.jpg",
+                "title": "Cristiano Xavier - 9"
+            },
+            {
+                "src": "/images/artistas/CRISTIANO XAVIER/_W6A9413.jpg",
+                "srct": "/images/artistas/CRISTIANO XAVIER/_W6A9413.jpg",
+                "title": "Cristiano Xavier - 10"
+            },
+            {
+                "src": "/images/artistas/CRISTIANO XAVIER/texturas socotra 90x90.jpg",
+                "srct": "/images/artistas/CRISTIANO XAVIER/texturas socotra 90x90.jpg",
+                "title": "Cristiano Xavier - 11"
+            }
+        ]
+    },
+    "6": {
+        "name": "Eidi Feldon",
+        "images": []
+    },
+    "7": {
+        "name": "Érico Hiller",
+        "images": [
+            {
+                "src": "/images/artistas/ÉRICO HILLER/3204ACC8-B6F4-4D7A-89D0-A364DEC65A06.JPG",
+                "srct": "/images/artistas/ÉRICO HILLER/3204ACC8-B6F4-4D7A-89D0-A364DEC65A06.JPG",
+                "title": "Érico Hiller - 1"
+            },
+            {
+                "src": "/images/artistas/ÉRICO HILLER/335D8FC7-BFBE-4F9C-B283-2E853E23CD81.JPG",
+                "srct": "/images/artistas/ÉRICO HILLER/335D8FC7-BFBE-4F9C-B283-2E853E23CD81.JPG",
+                "title": "Érico Hiller - 2"
+            },
+            {
+                "src": "/images/artistas/ÉRICO HILLER/49150864-BD38-4E0E-A6A8-275D1590A71B.JPG",
+                "srct": "/images/artistas/ÉRICO HILLER/49150864-BD38-4E0E-A6A8-275D1590A71B.JPG",
+                "title": "Érico Hiller - 3"
+            },
+            {
+                "src": "/images/artistas/ÉRICO HILLER/63A23A0B-EC96-4F9F-AA41-CF33B3F00152.JPG",
+                "srct": "/images/artistas/ÉRICO HILLER/63A23A0B-EC96-4F9F-AA41-CF33B3F00152.JPG",
+                "title": "Érico Hiller - 4"
+            },
+            {
+                "src": "/images/artistas/ÉRICO HILLER/6B3E9566-3BF6-4F26-A82B-4690FC4F61A2.JPG",
+                "srct": "/images/artistas/ÉRICO HILLER/6B3E9566-3BF6-4F26-A82B-4690FC4F61A2.JPG",
+                "title": "Érico Hiller - 5"
+            },
+            {
+                "src": "/images/artistas/ÉRICO HILLER/82730DAF-82DF-42B1-9936-22AA37174FEE.JPG",
+                "srct": "/images/artistas/ÉRICO HILLER/82730DAF-82DF-42B1-9936-22AA37174FEE.JPG",
+                "title": "Érico Hiller - 6"
+            },
+            {
+                "src": "/images/artistas/ÉRICO HILLER/B82E332E-0203-45C1-AF61-ABF4BDDE0F6B.JPG",
+                "srct": "/images/artistas/ÉRICO HILLER/B82E332E-0203-45C1-AF61-ABF4BDDE0F6B.JPG",
+                "title": "Érico Hiller - 7"
+            },
+            {
+                "src": "/images/artistas/ÉRICO HILLER/B8CE1780-0024-4F3C-876A-B8FF9CF43A1F.JPG",
+                "srct": "/images/artistas/ÉRICO HILLER/B8CE1780-0024-4F3C-876A-B8FF9CF43A1F.JPG",
+                "title": "Érico Hiller - 8"
+            },
+            {
+                "src": "/images/artistas/ÉRICO HILLER/C8453DEC-6475-42EC-BCDC-3CD179FB4035.JPG",
+                "srct": "/images/artistas/ÉRICO HILLER/C8453DEC-6475-42EC-BCDC-3CD179FB4035.JPG",
+                "title": "Érico Hiller - 9"
+            },
+            {
+                "src": "/images/artistas/ÉRICO HILLER/EDF11608-999F-4A48-BB34-08B10BEA4345.JPG",
+                "srct": "/images/artistas/ÉRICO HILLER/EDF11608-999F-4A48-BB34-08B10BEA4345.JPG",
+                "title": "Érico Hiller - 10"
+            },
+            {
+                "src": "/images/artistas/ÉRICO HILLER/F1C12032-16ED-41D1-8030-7D51D30E831A.JPG",
+                "srct": "/images/artistas/ÉRICO HILLER/F1C12032-16ED-41D1-8030-7D51D30E831A.JPG",
+                "title": "Érico Hiller - 11"
+            }
+        ]
+    },
+    "8": {
+        "name": "Helo Mello",
+        "images": [
+            {
+                "src": "/images/artistas/HELO MELLO/09A6CDEE-EBB4-4851-898B-D491EF0A6AE0.jpeg",
+                "srct": "/images/artistas/HELO MELLO/09A6CDEE-EBB4-4851-898B-D491EF0A6AE0.jpeg",
+                "title": "Helo Mello - 1"
+            },
+            {
+                "src": "/images/artistas/HELO MELLO/299ABC45-E0F9-4D07-A1BF-250A0ECAFFB9.png",
+                "srct": "/images/artistas/HELO MELLO/299ABC45-E0F9-4D07-A1BF-250A0ECAFFB9.png",
+                "title": "Helo Mello - 2"
+            },
+            {
+                "src": "/images/artistas/HELO MELLO/42BB1AF0-9A3C-4DDE-963F-6DBD3B1C8A84.jpg",
+                "srct": "/images/artistas/HELO MELLO/42BB1AF0-9A3C-4DDE-963F-6DBD3B1C8A84.jpg",
+                "title": "Helo Mello - 3"
+            },
+            {
+                "src": "/images/artistas/HELO MELLO/528528F9-9A75-428B-97A4-D2780C53B26F.jpg",
+                "srct": "/images/artistas/HELO MELLO/528528F9-9A75-428B-97A4-D2780C53B26F.jpg",
+                "title": "Helo Mello - 4"
+            },
+            {
+                "src": "/images/artistas/HELO MELLO/53130179-6ED5-4A35-ACD5-09A43817AD78.png",
+                "srct": "/images/artistas/HELO MELLO/53130179-6ED5-4A35-ACD5-09A43817AD78.png",
+                "title": "Helo Mello - 5"
+            },
+            {
+                "src": "/images/artistas/HELO MELLO/617795E4-E7AA-4FBC-9C6F-E6F00F8A80DC.jpg",
+                "srct": "/images/artistas/HELO MELLO/617795E4-E7AA-4FBC-9C6F-E6F00F8A80DC.jpg",
+                "title": "Helo Mello - 6"
+            },
+            {
+                "src": "/images/artistas/HELO MELLO/7D6D9AE2-0C1D-46E7-B6A6-02B5447D5058.jpg",
+                "srct": "/images/artistas/HELO MELLO/7D6D9AE2-0C1D-46E7-B6A6-02B5447D5058.jpg",
+                "title": "Helo Mello - 7"
+            },
+            {
+                "src": "/images/artistas/HELO MELLO/7DDDF1C8-3810-44CD-831B-2C4A86A02A2D.jpg",
+                "srct": "/images/artistas/HELO MELLO/7DDDF1C8-3810-44CD-831B-2C4A86A02A2D.jpg",
+                "title": "Helo Mello - 8"
+            },
+            {
+                "src": "/images/artistas/HELO MELLO/AC3DDB94-99E9-4398-9287-A30977924461.jpg",
+                "srct": "/images/artistas/HELO MELLO/AC3DDB94-99E9-4398-9287-A30977924461.jpg",
+                "title": "Helo Mello - 9"
+            },
+            {
+                "src": "/images/artistas/HELO MELLO/B0B74116-76F7-4898-936A-AE7AEDD9F87E.jpg",
+                "srct": "/images/artistas/HELO MELLO/B0B74116-76F7-4898-936A-AE7AEDD9F87E.jpg",
+                "title": "Helo Mello - 10"
+            },
+            {
+                "src": "/images/artistas/HELO MELLO/F2FB9603-4FD8-4403-8BC1-9C5F4DF70A1A.png",
+                "srct": "/images/artistas/HELO MELLO/F2FB9603-4FD8-4403-8BC1-9C5F4DF70A1A.png",
+                "title": "Helo Mello - 11"
+            }
+        ]
+    },
+    "9": {
+        "name": "Jean Manzon",
+        "images": [
+            {
+                "src": "/images/artistas/JEAN MANZON/18DAC83C-AFB9-134A-9C79-45A32DA14BDC.JPG",
+                "srct": "/images/artistas/JEAN MANZON/18DAC83C-AFB9-134A-9C79-45A32DA14BDC.JPG",
+                "title": "Jean Manzon - 1"
+            },
+            {
+                "src": "/images/artistas/JEAN MANZON/4B05CD3A-8DD9-4C43-A06F-D4E0C73D44EE.JPG",
+                "srct": "/images/artistas/JEAN MANZON/4B05CD3A-8DD9-4C43-A06F-D4E0C73D44EE.JPG",
+                "title": "Jean Manzon - 2"
+            },
+            {
+                "src": "/images/artistas/JEAN MANZON/58E51C9A-8A51-C141-A511-73F187B18007.JPG",
+                "srct": "/images/artistas/JEAN MANZON/58E51C9A-8A51-C141-A511-73F187B18007.JPG",
+                "title": "Jean Manzon - 3"
+            },
+            {
+                "src": "/images/artistas/JEAN MANZON/5C6966A1-AE2D-7241-8D9E-55C9DF46B265.JPG",
+                "srct": "/images/artistas/JEAN MANZON/5C6966A1-AE2D-7241-8D9E-55C9DF46B265.JPG",
+                "title": "Jean Manzon - 4"
+            },
+            {
+                "src": "/images/artistas/JEAN MANZON/8AC93005-5D32-DE4E-85C2-9A012672E8C8.JPG",
+                "srct": "/images/artistas/JEAN MANZON/8AC93005-5D32-DE4E-85C2-9A012672E8C8.JPG",
+                "title": "Jean Manzon - 5"
+            },
+            {
+                "src": "/images/artistas/JEAN MANZON/998C8553-BE8B-9B45-9E97-58B12D9C0361.jpg",
+                "srct": "/images/artistas/JEAN MANZON/998C8553-BE8B-9B45-9E97-58B12D9C0361.jpg",
+                "title": "Jean Manzon - 6"
+            },
+            {
+                "src": "/images/artistas/JEAN MANZON/D8351EB7-0AB4-EE43-8F18-1AA3B37F29DB.JPG",
+                "srct": "/images/artistas/JEAN MANZON/D8351EB7-0AB4-EE43-8F18-1AA3B37F29DB.JPG",
+                "title": "Jean Manzon - 7"
+            }
+        ]
+    },
+    "10": {
+        "name": "João Paulo Barbosa",
+        "images": [
+            {
+                "src": "/images/artistas/JOÃO PAULO BARBOSA/0908B0F0-1910-BC44-91F3-7DE9FB088D91.jpg",
+                "srct": "/images/artistas/JOÃO PAULO BARBOSA/0908B0F0-1910-BC44-91F3-7DE9FB088D91.jpg",
+                "title": "João Paulo Barbosa - 1"
+            },
+            {
+                "src": "/images/artistas/JOÃO PAULO BARBOSA/0AF2B37B-3D6D-3D46-920F-86EE6EECA908.jpg",
+                "srct": "/images/artistas/JOÃO PAULO BARBOSA/0AF2B37B-3D6D-3D46-920F-86EE6EECA908.jpg",
+                "title": "João Paulo Barbosa - 2"
+            },
+            {
+                "src": "/images/artistas/JOÃO PAULO BARBOSA/4D4605BF-5437-FC45-AAA9-714C32A12F96.jpg",
+                "srct": "/images/artistas/JOÃO PAULO BARBOSA/4D4605BF-5437-FC45-AAA9-714C32A12F96.jpg",
+                "title": "João Paulo Barbosa - 3"
+            },
+            {
+                "src": "/images/artistas/JOÃO PAULO BARBOSA/56320D2F-D936-1E41-B688-7D9147B652C2.jpg",
+                "srct": "/images/artistas/JOÃO PAULO BARBOSA/56320D2F-D936-1E41-B688-7D9147B652C2.jpg",
+                "title": "João Paulo Barbosa - 4"
+            },
+            {
+                "src": "/images/artistas/JOÃO PAULO BARBOSA/72C8D857-ADB6-344C-89C4-71333705D9CF.jpg",
+                "srct": "/images/artistas/JOÃO PAULO BARBOSA/72C8D857-ADB6-344C-89C4-71333705D9CF.jpg",
+                "title": "João Paulo Barbosa - 5"
+            },
+            {
+                "src": "/images/artistas/JOÃO PAULO BARBOSA/742204F1-BE02-F842-AA47-3490A6DE8716.jpg",
+                "srct": "/images/artistas/JOÃO PAULO BARBOSA/742204F1-BE02-F842-AA47-3490A6DE8716.jpg",
+                "title": "João Paulo Barbosa - 6"
+            },
+            {
+                "src": "/images/artistas/JOÃO PAULO BARBOSA/770AFBC5-9BEA-3C45-883D-97AC09919544.jpg",
+                "srct": "/images/artistas/JOÃO PAULO BARBOSA/770AFBC5-9BEA-3C45-883D-97AC09919544.jpg",
+                "title": "João Paulo Barbosa - 7"
+            },
+            {
+                "src": "/images/artistas/JOÃO PAULO BARBOSA/7A894874-E99F-4D42-A891-3F8A7A7B192E.jpg",
+                "srct": "/images/artistas/JOÃO PAULO BARBOSA/7A894874-E99F-4D42-A891-3F8A7A7B192E.jpg",
+                "title": "João Paulo Barbosa - 8"
+            },
+            {
+                "src": "/images/artistas/JOÃO PAULO BARBOSA/7F66C3DD-80DC-BA40-9747-28BC0EDBD84B.jpg",
+                "srct": "/images/artistas/JOÃO PAULO BARBOSA/7F66C3DD-80DC-BA40-9747-28BC0EDBD84B.jpg",
+                "title": "João Paulo Barbosa - 9"
+            },
+            {
+                "src": "/images/artistas/JOÃO PAULO BARBOSA/A85614A3-AC24-404D-98C0-2C043EDA2CD1.jpg",
+                "srct": "/images/artistas/JOÃO PAULO BARBOSA/A85614A3-AC24-404D-98C0-2C043EDA2CD1.jpg",
+                "title": "João Paulo Barbosa - 10"
+            },
+            {
+                "src": "/images/artistas/JOÃO PAULO BARBOSA/B5E2F793-EE31-4B4C-9D0D-AD29B39D8AF6.jpg",
+                "srct": "/images/artistas/JOÃO PAULO BARBOSA/B5E2F793-EE31-4B4C-9D0D-AD29B39D8AF6.jpg",
+                "title": "João Paulo Barbosa - 11"
+            }
+        ]
+    },
+    "11": {
+        "name": "Juliana Naufel",
+        "images": [
+            {
+                "src": "/images/artistas/JULIANA NAUFEL/0952F4DB-A4A0-7046-B17C-F0BFD33CBDC1.jpg",
+                "srct": "/images/artistas/JULIANA NAUFEL/0952F4DB-A4A0-7046-B17C-F0BFD33CBDC1.jpg",
+                "title": "Juliana Naufel - 1"
+            },
+            {
+                "src": "/images/artistas/JULIANA NAUFEL/0EDDE0DF-A51E-0844-8AE4-E25BAE394DBE.jpg",
+                "srct": "/images/artistas/JULIANA NAUFEL/0EDDE0DF-A51E-0844-8AE4-E25BAE394DBE.jpg",
+                "title": "Juliana Naufel - 2"
+            },
+            {
+                "src": "/images/artistas/JULIANA NAUFEL/1008C160-4D6F-8542-8F7C-B37431A923E3.jpg",
+                "srct": "/images/artistas/JULIANA NAUFEL/1008C160-4D6F-8542-8F7C-B37431A923E3.jpg",
+                "title": "Juliana Naufel - 3"
+            },
+            {
+                "src": "/images/artistas/JULIANA NAUFEL/1E66A7A4-5772-6244-B7A6-6936DDF0E48B.jpg",
+                "srct": "/images/artistas/JULIANA NAUFEL/1E66A7A4-5772-6244-B7A6-6936DDF0E48B.jpg",
+                "title": "Juliana Naufel - 4"
+            },
+            {
+                "src": "/images/artistas/JULIANA NAUFEL/4D6B6B3B-0D05-734E-B6FD-2EA1E26785C5.jpg",
+                "srct": "/images/artistas/JULIANA NAUFEL/4D6B6B3B-0D05-734E-B6FD-2EA1E26785C5.jpg",
+                "title": "Juliana Naufel - 5"
+            },
+            {
+                "src": "/images/artistas/JULIANA NAUFEL/7DA95941-2BB8-D640-8733-D8ACB81A0EA9.JPG",
+                "srct": "/images/artistas/JULIANA NAUFEL/7DA95941-2BB8-D640-8733-D8ACB81A0EA9.JPG",
+                "title": "Juliana Naufel - 6"
+            },
+            {
+                "src": "/images/artistas/JULIANA NAUFEL/8A300F4E-D1DE-3C4F-A72F-380B290A6464.jpg",
+                "srct": "/images/artistas/JULIANA NAUFEL/8A300F4E-D1DE-3C4F-A72F-380B290A6464.jpg",
+                "title": "Juliana Naufel - 7"
+            },
+            {
+                "src": "/images/artistas/JULIANA NAUFEL/DB4F1A63-C640-7549-A2EC-937DFFD7FC59.jpg",
+                "srct": "/images/artistas/JULIANA NAUFEL/DB4F1A63-C640-7549-A2EC-937DFFD7FC59.jpg",
+                "title": "Juliana Naufel - 8"
+            },
+            {
+                "src": "/images/artistas/JULIANA NAUFEL/EFDD29C0-774E-3B4C-8162-D7F04C728FE2.jpg",
+                "srct": "/images/artistas/JULIANA NAUFEL/EFDD29C0-774E-3B4C-8162-D7F04C728FE2.jpg",
+                "title": "Juliana Naufel - 9"
+            },
+            {
+                "src": "/images/artistas/JULIANA NAUFEL/FDD2D03C-74DA-4549-BA48-1A390091BBDE.jpg",
+                "srct": "/images/artistas/JULIANA NAUFEL/FDD2D03C-74DA-4549-BA48-1A390091BBDE.jpg",
+                "title": "Juliana Naufel - 10"
+            }
+        ]
+    },
+    "12": {
+        "name": "Luciano Candisani",
+        "images": [
+            {
+                "src": "/images/artistas/LUCIANO CANDISANI/214E4455-B7B8-413F-A9B4-2EE3553F07F7.JPG",
+                "srct": "/images/artistas/LUCIANO CANDISANI/214E4455-B7B8-413F-A9B4-2EE3553F07F7.JPG",
+                "title": "Luciano Candisani - 1"
+            },
+            {
+                "src": "/images/artistas/LUCIANO CANDISANI/2E5C9E68-767E-4C43-B41B-B98F51ECBFF5.jpeg",
+                "srct": "/images/artistas/LUCIANO CANDISANI/2E5C9E68-767E-4C43-B41B-B98F51ECBFF5.jpeg",
+                "title": "Luciano Candisani - 2"
+            },
+            {
+                "src": "/images/artistas/LUCIANO CANDISANI/7C732A8D-0E5D-44FB-ABA7-86EC047E3EE2.JPG",
+                "srct": "/images/artistas/LUCIANO CANDISANI/7C732A8D-0E5D-44FB-ABA7-86EC047E3EE2.JPG",
+                "title": "Luciano Candisani - 3"
+            },
+            {
+                "src": "/images/artistas/LUCIANO CANDISANI/8032ADFF-29BD-4A2C-8F9F-0AC2E5B88D80.JPG",
+                "srct": "/images/artistas/LUCIANO CANDISANI/8032ADFF-29BD-4A2C-8F9F-0AC2E5B88D80.JPG",
+                "title": "Luciano Candisani - 4"
+            },
+            {
+                "src": "/images/artistas/LUCIANO CANDISANI/8FB6FA08-F104-44BE-BF30-53C3CA752313.JPG",
+                "srct": "/images/artistas/LUCIANO CANDISANI/8FB6FA08-F104-44BE-BF30-53C3CA752313.JPG",
+                "title": "Luciano Candisani - 5"
+            },
+            {
+                "src": "/images/artistas/LUCIANO CANDISANI/9BC1EA90-0D52-E840-A81F-E5595A8B9638.jpeg",
+                "srct": "/images/artistas/LUCIANO CANDISANI/9BC1EA90-0D52-E840-A81F-E5595A8B9638.jpeg",
+                "title": "Luciano Candisani - 6"
+            },
+            {
+                "src": "/images/artistas/LUCIANO CANDISANI/CA720368-7ED2-D349-81EA-C4739A9068AB.jpeg",
+                "srct": "/images/artistas/LUCIANO CANDISANI/CA720368-7ED2-D349-81EA-C4739A9068AB.jpeg",
+                "title": "Luciano Candisani - 7"
+            },
+            {
+                "src": "/images/artistas/LUCIANO CANDISANI/D73DAA9B-2696-4B09-9F73-63F75032D47F.JPG",
+                "srct": "/images/artistas/LUCIANO CANDISANI/D73DAA9B-2696-4B09-9F73-63F75032D47F.JPG",
+                "title": "Luciano Candisani - 8"
+            },
+            {
+                "src": "/images/artistas/LUCIANO CANDISANI/D990A197-76BE-6D4F-A1AC-5FCBB5DFDACC.jpeg",
+                "srct": "/images/artistas/LUCIANO CANDISANI/D990A197-76BE-6D4F-A1AC-5FCBB5DFDACC.jpeg",
+                "title": "Luciano Candisani - 9"
+            },
+            {
+                "src": "/images/artistas/LUCIANO CANDISANI/F1D27FFA-DE7D-448A-A6BA-A24E35C5ECE7.JPG",
+                "srct": "/images/artistas/LUCIANO CANDISANI/F1D27FFA-DE7D-448A-A6BA-A24E35C5ECE7.JPG",
+                "title": "Luciano Candisani - 10"
+            },
+            {
+                "src": "/images/artistas/LUCIANO CANDISANI/F464A1AA-D505-4F7F-9342-D1DF5CCF6307.JPG",
+                "srct": "/images/artistas/LUCIANO CANDISANI/F464A1AA-D505-4F7F-9342-D1DF5CCF6307.JPG",
+                "title": "Luciano Candisani - 11"
+            }
+        ]
+    },
+    "13": {
+        "name": "Luiz Aureliano",
+        "images": [
+            {
+                "src": "/images/artistas/LUIZ AURELIANO/0CB01C19-0EA6-404F-B77A-D51BE83294D3.jpeg",
+                "srct": "/images/artistas/LUIZ AURELIANO/0CB01C19-0EA6-404F-B77A-D51BE83294D3.jpeg",
+                "title": "Luiz Aureliano - 1"
+            },
+            {
+                "src": "/images/artistas/LUIZ AURELIANO/0DF7CAB9-656E-7140-9594-3180FAC1691A.jpeg",
+                "srct": "/images/artistas/LUIZ AURELIANO/0DF7CAB9-656E-7140-9594-3180FAC1691A.jpeg",
+                "title": "Luiz Aureliano - 2"
+            },
+            {
+                "src": "/images/artistas/LUIZ AURELIANO/1AB50178-D384-FF45-B861-770A71EFEAE9.jpg",
+                "srct": "/images/artistas/LUIZ AURELIANO/1AB50178-D384-FF45-B861-770A71EFEAE9.jpg",
+                "title": "Luiz Aureliano - 3"
+            },
+            {
+                "src": "/images/artistas/LUIZ AURELIANO/3500A011-39D0-094D-B417-6F2668F7300E.jpeg",
+                "srct": "/images/artistas/LUIZ AURELIANO/3500A011-39D0-094D-B417-6F2668F7300E.jpeg",
+                "title": "Luiz Aureliano - 4"
+            },
+            {
+                "src": "/images/artistas/LUIZ AURELIANO/4973F5D9-3ADC-E147-8AF7-C611A92EB3FE.png",
+                "srct": "/images/artistas/LUIZ AURELIANO/4973F5D9-3ADC-E147-8AF7-C611A92EB3FE.png",
+                "title": "Luiz Aureliano - 5"
+            },
+            {
+                "src": "/images/artistas/LUIZ AURELIANO/4B6907EC-04EE-7748-9B98-B556F4E56953.jpeg",
+                "srct": "/images/artistas/LUIZ AURELIANO/4B6907EC-04EE-7748-9B98-B556F4E56953.jpeg",
+                "title": "Luiz Aureliano - 6"
+            },
+            {
+                "src": "/images/artistas/LUIZ AURELIANO/50EAACFE-D7B1-7045-8289-CC55AB02D1DE.jpg",
+                "srct": "/images/artistas/LUIZ AURELIANO/50EAACFE-D7B1-7045-8289-CC55AB02D1DE.jpg",
+                "title": "Luiz Aureliano - 7"
+            },
+            {
+                "src": "/images/artistas/LUIZ AURELIANO/6F22D9B6-B637-0045-89D2-B5204D213B76.jpeg",
+                "srct": "/images/artistas/LUIZ AURELIANO/6F22D9B6-B637-0045-89D2-B5204D213B76.jpeg",
+                "title": "Luiz Aureliano - 8"
+            },
+            {
+                "src": "/images/artistas/LUIZ AURELIANO/AFF0CA97-46B5-9547-9A5D-3224B7643890.png",
+                "srct": "/images/artistas/LUIZ AURELIANO/AFF0CA97-46B5-9547-9A5D-3224B7643890.png",
+                "title": "Luiz Aureliano - 9"
+            },
+            {
+                "src": "/images/artistas/LUIZ AURELIANO/C850DF17-FBB3-9F45-AD9D-C281D0BF839F.jpeg",
+                "srct": "/images/artistas/LUIZ AURELIANO/C850DF17-FBB3-9F45-AD9D-C281D0BF839F.jpeg",
+                "title": "Luiz Aureliano - 10"
+            },
+            {
+                "src": "/images/artistas/LUIZ AURELIANO/E13A08EC-A35C-DE4E-828C-7A49E301BFEC.jpeg",
+                "srct": "/images/artistas/LUIZ AURELIANO/E13A08EC-A35C-DE4E-828C-7A49E301BFEC.jpeg",
+                "title": "Luiz Aureliano - 11"
+            }
+        ]
+    },
+    "14": {
+        "name": "Mayra Biajante",
+        "images": [
+            {
+                "src": "/images/artistas/MAYRA BIAJANTE/0F80F61A-83A3-3640-9A47-7D6A51E5C1FF.jpg",
+                "srct": "/images/artistas/MAYRA BIAJANTE/0F80F61A-83A3-3640-9A47-7D6A51E5C1FF.jpg",
+                "title": "Mayra Biajante - 1"
+            },
+            {
+                "src": "/images/artistas/MAYRA BIAJANTE/1144D053-0156-594F-9DEC-8A921EA52F1D.jpg",
+                "srct": "/images/artistas/MAYRA BIAJANTE/1144D053-0156-594F-9DEC-8A921EA52F1D.jpg",
+                "title": "Mayra Biajante - 2"
+            },
+            {
+                "src": "/images/artistas/MAYRA BIAJANTE/12157A13-F6FC-8247-BA48-660072625D46.jpg",
+                "srct": "/images/artistas/MAYRA BIAJANTE/12157A13-F6FC-8247-BA48-660072625D46.jpg",
+                "title": "Mayra Biajante - 3"
+            },
+            {
+                "src": "/images/artistas/MAYRA BIAJANTE/2F9BB3BE-C6EA-5F45-AB12-40194252898D.jpg",
+                "srct": "/images/artistas/MAYRA BIAJANTE/2F9BB3BE-C6EA-5F45-AB12-40194252898D.jpg",
+                "title": "Mayra Biajante - 4"
+            },
+            {
+                "src": "/images/artistas/MAYRA BIAJANTE/5DFDF0A7-C11A-DF4E-9217-B9F4419750A1.jpg",
+                "srct": "/images/artistas/MAYRA BIAJANTE/5DFDF0A7-C11A-DF4E-9217-B9F4419750A1.jpg",
+                "title": "Mayra Biajante - 5"
+            },
+            {
+                "src": "/images/artistas/MAYRA BIAJANTE/713DB499-BB5C-AB4A-AA1A-37849FBAA817.jpg",
+                "srct": "/images/artistas/MAYRA BIAJANTE/713DB499-BB5C-AB4A-AA1A-37849FBAA817.jpg",
+                "title": "Mayra Biajante - 6"
+            },
+            {
+                "src": "/images/artistas/MAYRA BIAJANTE/856AE06F-B11C-FA4F-B98C-D436BB357459.jpg",
+                "srct": "/images/artistas/MAYRA BIAJANTE/856AE06F-B11C-FA4F-B98C-D436BB357459.jpg",
+                "title": "Mayra Biajante - 7"
+            },
+            {
+                "src": "/images/artistas/MAYRA BIAJANTE/96432462-DC37-8F47-8838-917282E5724E.jpg",
+                "srct": "/images/artistas/MAYRA BIAJANTE/96432462-DC37-8F47-8838-917282E5724E.jpg",
+                "title": "Mayra Biajante - 8"
+            },
+            {
+                "src": "/images/artistas/MAYRA BIAJANTE/A1A8FE2F-7B54-1C45-B330-400A82ABE9D3.jpg",
+                "srct": "/images/artistas/MAYRA BIAJANTE/A1A8FE2F-7B54-1C45-B330-400A82ABE9D3.jpg",
+                "title": "Mayra Biajante - 9"
+            },
+            {
+                "src": "/images/artistas/MAYRA BIAJANTE/DD88628C-CA3A-9847-B3AD-C2E3FBEEDC99.jpg",
+                "srct": "/images/artistas/MAYRA BIAJANTE/DD88628C-CA3A-9847-B3AD-C2E3FBEEDC99.jpg",
+                "title": "Mayra Biajante - 10"
+            },
+            {
+                "src": "/images/artistas/MAYRA BIAJANTE/F792829D-C418-4548-AC38-53844740FFEA.jpg",
+                "srct": "/images/artistas/MAYRA BIAJANTE/F792829D-C418-4548-AC38-53844740FFEA.jpg",
+                "title": "Mayra Biajante - 11"
+            }
+        ]
+    },
+    "15": {
+        "name": "Nelson Kojranski",
+        "images": []
+    },
+    "16": {
+        "name": "Sheila Oliveira",
+        "images": [
+            {
+                "src": "/images/artistas/SHEILA OLIVEIRA/05B3EE5F-166E-4E3D-8B1E-EECE385AF800.jpg",
+                "srct": "/images/artistas/SHEILA OLIVEIRA/05B3EE5F-166E-4E3D-8B1E-EECE385AF800.jpg",
+                "title": "Sheila Oliveira - 1"
+            },
+            {
+                "src": "/images/artistas/SHEILA OLIVEIRA/1A39484E-EF27-4575-BBFC-51F52F1A8B4A.jpg",
+                "srct": "/images/artistas/SHEILA OLIVEIRA/1A39484E-EF27-4575-BBFC-51F52F1A8B4A.jpg",
+                "title": "Sheila Oliveira - 2"
+            },
+            {
+                "src": "/images/artistas/SHEILA OLIVEIRA/4C9D4EEB-CD97-48F9-9F7D-06F6B9CE1F70.jpg",
+                "srct": "/images/artistas/SHEILA OLIVEIRA/4C9D4EEB-CD97-48F9-9F7D-06F6B9CE1F70.jpg",
+                "title": "Sheila Oliveira - 3"
+            },
+            {
+                "src": "/images/artistas/SHEILA OLIVEIRA/5920730B-31A7-4537-8141-8F33B91083DD.jpg",
+                "srct": "/images/artistas/SHEILA OLIVEIRA/5920730B-31A7-4537-8141-8F33B91083DD.jpg",
+                "title": "Sheila Oliveira - 4"
+            },
+            {
+                "src": "/images/artistas/SHEILA OLIVEIRA/6CEAC72B-B540-4F2D-A6DD-33C05AF7CCEE.jpg",
+                "srct": "/images/artistas/SHEILA OLIVEIRA/6CEAC72B-B540-4F2D-A6DD-33C05AF7CCEE.jpg",
+                "title": "Sheila Oliveira - 5"
+            },
+            {
+                "src": "/images/artistas/SHEILA OLIVEIRA/7DCA879B-3D61-4019-9E0E-2231B7754F27.jpg",
+                "srct": "/images/artistas/SHEILA OLIVEIRA/7DCA879B-3D61-4019-9E0E-2231B7754F27.jpg",
+                "title": "Sheila Oliveira - 6"
+            },
+            {
+                "src": "/images/artistas/SHEILA OLIVEIRA/81FF7651-EEFA-4D2C-B246-7D664BA621B5.jpg",
+                "srct": "/images/artistas/SHEILA OLIVEIRA/81FF7651-EEFA-4D2C-B246-7D664BA621B5.jpg",
+                "title": "Sheila Oliveira - 7"
+            },
+            {
+                "src": "/images/artistas/SHEILA OLIVEIRA/8DEB3FCB-63E8-4B9D-B74D-366C8995D587.jpg",
+                "srct": "/images/artistas/SHEILA OLIVEIRA/8DEB3FCB-63E8-4B9D-B74D-366C8995D587.jpg",
+                "title": "Sheila Oliveira - 8"
+            },
+            {
+                "src": "/images/artistas/SHEILA OLIVEIRA/922DEADC-6D92-486C-A6AA-9BC66E68379A.jpg",
+                "srct": "/images/artistas/SHEILA OLIVEIRA/922DEADC-6D92-486C-A6AA-9BC66E68379A.jpg",
+                "title": "Sheila Oliveira - 9"
+            },
+            {
+                "src": "/images/artistas/SHEILA OLIVEIRA/A3E3C8EA-1F61-42BA-9A03-12509A717FAC.jpg",
+                "srct": "/images/artistas/SHEILA OLIVEIRA/A3E3C8EA-1F61-42BA-9A03-12509A717FAC.jpg",
+                "title": "Sheila Oliveira - 10"
+            },
+            {
+                "src": "/images/artistas/SHEILA OLIVEIRA/B7CDA99D-3734-4A8C-9CCB-4E624A11AEEE.jpg",
+                "srct": "/images/artistas/SHEILA OLIVEIRA/B7CDA99D-3734-4A8C-9CCB-4E624A11AEEE.jpg",
+                "title": "Sheila Oliveira - 11"
+            }
+        ]
+    },
+    "17": {
+        "name": "Valdemir Cunha",
+        "images": [
+            {
+                "src": "/images/artistas/VALDEMIR CUNHA/4B7202C0-630F-054D-81E0-EC68A6B76B7A.jpg",
+                "srct": "/images/artistas/VALDEMIR CUNHA/4B7202C0-630F-054D-81E0-EC68A6B76B7A.jpg",
+                "title": "Valdemir Cunha - 1"
+            },
+            {
+                "src": "/images/artistas/VALDEMIR CUNHA/55364399-D198-4DD1-A65F-C99094B4663F.jpg",
+                "srct": "/images/artistas/VALDEMIR CUNHA/55364399-D198-4DD1-A65F-C99094B4663F.jpg",
+                "title": "Valdemir Cunha - 2"
+            },
+            {
+                "src": "/images/artistas/VALDEMIR CUNHA/5EE5EF1E-CB59-3045-A5D5-9C97EF5EEF35.jpg",
+                "srct": "/images/artistas/VALDEMIR CUNHA/5EE5EF1E-CB59-3045-A5D5-9C97EF5EEF35.jpg",
+                "title": "Valdemir Cunha - 3"
+            },
+            {
+                "src": "/images/artistas/VALDEMIR CUNHA/797C50D2-8CAA-0345-BE72-3F4287BE55A6.png",
+                "srct": "/images/artistas/VALDEMIR CUNHA/797C50D2-8CAA-0345-BE72-3F4287BE55A6.png",
+                "title": "Valdemir Cunha - 4"
+            },
+            {
+                "src": "/images/artistas/VALDEMIR CUNHA/7FF7BA61-D902-456C-8024-CF52C5048E6F.jpeg",
+                "srct": "/images/artistas/VALDEMIR CUNHA/7FF7BA61-D902-456C-8024-CF52C5048E6F.jpeg",
+                "title": "Valdemir Cunha - 5"
+            },
+            {
+                "src": "/images/artistas/VALDEMIR CUNHA/927EFA31-AAD6-674B-9681-4E534F628678.png",
+                "srct": "/images/artistas/VALDEMIR CUNHA/927EFA31-AAD6-674B-9681-4E534F628678.png",
+                "title": "Valdemir Cunha - 6"
+            },
+            {
+                "src": "/images/artistas/VALDEMIR CUNHA/9E790336-5622-F04E-BD09-233BECC24A9A.png",
+                "srct": "/images/artistas/VALDEMIR CUNHA/9E790336-5622-F04E-BD09-233BECC24A9A.png",
+                "title": "Valdemir Cunha - 7"
+            },
+            {
+                "src": "/images/artistas/VALDEMIR CUNHA/E70F0B98-6C91-3C49-8F37-6C8853CE8CFE.jpg",
+                "srct": "/images/artistas/VALDEMIR CUNHA/E70F0B98-6C91-3C49-8F37-6C8853CE8CFE.jpg",
+                "title": "Valdemir Cunha - 8"
+            }
+        ]
+    },
+    "18": {
+        "name": "Willy Biondani",
+        "images": []
+    }
+} 
