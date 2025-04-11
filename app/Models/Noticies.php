@@ -15,6 +15,7 @@ class Noticies extends Model
         'image',
         'summary',
         'is_active',
+        'url',
     ];
     protected $casts = [
         'is_active' => 'boolean',

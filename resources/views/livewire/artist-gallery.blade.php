@@ -1,8 +1,32 @@
-<div class="container px-8 md:px-0 pt-14 mb-14  w-full mx-auto bg-black ">
-    <h2 class="text-4xl text-white font-bold">ARTISTAS</h2>
+<div class="container lg:px-8 pt-14 mb-14  w-full mx-auto bg-black ">
+    <h2 class="text-4xl text-white font-bold px-4">ARTISTAS</h2>
     <div class="lg:grid lg:grid-cols-[400px_1fr] pt-12">
         <div class="w-full lg:p-4">
-            <ul id="artist-list">
+            <!-- Select para Mobile -->
+            <div class="lg:hidden w-full px-4">
+                <select id="artist-select-mobile" class="w-full h-12 text-sm bg-transparent text-gray-400 border-2 border-gray-700 rounded-lg px-4 focus:outline-none focus:border-white focus:ring-2 focus:ring-white">
+                    <option value="1">Eduardo Kobbi</option>
+                    <option value="2">Angelo Pastorello</option>
+                    <option value="3">Antonio Saggese</option>
+                    <option value="4">Christiana Carvalho</option>
+                    <option value="5">Cristiano Xavier</option>
+                    <option value="6">Eidi Feldon</option>
+                    <option value="7">Érico Hiller</option>
+                    <option value="8">Helo Mello</option>
+                    <option value="9">Jean Manzon</option>
+                    <option value="10">João Paulo Barbosa</option>
+                    <option value="11">Juliana Naufel</option>
+                    <option value="12">Luciano Candisani</option>
+                    <option value="13">Luiz Aureliano</option>
+                    <option value="14">Mayra Biajante</option>
+                    <option value="15">Nelson Kojranski</option>
+                    <option value="16">Sheila Oliveira</option>
+                    <option value="17">Valdemir Cunha</option>
+                    <option value="18">Willy Biondani</option>
+                </select>
+            </div>
+            <!-- Lista para Desktop -->
+            <ul id="artist-list" class="hidden lg:block">
                 <li class="cursor-pointer font-bold text-2xl p-2 text-gray-400" data-id="1" onclick="selectArtist(1)">
                     Eduardo Kobbi
                 </li>
@@ -71,30 +95,36 @@
     document.addEventListener("DOMContentLoaded", function() {
         console.log("✅ Página carregada!");
 
-        // 🔥 Carregar o JSON com as imagens dos artistas
         let artistImages = {};
         fetch('/js/artist-images.json')
             .then(response => response.json())
             .then(data => {
-                artistImages = data;
-                // Selecionar automaticamente o primeiro artista ao carregar a página
-                let firstArtist = document.querySelector("#artist-list li");
-                if (firstArtist) {
-                    let firstArtistId = firstArtist.getAttribute("data-id");
-                    firstArtist.classList.remove("text-gray-400");
-                    firstArtist.classList.add("text-white");
-                    selectArtist(firstArtistId);
+                if(data) {
+                    artistImages = data;
+    
+                    let firstArtist = document.querySelector("#artist-list li");
+                    if (firstArtist) {
+                        let firstArtistId = firstArtist.getAttribute("data-id");
+                        firstArtist.classList.remove("text-gray-400");
+                        firstArtist.classList.add("text-white");
+                        selectArtist(firstArtistId);
+                    }
+                        
                 }
             })
             .catch(error => console.error('Erro ao carregar as imagens:', error));
 
-        // 🎯 Função para mudar as imagens da galeria
+        // Adicionar evento de change para o select mobile
+        document.getElementById('artist-select-mobile').addEventListener('change', function(e) {
+            selectArtist(e.target.value);
+        });
+
         window.selectArtist = function(artistId) {
             console.log("🎨 Artista selecionado:", artistId);
 
             let images = artistImages[artistId]?.images || [];
 
-            // 🖼️ Atualizar classes de seleção
+
             document.querySelectorAll("#artist-list li").forEach(li => {
                 li.classList.remove("text-white");
                 li.classList.add("text-gray-400");
@@ -107,7 +137,7 @@
             }
 
             jQuery("#artist-gallery").nanogallery2('destroy');
-            // 🚀 Atualizar galeria
+
             jQuery("#artist-gallery").empty().nanogallery2({
                 itemsBaseURL: '',
                 items: images,

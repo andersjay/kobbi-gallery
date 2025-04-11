@@ -9,6 +9,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -38,11 +39,9 @@ class ExhibitionsResource extends Resource
                             ->placeholder('titulo-da-exposicao')
                             ->required(),
                         DatePicker::make('start_date')
-                            ->label('Data de inicio')
-                            ->required(),
+                            ->label('Data de inicio'),
                         DatePicker::make('end_date')
-                            ->label('Data de fim')
-                            ->required(),
+                            ->label('Data de fim'),
                         TextInput::make('year')
                             ->label('Ano da exposição')
                             ->placeholder('2025'),
@@ -51,7 +50,7 @@ class ExhibitionsResource extends Resource
                             ->columns(2)
                             ->schema([
                                 FileUpload::make('image')
-                                    ->label('Imagem da exposição')
+                                    ->label('Convite da exposição')
                                     ->columnSpan(1)
                                     ->image()
                                     ->disk('public')
@@ -64,6 +63,25 @@ class ExhibitionsResource extends Resource
                                     ->disk('public')
                                     ->directory('uploads/exhibitions/banners')
                                     ->required(),
+                                Repeater::make('gallery')
+                                    ->label('Galeria de imagens')
+                                    ->columnSpan(2)
+                                    ->schema([
+                                        FileUpload::make('image')
+                                            ->label('Imagem')
+                                            ->image()
+                                            ->disk('public')
+                                            ->directory('uploads/exhibitions/gallery')
+                                            ->required(),
+                                        TextInput::make('caption')
+                                            ->label('Legenda da imagem')
+                                            ->placeholder('Descreva a imagem')
+                                    ])
+                                    ->defaultItems(0)
+                                    ->addActionLabel('Adicionar imagem')
+                                    ->reorderableWithButtons()
+                                    ->collapsible()
+                                    ->itemLabel(fn (array $state): ?string => $state['caption'] ?? 'Nova imagem'),
                             ]),
                         Section::make('Descrições da exposição')
                             ->columnSpan(2)
@@ -71,14 +89,12 @@ class ExhibitionsResource extends Resource
                             ->schema([
                                 RichEditor::make('description')
                                     ->label('Descrição da exposição')
-                                    
-                                    ->columnSpan(1)
-                                    ->required(),
+       
+                                    ->columnSpan(1),
                                 RichEditor::make('summary')
                                     ->disableToolbarButtons(['attachFiles'])
                                     ->label('Resumo da exposição')
-                                    ->columnSpan(1)
-                                    ->required(),
+                                    ->columnSpan(1),
                             ]),
 
                     ]),

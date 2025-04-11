@@ -28,4 +28,10 @@ class Exhibition extends Model
         'end_date',
         'is_active',
     ];
+
+    protected $casts = [
+        'start_date' => 'date',
+        'end_date' => 'date',
+        'gallery' => 'array'
+    ];
 }

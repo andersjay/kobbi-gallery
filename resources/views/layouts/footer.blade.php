@@ -1,5 +1,5 @@
 <footer class="bg-black w-full">
-  <div class="px-8 md:px-10 lg:px-6 xl:px-4 max-w-[1440px] w-full mx-auto py-20 bg-black flex flex-col items-center md:grid md:grid-cols-[100px,1fr,150px] lg:grid lg:grid-cols-[200px,1fr,150px] gap-8 lg:gap-2">
+  <div class="px-8 lg:px-6 xl:px-4 container mx-auto py-20 bg-black flex flex-col items-center md:grid md:grid-cols-[100px,1fr,150px] lg:grid lg:grid-cols-[200px,1fr,150px] gap-8 lg:gap-2">
       <a href="{{ route('home') }}" class="w-full max-w-[150px]">
           <img class="w-full" src="{{ asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery">
       </a>

@@ -35,6 +35,12 @@ class NoticiesResource extends Resource
                     ->columns(1)
                     ->placeholder('Exemplo: noticia-1')
                     ->maxLength(255),
+                Forms\Components\TextInput::make('url')
+                    ->label('URL da notícia')
+                    ->columns(1)
+                    ->columnSpan(2)
+                    ->placeholder('Exemplo: https://www.google.com')
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('author_name')
                     ->label('Autor')
                     ->columns(1)
@@ -42,9 +48,6 @@ class NoticiesResource extends Resource
                 Forms\Components\TextInput::make('summary')
                     ->label('Resumo')
                     ->columns(1),
-                Forms\Components\RichEditor::make('content')
-                    ->label('Conteúdo')
-                    ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
                     ->label('Imagem')
                     ->image(),

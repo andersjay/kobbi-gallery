@@ -1,4 +1,4 @@
-<div class="space-y-4">
+<div class="container px-8 mx-auto space-y-4">
     <h2 class="mt-10 md:mt-8 md:mb-8 lg:mt-0 text-xl text-white font-bold">EXPOSIÇÃO ATUAL</h2>
 
     <div class="w-full flex flex-col gap-2 md:grid md:grid-cols-[2fr_1fr] md:gap-4 lg:grid-cols-[1fr_1fr] lg:gap-8">
