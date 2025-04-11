@@ -7,7 +7,7 @@
       <nav class="flex flex-col md:flex-row justify-center items-center gap-2">
           <a href="#" class="text-white text-lg md:text-sm lg:text-sm">ARTISTAS</a>
           <a href="{{ route('exhibitions') }}" class="text-white text-sm md:text-sm lg:text-sm">EXPOSIÇÕES</a>
-          <a href="#" class="text-white text-sm md:text-sm lg:text-sm">PARCERIAS</a>
+          {{-- <a href="#" class="text-white text-sm md:text-sm lg:text-sm">PARCERIAS</a> --}}
           <a href="{{ route('gallery') }}" class="text-white text-sm md:text-sm lg:text-sm">GALERIA</a>
           <a href="{{ route('noticies') }}" class="text-white text-sm md:text-sm lg:text-sm">NOTÍCIAS</a>
           <a href="{{ route('contact') }}" class="text-white text-sm md:text-sm lg:text-sm">CONTATO</a>

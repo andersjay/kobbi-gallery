@@ -5,13 +5,13 @@
         </a>
     
         <nav class="flex items-center gap-6">
-            <a href="{{ route('artists.index') }}" class="text-white hover:border-b-2 transition-all text-sm">ARTISTAS</a>
-            <a href="{{ route('exhibitions') }}" class="text-white hover:border-b-2 transition-all text-sm">EXPOSIÇÕES</a>
-            <a href="#" class="text-white hover:border-b-2 transition-all text-sm">PARCERIAS</a>
-            <a href="{{ route('gallery') }}" class="text-white hover:border-b-2 transition-all text-sm">GALERIA</a>
-            <a href="{{ route('noticies') }}" class="text-white hover:border-b-2 transition-all text-sm">NOTÍCIAS</a>
-            <a href="{{ route('contact') }}" class="text-white hover:border-b-2 transition-all text-sm">CONTATO</a>
-            <a href="#" class="text-white hover:border-b-2 transition-all text-sm">LOJA</a>
+            <a href="{{ route('artists.index') }}" class="text-white hover:border-b-2 transition-all text-lg">ARTISTAS</a>
+            <a href="{{ route('exhibitions') }}" class="text-white hover:border-b-2 transition-all text-lg">EXPOSIÇÕES</a>
+            {{-- <a href="#" class="text-white hover:border-b-2 transition-all text-lg">PARCERIAS</a> --}}
+            <a href="{{ route('gallery') }}" class="text-white hover:border-b-2 transition-all text-lg">GALERIA</a>
+            <a href="{{ route('noticies') }}" class="text-white hover:border-b-2 transition-all text-lg">NOTÍCIAS</a>
+            <a href="{{ route('contact') }}" class="text-white hover:border-b-2 transition-all text-lg">CONTATO</a>
+            {{-- <a href="#" class="text-white hover:border-b-2 transition-all text-lg">LOJA</a> --}}
     
         </nav>
     </div>
@@ -48,7 +48,7 @@
                         <a href="{{ route('exhibitions') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">EXPOSIÇÕES</a>
                     </li>
                     <li>
-                        <a href="#" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">PARCERIAS</a>
+                        {{-- <a href="#" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">PARCERIAS</a> --}}
                     </li>
                     <li>
                         <a href="{{ route('gallery') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">GALERIA</a>
@@ -60,7 +60,7 @@
                         <a href="{{ route('contact') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">CONTATO</a>
                     </li>
                     <li>
-                        <a href="#" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">LOJA</a>
+                        {{-- <a href="#" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">LOJA</a> --}}
                     </li>
                 </ul>
         

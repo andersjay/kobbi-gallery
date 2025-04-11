@@ -22,7 +22,7 @@
                                     <span>{{ $item->author_name }}</span>
                                 </div>
                                 <p class="text-4xl text-white">{{ $item->title }}</p>
-                                <a href="#">
+                                <a href="{{ route('exhibition', $item->id) }}">
                                     <span class="text-white p-0">Ver exposição</span>
                                 </a>
                             </div>

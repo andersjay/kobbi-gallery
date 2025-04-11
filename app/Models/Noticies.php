@@ -12,7 +12,7 @@ class Noticies extends Model
         'slug',
         'author_name',
         'content',
-        'image',
+        'image_url',
         'summary',
         'is_active',
         'url',

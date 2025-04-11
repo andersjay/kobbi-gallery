@@ -48,7 +48,7 @@ class NoticiesResource extends Resource
                 Forms\Components\TextInput::make('summary')
                     ->label('Resumo')
                     ->columns(1),
-                Forms\Components\TextInput::make('image')
+                Forms\Components\TextInput::make('image_url')
                     ->label('URL da Imagem')
                     ->required()
                     ->placeholder('https://exemplo.com/imagem.jpg')

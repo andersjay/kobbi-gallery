@@ -23,6 +23,7 @@ class Exhibition extends Model
         'summary',
         'image',
         'banner',
+        'gallery',
         'year',
         'start_date',
         'end_date',

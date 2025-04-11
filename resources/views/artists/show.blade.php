@@ -86,10 +86,10 @@
         <!-- Botão Voltar -->
         <div class="mt-12">
             <a href="{{ route('artists.index') }}" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 mr-2 text-white hover:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>
-                <span>Voltar para lista de artistas</span>
+                <span class="text-white hover:text-gray-300 transition-colors">Voltar para lista de artistas</span>
             </a>
         </div>
     </div>
