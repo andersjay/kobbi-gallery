@@ -5,6 +5,7 @@ use App\Http\Controllers\ExhibitionController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoticieController;
+use App\Http\Controllers\ArtistController;
 use App\Livewire\Gallery;
 use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
@@ -28,8 +29,12 @@ Route::get('/exposicoes', [ExhibitionController::class, 'index'])->name('exhibit
 Route::get('/exposicoes/{id}', [ExhibitionController::class, 'exhibition'])->name('exhibition');
 
 //Noticias
-Route::get('/noticias', [NoticieController::class, 'index'])->name('noticies.index');
+Route::get('/noticias', [NoticieController::class, 'index'])->name('noticies');
 Route::get('/noticias/{slug}', [NoticieController::class, 'show'])->name('noticies.show');
+
+//Artistas
+Route::get('/artistas', [ArtistController::class, 'index'])->name('artists.index');
+Route::get('/artistas/{id}', [ArtistController::class, 'show'])->name('artists.show');
 
 //Contato
 Route::get('/contato', [ContactController::class, 'index'])->name('contact');

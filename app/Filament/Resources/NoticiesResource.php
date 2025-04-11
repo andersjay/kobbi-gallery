@@ -48,10 +48,12 @@ class NoticiesResource extends Resource
                 Forms\Components\TextInput::make('summary')
                     ->label('Resumo')
                     ->columns(1),
-                Forms\Components\FileUpload::make('image')
-                    ->label('Imagem')
-                    ->image(),
-
+                Forms\Components\TextInput::make('image')
+                    ->label('URL da Imagem')
+                    ->required()
+                    ->placeholder('https://exemplo.com/imagem.jpg')
+                    ->url()
+                    ->columnSpan(2),
             ]);
     }
 
@@ -67,8 +69,8 @@ class NoticiesResource extends Resource
                 Tables\Columns\TextColumn::make('author_name')
                     ->label('Autor')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image')
-                    ->label('Imagem'),
+                Tables\Columns\TextColumn::make('image_url')
+                    ->label('URL da Imagem'),
                 Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()

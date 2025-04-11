@@ -1,5 +1,5 @@
 @extends('layouts.app')
-§
+
 @section('content')
   <div class="container px-4 pt-14 mt-4w-full mx-auto pb-10  bg-black">
     <div class="mt-12">

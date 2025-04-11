@@ -8,7 +8,7 @@
     <div class="mt-11 mb-16">
         <a href="{{ route('noticies.show', $lastNoticie->slug) }}" class="block">
             <div class="w-full max-h-[500px] overflow-hidden">
-                <img class="w-full h-full object-cover" src="{{ asset('storage/' . $lastNoticie->image) }}" alt="{{ $lastNoticie->title }}">
+                <img class="w-full h-full object-cover" src="{{ $lastNoticie->image_url }}" alt="{{ $lastNoticie->title }}">
             </div>
             <div class="mt-6">
                 <h2 class="text-3xl text-white font-bold">{{ $lastNoticie->title }}</h2>
@@ -25,7 +25,7 @@
         <a href="{{ route('noticies.show', $notice->slug) }}" class="block group">
             <div class="w-full h-[200px] overflow-hidden">
                 <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
-                     src="{{ asset('storage/' . $notice->image) }}" 
+                     src="{{ $notice->image_url }}" 
                      alt="{{ $notice->title }}">
             </div>
             <div class="mt-4">

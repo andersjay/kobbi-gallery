@@ -5,12 +5,12 @@
         </a>
     
         <nav class="flex items-center gap-6">
-            <a href="#" class="text-white hover:border-b-2 transition-all text-sm">ARTISTAS</a>
+            <a href="{{ route('artists.index') }}" class="text-white hover:border-b-2 transition-all text-sm">ARTISTAS</a>
             <a href="{{ route('exhibitions') }}" class="text-white hover:border-b-2 transition-all text-sm">EXPOSIÇÕES</a>
             <a href="#" class="text-white hover:border-b-2 transition-all text-sm">PARCERIAS</a>
             <a href="{{ route('gallery') }}" class="text-white hover:border-b-2 transition-all text-sm">GALERIA</a>
-            <a href="#" class="text-white hover:border-b-2 transition-all text-sm">NOTÍCIAS</a>
-            <a href="#" class="text-white hover:border-b-2 transition-all text-sm">CONTATO</a>
+            <a href="{{ route('noticies') }}" class="text-white hover:border-b-2 transition-all text-sm">NOTÍCIAS</a>
+            <a href="{{ route('contact') }}" class="text-white hover:border-b-2 transition-all text-sm">CONTATO</a>
             <a href="#" class="text-white hover:border-b-2 transition-all text-sm">LOJA</a>
     
         </nav>
@@ -42,7 +42,7 @@
                 
                 <ul class="w-full max-w-md text-center">
                     <li>
-                        <a href="#" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">ARTISTAS</a>
+                        <a href="{{ route('artists.index') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">ARTISTAS</a>
                     </li>
                     <li>
                         <a href="{{ route('exhibitions') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">EXPOSIÇÕES</a>
@@ -54,10 +54,10 @@
                         <a href="{{ route('gallery') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">GALERIA</a>
                     </li>
                     <li>
-                        <a href="#" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">NOTÍCIAS</a>
+                        <a href="{{ route('noticies') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">NOTÍCIAS</a>
                     </li>
                     <li>
-                        <a href="#" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">CONTATO</a>
+                        <a href="{{ route('contact') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">CONTATO</a>
                     </li>
                     <li>
                         <a href="#" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">LOJA</a>

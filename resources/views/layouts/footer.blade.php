@@ -9,8 +9,8 @@
           <a href="{{ route('exhibitions') }}" class="text-white text-sm md:text-sm lg:text-sm">EXPOSIÇÕES</a>
           <a href="#" class="text-white text-sm md:text-sm lg:text-sm">PARCERIAS</a>
           <a href="{{ route('gallery') }}" class="text-white text-sm md:text-sm lg:text-sm">GALERIA</a>
-          <a href="#" class="text-white text-sm md:text-sm lg:text-sm">NOTÍCIAS</a>
-          <a href="#" class="text-white text-sm md:text-sm lg:text-sm">CONTATO</a>
+          <a href="{{ route('noticies') }}" class="text-white text-sm md:text-sm lg:text-sm">NOTÍCIAS</a>
+          <a href="{{ route('contact') }}" class="text-white text-sm md:text-sm lg:text-sm">CONTATO</a>
           <a href="#" class="text-white text-sm md:text-sm lg:text-sm">LOJA</a>
       </nav>
 

@@ -4,9 +4,9 @@
     <div class="max-w-4xl mx-auto">
         <h1 class="text-4xl text-white font-bold mb-6">{{ $noticie->title }}</h1>
         
-        @if($noticie->image)
+        @if($noticie->image_url)
         <div class="w-full h-[400px] mb-8">
-            <img class="w-full h-full object-cover" src="{{ asset('storage/' . $noticie->image) }}" alt="{{ $noticie->title }}">
+            <img class="w-full h-full object-cover" src="{{ $noticie->image_url }}" alt="{{ $noticie->title }}">
         </div>
         @endif
 
