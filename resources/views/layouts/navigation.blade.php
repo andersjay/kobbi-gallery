@@ -1,7 +1,7 @@
 <div>
     <div class="container mx-auto pt-6 md:px-8 lg:flex lg:justify-between hidden py-4 items-center {{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'absolute left-0 right-0 z-20' : ''}}">
         <a href="{{ route('home') }}" class="w-40">
-            <img src="/images/logo-kobbi.png" alt="Logo Kobbi Gallery" class="w-full">
+            <img src="{{ asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery" class="w-full">
         </a>
     
         <nav class="flex items-center gap-6">
@@ -18,7 +18,7 @@
 
     <div class="lg:hidden flex w-full justify-between px-8 py-4 items-center absolute left-0 right-0 z-20">
         <a href="{{ route('home') }}"class="w-40">
-            <img src="/images/logo-kobbi.png" alt="Logo Kobbi Gallery" class="w-full">
+            <img src="{{ asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery" class="w-full">
         </a>
         <div x-data="{ open: false }" class="relative w-full flex justify-end">
             <button @click="open = true" class="px-4 py-2 text-white rounded-md">
@@ -65,7 +65,7 @@
                 </ul>
         
                 <div class="w-40">
-                    <img src="images/logo-kobbi.png" alt="Logo Kobbi Gallery" class="w-full">
+                    <img src="{{ asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery" class="w-full">
                 </div>
 
                 <button @click="open = false" class="absolute top-4 right-4 p-3 text-white rounded-full">
