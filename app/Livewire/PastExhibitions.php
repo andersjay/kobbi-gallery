@@ -13,6 +13,7 @@ class PastExhibitions extends Component
         $this->pastExhibitions = Exhibition::orderBy('sort')
             ->orderBy('created_at', 'desc')
             ->skip(1)
+            ->limit(100)
             ->get();
             
         return view('livewire.past-exhibitions');
