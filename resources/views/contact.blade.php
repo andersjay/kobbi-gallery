@@ -1,25 +1,25 @@
 @extends('layouts.app')
 @section('content')
 <div class="container px-8 pt-14 w-full mx-auto pb-20">
-    <h1 class="text-4xl text-white font-bold mb-12">CONTATO</h1>
+    <h1 class="text-4xl text-gray-950 font-bold mb-12">CONTATO</h1>
 
     <div class="grid md:grid-cols-2 gap-12">
         <!-- Informações de Contato -->
         <div class="space-y-10">
             <!-- Formulário de Contato -->
             <div class="space-y-4">
-                <h2 class="text-2xl text-white font-semibold">Envie sua mensagem</h2>
+                <h2 class="text-2xl text-gray-950 font-semibold">Envie sua mensagem</h2>
                 <form id="contactForm" class="space-y-4">
                     <div>
-                        <label for="name" class="block text-gray-300 mb-1">Nome</label>
+                        <label for="name" class="block text-gray-950 mb-1">Nome</label>
                         <input type="text" id="name" name="name" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-zinc-500" required>
                     </div>
                     <div>
-                        <label for="email" class="block text-gray-300 mb-1">E-mail</label>
+                        <label for="email" class="block text-gray-950 mb-1">E-mail</label>
                         <input type="email" id="email" name="email" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-zinc-500" required>
                     </div>
                     <div>
-                        <label for="message" class="block text-gray-300 mb-1">Mensagem</label>
+                        <label for="message" class="block text-gray-950 mb-1">Mensagem</label>
                         <textarea id="message" name="message" rows="4" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-zinc-500" required></textarea>
                     </div>
                     <button type="submit" class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors">
@@ -35,37 +35,37 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Endereço -->
                 <div class="space-y-4">
-                    <h2 class="text-2xl text-white font-semibold">Endereço</h2>
-                    <div class="text-gray-300 space-y-1">
-                        <p>Rua Tv. Alonso, 23 – Beco do Batman</p>
-                        <p>Vila Madalena – São Paulo</p>
+                    <h2 class="text-2xl text-gray-950 font-semibold">Endereço</h2>
+                    <div class="text-gray-950 space-y-1">
+                        <p class="text-gray-950">Rua Tv. Alonso, 23 – Beco do Batman</p>
+                        <p class="text-gray-950">Vila Madalena – São Paulo</p>
                     </div>
                 </div>
 
                 <!-- Horário -->
                 <div class="space-y-4">
-                    <h2 class="text-2xl text-white font-semibold">Horário</h2>
-                    <div class="text-gray-300 space-y-1">
-                        <p>Aberto de segunda-feira a sábado</p>
-                        <p>9:30 – 18:00</p>
+                    <h2 class="text-2xl text-gray-950 font-semibold">Horário</h2>
+                    <div class="text-gray-950 space-y-1">
+                        <p class="text-gray-950">Aberto de segunda-feira a sábado</p>
+                        <p class="text-gray-950">9:30 – 18:00</p>
                     </div>
                 </div>
 
                 <!-- Telefones -->
                 <div class="space-y-4">
-                    <h2 class="text-2xl text-white font-semibold">Telefones</h2>
-                    <div class="text-gray-300 space-y-3">
+                    <h2 class="text-2xl text-gray-950 font-semibold">Telefones</h2>
+                    <div class="text-gray-950 space-y-3">
                         <div class="flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                             </svg>
-                            <a href="tel:+551138152223" class="hover:text-white transition-colors">+55 11 3815-2223</a>
+                            <a href="tel:+551138152223" class="hover:text-gray-950 transition-colors">+55 11 3815-2223</a>
                         </div>
                         <div class="flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
                             </svg>
-                            <a href="https://wa.me/5511984202061" target="_blank" class="hover:text-white transition-colors">+55 11 98420-2061 (WhatsApp)</a>
+                            <a href="https://wa.me/5511984202061" target="_blank" class="hover:text-gray-950 transition-colors">+55 11 98420-2061 (WhatsApp)</a>
                         </div>
                     </div>
                 </div>

@@ -32,7 +32,7 @@
         @endif
         @livewireStyles
     </head>
-    <body class="jost-font antialiased dark:bg-black dark:text-white/50 relative">
+    <body class="jost-font antialiased bg-[#F3F3F3] relative">
         @include('layouts.navigation')
         @yield('content')
         @include('layouts.footer')

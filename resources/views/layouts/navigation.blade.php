@@ -5,13 +5,13 @@
         </a>
     
         <nav class="flex items-center gap-6">
-            <a href="{{ route('artists.index') }}" class="text-white hover:border-b-2 transition-all text-lg">ARTISTAS</a>
-            <a href="{{ route('exhibitions') }}" class="text-white hover:border-b-2 transition-all text-lg">EXPOSIÇÕES</a>
-            {{-- <a href="#" class="text-white hover:border-b-2 transition-all text-lg">PARCERIAS</a> --}}
-            <a href="{{ route('gallery') }}" class="text-white hover:border-b-2 transition-all text-lg">GALERIA</a>
-            <a href="{{ route('noticies') }}" class="text-white hover:border-b-2 transition-all text-lg">NOTÍCIAS</a>
-            <a href="{{ route('contact') }}" class="text-white hover:border-b-2 transition-all text-lg">CONTATO</a>
-            {{-- <a href="#" class="text-white hover:border-b-2 transition-all text-lg">LOJA</a> --}}
+            <a href="{{ route('artists.index') }}" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2 border-b-2 border-gray-100' : 'text-gray-950 hover:border-b-2 border-gray-950'}} transition-all text-lg">ARTISTAS</a>
+            <a href="{{ route('exhibitions') }}" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2' : 'text-gray-950 hover:border-b-2 border-gray-950'}} transition-all text-lg">EXPOSIÇÕES</a>
+            {{-- <a href="#" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2' : 'text-gray-950'}} transition-all text-lg">PARCERIAS</a> --}}
+            <a href="{{ route('gallery') }}" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2' : 'text-gray-950 hover:border-b-2 border-gray-950'}} transition-all text-lg">GALERIA</a>
+            <a href="{{ route('noticies') }}" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2' : 'text-gray-950 hover:border-b-2 border-gray-950'}} transition-all text-lg">NOTÍCIAS</a>
+            <a href="{{ route('contact') }}" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2' : 'text-gray-950 hover:border-b-2 border-gray-950'}} transition-all text-lg">CONTATO</a>
+            {{-- <a href="#" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2' : 'text-gray-950'}} transition-all text-lg">LOJA</a> --}}
     
         </nav>
     </div>
@@ -42,25 +42,25 @@
                 
                 <ul class="w-full max-w-md text-center">
                     <li>
-                        <a href="{{ route('artists.index') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">ARTISTAS</a>
+                        <a href="{{ route('artists.index') }}" class="block px-6 py-4 text-black text-2xl hover:text-gray-300 transition-colors">ARTISTAS</a>
                     </li>
                     <li>
-                        <a href="{{ route('exhibitions') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">EXPOSIÇÕES</a>
+                        <a href="{{ route('exhibitions') }}" class="block px-6 py-4 text-black text-2xl hover:text-gray-300 transition-colors">EXPOSIÇÕES</a>
                     </li>
                     <li>
-                        {{-- <a href="#" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">PARCERIAS</a> --}}
+                        {{-- <a href="#" class="block px-6 py-4 text-black text-2xl hover:text-gray-300 transition-colors">PARCERIAS</a> --}}
                     </li>
                     <li>
-                        <a href="{{ route('gallery') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">GALERIA</a>
+                        <a href="{{ route('gallery') }}" class="block px-6 py-4 text-black text-2xl hover:text-gray-300 transition-colors">GALERIA</a>
                     </li>
                     <li>
-                        <a href="{{ route('noticies') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">NOTÍCIAS</a>
+                        <a href="{{ route('noticies') }}" class="block px-6 py-4 text-black text-2xl hover:text-gray-300 transition-colors">NOTÍCIAS</a>
                     </li>
                     <li>
-                        <a href="{{ route('contact') }}" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">CONTATO</a>
+                        <a href="{{ route('contact') }}" class="block px-6 py-4 text-black text-2xl hover:text-gray-300 transition-colors">CONTATO</a>
                     </li>
                     <li>
-                        {{-- <a href="#" class="block px-6 py-4 text-white text-2xl hover:text-gray-300 transition-colors">LOJA</a> --}}
+                        {{-- <a href="#" class="block px-6 py-4 text-black text-2xl hover:text-gray-300 transition-colors">LOJA</a> --}}
                     </li>
                 </ul>
         
@@ -68,7 +68,7 @@
                     <img src="{{ asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery" class="w-full">
                 </div>
 
-                <button @click="open = false" class="absolute top-4 right-4 p-3 text-white rounded-full">
+                <button @click="open = false" class="absolute top-4 right-4 p-3 text-black rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                 </button>
             </div>

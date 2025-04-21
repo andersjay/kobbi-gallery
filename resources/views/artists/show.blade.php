@@ -22,10 +22,10 @@
             </div>
             
             <div class="w-full md:w-2/3">
-                <h1 class="text-5xl text-white font-bold mb-6">{{ $artist->name }}</h1>
+                <h1 class="text-5xl text-gray-950 font-bold mb-6">{{ $artist->name }}</h1>
                 @if($artist->description)
                     <div class="prose prose-invert max-w-none">
-                        <p class="text-gray-300 text-lg">{{ $artist->description }}</p>
+                        <p class="text-gray-700 text-lg">{{ $artist->description }}</p>
                     </div>
                 @endif
             </div>
@@ -33,7 +33,7 @@
 
         <!-- Galeria de Obras -->
         @if($artist->artworks->count() > 0)
-            <h2 class="text-3xl text-white font-bold mb-8">Obras do Artista</h2>
+            <h2 class="text-3xl text-gray-950 font-bold mb-8">Obras do Artista</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @foreach($artist->artworks as $artwork)
                     <div class="group">
@@ -69,7 +69,7 @@
 
         <!-- Galeria de Imagens Adicionais do Artista -->
         @if(is_array($artist->image) && count($artist->image) > 1)
-            <h2 class="text-3xl text-white font-bold mt-16 mb-8">Mais Imagens</h2>
+            <h2 class="text-3xl text-gray-950 font-bold mt-16 mb-8">Mais Imagens</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 @foreach(array_slice($artist->image, 1) as $image)
                     <div class="aspect-square rounded-lg overflow-hidden">
@@ -86,10 +86,10 @@
         <!-- Botão Voltar -->
         <div class="mt-12">
             <a href="{{ route('artists.index') }}" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
-                <svg class="w-4 h-4 mr-2 text-white hover:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 mr-2 text-gray-950 hover:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>
-                <span class="text-white hover:text-gray-300 transition-colors">Voltar para lista de artistas</span>
+                <span class="text-gray-950 hover:text-gray-300 transition-colors">Voltar para lista de artistas</span>
             </a>
         </div>
     </div>

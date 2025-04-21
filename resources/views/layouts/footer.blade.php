@@ -1,17 +1,17 @@
-<footer class="bg-black w-full">
-  <div class="px-8 lg:px-6 xl:px-4 container mx-auto py-20 bg-black flex flex-col items-center md:grid md:grid-cols-[100px,1fr,150px] lg:grid lg:grid-cols-[200px,1fr,150px] gap-8 lg:gap-2">
+<footer class="bg-[#F3F3F3] text-black w-full">
+  <div class="px-8 lg:px-6 xl:px-4 container mx-auto py-20 flex flex-col items-center md:grid md:grid-cols-[100px,1fr,150px] lg:grid lg:grid-cols-[200px,1fr,150px] gap-8 lg:gap-2">
       <a href="{{ route('home') }}" class="w-full max-w-[150px]">
           <img class="w-full" src="{{ asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery">
       </a>
 
       <nav class="flex flex-col md:flex-row justify-center items-center gap-2">
-          <a href="#" class="text-white text-lg md:text-sm lg:text-sm">ARTISTAS</a>
-          <a href="{{ route('exhibitions') }}" class="text-white text-sm md:text-sm lg:text-sm">EXPOSIÇÕES</a>
-          {{-- <a href="#" class="text-white text-sm md:text-sm lg:text-sm">PARCERIAS</a> --}}
-          <a href="{{ route('gallery') }}" class="text-white text-sm md:text-sm lg:text-sm">GALERIA</a>
-          <a href="{{ route('noticies') }}" class="text-white text-sm md:text-sm lg:text-sm">NOTÍCIAS</a>
-          <a href="{{ route('contact') }}" class="text-white text-sm md:text-sm lg:text-sm">CONTATO</a>
-          <a href="#" class="text-white text-sm md:text-sm lg:text-sm">LOJA</a>
+          <a href="#" class=" text-lg md:text-sm lg:text-sm">ARTISTAS</a>
+          <a href="{{ route('exhibitions') }}" class=" text-sm md:text-sm lg:text-sm">EXPOSIÇÕES</a>
+          {{-- <a href="#" class=" text-sm md:text-sm lg:text-sm">PARCERIAS</a> --}}
+          <a href="{{ route('gallery') }}" class=" text-sm md:text-sm lg:text-sm">GALERIA</a>
+          <a href="{{ route('noticies') }}" class=" text-sm md:text-sm lg:text-sm">NOTÍCIAS</a>
+          <a href="{{ route('contact') }}" class=" text-sm md:text-sm lg:text-sm">CONTATO</a>
+          <a href="#" class=" text-sm md:text-sm lg:text-sm">LOJA</a>
       </nav>
 
       <div class="flex items-center gap-6">
@@ -29,7 +29,7 @@
 
   </div>
 
-    <div class="w-full border-t border-white pb-8 py-4 text-white text-center">
+    <div class="w-full border-t border-black pb-8 py-4  text-center">
         <span>
             Copyright 2025. Kobbi Photogallery. Todos os direitos reservados
         </span>

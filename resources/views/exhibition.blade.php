@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="bg-black">
+    <div class="">
         <div class="swiper mySwiper w-full h-full mb-14">
             <div class="swiper-wrapper">
                 <div class="swiper-slide text-center text-lg px-8 md:px-10 lg:px-6 xl:px-4 h-[510px] md:h-[810px] flex items-center justify-center"
@@ -60,7 +60,7 @@
             <!-- Galeria Lateral -->
             @if($exhibition->gallery)
                 <div class="space-y-8">
-                    <h3 class="text-2xl font-bold text-white">Galeria</h3>
+                    <h3 class="text-2xl font-bold text-gray-950">Galeria</h3>
                     <div class="space-y-6">
                         @foreach($exhibition->gallery as $item)
                             <div class="relative group">

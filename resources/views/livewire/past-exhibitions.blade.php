@@ -1,5 +1,5 @@
 <div class="container px-8 mx-auto mt-10 pt-10 border-t border-gray-800">
-    <h2 class="text-xl text-white font-bold">EXPOSIÇÕES PASSADAS</h2>
+    <h2 class="text-xl text-gray-950 font-bold">EXPOSIÇÕES PASSADAS</h2>
 
     <div class="flex flex-col gap-10 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         @foreach ($pastExhibitions as $pastExhibition)
@@ -13,13 +13,13 @@
                     </div>
                     <div class="w-full flex flex-col gap-2">
                         <div>
-                            <h3 class="text-lg text-white font-bold mt-0 p-0">{{ $pastExhibition->title }}</h3>
-                            <p class="text-sm text-gray-400 p-0 mt-0">{{ $pastExhibition->author_name }}</p>
-                            <p class="text-sm text-gray-400 p-0 mt-0">
+                            <h3 class="text-lg text-gray-950 font-bold mt-0 p-0">{{ $pastExhibition->title }}</h3>
+                            <p class="text-sm text-gray-700 p-0 mt-0">{{ $pastExhibition->author_name }}</p>
+                            <p class="text-sm text-gray-700 p-0 mt-0">
                             {{ \Carbon\Carbon::parse($pastExhibition->start_date)->format('d/m/Y') }}</p>
                         </div>
                         
-                        <a href="#" class="text-gray-400">Ver exposição</a>
+                        <a href="#" class="text-gray-700">Ver exposição</a>
                     </div>
                 </a>
             </div>

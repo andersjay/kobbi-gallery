@@ -33,8 +33,9 @@
             <div class="swiper-button-next text-white"></div>
             <div class="swiper-button-prev text-white"></div>
         </div>
-        <livewire:artist-gallery />
+        {{-- <livewire:artist-gallery />
         <livewire:gallery />
-        <livewire:noticie />
+        <livewire:noticie /> --}}
+        <livewire:newsletter/>
     </div>
 @endsection
