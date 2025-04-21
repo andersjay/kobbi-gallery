@@ -4,15 +4,33 @@
           <img class="w-full" src="{{ asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery">
       </a>
 
-      <nav class="flex flex-col md:flex-row justify-center items-center gap-2">
+      {{-- <nav class="flex flex-col md:flex-row justify-center items-center gap-2">
           <a href="#" class=" text-lg md:text-sm lg:text-sm">ARTISTAS</a>
           <a href="{{ route('exhibitions') }}" class=" text-sm md:text-sm lg:text-sm">EXPOSIÇÕES</a>
           {{-- <a href="#" class=" text-sm md:text-sm lg:text-sm">PARCERIAS</a> --}}
-          <a href="{{ route('gallery') }}" class=" text-sm md:text-sm lg:text-sm">GALERIA</a>
+          {{-- <a href="{{ route('gallery') }}" class=" text-sm md:text-sm lg:text-sm">GALERIA</a>
           <a href="{{ route('noticies') }}" class=" text-sm md:text-sm lg:text-sm">NOTÍCIAS</a>
           <a href="{{ route('contact') }}" class=" text-sm md:text-sm lg:text-sm">CONTATO</a>
-          <a href="#" class=" text-sm md:text-sm lg:text-sm">LOJA</a>
-      </nav>
+          <a href="#" class=" text-sm md:text-sm lg:text-sm">LOJA</a> --}}
+        {{-- </nav> --}}
+
+      <div class="flex flex-col items-center w-full md:flex-row md:justify-center md:items-start gap-8 md:gap-4">
+        <div class="flex flex-col text-center">
+            <h3 class="text-lg font-bold text-gray-950">KOBBI GALLERY</h3>
+            <p class="text-gray-950 p-0 m-0">Rua Augusta, 2900 <br> Vila Madalena, São Paulo/SP</p>
+        </div>
+        <div class="flex flex-col text-center">
+            <h3 class="text-lg font-bold text-gray-950">CONTATO</h3>
+            <p class="text-gray-950 p-0 m-0">+55 11 98420-2061</p>
+            <p class="text-gray-950 p-0 m-0">contato@kobbi.com.br</p>
+        </div>
+        <div class="flex flex-col gap-2 text-center">
+            <h3 class="text-lg font-bold text-gray-950">HORARIO</h3>
+            <p class="text-gray-950 p-0 m-0">Segunda a Sexta: 10h às 18h</p>
+            <p class="text-gray-950 p-0 m-0">Sábado: 10h às 18h</p>
+            <p class="text-gray-950 p-0 m-0">Domingo: 10h às 18h</p>
+        </div>
+      </div>
 
       <div class="flex items-center gap-6">
           <a href="https://web.whatsapp.com/send?phone=5511984202061&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Kobbi%20Gallery" target="_blank">
