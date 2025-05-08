@@ -11,21 +11,32 @@
             </a>
         @endif
 
-            <nav class="flex items-center gap-6">
-                <a href="{{ route('gallery') }}"
-                    class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2' : 'text-gray-950 hover:border-b-2 border-gray-950' }} transition-all text-lg">GALERIA</a>
-                <a href="{{ route('artists.index') }}"
-                    class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2 border-b-2 border-gray-100' : 'text-gray-950 hover:border-b-2 border-gray-950' }} transition-all text-lg">ARTISTAS</a>
-                <a href="{{ route('exhibitions') }}"
-                    class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2' : 'text-gray-950 hover:border-b-2 border-gray-950' }} transition-all text-lg">EXPOSIÇÕES</a>
-                {{-- <a href="#" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2' : 'text-gray-950'}} transition-all text-lg">PARCERIAS</a> --}}
-                <a href="{{ route('noticies') }}"
-                    class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2' : 'text-gray-950 hover:border-b-2 border-gray-950' }} transition-all text-lg">NOTÍCIAS</a>
-                <a href="{{ route('contact') }}"
-                    class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2' : 'text-gray-950 hover:border-b-2 border-gray-950' }} transition-all text-lg">CONTATO</a>
-                {{-- <a href="#" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b-2' : 'text-gray-950'}} transition-all text-lg">LOJA</a> --}}
+        <nav class="flex items-center gap-6">
+            <a href="{{ route('gallery') }}"
+                class="{{ request()->routeIs('gallery') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">GALERIA</a>
 
-            </nav>
+            <a href="{{ route('artists.index') }}"
+                class="{{ request()->routeIs('artists.index') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b border-gray-100' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">ARTISTAS</a>
+
+            <a href="{{ route('exhibitions') }}"
+                class="{{ request()->routeIs('exhibitions') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">EXPOSIÇÕES</a>
+
+            <a href="{{ route('artists.index') }}"
+                class="{{ request()->routeIs('agenda') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b border-gray-100' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">AGENDA</a>
+
+            {{-- <a href="#" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b' : 'text-gray-950'}} transition-all text-lg font-light">PARCERIAS</a> --}}
+            <a href="{{ route('noticies') }}"
+                class="{{ request()->routeIs('noticies') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">NOTÍCIAS</a>
+
+            <a href="{{ route('artists.index') }}"
+                class="{{ request()->routeIs('acervo') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b border-gray-100' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">ACERVO</a>
+
+            <a href="{{ route('contact') }}"
+                class="{{ request()->routeIs('contact') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">CONTATO</a>
+
+            {{-- <a href="#" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b' : 'text-gray-950'}} transition-all text-lg font-light">LOJA</a> --}}
+
+        </nav>
     </div>
 
     <div class="lg:hidden flex w-full justify-between px-8 py-4 items-center absolute left-0 right-0 z-20">
@@ -62,30 +73,37 @@
                 <ul class="w-full max-w-md text-center">
                     <li>
                         <a href="{{ route('gallery') }}"
-                            class="block px-6 py-4 text-gray-950 text-2xl hover:text-gray-700 transition-colors">GALERIA</a>
+                            class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('gallery') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }}">GALERIA</a>
                     </li>
                     <li>
                         <a href="{{ route('artists.index') }}"
-                            class="block px-6 py-4 text-gray-950 text-2xl hover:text-gray-700 transition-colors">ARTISTAS</a>
+                            class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('artists.index') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }}">ARTISTAS</a>
                     </li>
                     <li>
                         <a href="{{ route('exhibitions') }}"
-                            class="block px-6 py-4 text-gray-950 text-2xl hover:text-gray-700 transition-colors">EXPOSIÇÕES</a>
+                            class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('exhibitions') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }}">EXPOSIÇÕES</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('exhibitions') }}"
+                            class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('agenda') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }}">AGENDA</a>
                     </li>
 
                     <li>
                         {{-- <a href="#" class="block px-6 py-4 text-gray-950 text-2xl hover:text-gray-700 transition-colors">PARCERIAS</a> --}}
                     </li>
-                    <a href="{{ route('gallery') }}"
-                        class="block px-6 py-4 text-gray-950 text-2xl hover:text-gray-700 transition-colors">GALERIA</a>
-                    </li>
                     <li>
                         <a href="{{ route('noticies') }}"
-                            class="block px-6 py-4 text-gray-950 text-2xl hover:text-gray-700 transition-colors">NOTÍCIAS</a>
+                            class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('noticies') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }}">NOTÍCIAS</a>
+                    </li>   
+
+                    <li>
+                        <a href="{{ route('artists.index') }}"
+                            class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('acervo') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }}">ACERVO</a>
                     </li>
+
                     <li>
                         <a href="{{ route('contact') }}"
-                            class="block px-6 py-4 text-gray-950 text-2xl hover:text-gray-700 transition-colors">CONTATO</a>
+                            class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('contact') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }}">CONTATO</a>
                     </li>
                     <li>
                         {{-- <a href="#" class="block px-6 py-4 text-gray-950 text-2xl hover:text-gray-700 transition-colors">LOJA</a> --}}

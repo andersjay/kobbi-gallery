@@ -20,6 +20,9 @@
         <!-- nanogallery2 -->
         <link  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
         <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
+        
+        <!-- Phosphor Icons -->
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
     </head>
     
         <!-- Styles / Scripts -->

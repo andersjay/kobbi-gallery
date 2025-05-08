@@ -1,6 +1,6 @@
 <div class="container mx-auto pt-6 md:px-8 py-4 w-full">
     <h2 class="text-xl text-center md:text-left text-gray-800 font-light ">ASSINE A NOSSA NEWSLETTER</h2>
-    <form action="#" method="POST" class="w-full mx-auto p-4 flex flex-col md:items-center md:flex-row gap-4">
+    <form action="#" method="POST" class="w-full mx-auto py-4 flex flex-col md:items-center md:flex-row gap-4">
         @csrf
 
         <div class="mb-4 w-full">

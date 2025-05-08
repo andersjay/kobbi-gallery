@@ -26,23 +26,12 @@
         </div>
         <div class="flex flex-col gap-2 text-center">
             <h3 class="text-lg font-bold text-gray-950">HORARIO</h3>
-            <p class="text-gray-950 p-0 m-0">Segunda a Sexta: 10h às 18h</p>
-            <p class="text-gray-950 p-0 m-0">Sábado: 10h às 18h</p>
-            <p class="text-gray-950 p-0 m-0">Domingo: 10h às 18h</p>
+            <p class="text-gray-950 p-0 m-0">Segunda a Sexta: 9:30 às 18h</p>
+            <p class="text-gray-950 p-0 m-0">Sábado: 9:30 às 18h</p>
         </div>
       </div>
 
-      <div class="flex items-center gap-6">
-          <a href="https://web.whatsapp.com/send?phone=5511984202061&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Kobbi%20Gallery" target="_blank">
-              <img src="{{ asset('images/link-whats.png') }}" alt="WhatsApp">
-          </a>
-          <a href="https://www.instagram.com/kobbi.gallery/">
-              <img src="{{ asset('images/link-insta.png') }}" alt="Instagram">
-          </a>
-          {{-- <a href="#">
-              <img src="{{ asset('images/link-email.png') }}" alt="Email">
-          </a> --}}
-      </div>
+      <x-social-media-links />
     </div>
 
   </div>
