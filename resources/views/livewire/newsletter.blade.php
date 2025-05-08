@@ -15,7 +15,8 @@ focus:ring focus:ring-blue-200" placeholder="Seu nome">
 focus:ring focus:ring-blue-200" placeholder="seuemail@exemplo.com">
         </div>
 
-        <button type="submit" class="max-w-52 w-full h-10 md:mt-3 bg-gray-950 text-white py-2 rounded hover:bg-gray-800 focus:outline-none 
+        <button type="submit" class="max-w-52 w-full h-10 md:mt-3 bg-[#D1D1D1] text-black py-2 rounded hover:brightness-95 focus:outline-none 
 focus:bg-gray-800">Inscreva-se</button>
     </form>
+    <div class="w-full h-[1px] bg-[#D1D1D1] mt-20"></div>
 </div>

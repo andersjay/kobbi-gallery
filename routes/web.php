@@ -35,6 +35,7 @@ Route::get('/noticias/{slug}', [NoticieController::class, 'show'])->name('notici
 //Artistas
 Route::get('/artistas', [ArtistController::class, 'index'])->name('artists.index');
 Route::get('/artistas/{id}', [ArtistController::class, 'show'])->name('artists.show');
+Route::get('/artistas/{id}/imagens', [ArtistController::class, 'images'])->name('artists.images');
 
 //Contato
 Route::get('/contato', [ContactController::class, 'index'])->name('contact');

@@ -3,39 +3,140 @@
 @section('content')
 <div class="container px-8 pt-14 w-full mx-auto pb-10 border-t border-gray-800">
     <h2 class="text-4xl text-gray-950 font-bold mb-12">ARTISTAS</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        @foreach($artists as $artist)
-        <a href="{{ route('artists.show', $artist->id) }}" class="group">
-            <div class="relative overflow-hidden bg-gray-900 rounded-lg aspect-square">
-                @if(is_array($artist->image) && count($artist->image) > 0)
-                    <img 
-                        src="{{ asset('storage/' . $artist->image[0]) }}" 
-                        alt="{{ $artist->name }}" 
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    >
-                @else
-                    <div class="w-full h-full flex items-center justify-center bg-gray-800">
-                        <span class="text-gray-400 text-5xl">{{ substr($artist->name, 0, 1) }}</span>
-                    </div>
-                @endif
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <div>
-                        <h3 class="text-2xl font-bold text-white mb-2">{{ $artist->name }}</h3>
-                        @if($artist->description)
-                            <p class="text-gray-300 text-sm line-clamp-2">{{ $artist->description }}</p>
-                        @endif
-                        <div class="mt-4 inline-flex items-center text-blue-400">
-                            <span>Ver obras</span>
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
+    <div class="lg:grid lg:grid-cols-[400px_1fr] pt-12">
+        <div class="w-full lg:p-4">
+            <div class="lg:hidden w-full px-4">
+                <select id="artist-select-mobile" class="w-full h-12 text-sm bg-transparent text-gray-400 border-2 border-gray-700 rounded-lg px-4 focus:outline-none focus:border-gray-950 focus:ring-2 focus:ring-gray-950">
+                    @foreach($artists as $artist)
+                        <option value="{{ $artist->id }}">{{ $artist->name }}</option>
+                    @endforeach
+                </select>
             </div>
-        </a>
-        @endforeach
+            <ul id="artist-list" class="hidden lg:block">
+                @foreach($artists as $artist)
+                    <li class="cursor-pointer font-bold text-2xl p-2 text-gray-400" data-id="{{ $artist->id }}">
+                        {{ $artist->name }}
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="w-full p-6 text-gray-950 text-xl">
+            <div id="container-gallery">
+                <div id="artist-carousel" class="flex flex-col items-center justify-center min-h-[400px]"></div>
+            </div>
+        </div>
     </div>
 </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let artistImages = {};
+        let currentIndex = 0;
+        let currentImages = [];
+        fetch('/js/artist-images.json')
+            .then(response => response.json())
+            .then(data => {
+                if(data) {
+                    artistImages = data;
+                    let firstArtist = document.querySelector("#artist-list li");
+                    if (firstArtist) {
+                        let firstArtistId = firstArtist.getAttribute("data-id");
+                        firstArtist.classList.remove("text-gray-400");
+                        firstArtist.classList.add("text-gray-950");
+                        selectArtist(firstArtistId);
+                    }
+                }
+            })
+            .catch(error => console.error('Erro ao carregar as imagens:', error));
+        document.getElementById('artist-select-mobile').addEventListener('change', function(e) {
+            selectArtist(e.target.value);
+        });
+        document.querySelectorAll('#artist-list li').forEach(function(li) {
+            li.addEventListener('mouseover', function() {
+                selectArtist(this.getAttribute('data-id'));
+            });
+            li.addEventListener('click', function() {
+                window.location.href = '/artistas/' + this.getAttribute('data-id');
+            });
+        });
+        window.selectArtist = function(artistId) {
+            // Buscar imagens do resource do artista
+            fetch(`/artistas/${artistId}/imagens`)
+                .then(response => response.json())
+                .then(data => {
+                    currentImages = data.images || [];
+                    currentIndex = 0;
+                    document.querySelectorAll("#artist-list li").forEach(li => {
+                        li.classList.remove("text-gray-950");
+                        li.classList.add("text-gray-400");
+                    });
+                    let selectedArtist = document.querySelector(`[data-id='${artistId}']`);
+                    if (selectedArtist) {
+                        selectedArtist.classList.remove("text-gray-400");
+                        selectedArtist.classList.add("text-gray-950");
+                    }
+                    renderCarousel();
+                });
+        };
+        function renderCarousel() {
+            const carousel = document.getElementById('artist-carousel');
+            carousel.innerHTML = '';
+            if(currentImages.length === 0) {
+                carousel.innerHTML = '<div class="text-gray-400 text-center">Nenhuma obra cadastrada para este artista.</div>';
+                return;
+            }
+            const wrapper = document.createElement('div');
+            wrapper.className = 'gallery-lightbox-wrapper flex items-center justify-center';
+            // Renderiza todos os links, mas só mostra a imagem atual
+            currentImages.forEach((imgData, idx) => {
+                const link = document.createElement('a');
+                link.href = imgData.src;
+                link.className = 'gallery-lightbox';
+                link.setAttribute('data-caption', imgData.title);
+                link.style.display = idx === currentIndex ? 'block' : 'none';
+                const img = document.createElement('img');
+                img.src = imgData.src;
+                img.alt = imgData.title;
+                img.className = 'max-h-[500px] max-w-full rounded shadow-lg mx-auto cursor-zoom-in';
+                link.appendChild(img);
+                wrapper.appendChild(link);
+            });
+            const title = document.createElement('div');
+            title.className = 'mt-4 text-center text-lg font-semibold';
+            title.textContent = currentImages[currentIndex].title;
+            const nav = document.createElement('div');
+            nav.className = 'flex items-center justify-center gap-8 mt-6';
+            const prevBtn = document.createElement('button');
+            prevBtn.innerHTML = '⟨';
+            prevBtn.className = 'text-3xl px-4 py-2 rounded hover:bg-gray-200 disabled:opacity-30';
+            prevBtn.disabled = currentIndex === 0;
+            prevBtn.onclick = function() {
+                if(currentIndex > 0) {
+                    currentIndex--;
+                    renderCarousel();
+                }
+            };
+            const nextBtn = document.createElement('button');
+            nextBtn.innerHTML = '⟩';
+            nextBtn.className = 'text-3xl px-4 py-2 rounded hover:bg-gray-200 disabled:opacity-30';
+            nextBtn.disabled = currentIndex === currentImages.length - 1;
+            nextBtn.onclick = function() {
+                if(currentIndex < currentImages.length - 1) {
+                    currentIndex++;
+                    renderCarousel();
+                }
+            };
+            nav.appendChild(prevBtn);
+            nav.appendChild(nextBtn);
+            carousel.appendChild(wrapper);
+            carousel.appendChild(title);
+            carousel.appendChild(nav);
+            baguetteBox.run('.gallery-lightbox-wrapper', {
+                captions: true,
+                buttons: 'auto',
+            });
+        }
+    });
+</script>
 @endsection 

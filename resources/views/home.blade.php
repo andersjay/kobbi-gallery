@@ -5,30 +5,42 @@
     <div>
         <div class="swiper mySwiper w-full h-full mb-14">
             <div class="swiper-wrapper">
-                @foreach ($exhibitions as $item)
+                @if($exhibitionBanner)
                     <div class="swiper-slide text-center text-lg px-8 md:px-10 lg:px-6 xl:px-4 h-[600px] flex items-end"
                         style="background:
                               linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 50%), 
-                              url({{ asset('storage/' . $item->banner) }}); 
+                              url({{ asset('storage/' . $exhibitionBanner->banner) }}); 
                       background-size: cover; 
                       background-position: center; 
                       background-repeat: no-repeat;">
-
-                        {{-- linear-gradient(to top, black, transparent 50%),  --}}
-
-                        {{-- <div class="container w-full mx-auto flex items-start">
+                        <div class="container w-full mx-auto flex items-start">
                             <div class="flex flex-col space-y-1 text-left">
                                 <div class="flex gap-2">
-                                    <h2 class="text-2xl text-white">{{ $item->year }}</h2>
+                                    <h2 class="text-2xl text-white">{{ $exhibitionBanner->year }}</h2>
                                     |
-                                    <span>{{ $item->author_name }}</span>
+                                    <span>{{ $exhibitionBanner->author_name }}</span>
                                 </div>
-                                <p class="text-4xl text-white">{{ $item->title }}</p>
-                                <a href="{{ route('exhibition', $item->id) }}">
+                                <p class="text-4xl text-white">{{ $exhibitionBanner->title }}</p>
+                                <a href="{{ route('exhibition', $exhibitionBanner->id) }}">
                                     <span class="text-white p-0">Ver exposição</span>
                                 </a>
                             </div>
-                        </div> --}}
+                        </div>
+                    </div>
+                @endif
+                @foreach ($banners as $banner)
+                    <div class="swiper-slide text-center text-lg px-8 md:px-10 lg:px-6 xl:px-4 h-[600px] flex items-end"
+                        style="background:
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 50%), 
+                              url({{ asset('storage/' . $banner->image) }}); 
+                      background-size: cover; 
+                      background-position: center; 
+                      background-repeat: no-repeat;">
+                        @if($banner->url)
+                            <a href="{{ $banner->url }}" target="_blank" class="w-full h-full flex items-end justify-start">
+                                <span class="sr-only">Banner com link</span>
+                            </a>
+                        @endif
                     </div>
                 @endforeach
             </div>

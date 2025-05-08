@@ -17,10 +17,11 @@ class GalleryResource extends Resource
 {
     protected static ?string $model = Gallery::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationLabel = 'Galeria';
-    protected static ?string $pluralLabel = 'Galerias';
+    protected static ?string $navigationIcon = 'heroicon-o-photo';
+    protected static ?string $navigationLabel = 'Imagens da Galeria';
+    protected static ?string $pluralLabel = 'Imagens da Galeria';
     protected static ?string $slug = 'galleries';
+    protected static ?string $navigationGroup = 'Galeria';
     public static function form(Form $form): Form
     {
         return $form
