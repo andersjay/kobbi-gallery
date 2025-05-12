@@ -40,3 +40,7 @@ Route::get('/artistas/{id}/imagens', [ArtistController::class, 'images'])->name(
 //Contato
 Route::get('/contato', [ContactController::class, 'index'])->name('contact');
 
+//Agenda
+Route::get('/agenda', [App\Http\Controllers\AgendaController::class, 'index'])->name('agenda.index');
+Route::get('/agenda/{event}', [App\Http\Controllers\AgendaController::class, 'show'])->name('agenda.show');
+

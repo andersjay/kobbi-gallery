@@ -21,8 +21,8 @@
             <a href="{{ route('exhibitions') }}"
                 class="{{ request()->routeIs('exhibitions') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">EXPOSIÇÕES</a>
 
-            <a href="{{ route('artists.index') }}"
-                class="{{ request()->routeIs('agenda') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b border-gray-100' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">AGENDA</a>
+            <a href="{{ route('agenda.index') }}"
+                class="{{ request()->routeIs('agenda.index') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b border-gray-100' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">AGENDA</a>
 
             {{-- <a href="#" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b' : 'text-gray-950'}} transition-all text-lg font-light">PARCERIAS</a> --}}
             <a href="{{ route('noticies') }}"
@@ -84,8 +84,8 @@
                             class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('exhibitions') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }}">EXPOSIÇÕES</a>
                     </li>
                     <li>
-                        <a href="{{ route('exhibitions') }}"
-                            class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('agenda') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }}">AGENDA</a>
+                        <a href="{{ route('agenda.index') }}"
+                            class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('agenda.index') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }}">AGENDA</a>
                     </li>
 
                     <li>

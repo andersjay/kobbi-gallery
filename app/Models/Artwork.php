@@ -14,7 +14,10 @@ class Artwork extends Model
         'artist_id',
         'name',
         'description',
-        'images'
+        'images',
+        'year',
+        'technique',
+        'size_cm'
     ];
 
     protected $casts = [
