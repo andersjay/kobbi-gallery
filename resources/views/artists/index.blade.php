@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container px-8 pt-14 w-full mx-auto pb-10 border-t border-gray-800">
-        <h2 class="text-4xl text-gray-950 font-bold mb-12">ARTISTAS</h2>
+    <div class="container px-8 pt-14 w-full mx-auto pb-10 ">
+        <h2 class="text-4xl text-gray-950 font-bold md:mb-12 mt-12 md:mt-0">ARTISTAS</h2>
         <div class="lg:grid lg:grid-cols-[400px_1fr] pt-12">
             <div class="w-full lg:p-4">
                 <div class="lg:hidden w-full px-4">
@@ -33,6 +33,7 @@
                     style="display:block;">Ver artista</button>
             </div>
         </div>
+        <div class="flex flex-col items-center justify-center">
     </div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>

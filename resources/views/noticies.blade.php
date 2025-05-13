@@ -1,45 +1,33 @@
 @extends('layouts.app')
 @section('content')
-<div class="container px-8 pt-14 w-full mx-auto pb-10 border-t border-gray-800">
-    <h2 class="text-4xl text-gray-950 font-bold">NOTÍCIAS</h2>
-    
-    @if($lastNoticie)
-    <!-- Notícia em Destaque -->
-    <div class="mt-11 mb-16">
-        <a href="{{ route('noticies.show', $lastNoticie->slug) }}" class="block">
-            <div class="w-full max-h-[500px] overflow-hidden">
-                <img class="w-full h-full object-cover" src="{{ $lastNoticie->image_url }}" alt="{{ $lastNoticie->title }}">
-            </div>
-            <div class="mt-6">
-                <h2 class="text-3xl text-gray-950 font-bold">{{ $lastNoticie->title }}</h2>
-                <p class="text-gray-700 text-lg mt-3">{{ $lastNoticie->summary }}</p>
-                <span class="text-gray-950 mt-4 inline-block">Leia mais</span>
-            </div>
-        </a>
-    </div>
-
-    <!-- Grid de Notícias -->
-    @if($noticies->count() > 0)
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        @foreach($noticies as $notice)
-        <a href="{{ route('noticies.show', $notice->slug) }}" class="block group">
-            <div class="w-full h-[200px] overflow-hidden">
-                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
-                     src="{{ $notice->image_url }}" 
-                     alt="{{ $notice->title }}">
-            </div>
-            <div class="mt-4">
-                <h3 class="text-xl text-gray-950 font-semibold group-hover:text-gray-950 transition-colors">{{ $notice->title }}</h3>
-                <p class="text-gray-700 text-sm mt-2">{{ $notice->summary }}</p>
-                <span class="text-gray-950 mt-3 inline-block">Leia mais</span>
-            </div>
-        </a>
-        @endforeach
-    </div>
-    @endif
-
+<div class="container px-8 pt-14 w-full mx-auto pb-10">
+    <h2 class="md:text-4xl text-3xl text-gray-950 font-bold mb-12 mt-12 md:mt-0">NOTÍCIAS</h2>
+    @if($noticies->count())
+        <div class="space-y-8">
+            @foreach($noticies as $notice)
+                <div class="flex flex-col md:flex-row gap-6 md:items-center  bg-[#F3F3F3] rounded-xl md:p-5">
+                    <div class="w-full md:w-1/4 flex-shrink-0 flex items-center">
+                        <img src="{{ $notice->image_url }}" alt="{{ $notice->title }}" class="w-full max-w-[160px] aspect-square object-cover rounded-lg border border-gray-200 bg-[#7cc0e6] mx-auto">
+                    </div>
+                    <div class="w-full md:w-3/4">
+                        <h6 class="text-lg text-gray-950 font-bold mb-1">{{ $notice->title }}</h6>
+                        @if($notice->created_at)
+                        <strong class="block text-gray-700 mb-2">{{ \Carbon\Carbon::parse($notice->created_at)->format('d/m/Y') }}</strong>
+                        @endif
+                        <div class="text-gray-700 text-base mb-1">{{ \Illuminate\Support\Str::limit(strip_tags($notice->summary), 300) }}</div>
+                        <div class="mt-4">
+                            <a href="{{ route('noticies.show', $notice->slug) }}" class="w-full bg-[#D1D1D1] text-black py-2 px-4 rounded font-semibold text-md hover:brightness-95 transition">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     @else
-    <p class="text-gray-950 text-xl mt-8">Nenhuma notícia disponível no momento.</p>
+        <div class="alert alert-info mt-8 text-center text-gray-700 bg-[#F3F3F3] border-0 rounded-lg py-6">Nenhuma notícia cadastrada no momento.</div>
     @endif
+
+    <div class="mt-10">
+      <livewire:newsletter />
+    </div>
 </div>
 @endsection

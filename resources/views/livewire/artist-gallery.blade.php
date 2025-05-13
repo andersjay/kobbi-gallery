@@ -15,7 +15,7 @@
                 @foreach($artists as $artist)
                     <li class="cursor-pointer font-bold text-2xl p-2 text-gray-400" data-id="{{ $artist->id }}" onclick="selectArtist({{ $artist->id }})">
                         {{ $artist->name }}
-                    </li>
+                </li>
                 @endforeach
             </ul>
         </div>

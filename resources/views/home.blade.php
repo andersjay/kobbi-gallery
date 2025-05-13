@@ -13,7 +13,7 @@
                       background-size: cover; 
                       background-position: center; 
                       background-repeat: no-repeat;">
-                        <div class="container w-full mx-auto flex items-start">
+                        {{-- <div class="container w-full mx-auto flex items-start">
                             <div class="flex flex-col space-y-1 text-left">
                                 <div class="flex gap-2">
                                     <h2 class="text-2xl text-white">{{ $exhibitionBanner->year }}</h2>
@@ -25,7 +25,7 @@
                                     <span class="text-white p-0">Ver exposição</span>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 @endif
                 @foreach ($banners as $banner)
@@ -50,6 +50,8 @@
         {{-- <livewire:artist-gallery />
         <livewire:gallery />
         <livewire:noticie /> --}}
-        <livewire:newsletter/>
+        <div class="container px-8 pt-14 w-full mx-auto pb-10">
+            <livewire:newsletter />
+        </div>
     </div>
 @endsection

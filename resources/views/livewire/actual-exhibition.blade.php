@@ -12,8 +12,10 @@
         <div class="">
             <div class="md:h-auto flex flex-col gap-1">
                 <h2 class="text-xl text-gray-950 font-bold mt-4 md:mt-0">{{ $actualExhibition->title }}</h2>
-                <h4 class="text-md text-gray-500">Autor: {{ $actualExhibition->author_name }}</h4>
-                <span class="text-white text-md w-full">{!! $actualExhibition->summary !!}</span>
+                <h4 class="text-md text-gray-500">Fotógrafo: {{ $actualExhibition->author_name }}</h4>
+                <div class="actual-exhibition-summary text-md w-full">
+                    {!! $actualExhibition->summary !!}
+                </div>
             </div>
             <div class="mt-4">
                 <a href="{{ route('exhibition', $actualExhibition->id) }}"
@@ -24,4 +26,9 @@
             </div>
         </div>
     </div>
+    <style>
+        .actual-exhibition-summary p {
+            color: #000 !important;
+        }
+        </style>
 </div>

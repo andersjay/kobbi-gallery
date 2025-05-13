@@ -9,8 +9,7 @@ class NoticieController extends Controller
     public function index()
     {
         $noticies = Noticies::latest()->get();
-        $lastNoticie = $noticies->shift(); // Remove e retorna a primeira notícia (mais recente)
-        return view('noticies', compact('noticies', 'lastNoticie'));
+        return view('noticies', compact('noticies'));
     }
 
     public function show($slug)

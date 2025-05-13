@@ -28,8 +28,8 @@
             <a href="{{ route('noticies') }}"
                 class="{{ request()->routeIs('noticies') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">NOTÍCIAS</a>
 
-            <a href="{{ route('artists.index') }}"
-                class="{{ request()->routeIs('acervo') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b border-gray-100' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">ACERVO</a>
+            <a href="{{ route('acervo.index') }}"
+                class="{{ request()->routeIs('acervo.index') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b border-gray-100' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">ACERVO</a>
 
             <a href="{{ route('contact') }}"
                 class="{{ request()->routeIs('contact') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">CONTATO</a>
@@ -97,8 +97,8 @@
                     </li>   
 
                     <li>
-                        <a href="{{ route('artists.index') }}"
-                            class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('acervo') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }}">ACERVO</a>
+                        <a href="{{ route('acervo.index') }}"
+                            class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('acervo.index') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }}">ACERVO</a>
                     </li>
 
                     <li>

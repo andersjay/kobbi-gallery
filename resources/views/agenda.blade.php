@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container px-8 pt-14 w-full mx-auto pb-10">
-    <h2 class="text-4xl text-gray-950 font-bold mb-12 ">AGENDA</h2>
+    <h2 class="text-4xl text-gray-950 font-bold mb-12 mt-12 md:mt-0">AGENDA</h2>
     @if($nextEvent)
         <div class="mb-10">
             <h4 class="text-2xl text-gray-950 font-semibold mb-4">PRÓXIMO EVENTO</h4>
@@ -43,5 +43,8 @@
     @else
         <div class="alert alert-info mt-8 text-center text-gray-700 bg-[#F3F3F3] border-0 rounded-lg py-6">Nenhum evento cadastrado no momento.</div>
     @endif
+    <div class="mt-10">
+      <livewire:newsletter />
+    </div>
 </div>
 @endsection 

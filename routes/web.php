@@ -8,6 +8,7 @@ use App\Http\Controllers\NoticieController;
 use App\Http\Controllers\ArtistController;
 use App\Livewire\Gallery;
 use App\Livewire\Welcome;
+use App\Http\Controllers\CollectionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,4 +44,8 @@ Route::get('/contato', [ContactController::class, 'index'])->name('contact');
 //Agenda
 Route::get('/agenda', [App\Http\Controllers\AgendaController::class, 'index'])->name('agenda.index');
 Route::get('/agenda/{event}', [App\Http\Controllers\AgendaController::class, 'show'])->name('agenda.show');
+
+//Acervo
+Route::get('/acervo', [CollectionController::class, 'index'])->name('acervo.index');
+Route::post('/acervo/interesse', [CollectionController::class, 'interesse'])->name('acervo.interesse');
 
