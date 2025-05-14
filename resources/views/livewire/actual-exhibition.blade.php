@@ -19,8 +19,7 @@
             </div>
             <div class="mt-4">
                 <a href="{{ route('exhibition', $actualExhibition->id) }}"
-                    class="text-md bg-gray-950 px-2 py-1 rounded-md text-white mt-4 border border-transparent 
-                    hover:bg-white hover:border-gray-950 hover:text-gray-950 transition-colors">
+                    class="bg-[#d1d1d1] text-gray-950 px-4 py-2 rounded-sm mt-4 hover:brightness-95 transition-colors">
                     Ver exposição
                 </a>
             </div>
