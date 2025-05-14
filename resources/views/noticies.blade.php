@@ -26,7 +26,7 @@
         <div class="alert alert-info mt-8 text-center text-gray-700 bg-[#F3F3F3] border-0 rounded-lg py-6">Nenhuma notícia cadastrada no momento.</div>
     @endif
 
-    <div class="mt-10">
+    <div class="mt-10 border-t border-[#D1D1D1] pt-10">
       <livewire:newsletter />
     </div>
 </div>

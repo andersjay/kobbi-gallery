@@ -39,8 +39,9 @@
             <div class="swiper-button-prev text-gray-950"></div>
         </div>
     </div>
-
-    <livewire:newsletter />
+    <div class="mt-10 border-t border-[#D1D1D1] pt-10">
+        <livewire:newsletter />
+    </div>
 </div>
 
 <!-- baguetteBox.js para lightbox -->

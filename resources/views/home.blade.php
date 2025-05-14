@@ -51,7 +51,7 @@
         {{-- <livewire:artist-gallery />
         <livewire:gallery />
         <livewire:noticie /> --}}
-        <div class="container px-8 pt-14 w-full mx-auto pb-10">
+        <div class="container px-8 pt-14 w-full mx-auto pb-10 border-t border-[#D1D1D1]">
             <livewire:newsletter />
         </div>
     </div>
