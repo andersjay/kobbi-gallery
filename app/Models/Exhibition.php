@@ -24,6 +24,8 @@ class Exhibition extends Model
         'image',
         'banner',
         'gallery',
+        'pdf',
+        'is_collective',
         'year',
         'start_date',
         'end_date',
@@ -35,4 +37,9 @@ class Exhibition extends Model
         'end_date' => 'date',
         'gallery' => 'array'
     ];
+
+    public function photographers()
+    {
+        return $this->belongsToMany(\App\Models\Artist::class, 'exhibition_photographer', 'exhibition_id', 'artist_id');
+    }
 }

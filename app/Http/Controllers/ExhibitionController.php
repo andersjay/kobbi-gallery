@@ -14,7 +14,7 @@ class ExhibitionController extends Controller
     }
     public function exhibition($id)
     {
-        $exhibition = \App\Models\Exhibition::find($id);
+        $exhibition = \App\Models\Exhibition::with('photographers')->find($id);
         return view('exhibition', compact('exhibition'));
     }
 }

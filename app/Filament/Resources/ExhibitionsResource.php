@@ -10,6 +10,8 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Checkbox;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -45,6 +47,18 @@ class ExhibitionsResource extends Resource
                         TextInput::make('year')
                             ->label('Ano da exposição')
                             ->placeholder('2025'),
+                        Checkbox::make('is_collective')
+                            ->label('Exposição coletiva')
+                            ->reactive(),
+                        Select::make('photographers')
+                            ->label('Fotógrafos')
+                            ->multiple()
+                            ->preload()
+                            ->relationship('photographers', 'name')
+                            ->visible(fn ($get) => $get('is_collective')),
+                        TextInput::make('author_name')
+                            ->label('Nome do autor')
+                            ->visible(fn ($get) => !$get('is_collective')),
                         Section::make('Imagens da exposição')
                             ->columnSpan(2)
                             ->columns(2)
@@ -64,24 +78,36 @@ class ExhibitionsResource extends Resource
                                     ->directory('uploads/exhibitions/banners')
                                     ->required(),
                                 Repeater::make('gallery')
-                                    ->label('Galeria de imagens')
+                                    ->label('Obras')
                                     ->columnSpan(2)
                                     ->schema([
+                                        TextInput::make('name')
+                                            ->label('Nome da obra')
+                                            ->required(),
+                                        TextInput::make('year')
+                                            ->label('Ano')
+                                            ->required(),
+                                        TextInput::make('technique')
+                                            ->label('Técnica')
+                                            ->required(),
+                                        TextInput::make('size_cm')
+                                            ->label('Tamanho (cm)')
+                                            ->required(),
+                                        TextInput::make('description')
+                                            ->label('Descrição')
+                                            ->required(),
                                         FileUpload::make('image')
-                                            ->label('Imagem')
+                                            ->label('Imagem da obra')
                                             ->image()
                                             ->disk('public')
-                                            ->directory('uploads/exhibitions/gallery')
+                                            ->directory('uploads/exhibitions/works')
                                             ->required(),
-                                        TextInput::make('caption')
-                                            ->label('Legenda da imagem')
-                                            ->placeholder('Descreva a imagem')
                                     ])
                                     ->defaultItems(0)
-                                    ->addActionLabel('Adicionar imagem')
+                                    ->addActionLabel('Adicionar obra')
                                     ->reorderableWithButtons()
                                     ->collapsible()
-                                    ->itemLabel(fn (array $state): ?string => $state['caption'] ?? 'Nova imagem'),
+                                    ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Nova obra'),
                             ]),
                         Section::make('Descrições da exposição')
                             ->columnSpan(2)
@@ -95,14 +121,19 @@ class ExhibitionsResource extends Resource
                                     ->disableToolbarButtons(['attachFiles'])
                                     ->label('Resumo da exposição')
                                     ->columnSpan(1),
+                                FileUpload::make('pdf')
+                                    ->label('PDF para download')
+                                    ->disk('public')
+                                    ->directory('uploads/exhibitions/pdfs')
+                                    ->acceptedFileTypes(['application/pdf'])
+                                    ->maxSize(10240)
+                                    ->columnSpan(2),
                             ]),
 
                     ]),
                 Section::make('Informações do autor')
                     ->columns(1)
                     ->schema([
-                        TextInput::make('author_name')
-                            ->label('Nome do autor'),
                         RichEditor::make('author_description')
                             ->disableToolbarButtons(['attachFiles'])
                             ->label('Descrição do autor')
