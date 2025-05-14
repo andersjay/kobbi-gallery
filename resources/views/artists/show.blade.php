@@ -100,8 +100,11 @@
                             </button>
                         </div>
                         <!-- Formulário de interesse -->
-                        <form id="interest-form" style="display:none;"
+                        <form id="interest-form" method="POST" action="{{ route('exhibition.interest') }}" style="display:none;"
                             class="absolute bg-white rounded-2xl shadow-2xl p-8 max-w-2xl w-full min-h-[500px] max-h-[80vh] flex flex-col justify-center">
+                            @csrf
+                            <input type="hidden" name="artist_id" value="{{ $artist->id }}">
+                            <input type="hidden" name="obra_index" id="artist-obra-index" value="">
                             <button type="button" onclick="closeArtworkModal()"
                                 style="position:absolute; top:32px; right:48px; font-size:3rem; color:black; background:none; border:none; cursor:pointer;">&times;</button>
                             <h2 class="text-2xl font-bold mb-8 text-black">FORMULÁRIO DE INTERESSE:</h2>
@@ -145,6 +148,7 @@
                         currentModalIdx = idx;
                         renderArtworkModal();
                         document.getElementById('artwork-modal').style.display = 'flex';
+                        document.getElementById('artist-obra-index').value = idx;
                     }
 
                     function closeArtworkModal() {
@@ -208,11 +212,11 @@
                         lastArtwork = artwork;
                     };
                     document.getElementById('interest-form').onsubmit = function(e) {
-                        e.preventDefault();
+                        // e.preventDefault(); // Remover para permitir submit normal
                         // Aqui você pode fazer um fetch/ajax para enviar para o backend
                         // Exemplo: enviar para /api/interesse ou similar
-                        alert('Interesse enviado!');
-                        closeArtworkModal();
+                        // alert('Interesse enviado!');
+                        // closeArtworkModal();
                     };
                 </script>
             @else
@@ -250,4 +254,20 @@
             </div>
         </div>
     </div>
+    @if(session('success'))
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Sucesso!',
+                    text: '{{ session('success') }}',
+                    confirmButtonText: 'OK',
+                    customClass: {
+                        popup: 'rounded-xl'
+                    }
+                });
+            });
+        </script>
+    @endif
 @endsection

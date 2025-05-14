@@ -46,7 +46,10 @@
             </div>
         </div>
         <!-- Formulário de interesse -->
-        <form id="interest-form" style="display:none;" class="absolute bg-white rounded-2xl shadow-2xl p-8 max-w-2xl w-full min-h-[500px] max-h-[80vh] flex flex-col justify-center">
+        <form id="interest-form" method="POST" action="{{ route('exhibition.interest') }}" style="display:none;" class="absolute bg-white rounded-2xl shadow-2xl p-8 max-w-2xl w-full min-h-[500px] max-h-[80vh] flex flex-col justify-center">
+            @csrf
+            <input type="hidden" name="collection_id" value="1"><!-- Será ajustado via JS -->
+            <input type="hidden" name="obra_index" id="acervo-obra-index" value="">
             <button type="button" onclick="closeArtworkModal()" style="position:absolute; top:32px; right:48px; font-size:3rem; color:black; background:none; border:none; cursor:pointer;">&times;</button>
             <h2 class="text-2xl font-bold mb-8 text-black">FORMULÁRIO DE INTERESSE:</h2>
             <div class="flex items-start mb-8">
@@ -82,6 +85,8 @@
         currentModalIdx = idx;
         renderArtworkModal();
         document.getElementById('artwork-modal').style.display = 'flex';
+        document.getElementById('acervo-obra-index').value = idx;
+        document.querySelector('input[name=collection_id]').value = 1; // Ajuste se tiver mais de uma coleção
     }
     function closeArtworkModal() {
         document.getElementById('artwork-modal').style.display = 'none';
@@ -123,4 +128,20 @@
         }
     });
 </script>
+@if(session('success'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Sucesso!',
+                text: '{{ session('success') }}',
+                confirmButtonText: 'OK',
+                customClass: {
+                    popup: 'rounded-xl'
+                }
+            });
+        });
+    </script>
+@endif
 @endsection 

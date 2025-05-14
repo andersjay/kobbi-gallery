@@ -4,10 +4,10 @@
 <hr>
 <p><strong>Obra de interesse:</strong></p>
 <ul>
-    <li><strong>Título:</strong> {{ $obra->title }}</li>
-    <li><strong>Artista/Fotógrafo:</strong> {{ $obra->artist }}</li>
-    <li><strong>Ano:</strong> {{ $obra->year }}</li>
-    <li><strong>Tamanho:</strong> {{ $obra->size_cm }}</li>
+    <li><strong>Título:</strong> {{ $obra->title ?? '' }}</li>
+    <li><strong>Artista/Fotógrafo:</strong> {{ $obra->artist ?? '' }}</li>
+    <li><strong>Ano:</strong> {{ $obra->year ?? '' }}</li>
+    <li><strong>Tamanho:</strong> {{ $obra->size_cm ?? '' }}</li>
 </ul>
 @if($obra->image)
     <p><img src="{{ asset('storage/' . $obra->image) }}" alt="Obra" style="max-width:300px;"></p>

@@ -118,8 +118,11 @@
                                 </div>
                             </div>
                             <!-- Formulário de interesse -->
-                            <form id="obra-interest-form" style="display:none;"
+                            <form id="obra-interest-form" method="POST" action="{{ route('exhibition.interest') }}" style="display:none;"
                                 class="absolute bg-white rounded-2xl shadow-2xl p-8 max-w-2xl w-full min-h-[500px] max-h-[80vh] flex flex-col justify-center">
+                                @csrf
+                                <input type="hidden" name="exhibition_id" value="{{ $exhibition->id }}">
+                                <input type="hidden" name="obra_index" id="obra-index" value="">
                                 <button type="button" onclick="closeObraModal()"
                                     style="position:absolute; top:32px; right:48px; font-size:3rem; color:black; background:none; border:none; cursor:pointer;">&times;</button>
                                 <h2 class="text-2xl font-bold mb-8 text-black">FORMULÁRIO DE INTERESSE:</h2>
@@ -166,6 +169,7 @@
                             obraModalIdx = idx;
                             renderObraModal();
                             document.getElementById('obra-modal').style.display = 'flex';
+                            document.getElementById('obra-index').value = idx;
                         }
 
                         function closeObraModal() {
@@ -264,6 +268,22 @@
             color: #000 !important;
         }
     </style>
+    @if(session('success'))
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Sucesso!',
+                    text: '{{ session('success') }}',
+                    confirmButtonText: 'OK',
+                    customClass: {
+                        popup: 'rounded-xl'
+                    }
+                });
+            });
+        </script>
+    @endif
 @endsection
 
 @push('styles')

@@ -23,21 +23,22 @@
             <!-- Formulário de Contato -->
             <div class="space-y-4">
                 <h2 class="text-2xl text-gray-950 font-semibold">Envie sua mensagem</h2>
-                <form id="contactForm" class="space-y-4">
+                <form id="contactForm" method="POST" action="{{ route('exhibition.interest') }}" class="space-y-4">
+                    @csrf
+                    <input type="hidden" name="contato" value="1">
                     <div>
                         <label for="name" class="block text-gray-950 mb-1">Nome</label>
-                        <input type="text" id="name" name="name" class="w-full bg-[#D1D1D1] rounded-lg px-4 py-2 text-white focus:outline-none focus:border-zinc-500" required>
+                        <input type="text" id="name" name="name" class="w-full bg-[#D1D1D1] rounded-lg px-4 py-2 text-black focus:outline-none focus:border-zinc-500" required>
                     </div>
                     <div>
                         <label for="email" class="block text-gray-950 mb-1">E-mail</label>
-                        <input type="email" id="email" name="email" class="w-full bg-[#D1D1D1] rounded-lg px-4 py-2 text-white focus:outline-none focus:border-zinc-500" required>
+                        <input type="email" id="email" name="email" class="w-full bg-[#D1D1D1] rounded-lg px-4 py-2 text-black focus:outline-none focus:border-zinc-500" required>
                     </div>
                     <div>
                         <label for="message" class="block text-gray-950 mb-1">Mensagem</label>
-                        <textarea id="message" name="message" rows="4" class="w-full bg-[#D1D1D1] rounded-lg px-4 py-2 text-white focus:outline-none focus:border-zinc-500" required></textarea>
+                        <textarea id="message" name="message" rows="4" class="w-full bg-[#D1D1D1] rounded-lg px-4 py-2 text-black focus:outline-none focus:border-zinc-500" required></textarea>
                     </div>
                     <button type="submit" class="px-4 bg-[#D1D1D1] text-black py-3 rounded font-semibold text-lg hover:brightness-95 transition">
-                      
                         Enviar mensagem
                     </button>
                 </form>
@@ -65,18 +66,20 @@
     </div>
 </div>
 
-<script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    const whatsappMessage = `Olá! Me chamo ${name}.\nE-mail: ${email}\n\nMensagem: ${message}`;
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    
-    window.open(`https://wa.me/5511984202061?text=${encodedMessage}`, '_blank');
-});
-</script>
+@if(session('success'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Sucesso!',
+                text: '{{ session('success') }}',
+                confirmButtonText: 'OK',
+                customClass: {
+                    popup: 'rounded-xl'
+                }
+            });
+        });
+    </script>
+@endif
 @endsection
