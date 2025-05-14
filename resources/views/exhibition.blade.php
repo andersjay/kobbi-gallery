@@ -255,7 +255,7 @@
                                     <p class="text-sm text-gray-700">Técnica: {{ $item['technique'] ?? '' }}</p>
                                     <p class="text-sm text-gray-700">Tamanho: {{ $item['size_cm'] ?? '' }} cm</p>
                                     <p class="text-sm text-gray-700">{{ $item['description'] ?? '' }}</p>
-                                </div>
+                                    </div>
                             </div>
                         @endforeach
                     </div>
@@ -287,11 +287,11 @@
 @endsection
 
 @push('styles')
-    <style>
-        .prose-invert {
-            --tw-prose-invert-body: theme('colors.gray.300');
-            --tw-prose-invert-headings: theme('colors.white');
-            --tw-prose-invert-links: theme('colors.white');
-        }
-    </style>
+<style>
+    .prose-invert {
+        --tw-prose-invert-body: theme('colors.gray.300');
+        --tw-prose-invert-headings: theme('colors.white');
+        --tw-prose-invert-links: theme('colors.white');
+    }
+</style>
 @endpush

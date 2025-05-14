@@ -23,6 +23,7 @@ class Exhibition extends Model
         'summary',
         'image',
         'banner',
+        'banner_url',
         'gallery',
         'pdf',
         'is_collective',

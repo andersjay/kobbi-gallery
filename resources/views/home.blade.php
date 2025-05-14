@@ -14,7 +14,11 @@
                       background-size: cover; 
                       background-position: {{ $exhibitionBanner->banner_position }}!important; 
                       background-repeat: no-repeat;">
-                      
+                        @if($exhibitionBanner->banner_url)
+                            <a href="{{ $exhibitionBanner->banner_url }}" target="_blank" class="w-full h-full flex items-end justify-start">
+                                <span class="sr-only">Banner com link</span>
+                            </a>
+                        @endif
                         {{-- <div class="container w-full mx-auto flex items-start">
                             <div class="flex flex-col space-y-1 text-left">
                                 <div class="flex gap-2">

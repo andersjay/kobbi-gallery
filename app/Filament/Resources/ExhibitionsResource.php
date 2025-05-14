@@ -55,10 +55,10 @@ class ExhibitionsResource extends Resource
                             ->multiple()
                             ->preload()
                             ->relationship('photographers', 'name')
-                            ->visible(fn ($get) => $get('is_collective')),
+                            ->visible(fn($get) => $get('is_collective')),
                         TextInput::make('author_name')
                             ->label('Nome do autor')
-                            ->visible(fn ($get) => !$get('is_collective')),
+                            ->visible(fn($get) => !$get('is_collective')),
                         Section::make('Imagens da exposição')
                             ->columnSpan(2)
                             ->columns(2)
@@ -77,6 +77,10 @@ class ExhibitionsResource extends Resource
                                     ->disk('public')
                                     ->directory('uploads/exhibitions/banners')
                                     ->required(),
+                                TextInput::make('banner_url')
+                                    ->label('URL do banner (opcional)')
+                                    ->url()
+                                    ->nullable(),
                                 Select::make('banner_position')
                                     ->label('Posição do banner')
                                     ->options([
@@ -122,7 +126,7 @@ class ExhibitionsResource extends Resource
                                     ->addActionLabel('Adicionar obra')
                                     ->reorderableWithButtons()
                                     ->collapsible()
-                                    ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Nova obra'),
+                                    ->itemLabel(fn(array $state): ?string => $state['name'] ?? 'Nova obra'),
                             ]),
                         Section::make('Descrições da exposição')
                             ->columnSpan(2)
@@ -130,7 +134,7 @@ class ExhibitionsResource extends Resource
                             ->schema([
                                 RichEditor::make('description')
                                     ->label('Descrição da exposição')
-       
+
                                     ->columnSpan(1),
                                 RichEditor::make('summary')
                                     ->disableToolbarButtons(['attachFiles'])
