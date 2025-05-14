@@ -3,7 +3,7 @@
 @section('content')
 <div class="container px-8 pt-14 w-full mx-auto pb-10">
     <h2 class="text-4xl text-gray-950 font-bold mb-8 border-b pb-2">OBRAS</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-start">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-start">
         @foreach($acervo as $obra)
             <div class="flex flex-col items-center w-auto cursor-pointer" onclick="openArtworkModal({{ $obra->id }})">
                 <div class="flex items-center justify-center" style="width:250px; height:250px;">
