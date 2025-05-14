@@ -26,6 +26,7 @@ class Exhibition extends Model
         'gallery',
         'pdf',
         'is_collective',
+        'banner_position',
         'year',
         'start_date',
         'end_date',
