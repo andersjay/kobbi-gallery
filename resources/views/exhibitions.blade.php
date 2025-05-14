@@ -6,5 +6,8 @@
         <livewire:actual-exhibition/>
         <livewire:past-exhibitions/>
     </div>
+    <div class="mt-10 border-t border-[#D1D1D1] pt-10">
+        <livewire:newsletter />
+    </div>
   </div>
 @endsection

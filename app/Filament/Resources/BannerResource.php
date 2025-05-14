@@ -27,6 +27,21 @@ class BannerResource extends Resource
                     ->label('Imagem')
                     ->image()
                     ->required(),
+                Forms\Components\Select::make('position')
+                    ->label('Posição da imagem')
+                    ->options([
+                        'center center' => 'Centro Centro',
+                        'top center' => 'Cima Centro',
+                        'bottom center' => 'Baixo Centro',
+                        'center left' => 'Centro Esquerda',
+                        'center right' => 'Centro Direita',
+                        'top left' => 'Cima Esquerda',
+                        'top right' => 'Cima Direita',
+                        'bottom left' => 'Baixo Esquerda',
+                        'bottom right' => 'Baixo Direita',
+                    ])
+                    ->default('center center')
+                    ->required(),
                 Forms\Components\TextInput::make('url')
                     ->label('URL (opcional)')
                     ->url()

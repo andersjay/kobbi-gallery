@@ -77,6 +77,21 @@ class ExhibitionsResource extends Resource
                                     ->disk('public')
                                     ->directory('uploads/exhibitions/banners')
                                     ->required(),
+                                Select::make('banner_position')
+                                    ->label('Posição do banner')
+                                    ->options([
+                                        'center center' => 'Centro Centro',
+                                        'top center' => 'Cima Centro',
+                                        'bottom center' => 'Baixo Centro',
+                                        'center left' => 'Centro Esquerda',
+                                        'center right' => 'Centro Direita',
+                                        'top left' => 'Cima Esquerda',
+                                        'top right' => 'Cima Direita',
+                                        'bottom left' => 'Baixo Esquerda',
+                                        'bottom right' => 'Baixo Direita',
+                                    ])
+                                    ->default('center center')
+                                    ->required(),
                                 Repeater::make('gallery')
                                     ->label('Obras')
                                     ->columnSpan(2)

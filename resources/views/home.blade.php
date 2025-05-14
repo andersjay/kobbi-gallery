@@ -6,12 +6,13 @@
         <div class="swiper mySwiper w-full h-full mb-14">
             <div class="swiper-wrapper">
                 @if($exhibitionBanner)
+   
                     <div class="swiper-slide text-center text-lg px-8 md:px-10 lg:px-6 xl:px-4 h-[600px] flex items-end"
                         style="background:
                               linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 50%), 
                               url({{ asset('storage/' . $exhibitionBanner->banner) }}); 
                       background-size: cover; 
-                      background-position: center; 
+                      background-position: {{ $exhibitionBanner->banner_position }}; 
                       background-repeat: no-repeat;">
                         {{-- <div class="container w-full mx-auto flex items-start">
                             <div class="flex flex-col space-y-1 text-left">
