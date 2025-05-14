@@ -39,7 +39,7 @@
 
   </div>
 
-    <div class="w-full border-t border-[#D1D1D1] pb-8 py-4  text-center">
+    <div class="w-full border-t border-[#D1D1D1] pb-8 py-4 text-black  text-center">
         <span>
             {{ $footer && $footer->copyright ? $footer->copyright : 'Copyright 2025. Kobbi Photogallery. Todos os direitos reservados' }}
         </span>

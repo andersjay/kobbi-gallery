@@ -35,6 +35,9 @@
         </div>
         <div class="flex flex-col items-center justify-center">
     </div>
+    <div class="mt-10 border-t border-[#D1D1D1] pt-10">
+        <livewire:newsletter />
+    </div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
     <script>

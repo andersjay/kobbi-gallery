@@ -61,8 +61,8 @@
         </div>
     </div>
 
-    <div class="mt-12">
-        <livewire:newsletter/>
+    <div class="mt-10 border-t border-[#D1D1D1] pt-10">
+        <livewire:newsletter />
     </div>
 </div>
 
