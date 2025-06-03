@@ -16,6 +16,9 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            lineHeight: {
+                'kobbi': '1.3',
+            },
         },
     },
     plugins: [

@@ -11,6 +11,7 @@ use App\Livewire\Welcome;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\ExhibitionInterestController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Http;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,4 +51,19 @@ Route::get('/agenda/{event}', [App\Http\Controllers\AgendaController::class, 'sh
 //Acervo
 Route::get('/acervo', [CollectionController::class, 'index'])->name('acervo.index');
 Route::post('/acervo/interesse', [CollectionController::class, 'interesse'])->name('acervo.interesse');
+
+Route::get('/mailchimp-ping', function () {
+    $apiKey = env('NEWSLETTER_API_KEY');
+    $endpoint = env('NEWSLETTER_ENDPOINT');
+    $dc = null;
+    if (preg_match('/https:\/\/(.*?)\.api\.mailchimp\.com/', $endpoint, $matches)) {
+        $dc = $matches[1];
+    }
+    if (!$apiKey || !$dc) {
+        return response()->json(['error' => 'API Key ou datacenter não configurados corretamente.'], 400);
+    }
+    $url = "https://{$dc}.api.mailchimp.com/3.0/ping";
+    $response = Http::withBasicAuth('anystring', $apiKey)->get($url);
+    return response()->json($response->json(), $response->status());
+});
 

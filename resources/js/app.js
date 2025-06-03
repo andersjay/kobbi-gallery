@@ -6,9 +6,10 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
   autoplay:{
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
-  }
+  },
+  speed: 1200,
 });
 
 jQuery(document).ready(function () {

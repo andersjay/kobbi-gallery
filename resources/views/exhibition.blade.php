@@ -13,16 +13,16 @@
 
                     <div class="max-w-[1440px] w-full mx-auto flex items-center justify-center">
                         <div class="flex flex-col space-y-1">
-                            <h2 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold">{{ $exhibition->title }}</h2>
+                            <h2 class="text-white text-3xl md:text-5xl lg:text-6xl font-medium">{{ $exhibition->title }}</h2>
                             @if ($exhibition->author_name && !$exhibition->is_collective)
-                                <h3 class="text-white text-xl md:text-2xl font-bold text-center">{{ $exhibition->author_name }}</h3>
+                                <h3 class="text-white text-xl md:text-xl font-light text-center">{{ $exhibition->author_name }}</h3>
                             @else
-                                <h3 class="text-white text-xl md:text-2xl font-bold text-center">
+                                <h3 class="text-white text-xl md:text-xl font-light text-center">
                                     Exposição coletiva
                                 </h3>
                             @endif
                             @if ($exhibition->year)
-                                <p class="text-white text-lg md:text-xl text-center">{{ $exhibition->year }}</p>
+                                <p class="text-white text-lg md:text-xl text-justify font-light">{{ $exhibition->year }}</p>
                             @endif
                         </div>
                     </div>
@@ -33,15 +33,15 @@
         </div>
     </div>
 
-    <div class="container px-4 mx-auto mt-14">
+    <div class="container-kobbi px-4 mx-auto mt-14">
         <div class="w-full gap-14">
             <div class="w-full">
-                <h3 class="text-2xl md:text-3xl font-bold text-black">
+                <h3 class="text-2xl md:text-3xl font-medium text-black">
                     @if ($exhibition->is_collective && $exhibition->photographers && $exhibition->photographers->count())
                         <div class="flex flex-col gap-1">
                             @foreach ($exhibition->photographers as $photographer)
                                 <a href="{{ route('artists.show', $photographer->id) }}"
-                                    class=" hover:underline">{{ $photographer->name }}</a>
+                                    class=" hover:underline font-medium">{{ $photographer->name }}</a>
                             @endforeach
                         </div>
                     @else
@@ -54,10 +54,9 @@
                 </div>
 
                 @if ($exhibition->pdf)
-                    <div class="my-6 w-full flex items-center gap-2">
-                        <div class="h-[1px] bg-[#D1D1D1] w-full"></div>
+                    <div class="my-6 w-full flex items-center justify-end gap-2">
                         <a href="{{ asset('storage/' . $exhibition->pdf) }}" target="_blank" download
-                            class="max-w-[150px] w-full inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 border border-gray-200 transition">
+                            class="max-w-[150px] w-full inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-700 transition">
                             <svg xmlns='http://www.w3.org/2000/svg' class='h-4 w-4' fill='none' viewBox='0 0 24 24'
                                 stroke='currentColor'>
                                 <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 4v16m8-8H4' />
@@ -66,16 +65,18 @@
                         </a>
                     </div>
                 @endif
-
+                <div class="my-6 w-full flex items-center gap-2">
+                    <span class="text-gray-600 text-base text-left w-full max-w-[50px]">OBRAS</span>
+                    <div class="h-[1px] bg-[#D1D1D1] w-full"></div>
+                </div>
                 @if ($exhibition->gallery)
                     <div class="mt-10">
-                        <h3 class="text-2xl font-bold text-gray-950 mb-4">Obras</h3>
                         <div class="flex gap-6 overflow-x-auto pb-4">
                             @foreach ($exhibition->gallery as $idx => $item)
-                                <div class="min-w-[320px] max-w-xs flex-shrink-0 border rounded-xl p-4 bg-white shadow cursor-pointer obra-card"
+                                <div class="min-w-[320px] max-w-xs flex-shrink-0 border p-4 bg-white shadow cursor-pointer obra-card"
                                     data-idx="{{ $idx }}">
                                     <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] ?? '' }}"
-                                        class="w-full aspect-[4/3] object-cover rounded-xl mb-4">
+                                        class="w-full aspect-[4/3] object-cover mb-4">
                                     <div class="space-y-1">
                                         <p class="text-lg font-bold text-gray-900">{{ $item['name'] ?? '' }}</p>
                                         <p class="text-sm text-gray-700">Ano: {{ $item['year'] ?? '' }}</p>
@@ -95,10 +96,10 @@
                             style="position:absolute; top:32px; right:48px; font-size:3rem; color:white; background:none; border:none; cursor:pointer;">&times;</button>
                         <div class="flex items-center justify-center w-full h-full" id="obra-modal-overlay-bg">
                             <div id="obra-modal-content"
-                                class="relative flex flex-col md:flex-row items-center justify-center bg-white rounded-2xl shadow-2xl p-8 max-w-5xl w-full min-h-[500px] max-h-[80vh]">
+                                class="relative flex flex-col md:flex-row items-center justify-center bg-white shadow-2xl p-8 max-w-5xl w-full min-h-[500px] max-h-[80vh]">
                                 <div class="flex-1 flex items-center justify-center relative transition-all duration-300">
                                     <img id="obra-modal-img" src="" alt=""
-                                        class="max-w-[32vw] max-h-[60vh] ml-8 rounded-lg shadow-lg bg-gray-200">
+                                        class="max-w-[32vw] max-h-[60vh] ml-8 shadow-lg bg-gray-200">
                                 </div>
                                 <div
                                     class="flex-1 flex flex-col justify-center items-start md:pl-16 mt-8 md:mt-0 w-full max-w-md transition-all duration-300">
@@ -113,13 +114,13 @@
                                         <div id="obra-modal-description" class="text-black text-base mb-6"></div>
                                     </div>
                                     <button id="obra-modal-interest"
-                                        class="bg-[#D1D1D1] text-black px-6 py-3 rounded font-medium text-base hover:brightness-95 transition border-none"
+                                        class="bg-[#D1D1D1] text-black px-6 py-3 font-medium text-base hover:brightness-95 transition border-none"
                                         style="border:none;">Registrar interesse</button>
                                 </div>
                             </div>
                             <!-- Formulário de interesse -->
                             <form id="obra-interest-form" method="POST" action="{{ route('exhibition.interest') }}" style="display:none;"
-                                class="absolute bg-white rounded-2xl shadow-2xl p-8 max-w-2xl w-full min-h-[500px] max-h-[80vh] flex flex-col justify-center">
+                                class="absolute bg-white shadow-2xl p-8 max-w-2xl w-full min-h-[500px] flex flex-col justify-center">
                                 @csrf
                                 <input type="hidden" name="exhibition_id" value="{{ $exhibition->id }}">
                                 <input type="hidden" name="obra_index" id="obra-index" value="">
@@ -128,7 +129,7 @@
                                 <h2 class="text-2xl font-bold mb-8 text-black">FORMULÁRIO DE INTERESSE:</h2>
                                 <div class="flex items-start mb-8">
                                     <img id="obra-form-img" src="" alt=""
-                                        class="w-24 h-24 object-cover rounded mr-6 border border-gray-300">
+                                        class="w-24 h-24 object-cover mr-6 border border-gray-300">
                                     <div>
                                         <div class="font-bold text-black" id="obra-form-title"></div>
                                         <div class="text-black" id="obra-form-year"></div>
@@ -141,22 +142,22 @@
                                     <label for="obra-interest-name" class="block font-semibold mb-1 text-black">Nome
                                         *</label>
                                     <input type="text" id="obra-interest-name" name="name" required
-                                        class="w-full border border-gray-400 rounded px-3 py-2 text-black">
+                                        class="w-full border border-gray-400  px-3 py-2 text-black">
                                 </div>
                                 <div class="mb-4">
                                     <label for="obra-interest-email" class="block font-semibold mb-1 text-black">E-mail
                                         *</label>
                                     <input type="email" id="obra-interest-email" name="email" required
-                                        class="w-full border border-gray-400 rounded px-3 py-2 text-black">
+                                        class="w-full border border-gray-400  px-3 py-2 text-black">
                                 </div>
                                 <div class="mb-6">
                                     <label for="obra-interest-message"
                                         class="block font-semibold mb-1 text-black">Mensagem *</label>
                                     <textarea id="obra-interest-message" name="message" required
-                                        class="w-full border border-gray-400 rounded px-3 py-2 min-h-[120px] text-black"></textarea>
+                                        class="w-full border border-gray-400  px-3 py-2 min-h-[120px] text-black"></textarea>
                                 </div>
                                 <button type="submit"
-                                    class="w-full bg-[#D1D1D1] text-black py-3 rounded font-semibold text-lg hover:brightness-95 transition">Enviar
+                                    class="w-full bg-[#D1D1D1] text-black py-3  font-semibold text-lg hover:brightness-95 transition">Enviar
                                     interesse</button>
                             </form>
                         </div>
@@ -224,7 +225,7 @@
 
                 {{-- <!-- Seção do Autor -->
                 @if ($exhibition->author_name || $exhibition->author_description)
-                    <div class="bg-zinc-900 rounded-2xl p-8 md:p-10">
+                    <div class="bg-zinc-900 -2xl p-8 md:p-10">
                         <div class="flex flex-col items-start">
                             @if ($exhibition->author_name)
                                 <h3 class="text-2xl md:text-3xl font-bold text-black mb-6">{{ $exhibition->author_name }}</h3>
@@ -262,6 +263,10 @@
                 </div>
             @endif --}}
         </div>
+        <div class="mt-10 pt-10">
+            <livewire:newsletter-form />
+        </div>
+        
     </div>
     <style>
         .description * {
@@ -277,13 +282,11 @@
                     title: 'Sucesso!',
                     text: '{{ session('success') }}',
                     confirmButtonText: 'OK',
-                    customClass: {
-                        popup: 'rounded-xl'
-                    }
                 });
             });
         </script>
     @endif
+   
 @endsection
 
 @push('styles')

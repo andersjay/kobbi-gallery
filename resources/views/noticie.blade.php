@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<div class="container px-8 pt-14 w-full mx-auto pb-10 border-t border-gray-800">
+<div class="container-kobbi md:px-0 pt-14 mx-auto pb-10 border-t border-gray-800">
     <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl text-gray-950 font-bold mb-6">{{ $noticie->title }}</h1>
+        <h1 class="header-title-spacing text-4xl text-gray-950 font-light">{{ $noticie->title }}</h1>
         
         @if($noticie->image_url)
         <div class="w-full h-[400px] mb-8">

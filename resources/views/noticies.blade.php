@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<div class="container px-8 pt-14 w-full mx-auto pb-10">
-    <h2 class="md:text-4xl text-3xl text-gray-950 font-bold mb-12 mt-12 md:mt-0">NOTÍCIAS</h2>
+<div class="container-kobbi md:px-0 pt-14 mx-auto pb-10">
+    <h2 class="header-title-spacing text-3xl text-gray-950 font-light">NOTÍCIAS</h2>
     @if($noticies->count())
         <div class="space-y-8">
             @foreach($noticies as $notice)
@@ -26,8 +26,8 @@
         <div class="alert alert-info mt-8 text-center text-gray-700 bg-[#F3F3F3] border-0 rounded-lg py-6">Nenhuma notícia cadastrada no momento.</div>
     @endif
 
-    <div class="mt-10 border-t border-[#D1D1D1] pt-10">
-      <livewire:newsletter />
+    <div class="mt-10 pt-10">
+      <livewire:newsletter-form />
     </div>
 </div>
 @endsection

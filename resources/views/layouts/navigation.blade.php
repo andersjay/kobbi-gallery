@@ -1,6 +1,6 @@
 <div>
     <div
-        class="container mx-auto pt-6 md:px-8 lg:flex lg:justify-between hidden py-4 items-center {{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'absolute left-0 right-0 z-20' : '' }}">
+        class="container-kobbi mx-auto pt-6 md:px-8 lg:flex lg:justify-between hidden py-4 items-center {{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'absolute left-0 right-0 z-20' : '' }}">
         @if (request()->routeIs('home') || request()->routeIs('exhibition'))
             <a href="{{ route('home') }}" class="w-40">
                 <img src="{{ asset('images/logo-white.png') }}" alt="Logo Kobbi Gallery" class="w-full">

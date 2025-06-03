@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container px-4 pt-14 mt-4 w-full mx-auto pb-10">
+<div class="container-kobbi md:px-0 pt-14 mx-auto pb-10 ">
     <div class="mt-12">
-        <h2 class="text-4xl text-gray-950 font-bold">GALERIA</h2>
+        <h2 class="header-title-spacing text-3xl text-gray-950 font-light">SOBRE A KOBBI GALLERY</h2>
         <div class="mt-8 w-full">
             @php
                 $gallerySetting = \App\Models\GallerySetting::first();
@@ -39,8 +39,8 @@
             <div class="swiper-button-prev text-gray-950"></div>
         </div>
     </div>
-    <div class="mt-10 border-t border-[#D1D1D1] pt-10">
-        <livewire:newsletter />
+    <div class="mt-10 pt-10">
+        <livewire:newsletter-form />
     </div>
 </div>
 

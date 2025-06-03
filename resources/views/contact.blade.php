@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<div class="container px-8 pt-14 w-full mx-auto pb-20">
-    <h1 class="text-4xl text-gray-950 font-bold mb-12 mt-12 md:mt-0">CONTATO</h1>
+<div class="container-kobbi md:px-0 pt-14 mx-auto pb-10">
+    <h1 class="header-title-spacing text-3xl text-gray-950 font-light">CONTATO</h1>
    
     <div class="grid md:grid-cols-2 gap-12">
         <!-- Informações de Contato -->
@@ -61,8 +61,8 @@
         </div>
     </div>
 
-    <div class="mt-10 border-t border-[#D1D1D1] pt-10">
-        <livewire:newsletter />
+    <div class="mt-10 pt-10">
+        <livewire:newsletter-form />
     </div>
 </div>
 

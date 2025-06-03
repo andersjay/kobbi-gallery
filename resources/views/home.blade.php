@@ -7,7 +7,7 @@
             <div class="swiper-wrapper">
                 @if($exhibitionBanner)
    
-                    <div class="swiper-slide text-center text-lg px-8 md:px-10 lg:px-6 xl:px-4 h-[600px] flex items-end"
+                    <div class="swiper-slide text-center text-lg px-8 md:px-10 lg:px-6 xl:px-4 h-[100dvh] flex items-end"
                         style="background:
                               linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 50%), 
                               url({{ asset('storage/' . $exhibitionBanner->banner) }}); 
@@ -36,7 +36,7 @@
                 @endif
                 @foreach ($banners as $banner)
            
-                    <div class="swiper-slide text-center text-lg px-8 md:px-10 lg:px-6 xl:px-4 h-[600px] flex items-end"
+                    <div class="swiper-slide text-center text-lg px-8 md:px-10 lg:px-6 xl:px-4 h-[100dvh] flex items-end"
                         style="background:
                               linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 50%), 
                               url({{ asset('storage/' . $banner->image) }}); 
@@ -57,8 +57,8 @@
         {{-- <livewire:artist-gallery />
         <livewire:gallery />
         <livewire:noticie /> --}}
-        <div class="container px-8 pt-14 w-full mx-auto pb-10">
-            <livewire:newsletter />
+        <div class="container-kobbi px-8 pt-14 w-full mx-auto pb-10">
+            <livewire:newsletter-form />
         </div>
     </div>
 @endsection

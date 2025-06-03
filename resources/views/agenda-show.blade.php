@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container px-8 pt-14 w-full mx-auto pb-10">
+<div class="container-kobbi md:px-0 pt-14 mx-auto pb-10">
     <a href="{{ route('agenda.index') }}" class="text-gray-500 hover:text-gray-950 mb-6 inline-block">&larr; Voltar para agenda</a>
-    <h1 class="text-3xl md:text-4xl font-bold text-gray-950 mb-2">{{ $event->title }}</h1>
+    <h1 class="header-title-spacing text-3xl md:text-4xl font-light text-gray-950">{{ $event->title }}</h1>
     <div class="font-bold text-lg text-gray-950 mb-6">{{ \Carbon\Carbon::parse($event->date)->format('d/m/Y') }}</div>
     <div class="grid md:grid-cols-2 gap-8 items-start mb-10">
         <div>

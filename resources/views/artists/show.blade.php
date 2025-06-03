@@ -3,8 +3,9 @@
 @section('content')
     <div class="container px-8 pt-14 w-full mx-auto pb-10 ">
         <div class="max-w-7xl mx-auto mt-12 md:mt-0">
-            <h1 class="md:text-5xl text-3xl my-2 text-gray-950 font-bold mb-2 text-center">{{ $artist->name }}</h1>
-
+            <div>
+                     <h1 class="md:text-4xl text-2xl my-2 text-gray-950 font-light mb-2">{{ $artist->name }}</h1>
+        
             @if ($artist->artworks->count() > 0)
                 @php
                     $destaque = $artist->artworks->first();
@@ -12,10 +13,11 @@
                     $allArtworks = $artist->artworks->values();
                 @endphp
                 <div class="flex flex-col items-center mb-12">
+                   
                     <div class="w-full max-w-xl mx-auto mb-8">
                         @if (is_array($destaque->images) && count($destaque->images) > 0)
                             <img src="{{ asset('storage/' . $destaque->images[0]) }}" alt="{{ $destaque->name }}"
-                                class="w-full h-auto rounded-lg shadow-lg object-contain mx-auto cursor-pointer"
+                                class="w-full h-[500px] rounded-lg object-contain mx-auto cursor-pointer"
                                 onclick="openArtworkModal(0)">
                         @else
                             <div class="w-full aspect-square flex items-center justify-center bg-gray-200 rounded-lg">
@@ -29,11 +31,15 @@
                             @endif
                         </div>
                     </div>
+                    <div class=" w-full flex items-center justify-center my-5">
+                        <span class="text-gray-600 text-base text-left w-full max-w-[200px]">OBRAS EM DESTAQUE</span>
+                        <div class="h-[1px] bg-[#D1D1D1] w-full"></div>
+                    </div>
                     @if ($outras->count() > 0)
                         <div class="flex flex-wrap justify-center gap-6 w-full">
                             @foreach ($outras as $idx => $artwork)
                                 <div class="w-40 flex flex-col items-center">
-                                    <div class="aspect-square w-full rounded-lg overflow-hidden bg-gray-900 mb-2">
+                                    <div class="aspect-square w-full overflow-hidden bg-gray-900 mb-2">
                                         @if (is_array($artwork->images) && count($artwork->images) > 0)
                                             <img src="{{ asset('storage/' . $artwork->images[0]) }}"
                                                 alt="{{ $artwork->name }}" class="w-full h-full object-cover cursor-pointer"
@@ -52,6 +58,7 @@
                             @endforeach
                         </div>
                     @endif
+                    
                 </div>
                 <!-- Modal navegável -->
                 <div id="artwork-modal"
@@ -60,7 +67,7 @@
                         style="position:absolute; top:32px; right:48px; font-size:3rem; color:white; background:none; border:none; cursor:pointer;">&times;</button>
                     <div class="flex items-center justify-center w-full h-full" id="modal-overlay-bg">
                         <div id="modal-content"
-                            class="relative flex flex-col md:flex-row items-center justify-center bg-white rounded-2xl shadow-2xl p-8 max-w-5xl w-full min-h-[500px] max-h-[80vh]">
+                            class="relative flex flex-col md:flex-row items-center justify-center bg-white shadow-2xl p-8 max-w-5xl w-full min-h-[500px] max-h-[80vh]">
                             <button id="modal-prev"
                                 class="hidden md:flex items-center justify-center bg-[#D1D1D1] hover:brightness-95 transition rounded-full w-12 h-12 absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer shadow z-10 border-none"
                                 style="background:none;">
@@ -73,7 +80,7 @@
                             <div id="modal-main-content"
                                 class="flex-1 flex items-center justify-center relative transition-all duration-300">
                                 <img id="artwork-modal-img" src="" alt=""
-                                    class="max-w-[32vw] max-h-[60vh] ml-8 rounded-lg shadow-lg bg-gray-200">
+                                    class="max-w-[32vw] max-h-[60vh] ml-8 shadow-lg bg-gray-200">
                             </div>
                             <div id="modal-info-content"
                                 class="flex-1 flex flex-col justify-center items-start md:pl-16 mt-8 md:mt-0 w-full max-w-md transition-all duration-300">
@@ -86,7 +93,7 @@
                                     <div id="artwork-modal-description" class="text-black text-base mb-6"></div>
                                 </div>
                                 <button id="modal-interest"
-                                    class="bg-[#D1D1D1] text-black px-6 py-3 rounded font-medium text-base hover:brightness-95 transition border-none"
+                                    class="bg-[#D1D1D1] text-black px-6 py-3 font-medium text-base hover:brightness-95 transition border-none"
                                     style="border:none;">Registrar interesse</button>
                             </div>
                             <button id="modal-next"
@@ -101,7 +108,7 @@
                         </div>
                         <!-- Formulário de interesse -->
                         <form id="interest-form" method="POST" action="{{ route('exhibition.interest') }}" style="display:none;"
-                            class="absolute bg-white rounded-2xl shadow-2xl p-8 max-w-2xl w-full min-h-[500px] max-h-[80vh] flex flex-col justify-center">
+                            class="absolute bg-white shadow-2xl p-8 max-w-2xl w-full min-h-[500px] flex flex-col justify-center">
                             @csrf
                             <input type="hidden" name="artist_id" value="{{ $artist->id }}">
                             <input type="hidden" name="obra_index" id="artist-obra-index" value="">
@@ -110,7 +117,7 @@
                             <h2 class="text-2xl font-bold mb-8 text-black">FORMULÁRIO DE INTERESSE:</h2>
                             <div class="flex items-start mb-8">
                                 <img id="form-artwork-img" src="" alt=""
-                                    class="w-24 h-24 object-cover rounded mr-6 border border-gray-300">
+                                    class="w-24 h-24 object-cover mr-6 border border-gray-300">
                                 <div>
                                     <div class="font-bold text-black" id="form-artwork-artist"></div>
                                     <div class="text-black" id="form-artwork-title"></div>
@@ -120,21 +127,21 @@
                             <div class="mb-4">
                                 <label for="interest-name" class="block font-semibold mb-1 text-black">Nome *</label>
                                 <input type="text" id="interest-name" name="name" required
-                                    class="w-full border border-gray-400 rounded px-3 py-2 text-black">
+                                    class="w-full border border-gray-400 px-3 py-2 text-black">
                             </div>
                             <div class="mb-4">
                                 <label for="interest-email" class="block font-semibold mb-1 text-black">E-mail *</label>
                                 <input type="email" id="interest-email" name="email" required
-                                    class="w-full border border-gray-400 rounded px-3 py-2 text-black">
+                                    class="w-full border border-gray-400 px-3 py-2 text-black">
                             </div>
                             <div class="mb-6">
                                 <label for="interest-message" class="block font-semibold mb-1 text-black">Mensagem
                                     *</label>
                                 <textarea id="interest-message" name="message" required
-                                    class="w-full border border-gray-400 rounded px-3 py-2 min-h-[120px] text-black"></textarea>
+                                    class="w-full border border-gray-400 px-3 py-2 min-h-[120px] text-black"></textarea>
                             </div>
                             <button type="submit"
-                                class="w-full bg-[#D1D1D1] text-black py-3 rounded font-semibold text-lg hover:brightness-95 transition">Enviar
+                                class="w-full bg-[#D1D1D1] text-black py-3 font-semibold text-lg hover:brightness-95 transition">Enviar
                                 interesse</button>
                         </form>
                     </div>
@@ -224,6 +231,8 @@
                     <p class="text-gray-400 text-xl">Nenhuma obra cadastrada ainda.</p>
                 </div>
             @endif
+            </div>
+            
             <div class="flex flex-col">
                 <div class="flex flex-col items-center justify-center">
 
@@ -234,9 +243,11 @@
             </div>
             @if ($artist->description)
                <div class="w-full">
-                <div class="h-[1px] w-full bg-[#D1D1D1] mb-4"></div>
-                <h5 class="text-lg font-bold text-gray-950 mb-2">SOBRE O ARTISTA</h5>
-                <p class="text-lg text-gray-600 mb-10 text-start  mx-auto">{{ $artist->description }}</p>
+                <div class=" w-full flex items-center justify-center my-5">
+                    <span class="text-gray-600 text-base text-left w-full max-w-[200px]">SOBRE O ARTISTA</span>
+                    <div class="h-[1px] bg-[#D1D1D1] w-full"></div>
+                </div>
+                <p class="text-lg text-gray-600 mb-10 text-justify  mx-auto">{{ $artist->description }}</p>
                </div>
             @else
                 <div class="mb-10"></div>

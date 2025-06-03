@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container px-8 pt-14 w-full mx-auto pb-10 ">
-        <h2 class="text-4xl text-gray-950 font-bold md:mb-12 mt-12 md:mt-0">ARTISTAS</h2>
+    <div class="container-kobbi md:px-0 pt-14 mx-auto pb-10">
+        <h2 class="header-title-spacing text-3xl text-gray-950 font-light">ARTISTAS</h2>
         <div class="lg:grid lg:grid-cols-[400px_1fr] pt-12">
             <div class="w-full lg:p-4">
                 <div class="lg:hidden w-full px-4">
@@ -15,7 +15,7 @@
                 </div>
                 <ul id="artist-list" class="hidden lg:block">
                     @foreach ($artists as $artist)
-                        <li class="cursor-pointer font-bold text-2xl p-2 text-gray-400" data-id="{{ $artist->id }}">
+                        <li class="cursor-pointer text-xl p-2 text-gray-400 uppercase tracking-wide" data-id="{{ $artist->id }}">
                             {{ $artist->name }}
                         </li>
                     @endforeach
@@ -35,8 +35,8 @@
         </div>
         <div class="flex flex-col items-center justify-center">
     </div>
-    <div class="mt-10 border-t border-[#D1D1D1] pt-10">
-        <livewire:newsletter />
+    <div class="mt-10 pt-10">
+        <livewire:newsletter-form />
     </div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
@@ -116,7 +116,7 @@
                     const img = document.createElement('img');
                     img.src = imgData.src;
                     img.alt = imgData.title;
-                    img.className = 'max-h-[500px] max-w-full rounded shadow-lg mx-auto cursor-zoom-in';
+                    img.className = 'max-h-[420px] max-w-full shadow-lg mx-auto cursor-zoom-in';
                     link.appendChild(img);
                     wrapper.appendChild(link);
                 });
