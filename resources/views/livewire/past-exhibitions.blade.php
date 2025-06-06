@@ -1,4 +1,4 @@
-<div class="container-kobbi  pt-14 mx-auto pb-10 border-t border-gray-800">
+<div class="container-kobbi  pt-4 mx-auto pb-10 border-t border-gray-300 mt-10">
     <h2 class="header-title-spacing text-xl text-gray-950 font-light">EXPOSIÇÕES PASSADAS</h2>
 
     <div class="flex flex-col gap-10 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

@@ -42,6 +42,10 @@ class CollectionResource extends Resource
                     ->image()
                     ->directory('acervo')
                     ->required(),
+                Forms\Components\RichEditor::make('additional_text')
+                    ->label('Informações Adicionais')
+                    ->nullable()
+                    ->columnSpanFull(),
             ]);
     }
 

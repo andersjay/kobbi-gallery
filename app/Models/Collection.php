@@ -12,5 +12,6 @@ class Collection extends Model
         'title',
         'year',
         'size_cm',
+        'additional_text',
     ];
 }

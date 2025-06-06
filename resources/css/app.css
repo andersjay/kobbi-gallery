@@ -40,6 +40,16 @@ h3 {
   padding-right: 1rem;
 }
 
+/* Garante que o texto nas seções do rodapé seja escuro */
+footer .container-kobbi p,
+footer .container-kobbi span,
+footer .container-kobbi div,
+footer .container-kobbi strong,
+footer .container-kobbi em,
+footer .container-kobbi li {
+  color: #1a202c !important; /* Cor escura, similar a text-gray-900 */
+}
+
 @media (min-width: 768px) {
   .container-kobbi {
     padding-left: 3rem;

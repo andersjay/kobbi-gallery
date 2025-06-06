@@ -2,50 +2,51 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\FooterSettingResource\Pages;
-use App\Models\FooterSetting;
+use App\Filament\Resources\ContactSettingResource\Pages;
+use App\Filament\Resources\ContactSettingResource\RelationManagers;
+use App\Models\ContactSetting;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class FooterSettingResource extends Resource
+class ContactSettingResource extends Resource
 {
-    protected static ?string $model = FooterSetting::class;
+    protected static ?string $model = ContactSetting::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-cog';
-    protected static ?string $navigationLabel = 'Rodapé';
-    protected static ?string $pluralLabel = 'Rodapé';
-    protected static ?string $slug = 'footer-settings';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Configurações Contato';
+    protected static ?string $pluralLabel = 'Configurações Contato';
+    protected static ?string $slug = 'contact-settings';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\FileUpload::make('logo')
-                    ->label('Logo')
-                    ->image(),
-                Forms\Components\TextInput::make('copyright')
-                    ->label('Copyright'),
-                Forms\Components\Section::make('Seções Personalizadas')
+                Forms\Components\Section::make('Seções Personalizadas Contato')
                     ->schema([
                         Forms\Components\TextInput::make('section1_title')
                             ->label('Título da Seção 1'),
                         Forms\Components\RichEditor::make('section1_description')
                             ->label('Descrição da Seção 1')
-                            ->nullable(),
+                            ->nullable()
+                            ->columnSpanFull(),
                         Forms\Components\TextInput::make('section2_title')
                             ->label('Título da Seção 2'),
                         Forms\Components\RichEditor::make('section2_description')
                             ->label('Descrição da Seção 2')
-                            ->nullable(),
+                            ->nullable()
+                            ->columnSpanFull(),
                         Forms\Components\TextInput::make('section3_title')
                             ->label('Título da Seção 3'),
                         Forms\Components\RichEditor::make('section3_description')
                             ->label('Descrição da Seção 3')
-                            ->nullable(),
-                    ]),
+                            ->nullable()
+                            ->columnSpanFull(),
+                    ])->columns(1),
             ]);
     }
 
@@ -53,10 +54,6 @@ class FooterSettingResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('logo')
-                    ->label('Logo'),
-                Tables\Columns\TextColumn::make('copyright')
-                    ->label('Copyright'),
                 Tables\Columns\TextColumn::make('section1_title')
                     ->label('Título Seção 1'),
                 Tables\Columns\TextColumn::make('section2_title')
@@ -64,18 +61,32 @@ class FooterSettingResource extends Resource
                 Tables\Columns\TextColumn::make('section3_title')
                     ->label('Título Seção 3'),
             ])
+            ->filters([
+                //
+            ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListFooterSettings::route('/'),
-            'create' => Pages\CreateFooterSetting::route('/create'),
-            'edit' => Pages\EditFooterSetting::route('/{record}/edit'),
+            'index' => Pages\ListContactSettings::route('/'),
+            'create' => Pages\CreateContactSetting::route('/create'),
+            'edit' => Pages\EditContactSetting::route('/{record}/edit'),
         ];
     }
-} 
+}

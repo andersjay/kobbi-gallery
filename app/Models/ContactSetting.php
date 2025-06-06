@@ -2,21 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FooterSetting extends Model
+class ContactSetting extends Model
 {
-    use HasFactory;
-
     protected $fillable = [
-        'logo',
-        'address',
-        'contact_phone',
-        'contact_email',
-        'schedule_week',
-        'schedule_saturday',
-        'copyright',
         'section1_title',
         'section1_description',
         'section2_title',
@@ -24,4 +14,4 @@ class FooterSetting extends Model
         'section3_title',
         'section3_description',
     ];
-} 
+}

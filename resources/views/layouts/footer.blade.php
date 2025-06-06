@@ -18,20 +18,26 @@
         {{-- </nav> --}}
 
       <div class="flex flex-col items-center w-full md:flex-row md:justify-center md:items-start gap-8 xl:gap-24">
-        <div class="flex flex-col text-start">
-            <h3 class="text-lg font-bold text-gray-950">KOBBI GALLERY</h3>
-            <p class="text-gray-950 p-0 m-0">{!! $footer && $footer->address ? $footer->address : 'Rua Augusta, 2900 <br> Vila Madalena, São Paulo/SP' !!}</p>
-        </div>
-        <div class="flex flex-col text-start">
-            <h3 class="text-lg font-bold text-gray-950">CONTATO</h3>
-            <p class="text-gray-950 p-0 m-0">{{ $footer && $footer->contact_phone ? $footer->contact_phone : '+55 11 98420-2061' }}</p>
-            <p class="text-gray-950 p-0 m-0">{{ $footer && $footer->contact_email ? $footer->contact_email : 'contato@kobbi.com.br' }}</p>
-        </div>
-        <div class="flex flex-col gap-2 text-start">
-            <h3 class="text-lg font-bold text-gray-950">HORARIO</h3>
-            <p class="text-gray-950 p-0 m-0">{{ $footer && $footer->schedule_week ? $footer->schedule_week : 'Segunda a Sexta: 9:30 às 18h' }}</p>
-            <p class="text-gray-950 p-0 m-0">{{ $footer && $footer->schedule_saturday ? $footer->schedule_saturday : 'Sábado: 9:30 às 18h' }}</p>
-        </div>
+        @if ($footer && $footer->section1_title)
+          <div class="flex flex-col text-start w-full items-center md:items-start">
+            <h3 class="text-lg font-bold text-gray-950 mb-2">{{ $footer->section1_title }}</h3>
+            <div class="text-gray-950 p-0 m-0 text-center md:text-start">{!! $footer->section1_description !!}</div>
+          </div>
+        @endif
+
+        @if ($footer && $footer->section2_title)
+          <div class="flex flex-col text-start w-full items-center md:items-start">
+            <h3 class="text-lg font-bold text-gray-950 mb-2">{{ $footer->section2_title }}</h3>
+            <div class="text-gray-950 p-0 m-0 text-center md:text-start">{!! $footer->section2_description !!}</div>
+          </div>
+        @endif
+
+        @if ($footer && $footer->section3_title)
+          <div class="flex flex-col text-start w-full items-center md:items-start">
+            <h3 class="text-lg font-bold text-gray-950 mb-2">{{ $footer->section3_title }}</h3>
+            <div class="text-gray-950 p-0 m-0 text-center md:text-start">{!! $footer->section3_description !!}</div>
+          </div>
+        @endif
       </div>
 
       <x-social-media-links />

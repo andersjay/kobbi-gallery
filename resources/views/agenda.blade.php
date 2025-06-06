@@ -13,7 +13,7 @@
                 <div class="w-full md:w-2/3">
                     <h5 class="text-[16px] text-gray-950 mb-1">{{ $nextEvent->title }}</h5>
                     <span class="block text-gray-700 mb-2 text-[14px]">{{ \Carbon\Carbon::parse($nextEvent->date)->format('d/m/Y') }}</span>
-                    <div class="text-gray-700 text-base mb-4 text-[14px]">{!! nl2br(e($nextEvent->description)) !!}</div>
+                    <div class="text-gray-700 text-base mb-4 text-[14px] text-justify">{!! nl2br(e($nextEvent->description)) !!}</div>
                     <a href="{{ route('agenda.show', $nextEvent) }}" class="w-full  text-black text-md hover:text-gray-950 hover:font-semibold transition ">Ver mais</a>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                     <div class="w-full md:w-3/4 ">
                         <h6 class="text-lg text-gray-950 mb-1 text-[16px]">{{ $event->title }}</h6>
                         <span class="block text-gray-700 text-[14px] mb-2">{{ \Carbon\Carbon::parse($event->date)->format('d/m/Y') }}</span>
-                        <div class="text-gray-700 text-base mb-1 text-[14px]">{!! \Illuminate\Support\Str::limit(strip_tags($event->description), 300) !!}</div>
+                        <div class="text-gray-700 text-base mb-1 text-[14px] text-justify">{!! \Illuminate\Support\Str::limit(strip_tags($event->description), 300) !!}</div>
                         <div class="mt-4">
                             <a href="{{ route('agenda.show', $event) }}" class="w-full text-black hover:text-gray-950 hover:font-semibold  transition">Ver mais</a>
                         </div>

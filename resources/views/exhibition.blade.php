@@ -46,7 +46,7 @@
                     @endif
                 </h3>
                 <!-- Conteúdo Principal -->
-                <div class="prose prose-lg max-w-none prose-invert columns-1 md:columns-2 w-full gap-x-10 description">
+                <div class="prose prose-lg max-w-none prose-invert columns-1 md:columns-2 w-full gap-x-10 description text-justify">
                     {!! $exhibition->description !!}
                 </div>
 
