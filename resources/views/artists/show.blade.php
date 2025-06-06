@@ -37,14 +37,15 @@
                         </div>
                         @if ($outras->count() > 0)
                             <div class="flex flex-wrap justify-center gap-6 w-full">
-                                @foreach ($outras as $idx => $artwork)
+                                @foreach ($artist->artworks as $i => $artwork)
+                                    @continue($i === 0)
                                     <div class="w-40 flex flex-col items-center">
                                         <div class="aspect-square w-full overflow-hidden bg-gray-900 mb-2">
                                             @if (is_array($artwork->images) && count($artwork->images) > 0)
                                                 <img src="{{ asset('storage/' . $artwork->images[0]) }}"
                                                     alt="{{ $artwork->name }}"
                                                     class="w-full h-full object-cover cursor-pointer"
-                                                    onclick="openArtworkModal({{ $idx + 1 }})">
+                                                    onclick="openArtworkModal({{ $i }})">
                                             @else
                                                 <div class="w-full h-full flex items-center justify-center">
                                                     <span
