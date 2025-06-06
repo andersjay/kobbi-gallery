@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-kobbi md:px-0 pt-14 mx-auto pb-10">
+    <div class="container-kobbi  pt-14 mx-auto pb-10">
         <h2 class="header-title-spacing text-3xl text-gray-950 font-light">ARTISTAS</h2>
         <div class="lg:grid lg:grid-cols-[400px_1fr] pt-12">
             <div class="w-full lg:p-4">

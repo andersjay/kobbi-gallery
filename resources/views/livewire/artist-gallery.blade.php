@@ -1,4 +1,4 @@
-<div class="container-kobbi md:px-0 pt-14 mx-auto pb-10 bg-black ">
+<div class="container-kobbi  pt-14 mx-auto pb-10 bg-black ">
     <h2 class="header-title-spacing text-3xl text-white font-light px-4">ARTISTAS</h2>
     <div class="lg:grid lg:grid-cols-[400px_1fr] pt-12">
         <div class="w-full lg:p-4">

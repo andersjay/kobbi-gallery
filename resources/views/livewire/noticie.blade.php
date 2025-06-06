@@ -1,4 +1,4 @@
-<div class="container-kobbi md:px-0 pt-14 mx-auto pb-10 border-t border-gray-800">
+<div class="container-kobbi  pt-14 mx-auto pb-10 border-t border-gray-800">
     <h2 class="header-title-spacing text-3xl text-white font-light">NOTÍCIAS</h2>
     <div class="md:grid md:grid-cols-2 md:gap-4 mt-11  content-between">
         <a href="{{$highlight->url}}" target="_blank" class="w-full flex flex-col gap-2">

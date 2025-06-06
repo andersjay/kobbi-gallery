@@ -55,6 +55,9 @@ class ExhibitionsResource extends Resource
                             ->multiple()
                             ->preload()
                             ->relationship('photographers', 'name')
+                            ->createOptionForm([
+                                TextInput::make('name')->label('Nome do fotógrafo')->required(),
+                            ])
                             ->visible(fn($get) => $get('is_collective')),
                         TextInput::make('author_name')
                             ->label('Nome do autor')

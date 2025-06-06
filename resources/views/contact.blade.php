@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container-kobbi md:px-0 pt-14 mx-auto pb-10">
+<div class="container-kobbi  pt-14 mx-auto pb-10">
     <h1 class="header-title-spacing text-3xl text-gray-950 font-light">CONTATO</h1>
    
     <div class="grid md:grid-cols-2 gap-12">

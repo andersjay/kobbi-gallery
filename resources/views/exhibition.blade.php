@@ -15,14 +15,14 @@
                         <div class="flex flex-col space-y-1">
                             <h2 class="text-white text-3xl md:text-5xl lg:text-6xl font-medium">{{ $exhibition->title }}</h2>
                             @if ($exhibition->author_name && !$exhibition->is_collective)
-                                <h3 class="text-white text-xl md:text-xl font-light text-center">{{ $exhibition->author_name }}</h3>
+                                <h3 class="text-white text-xl md:text-2xl font-light text-center">{{ $exhibition->author_name }}</h3>
                             @else
-                                <h3 class="text-white text-xl md:text-xl font-light text-center">
+                                <h3 class="text-white text-xl md:text-2xl font-light text-center">
                                     Exposição coletiva
                                 </h3>
                             @endif
                             @if ($exhibition->year)
-                                <p class="text-white text-lg md:text-xl text-justify font-light">{{ $exhibition->year }}</p>
+                                <p class="text-white text-lg md:text-2xl text-center font-light">{{ $exhibition->year }}</p>
                             @endif
                         </div>
                     </div>
@@ -36,14 +36,11 @@
     <div class="container-kobbi px-4 mx-auto mt-14">
         <div class="w-full gap-14">
             <div class="w-full">
-                <h3 class="text-2xl md:text-3xl font-medium text-black">
+                <h3 class="text-2xl md:text-3xl font-medium text-black {{$exhibition->is_collective ? 'text-center mb-4' : ''}}">
                     @if ($exhibition->is_collective && $exhibition->photographers && $exhibition->photographers->count())
-                        <div class="flex flex-col gap-1">
-                            @foreach ($exhibition->photographers as $photographer)
-                                <a href="{{ route('artists.show', $photographer->id) }}"
-                                    class=" hover:underline font-medium">{{ $photographer->name }}</a>
-                            @endforeach
-                        </div>
+                        {!! $exhibition->photographers->map(function($photographer) {
+                            return '<a href="' . route('artists.show', $photographer->id) . '" class="hover:underline font-medium">' . e($photographer->name) . '</a>';
+                        })->implode(' - ') !!}
                     @else
                         {{ $exhibition->author_name }}
                     @endif
@@ -61,7 +58,7 @@
                                 stroke='currentColor'>
                                 <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 4v16m8-8H4' />
                             </svg>
-                            Baixar PDF
+                            BAIXAR PDF
                         </a>
                     </div>
                 @endif
@@ -73,16 +70,15 @@
                     <div class="mt-10">
                         <div class="flex gap-6 overflow-x-auto pb-4">
                             @foreach ($exhibition->gallery as $idx => $item)
-                                <div class="min-w-[320px] max-w-xs flex-shrink-0 border p-4 bg-white shadow cursor-pointer obra-card"
+                                <div class="min-w-[320px] max-w-xs flex-shrink-0 p-4 cursor-pointer obra-card"
                                     data-idx="{{ $idx }}">
                                     <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] ?? '' }}"
-                                        class="w-full aspect-[4/3] object-cover mb-4">
+                                        class="w-full mb-4">
                                     <div class="space-y-1">
-                                        <p class="text-lg font-bold text-gray-900">{{ $item['name'] ?? '' }}</p>
-                                        <p class="text-sm text-gray-700">Ano: {{ $item['year'] ?? '' }}</p>
-                                        <p class="text-sm text-gray-700">Técnica: {{ $item['technique'] ?? '' }}</p>
-                                        <p class="text-sm text-gray-700">Tamanho: {{ $item['size_cm'] ?? '' }} cm</p>
-                                        <p class="text-sm text-gray-700">{{ $item['description'] ?? '' }}</p>
+                                        <p class="text-lg font-bold text-gray-900 capitalize">{{ $item['name'] ?? '' }}</p>
+                                        <p class="text-lg text-gray-700 capitalize">{{ $item['year'] ?? '' }}</p>
+                                        <p class="text-lg text-gray-700 capitalize">{{ $item['technique'] ?? '' }}</p>
+                                        <p class="text-lg text-gray-700 capitalize">{{ $item['size_cm'] ?? '' }} cm</p>
                                     </div>
                                 </div>
                             @endforeach

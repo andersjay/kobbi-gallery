@@ -36,8 +36,22 @@ h3 {
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-kobbi {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-kobbi {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 .header-title-spacing {

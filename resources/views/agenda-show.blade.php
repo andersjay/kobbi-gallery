@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-kobbi md:px-0 pt-14 mx-auto pb-10">
-    <a href="{{ route('agenda.index') }}" class="text-gray-500 hover:text-gray-950 mb-6 inline-block">&larr; Voltar para agenda</a>
-    <h1 class="header-title-spacing text-3xl md:text-4xl font-light text-gray-950">{{ $event->title }}</h1>
+<div class="container-kobbi pt-14 mx-auto pb-10">
+    <a href="{{ route('agenda.index') }}" class="text-gray-500 hover:text-gray-950 inline-block">&larr; Voltar para agenda</a>
+   <div>
+    <h1 class="text-3xl md:text-4xl font-light text-gray-950 mt-10">{{ $event->title }}</h1>
     <div class="font-bold text-lg text-gray-950 mb-6">{{ \Carbon\Carbon::parse($event->date)->format('d/m/Y') }}</div>
+   </div>
     <div class="grid md:grid-cols-2 gap-8 items-start mb-10">
         <div>
             <img src="{{ asset('storage/' . $event->cover_image) }}" alt="{{ $event->title }}" class="w-full max-w-[400px] aspect-square object-cover rounded-lg border border-gray-200 bg-[#7cc0e6] mx-auto">
