@@ -1,5 +1,5 @@
-<div class="container-kobbi  pt-14 mx-auto pb-10 bg-black ">
-    <h2 class="header-title-spacing text-3xl text-white font-light px-4">ARTISTAS</h2>
+<div class="container-kobbi pt-14 mx-auto pb-10 bg-white text-black">
+    <h2 class="header-title-spacing text-3xl text-black font-light px-4">ARTISTAS</h2>
     <div class="lg:grid lg:grid-cols-[400px_1fr] pt-12">
         <div class="w-full lg:p-4">
             <!-- Select para Mobile -->
@@ -20,7 +20,7 @@
             </ul>
         </div>
 
-        <div class="w-full p-6 text-white text-xl">
+        <div class="w-full p-6 text-black text-xl">
             <div id="container-gallery">
                 <div id="artist-gallery"></div>
             </div>
@@ -43,7 +43,7 @@
                     if (firstArtist) {
                         let firstArtistId = firstArtist.getAttribute("data-id");
                         firstArtist.classList.remove("text-gray-400");
-                        firstArtist.classList.add("text-white");
+                        firstArtist.classList.add("text-black");
                         selectArtist(firstArtistId);
                     }
                         
@@ -63,14 +63,14 @@
 
 
             document.querySelectorAll("#artist-list li").forEach(li => {
-                li.classList.remove("text-white");
+                li.classList.remove("text-black");
                 li.classList.add("text-gray-400");
             });
 
             let selectedArtist = document.querySelector(`[data-id='${artistId}']`);
             if (selectedArtist) {
                 selectedArtist.classList.remove("text-gray-400");
-                selectedArtist.classList.add("text-white");
+                selectedArtist.classList.add("text-black");
             }
 
             jQuery("#artist-gallery").nanogallery2('destroy');

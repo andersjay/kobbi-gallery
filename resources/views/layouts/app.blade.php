@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <title>Kobbi Gallery</title>
-        
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -16,15 +16,15 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <!-- jQuery -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" type="text/javascript"></script>
-        
+    <body class="jost-font antialiased bg-white text-black relative">
         <!-- nanogallery2 -->
         <link  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
         <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
-        
+
         <!-- Phosphor Icons -->
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
     </head>
-    
+
         <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('build/.vite/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -35,7 +35,7 @@
         @endif
         @livewireStyles
     </head>
-    <body class="jost-font antialiased bg-[#F3F3F3] relative">
+    <body class="jost-font antialiased relative">
         @include('layouts.navigation')
         @yield('content')
         @include('layouts.footer')

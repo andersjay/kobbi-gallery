@@ -5,7 +5,7 @@
     @if($noticies->count())
         <div class="space-y-8">
             @foreach($noticies as $notice)
-                <div class="flex flex-col md:flex-row gap-6 md:items-center  bg-[#F3F3F3] md:p-5">
+                <div class="flex flex-col md:flex-row gap-6 md:items-center bg-white md:p-5">
                     <div class="w-full md:w-1/4 flex-shrink-0 flex items-center">
                         <img src="{{ $notice->image_url }}" alt="{{ $notice->title }}" class="w-full max-w-[160px] aspect-square object-cover border border-gray-200 bg-[#7cc0e6] mx-auto">
                     </div>
@@ -23,7 +23,7 @@
             @endforeach
         </div>
     @else
-        <div class="alert alert-info mt-8 text-center text-gray-700 bg-[#F3F3F3] border-0 py-6">Nenhuma notícia cadastrada no momento.</div>
+        <div class="alert alert-info mt-8 text-center text-gray-700 bg-white border-0 py-6">Nenhuma notícia cadastrada no momento.</div>
     @endif
 
     <div class="mt-10 pt-10">
