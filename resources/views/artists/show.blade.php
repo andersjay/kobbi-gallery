@@ -226,10 +226,10 @@
                 <div class="h-[1px] bg-[#D1D1D1] w-full"></div>
             </div>
             @if ($outras->count() > 0)
-                <div class="flex flex-wrap justify-center gap-6 w-full">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                     @foreach ($artist->artworks as $i => $artwork)
                         @continue($i === 0)
-                        <div class="w-40 flex flex-col items-center">
+                        <div class="flex flex-col items-center">
                             <div class="aspect-square w-full overflow-hidden bg-gray-900 mb-2">
                                 @if (is_array($artwork->images) && count($artwork->images) > 0)
                                     <img src="{{ asset('storage/' . $artwork->images[0]) }}"
