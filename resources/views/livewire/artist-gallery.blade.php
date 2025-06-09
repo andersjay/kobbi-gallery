@@ -38,7 +38,7 @@
             .then(data => {
                 if(data) {
                     artistImages = data;
-    
+
                     let firstArtist = document.querySelector("#artist-list li");
                     if (firstArtist) {
                         let firstArtistId = firstArtist.getAttribute("data-id");
@@ -46,7 +46,7 @@
                         firstArtist.classList.add("text-black");
                         selectArtist(firstArtistId);
                     }
-                        
+
                 }
             })
             .catch(error => console.error('Erro ao carregar as imagens:', error));

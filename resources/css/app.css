@@ -21,9 +21,6 @@ p, h1, h2, h3, h4, h5, h6, span, label, input, textarea, button, div, a {
   line-height: 1.3 !important;
 }
 
-p {
-  @apply text-gray-100 my-4;
-}
 
 h2 {
   @apply text-2xl font-bold text-gray-200;
@@ -68,4 +65,3 @@ footer .container-kobbi li {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-

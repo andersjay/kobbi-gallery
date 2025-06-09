@@ -9,7 +9,7 @@
                     $gallerySetting = \App\Models\GallerySetting::first();
                 @endphp
                 @if ($gallerySetting && $gallerySetting->about)
-                    <div class="prose max-w-none text-gray-700 text-lg text-justify">{!! $gallerySetting->about !!}</div>
+                    <div class="prose max-w-none text-gray-800 text-lg text-justify">{!! $gallerySetting->about !!}</div>
                 @else
                     <div class="text-justify">
                         <p class="text-gray-700 text-lg">Fundada com a missão de explorar a fotografia e sua história, a
