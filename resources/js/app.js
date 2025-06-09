@@ -6,16 +6,16 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
   autoplay:{
-    delay: 5000,
+    delay: 7000,
     disableOnInteraction: false,
   },
-  speed: 1200,
+  speed: 1000,
 });
 
 jQuery(document).ready(function () {
   if (typeof galleryImages !== 'undefined' && Array.isArray(galleryImages)) {
       jQuery("#gallery").nanogallery2({
-          // ### gallery settings ### 
+          // ### gallery settings ###
           itemsBaseURL: '',
           items: galleryImages,
 
@@ -58,14 +58,14 @@ jQuery(document).ready(function () {
           gallerySorting: 'random',
           thumbnailDisplayOrder: 'random',
 
-          thumbnailHeight: '300', 
+          thumbnailHeight: '300',
           thumbnailWidthXS: '100%',
           thumbnailWidthSM: '50%',
-    
+
           thumbnailAlignment: 'scaled',
-          thumbnailGutterWidth: 0, 
+          thumbnailGutterWidth: 0,
           thumbnailGutterHeight: 0,
-          thumbnailBorderHorizontal: 0, 
+          thumbnailBorderHorizontal: 0,
           thumbnailBorderVertical: 0,
 
           thumbnailToolbarImage: null,
@@ -93,17 +93,17 @@ jQuery(document).ready(function () {
           },
 
           // GALLERY THEME
-          galleryTheme: { 
+          galleryTheme: {
               thumbnail: { background: '#111' }
           },
 
           // DEEP LINKING
           locationHash: true,
 
-          thumbnailGutterWidth: 1, 
+          thumbnailGutterWidth: 1,
           thumbnailGutterHeight: 1,
           thumbnailBorderHorizontal: 5,
-          thumbnailBorderVertical: 5,  
+          thumbnailBorderVertical: 5,
           thumbnailAlignment: 'center',
       });
   } else {
