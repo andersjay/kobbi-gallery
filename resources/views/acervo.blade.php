@@ -38,8 +38,7 @@
             <div class="flex-1 flex flex-col justify-center items-start md:pl-16 mt-8 md:mt-0 w-full max-w-md transition-all duration-300">
                 <div class="mb-6">
                     <div id="artwork-modal-artist" class="text-2xl font-bold text-black mb-4"></div>
-                    <div class="text-lg text-black mb-2"><span class="font-semibold">Título:</span> <span id="artwork-modal-title"></span></div>
-                    <div class="text-lg text-black mb-2"><span class="font-semibold">Ficha técnica:</span></div>
+                    <div id="artwork-modal-title" class="text-lg text-black mb-2"></div>
                     <div id="artwork-modal-desc" class="text-black text-base mb-6"></div>
                 </div>
                 <button id="modal-interest" class="bg-[#D1D1D1] text-black px-6 py-3 font-medium text-base hover:brightness-95 transition border-none" style="border:none;">Registrar interesse</button>
