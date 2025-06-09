@@ -21,7 +21,7 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="w-full p-6 text-gray-950 text-xl">
+            <div class="w-full text-gray-950 text-xl">
                 <div id="container-gallery">
                     <div id="artist-carousel" class="flex flex-col items-center justify-center min-h-[400px]"></div>
                 </div>
@@ -116,13 +116,13 @@
                     const img = document.createElement('img');
                     img.src = imgData.src;
                     img.alt = imgData.title;
-                    img.className = 'max-h-[420px] max-w-full shadow-lg mx-auto cursor-zoom-in';
+                    img.className = 'max-h-[300px] max-w-full shadow-lg mx-auto cursor-zoom-in';
                     link.appendChild(img);
                     wrapper.appendChild(link);
                 });
-                const title = document.createElement('div');
-                title.className = 'mt-4 text-center text-lg font-semibold';
-                title.textContent = currentImages[currentIndex].title;
+                // const title = document.createElement('div');
+                // title.className = 'mt-4 text-center text-lg font-semibold';
+                // title.textContent = currentImages[currentIndex].title;
                 const nav = document.createElement('div');
                 nav.className = 'flex items-center justify-center gap-8 mt-6';
                 const prevBtn = document.createElement('button');
