@@ -6,7 +6,7 @@
     @if($nextEvent)
         <div class="mb-10">
             <h4 class="text-xl text-gray-950 mb-4">PRÓXIMO EVENTO</h4>
-            <div class="flex flex-col md:flex-row  bg-[#F3F3F3] py-6">
+            <div class="flex flex-col md:flex-row bg-white py-6">
                 <div class="w-full md:w-1/3 flex-shrink-0 flex items-center justify-center">
                     <img src="{{ asset('storage/' . $nextEvent->cover_image) }}" alt="{{ $nextEvent->title }}" class="w-full max-w-[240px] aspect-square object-cover  border border-gray-200 bg-[#7cc0e6] mx-auto">
                 </div>
@@ -25,7 +25,7 @@
     @if($previousEvents->count())
         <div class="space-y-8">
             @foreach($previousEvents as $event)
-                <div class="flex flex-col md:flex-row gap-6 items-center bg-[#F3F3F3] rounded-xl p-5">
+                <div class="flex flex-col md:flex-row gap-6 items-center bg-white rounded-xl p-5">
                     <div class="w-full md:w-1/4 flex-shrink-0">
                         <img src="{{ asset('storage/' . $event->cover_image) }}" alt="{{ $event->title }}" class="w-full max-w-[160px] aspect-square object-cover bg-[#7cc0e6] mx-auto">
                     </div>
@@ -41,7 +41,7 @@
             @endforeach
         </div>
     @else
-        <div class="alert alert-info mt-8 text-center text-gray-700 bg-[#F3F3F3] border-0 rounded-lg py-6">Nenhum evento cadastrado no momento.</div>
+        <div class="alert alert-info mt-8 text-center text-gray-700 bg-white border-0 rounded-lg py-6">Nenhum evento cadastrado no momento.</div>
     @endif
     <div class="mt-10 pt-10">
       <livewire:newsletter-form />
