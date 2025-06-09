@@ -61,12 +61,8 @@
                                         <div class="mb-6">
                                             <div id="artwork-modal-artist"
                                                  class="text-2xl font-bold text-black mb-4"></div>
-                                            <div class="text-lg text-black mb-2"><span
-                                                    class="font-semibold">Título:</span>
-                                                <span id="artwork-modal-title"></span></div>
-                                            <div class="text-lg text-black mb-2"><span class="font-semibold">Ficha técnica:</span></div>
+                                            <div id="artwork-modal-title" class="text-lg text-black mb-2"></div>
                                             <div id="artwork-modal-description" class="text-black text-base mb-2"></div>
-                                            <div class="text-lg text-black mb-2"><span class="font-semibold">Descrição:</span></div>
                                             <div id="artwork-modal-desc" class="text-black text-base mb-2"></div>
                                         </div>
                                         <button id="modal-interest"
