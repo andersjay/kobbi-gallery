@@ -2,7 +2,7 @@
     $footer = \App\Models\FooterSetting::first();
 @endphp
 <footer class="bg-white text-black w-full">
-  <div class="px-8 lg:px-6 xl:px-4 container-kobbi mx-auto py-10 flex flex-col items-center md:grid md:grid-cols-[100px,1fr,150px] lg:grid lg:grid-cols-[200px,1fr,150px] gap-8 lg:gap-2">
+  <div class="px-8 lg:px-6 xl:px-4 container-kobbi py-10 flex flex-col items-center md:flex-row ">
       <a href="{{ route('home') }}" class="w-full max-w-[150px]">
           <img class="w-full" src="{{ $footer && $footer->logo ? asset('storage/' . $footer->logo) : asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery">
       </a>
@@ -17,23 +17,23 @@
           <a href="#" class=" text-sm md:text-sm lg:text-sm">LOJA</a> --}}
         {{-- </nav> --}}
 
-      <div class="flex flex-col items-center w-full md:flex-row md:justify-center md:items-start gap-8 xl:gap-24">
+      <div class="flex flex-col gap-10 md:gap-0 items-center w-full md:flex-row md:justify-center md:items-start">
         @if ($footer && $footer->section1_title)
-          <div class="flex flex-col text-start w-full items-center md:items-start">
+          <div class="flex flex-col text-start w-full max-w-[300px] items-center md:items-center">
             <h3 class="text-lg font-bold text-gray-950 mb-2">{{ $footer->section1_title }}</h3>
             <div class="text-gray-950 p-0 m-0 text-center md:text-start">{!! $footer->section1_description !!}</div>
           </div>
         @endif
 
         @if ($footer && $footer->section2_title)
-          <div class="flex flex-col text-start w-full items-center md:items-start">
+          <div class="flex flex-col text-start w-full max-w-[300px] items-center md:items-center">
             <h3 class="text-lg font-bold text-gray-950 mb-2">{{ $footer->section2_title }}</h3>
             <div class="text-gray-950 p-0 m-0 text-center md:text-start">{!! $footer->section2_description !!}</div>
           </div>
         @endif
 
         @if ($footer && $footer->section3_title)
-          <div class="flex flex-col text-start w-full items-center md:items-start">
+          <div class="flex flex-col text-start w-full max-w-[300px] items-center md:items-center">
             <h3 class="text-lg font-bold text-gray-950 mb-2">{{ $footer->section3_title }}</h3>
             <div class="text-gray-950 p-0 m-0 text-center md:text-start">{!! $footer->section3_description !!}</div>
           </div>
