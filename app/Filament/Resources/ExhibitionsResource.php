@@ -109,15 +109,6 @@ class ExhibitionsResource extends Resource
                                             ->disableToolbarButtons(['attachFiles'])
                                             ->label('Nome da obra')
                                             ->required(),
-                                        TextInput::make('year')
-                                            ->label('Ano')
-                                            ->required(),
-                                        TextInput::make('technique')
-                                            ->label('Técnica')
-                                            ->required(),
-                                        TextInput::make('size_cm')
-                                            ->label('Tamanho (cm)')
-                                            ->required(),
                                         RichEditor::make('description')
                                             ->disableToolbarButtons(['attachFiles'])
                                             ->label('Descrição')

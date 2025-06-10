@@ -35,10 +35,6 @@ class CollectionResource extends Resource
                     ->disableToolbarButtons(['attachFiles'])
                     ->label('Título')
                     ->required(),
-                Forms\Components\TextInput::make('year')
-                    ->label('Ano'),
-                Forms\Components\TextInput::make('size_cm')
-                    ->label('Tamanho (cm)'),
                 Forms\Components\FileUpload::make('image')
                     ->label('Imagem')
                     ->image()
@@ -65,10 +61,6 @@ class CollectionResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->label('Título')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('year')
-                    ->label('Ano'),
-                Tables\Columns\TextColumn::make('size_cm')
-                    ->label('Tamanho (cm)'),
             ])
             ->filters([
                 //

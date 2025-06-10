@@ -16,8 +16,7 @@
                 <div class="mt-4 text-center">
                     <div class="text-black text-base tracking-widest uppercase">{{ $obra->artist ?? 'FOTÓGRAFO' }}</div>
                     <div class="text-black text-sm mt-1">
-                        {{ $obra->title ?? '' }}@if($obra->year), {{ $obra->year }}@endif<br>
-                        @if($obra->size_cm){{ $obra->size_cm }} cm @endif
+                        {{ $obra->title ?? '' }}
                     </div>
                 </div>
             </div>
@@ -99,7 +98,7 @@
         document.getElementById('artwork-modal-img').alt = obra.title || '';
         document.getElementById('artwork-modal-artist').textContent = obra.artist || '';
         document.getElementById('artwork-modal-title').textContent = obra.title || '';
-        document.getElementById('artwork-modal-desc').textContent = (obra.year ? 'Ano: ' + obra.year + ' ' : '') + (obra.size_cm ? '| Tamanho: ' + obra.size_cm + ' cm' : '');
+        document.getElementById('artwork-modal-desc').textContent = obra.description || '';
         const additionalTextElement = document.getElementById('form-artwork-additional-text');
         if (obra.additional_text) {
             additionalTextElement.innerHTML = obra.additional_text;
@@ -121,7 +120,7 @@
         document.getElementById('form-artwork-img').alt = obra.title || '';
         document.getElementById('form-artwork-artist').textContent = obra.artist || '';
         document.getElementById('form-artwork-title').textContent = obra.title || '';
-        document.getElementById('form-artwork-desc').textContent = (obra.year ? 'Ano: ' + obra.year + ' ' : '') + (obra.size_cm ? '| Tamanho: ' + obra.size_cm + ' cm' : '');
+        document.getElementById('form-artwork-desc').textContent = obra.description || '';
         lastObra = obra;
     };
     document.getElementById('interest-form').onsubmit = function(e) {
