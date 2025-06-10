@@ -16,7 +16,7 @@ class Noticie extends Component
 
     public function mount()
     {
-        $this->noticies = Noticies::latest()->take(4)->get();
+        $this->noticies = Noticies::orderByDesc('date')->take(4)->get();
         $this->highlight = $this->noticies->shift();
     }
 

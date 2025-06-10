@@ -16,9 +16,11 @@ class Noticies extends Model
         'summary',
         'is_active',
         'url',
+        'date',
     ];
     protected $casts = [
         'is_active' => 'boolean',
+        'date' => 'date',
     ];
     protected $dates = [
         'created_at',
