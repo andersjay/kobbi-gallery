@@ -33,7 +33,8 @@ class ExhibitionsResource extends Resource
                 Section::make('Informações da exposição')
                     ->columns(2)
                     ->schema([
-                        TextInput::make('title')
+                        RichEditor::make('title')
+                            ->disableToolbarButtons(['attachFiles'])
                             ->label('Título da exposição')
                             ->required(),
                         TextInput::make('slug')
@@ -59,7 +60,8 @@ class ExhibitionsResource extends Resource
                                 TextInput::make('name')->label('Nome do fotógrafo')->required(),
                             ])
                             ->visible(fn($get) => $get('is_collective')),
-                        TextInput::make('author_name')
+                        RichEditor::make('author_name')
+                            ->disableToolbarButtons(['attachFiles'])
                             ->label('Nome do autor')
                             ->visible(fn($get) => !$get('is_collective')),
                         Section::make('Imagens da exposição')
@@ -103,7 +105,8 @@ class ExhibitionsResource extends Resource
                                     ->label('Obras')
                                     ->columnSpan(2)
                                     ->schema([
-                                        TextInput::make('name')
+                                        RichEditor::make('name')
+                                            ->disableToolbarButtons(['attachFiles'])
                                             ->label('Nome da obra')
                                             ->required(),
                                         TextInput::make('year')
@@ -115,7 +118,8 @@ class ExhibitionsResource extends Resource
                                         TextInput::make('size_cm')
                                             ->label('Tamanho (cm)')
                                             ->required(),
-                                        TextInput::make('description')
+                                        RichEditor::make('description')
+                                            ->disableToolbarButtons(['attachFiles'])
                                             ->label('Descrição')
                                             ->required(),
                                         FileUpload::make('image')
