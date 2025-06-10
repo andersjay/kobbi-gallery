@@ -74,7 +74,7 @@
                                     data-idx="{{ $idx }}">
                                     <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] ?? '' }}"
                                         class="w-full mb-4">
-                                    <div class="prose prose-sm text-gray-900 break-words">
+                                    <div class="prose prose-sm text-gray-900 break-words max-w-full">
                                         {!! $item['name'] ?? '' !!}
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@
                                     class="flex-1 flex flex-col justify-center items-start md:pl-16 mt-8 md:mt-0 w-full max-w-md transition-all duration-300">
                                     <div class="mb-6">
                                         <div id="obra-modal-title" class="text-2xl text-black mb-4 break-words"></div>
-                                        <div id="obra-modal-description" class="text-black text-base mb-6 break-words"></div>
+                                        <div id="obra-modal-description" class="prose text-black text-base mb-6 break-words max-w-full"></div>
                                     </div>
                                     <button id="obra-modal-interest"
                                         class="bg-[#D1D1D1] text-black px-6 py-3 font-medium text-base hover:brightness-95 transition border-none"
@@ -118,8 +118,8 @@
                                     <img id="obra-form-img" src="" alt=""
                                         class="w-24 h-24 object-cover mr-6 border border-gray-300">
                                     <div>
-                                        <div class="text-black break-words" id="obra-form-title"></div>
-                                        <div class="text-black break-words" id="obra-form-description"></div>
+                                        <div class="prose text-black break-words max-w-full" id="obra-form-title"></div>
+                                        <div class="prose text-black break-words max-w-full" id="obra-form-description"></div>
                                     </div>
                                 </div>
                                 <div class="mb-4">
