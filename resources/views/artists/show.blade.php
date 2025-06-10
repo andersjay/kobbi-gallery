@@ -27,7 +27,7 @@
                                     </div>
                                 @endif
                                 <div class="mt-4 text-center">
-                                    <h2 class="text-2xl font-bold text-gray-950 mb-2">{{ $destaque->name }}</h2>
+                                    <h2 class="text-2xl text-gray-950 mb-2">{{ $destaque->name }}</h2>
                                 </div>
                             </div>
 
@@ -102,25 +102,25 @@
                                         </div>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="interest-name" class="block font-semibold mb-1 text-black">Nome
+                                        <label for="interest-name" class="block  mb-1 text-black">Nome
                                             *</label>
                                         <input type="text" id="interest-name" name="name" required
                                                class="w-full border border-gray-400 px-3 py-2 text-black">
                                     </div>
                                     <div class="mb-4">
-                                        <label for="interest-email" class="block font-semibold mb-1 text-black">E-mail
+                                        <label for="interest-email" class="block  mb-1 text-black">E-mail
                                             *</label>
                                         <input type="email" id="interest-email" name="email" required
                                                class="w-full border border-gray-400 px-3 py-2 text-black">
                                     </div>
                                     <div class="mb-6">
-                                        <label for="interest-message" class="block font-semibold mb-1 text-black">Mensagem
+                                        <label for="interest-message" class="block  mb-1 text-black">Mensagem
                                             *</label>
                                         <textarea id="interest-message" name="message" required
                                                   class="w-full border border-gray-400 px-3 py-2 min-h-[120px] text-black"></textarea>
                                     </div>
                                     <button type="submit"
-                                            class="w-full bg-[#D1D1D1] text-black py-3 font-semibold text-lg hover:brightness-95 transition">
+                                            class="w-full bg-[#D1D1D1] text-black py-3  text-lg hover:brightness-95 transition">
                                         Enviar
                                         interesse
                                     </button>
@@ -240,7 +240,7 @@
                                 @endif
                             </div>
                             <div class="text-center">
-                                <span class="font-semibold text-gray-900">{{ $artwork->name }}</span>
+                                <span class=" text-gray-900">{{ $artwork->name }}</span>
                             </div>
                         </div>
                     @endforeach
