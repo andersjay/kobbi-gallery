@@ -103,19 +103,12 @@ class ExhibitionsResource extends Resource
                                     ->label('Obras')
                                     ->columnSpan(2)
                                     ->schema([
-                                        TextInput::make('name')
+                                        RichEditor::make('name')
+                                            ->disableToolbarButtons(['attachFiles'])
                                             ->label('Nome da obra')
                                             ->required(),
-                                        TextInput::make('year')
-                                            ->label('Ano')
-                                            ->required(),
-                                        TextInput::make('technique')
-                                            ->label('Técnica')
-                                            ->required(),
-                                        TextInput::make('size_cm')
-                                            ->label('Tamanho (cm)')
-                                            ->required(),
-                                        TextInput::make('description')
+                                        RichEditor::make('description')
+                                            ->disableToolbarButtons(['attachFiles'])
                                             ->label('Descrição')
                                             ->required(),
                                         FileUpload::make('image')
