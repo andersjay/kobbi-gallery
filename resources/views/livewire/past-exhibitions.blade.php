@@ -4,7 +4,7 @@
     <div class="flex flex-col gap-10 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         @foreach ($pastExhibitions as $pastExhibition)
             <div class="mt-4 flex flex-col gap-2 w-full hover:scale-105 transition-all duration-300">
-                <a href="{{ route('exhibition', $pastExhibition->id) }}" class="w-full flex flex-col gap-2">
+                <a href="{{ route('exhibition', $pastExhibition->slug) }}" class="w-full flex flex-col gap-2">
                     <div class="w-full max-w-[400px h-auto">
                         <div class="w-full aspect-square overflow-hidden">
                             <img class="w-full h-full object-cover" src="{{ asset('storage/' . $pastExhibition->image) }}"
@@ -19,7 +19,7 @@
                             {{ \Carbon\Carbon::parse($pastExhibition->start_date)->format('d/m/Y') }}</p>
                         </div>
 
-                        <a href="{{$pastExhibition->url}}" class="text-gray-700">Ver exposição</a>
+                        <a href="{{route('exhibition', $pastExhibition->slug)}}" class="text-gray-700">Ver exposição</a>
                     </div>
                 </a>
             </div>

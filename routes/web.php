@@ -29,7 +29,7 @@ Route::get('/galeria', [GalleryController::class, 'index'])->name('gallery');
 
 //Exposicoes
 Route::get('/exposicoes', [ExhibitionController::class, 'index'])->name('exhibitions');
-Route::get('/exposicoes/{id}', [ExhibitionController::class, 'exhibition'])->name('exhibition');
+Route::get('/exposicoes/{slug}', [ExhibitionController::class, 'exhibition'])->name('exhibition');
 Route::post('/exposicoes/interesse', [ExhibitionInterestController::class, 'send'])->name('exhibition.interest');
 
 //Noticias

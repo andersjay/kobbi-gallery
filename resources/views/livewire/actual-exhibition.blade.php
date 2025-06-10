@@ -3,9 +3,9 @@
 
     <div class="w-full flex flex-col gap-2 md:grid md:grid-cols-[2fr_1fr] md:gap-4 lg:grid-cols-[1fr_1fr] lg:gap-8">
         <div class="flex justify-center md:justify-start hover:scale-105 transition-all duration-300">
-            <a href="{{ route('exhibition', $actualExhibition->id) }}" class="w-full max-w-[600px] h-auto md:h-[500px]">
+            <a href="{{ route('exhibition', $actualExhibition->slug) }}" class="w-full max-w-[600px] h-auto md:h-[500px]">
                 <img class="w-full h-full aspect-square md:object-contain"
-                    src="{{ asset('storage/' . $actualExhibition->image) }}" 
+                    src="{{ asset('storage/' . $actualExhibition->image) }}"
                     alt="{{ $actualExhibition->title }}">
             </a>
         </div>

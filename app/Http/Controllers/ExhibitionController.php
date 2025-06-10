@@ -12,9 +12,9 @@ class ExhibitionController extends Controller
         $exhibitions = Exhibition::where('id', '!=', $lastExhibition->id)->get();
         return view('exhibitions', compact('exhibitions', 'lastExhibition'));
     }
-    public function exhibition($id)
+    public function exhibition($slug)
     {
-        $exhibition = \App\Models\Exhibition::with('photographers')->find($id);
+        $exhibition = \App\Models\Exhibition::with('photographers')->where('slug', $slug)->first();
         return view('exhibition', compact('exhibition'));
     }
 }
