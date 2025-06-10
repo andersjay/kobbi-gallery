@@ -11,8 +11,8 @@
                     </div>
                     <div class="w-full md:w-3/4">
                         <h6 class="text-lg text-gray-950 mb-1">{{ $notice->title }}</h6>
-                        @if($notice->created_at)
-                        <span class="block text-gray-700 mb-2">{{ \Carbon\Carbon::parse($notice->created_at)->format('d/m/Y') }}</span>
+                        @if($notice->date)
+                        <span class="block text-gray-700 mb-2">{{ \Carbon\Carbon::parse($notice->date)->format('d/m/Y') }}</span>
                         @endif
                         <div class="text-gray-700 text-base mb-1">{{ \Illuminate\Support\Str::limit(strip_tags($notice->summary), 300) }}</div>
                         <div class="mt-4">
