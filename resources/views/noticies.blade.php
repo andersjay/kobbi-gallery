@@ -16,7 +16,7 @@
                         @endif
                         <div class="text-gray-700 text-base mb-1">{{ \Illuminate\Support\Str::limit(strip_tags($notice->summary), 300) }}</div>
                         <div class="mt-4">
-                            <a href="{{ route('noticies.show', $notice->slug) }}" class="w-full text-gray-400 font-semibold text-md hover:brightness-95 transition">VER MAIS</a>
+                            <a href="{{ route('noticies.show', $notice->slug) }}" class="w-full text-gray-400 text-md hover:brightness-95 transition">VER MAIS</a>
                         </div>
                     </div>
                 </div>

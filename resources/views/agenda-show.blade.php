@@ -12,7 +12,7 @@
             <img src="{{ asset('storage/' . $event->cover_image) }}" alt="{{ $event->title }}" class="w-full max-w-[400px] aspect-square object-cover border border-gray-200 bg-[#7cc0e6]">
         </div>
         <div>
-            <div class="text-gray-700 text-base leading-relaxed text-justify">{!! nl2br(e($event->description)) !!}</div>
+            <div class="text-gray-700 text-base leading-relaxed text-justify flex-wrap break-words">{!! nl2br(e($event->description)) !!}</div>
         </div>
     </div>
     <div class="my-6 text-gray-950 flex items-center gap-2">
@@ -35,4 +35,4 @@
 <script>
     baguetteBox.run('.gallery-lightbox');
 </script>
-@endsection 
+@endsection
