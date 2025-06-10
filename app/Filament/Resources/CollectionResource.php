@@ -27,10 +27,12 @@ class CollectionResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('artist')
+                Forms\Components\RichEditor::make('artist')
+                    ->disableToolbarButtons(['attachFiles'])
                     ->label('Artista/Fotógrafo')
                     ->required(),
-                Forms\Components\TextInput::make('title')
+                Forms\Components\RichEditor::make('title')
+                    ->disableToolbarButtons(['attachFiles'])
                     ->label('Título')
                     ->required(),
                 Forms\Components\TextInput::make('year')
