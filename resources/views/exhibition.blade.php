@@ -95,11 +95,11 @@
                                         class="max-w-[32vw] max-h-[60vh] ml-8 shadow-lg bg-gray-200">
                                 </div>
                                 <div
-                                    class="flex-1 flex flex-col justify-center items-start md:pl-16 mt-8 md:mt-0 w-full max-w-md transition-all duration-300">
-                                    <div class="mb-6">
+                                    class="flex-1 flex flex-col justify-center items-start mt-8 md:mt-0 w-full max-w-md transition-all duration-300">
+
                                         <div id="obra-modal-title" class="text-2xl text-black mb-4 break-words"></div>
                                         <div id="obra-modal-description" class="prose text-black text-base mb-6 break-words max-w-full"></div>
-                                    </div>
+
                                     <button id="obra-modal-interest"
                                         class="bg-[#D1D1D1] text-black px-6 py-3 font-medium text-base hover:brightness-95 transition border-none"
                                         style="border:none;">Registrar interesse</button>
@@ -114,10 +114,10 @@
                                 <button type="button" onclick="closeObraModal()"
                                     style="position:absolute; top:32px; right:48px; font-size:3rem; color:black; background:none; border:none; cursor:pointer;">&times;</button>
                                 <span class="text-2xl mb-8 text-black">FORMULÁRIO DE INTERESSE:</span>
-                                <div class="flex items-start mb-8">
+                                <div class="flex mb-8 gap-2 break-words">
                                     <img id="obra-form-img" src="" alt=""
-                                        class="w-24 h-24 object-cover mr-6 border border-gray-300">
-                                    <div>
+                                        class="w-24 h-24 object-cover border border-gray-300">
+                                    <div class="flex flex-wrap">
                                         <div class="prose text-black break-words max-w-full" id="obra-form-title"></div>
                                         <div class="prose text-black break-words max-w-full" id="obra-form-description"></div>
                                     </div>
