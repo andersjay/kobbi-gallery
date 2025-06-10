@@ -18,8 +18,8 @@
                             <p class="text-sm text-gray-700 p-0 mt-0">
                             {{ \Carbon\Carbon::parse($pastExhibition->start_date)->format('d/m/Y') }}</p>
                         </div>
-                        
-                        <a href="#" class="text-gray-700">Ver exposição</a>
+
+                        <a href="{{$pastExhibition->url}}" class="text-gray-700">Ver exposição</a>
                     </div>
                 </a>
             </div>

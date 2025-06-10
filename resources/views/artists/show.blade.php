@@ -91,12 +91,12 @@
                                             style="position:absolute; top:32px; right:48px; font-size:3rem; color:black; background:none; border:none; cursor:pointer;">
                                         &times;
                                     </button>
-                                    <h2 class="text-2xl font-bold mb-8 text-black">CONSULTA DE INTERESSE:</h2>
+                                    <h2 class="text-2xl mb-8 text-black">CONSULTA DE INTERESSE:</h2>
                                     <div class="flex items-start mb-8">
                                         <img id="form-artwork-img" src="" alt=""
                                              class="w-24 h-24 object-cover mr-6 border border-gray-300">
                                         <div>
-                                            <div class="font-bold text-black" id="form-artwork-artist"></div>
+                                            <div class="text-black" id="form-artwork-artist"></div>
                                             <div class="text-black mt-2" id="form-artwork-title"></div>
                                             <div class="text-black" id="form-artwork-desc"></div>
                                         </div>
@@ -288,4 +288,8 @@
             });
         </script>
     @endif
+
+    <div class="pt-6">
+        <livewire:newsletter-form />
+    </div>
 @endsection
