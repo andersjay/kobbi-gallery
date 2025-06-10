@@ -54,13 +54,13 @@
                                     <div id="modal-main-content"
                                          class="flex-1 flex items-center justify-center relative transition-all duration-300">
                                         <img id="artwork-modal-img" src="" alt=""
-                                             class="max-w-[32vw] max-h-[60vh] ml-8 shadow-lg bg-gray-200">
+                                             class="md:max-w-[32vw] max-h-[60vh] md:ml-8 shadow-lg bg-gray-200">
                                     </div>
                                     <div id="modal-info-content"
                                          class="flex-1 flex flex-col justify-center items-start md:pl-16 mt-8 md:mt-0 w-full max-w-md transition-all duration-300">
                                         <div class="mb-6">
                                             <div id="artwork-modal-artist"
-                                                 class="text-2xl font-bold text-black mb-4"></div>
+                                                 class="text-xl text-black mb-4"></div>
                                             <div id="artwork-modal-title" class="text-lg text-black mb-2"></div>
                                             <div id="artwork-modal-description" class="text-black text-base mb-2"></div>
                                             <div id="artwork-modal-desc" class="text-black text-base mb-2"></div>
@@ -91,13 +91,13 @@
                                             style="position:absolute; top:32px; right:48px; font-size:3rem; color:black; background:none; border:none; cursor:pointer;">
                                         &times;
                                     </button>
-                                    <h2 class="text-2xl font-bold mb-8 text-black">FORMULÁRIO DE INTERESSE:</h2>
+                                    <h2 class="text-2xl font-bold mb-8 text-black">CONSULTA DE INTERESSE:</h2>
                                     <div class="flex items-start mb-8">
                                         <img id="form-artwork-img" src="" alt=""
                                              class="w-24 h-24 object-cover mr-6 border border-gray-300">
                                         <div>
                                             <div class="font-bold text-black" id="form-artwork-artist"></div>
-                                            <div class="text-black" id="form-artwork-title"></div>
+                                            <div class="text-black mt-2" id="form-artwork-title"></div>
                                             <div class="text-black" id="form-artwork-desc"></div>
                                         </div>
                                     </div>
