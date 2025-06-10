@@ -3,7 +3,7 @@
 @endphp
 <footer class="bg-white text-black w-full">
   <div class="px-8 lg:px-6 xl:px-4 container-kobbi py-10 flex flex-col items-center md:flex-row ">
-      <a href="{{ route('home') }}" class="w-full max-w-[150px]">
+      <a href="{{ route('home') }}" class="w-full max-w-[150px] mb-6 md:mb-0">
           <img class="w-full" src="{{ $footer && $footer->logo ? asset('storage/' . $footer->logo) : asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery">
       </a>
 
@@ -33,7 +33,7 @@
         @endif
 
         @if ($footer && $footer->section3_title)
-          <div class="flex flex-col text-start w-full max-w-[300px] items-center md:items-center">
+          <div class="flex flex-col text-start w-full max-w-[300px] items-center md:items-center mb-6 md:mb-0">
             <h3 class="text-lg font-bold text-gray-950 mb-2">{{ $footer->section3_title }}</h3>
             <div class="text-gray-950 p-0 m-0 text-center md:text-start">{!! $footer->section3_description !!}</div>
           </div>

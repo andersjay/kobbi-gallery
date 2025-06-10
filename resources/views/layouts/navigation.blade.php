@@ -40,13 +40,20 @@
     </div>
 
     <div class="lg:hidden flex w-full justify-between px-8 py-4 items-center absolute left-0 right-0 z-20">
-        <a href="{{ route('home') }}"class="w-40">
-            <img src="{{ asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery" class="w-full">
-        </a>
+        @if (request()->routeIs('home') || request()->routeIs('exhibition'))
+            <a href="{{ route('home') }}" class="w-40">
+
+                <img src="{{ asset('images/logo-white.png') }}" alt="Logo Kobbi Gallery" class="w-full">
+            </a>
+        @else
+            <a href="{{ route('home') }}" class="w-40">
+                <img src="{{ asset('images/logo-kobbi.png') }}" alt="Logo Kobbi Gallery" class="w-full">
+            </a>
+        @endif
         <div x-data="{ open: false }" class="relative w-full flex justify-end">
             <button @click="open = true"
-                class="px-4 
-             py-2 
+                class="px-4
+             py-2
               rounded-md
               {{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 ' : 'text-gray-950' }}
               ">
@@ -94,7 +101,7 @@
                     <li>
                         <a href="{{ route('noticies') }}"
                             class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('noticies') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }}">NOTÍCIAS</a>
-                    </li>   
+                    </li>
 
                     <li>
                         <a href="{{ route('acervo.index') }}"

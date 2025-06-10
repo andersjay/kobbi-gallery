@@ -31,9 +31,9 @@
 <div id="artwork-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center;">
     {{-- <button onclick="closeArtworkModal()" style="position:absolute; top:32px; right:48px; font-size:3rem; color:white; background:none; border:none; cursor:pointer;" class="hidden md:flex">&times;</button> --}}
     <div class="flex items-center justify-center w-full h-full" id="modal-overlay-bg">
-        <div id="modal-content" class="relative flex flex-col md:flex-row items-center justify-center bg-white shadow-2xl p-8 max-w-5xl w-full min-h-[500px] max-h-[80vh] mx-4">
+        <div id="modal-content" class="relative flex flex-col md:flex-row items-center justify-center bg-white shadow-2xl p-8 max-w-5xl w-full min-h-[500px] max-h-[80vh] mx-8">
             <div class="flex-1 flex items-center justify-center relative transition-all duration-300">
-                <img id="artwork-modal-img" src="" alt="" class="max-w-[32vw] max-h-[60vh] ml-8 shadow-lg bg-gray-200">
+                <img id="artwork-modal-img" src="" alt="" class="md:max-w-[32vw] max-h-[60vh] md:ml-8 shadow-lg">
             </div>
             <div class="flex-1 flex flex-col justify-center items-start md:pl-16 mt-8 md:mt-0 w-full max-w-md transition-all duration-300">
                 <div class="mb-6">
@@ -45,7 +45,7 @@
             </div>
         </div>
         <!-- Formulário de interesse -->
-        <form id="interest-form" method="POST" action="{{ route('exhibition.interest') }}" style="display:none;" class="absolute bg-white shadow-2xl p-8 max-w-2xl w-full min-h-[500px flex flex-col justify-center">
+        <form id="interest-form" method="POST" action="{{ route('exhibition.interest') }}" style="display:none;" class="absolute bg-white shadow-2xl p-8 max-w-2xl w-full min-h-[500px flex flex-col justify-center mx-4">
             @csrf
             <input type="hidden" name="collection_id" value="1"><!-- Será ajustado via JS -->
             <input type="hidden" name="obra_index" id="acervo-obra-index" value="">
@@ -145,9 +145,9 @@
                 title: 'Sucesso!',
                 text: '{{ session('success') }}',
                 confirmButtonText: 'OK',
-       
+
             });
         });
     </script>
 @endif
-@endsection 
+@endsection

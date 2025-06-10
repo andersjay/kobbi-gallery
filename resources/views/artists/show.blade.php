@@ -41,7 +41,7 @@
                             </button>
                             <div class="flex items-center justify-center w-full h-full" id="modal-overlay-bg">
                                 <div id="modal-content"
-                                     class="relative flex flex-col md:flex-row items-center justify-center bg-white shadow-2xl p-8 max-w-5xl w-full min-h-[500px] max-h-[80vh]">
+                                     class="relative flex flex-col md:flex-row items-center justify-center bg-white shadow-2xl p-8 max-w-5xl w-full min-h-[500px] max-h-[80vh] mx-8">
                                     <button id="modal-prev"
                                             class="hidden md:flex items-center justify-center bg-[#D1D1D1] hover:brightness-95 transition rounded-full w-12 h-12 absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer shadow z-10 border-none"
                                             style="background:none;">
@@ -83,7 +83,7 @@
                                 <!-- Formulário de interesse -->
                                 <form id="interest-form" method="POST" action="{{ route('exhibition.interest') }}"
                                       style="display:none;"
-                                      class="absolute bg-white shadow-2xl p-8 max-w-2xl w-full min-h-[500px] flex flex-col justify-center">
+                                      class="absolute bg-white shadow-2xl p-8 max-w-2xl w-full min-h-[500px] flex flex-col justify-center mx-7">
                                     @csrf
                                     <input type="hidden" name="artist_id" value="{{ $artist->id }}">
                                     <input type="hidden" name="obra_index" id="artist-obra-index" value="">
