@@ -6,6 +6,7 @@ use App\Filament\Resources\NoticiesResource\Pages;
 use App\Models\Noticies;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Forms\Components\DatePicker;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -41,6 +42,9 @@ class NoticiesResource extends Resource
                     ->columnSpan(2)
                     ->placeholder('Exemplo: https://www.google.com')
                     ->maxLength(255),
+                Forms\Components\DatePicker::make('date')
+                    ->label('Data')
+                    ->columns(1),
                 Forms\Components\TextInput::make('author_name')
                     ->label('Autor')
                     ->columns(1)
@@ -69,6 +73,10 @@ class NoticiesResource extends Resource
                 Tables\Columns\TextColumn::make('author_name')
                     ->label('Autor')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('date')
+                    ->label('Data')
+                    ->date()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('image_url')
                     ->label('URL da Imagem'),
                 Tables\Columns\TextColumn::make('deleted_at')
