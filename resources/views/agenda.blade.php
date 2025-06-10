@@ -32,7 +32,7 @@
                     <div class="w-full md:w-3/4 ">
                         <h6 class="text-lg text-gray-950 mb-1 text-[16px]">{{ $event->title }}</h6>
                         <span class="block text-gray-700 text-[14px] mb-2">{{ \Carbon\Carbon::parse($event->date)->format('d/m/Y') }}</span>
-                        <div class="text-gray-700 text-base mb-1 text-[14px] text-justify">{!! \Illuminate\Support\Str::limit(strip_tags($event->description), 300) !!}</div>
+                        <div class="text-gray-700 text-base mb-1 text-[14px] text-justify flex-wrap break-words">{!! \Illuminate\Support\Str::limit(strip_tags($event->description), 300) !!}</div>
                         <div class="mt-4">
                             <a href="{{ route('agenda.show', $event) }}" class="w-full text-gray-400 text-md hover:brightness-95 transition">VER MAIS</a>
                         </div>
