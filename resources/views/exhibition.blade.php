@@ -5,10 +5,10 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide text-center text-lg px-8 md:px-10 lg:px-6 xl:px-4 h-[510px] md:h-[810px] flex items-center justify-center"
                     style="background:
-                        linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 50%), 
-                        url({{ asset('storage/' . $exhibition->banner) }}); 
-                background-size: cover; 
-                background-position: center; 
+                        linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 50%),
+                        url({{ asset('storage/' . $exhibition->banner) }});
+                background-size: cover;
+                background-position: center;
                 background-repeat: no-repeat;">
 
                     <div class="max-w-[1440px] w-full mx-auto flex items-center justify-center">
@@ -75,7 +75,7 @@
                                     <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] ?? '' }}"
                                         class="w-full mb-4">
                                     <div class="space-y-1">
-                                        <p class="text-lg font-bold text-gray-900 capitalize">{{ $item['name'] ?? '' }}</p>
+                                        <p class="text-lg  text-gray-900 capitalize">{{ $item['name'] ?? '' }}</p>
                                         <p class="text-lg text-gray-700 capitalize">{{ $item['year'] ?? '' }}</p>
                                         <p class="text-lg text-gray-700 capitalize">{{ $item['technique'] ?? '' }}</p>
                                         <p class="text-lg text-gray-700 capitalize">{{ $item['size_cm'] ?? '' }} cm</p>
@@ -88,8 +88,8 @@
                     <!-- Modal de Obra -->
                     <div id="obra-modal"
                         style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center;">
-                        <button onclick="closeObraModal()"
-                            style="position:absolute; top:32px; right:48px; font-size:3rem; color:white; background:none; border:none; cursor:pointer;">&times;</button>
+{{--                        <button onclick="closeObraModal()"--}}
+{{--                            style="position:absolute; top:32px; right:48px; font-size:3rem; color:white; background:none; border:none; cursor:pointer;">&times;</button>--}}
                         <div class="flex items-center justify-center w-full h-full" id="obra-modal-overlay-bg">
                             <div id="obra-modal-content"
                                 class="relative flex flex-col md:flex-row items-center justify-center bg-white shadow-2xl p-8 max-w-5xl w-full min-h-[500px] max-h-[80vh]">
@@ -100,12 +100,12 @@
                                 <div
                                     class="flex-1 flex flex-col justify-center items-start md:pl-16 mt-8 md:mt-0 w-full max-w-md transition-all duration-300">
                                     <div class="mb-6">
-                                        <div id="obra-modal-title" class="text-2xl font-bold text-black mb-4"></div>
-                                        <div class="text-lg text-black mb-2"><span class="font-semibold">Ano:</span> <span
+                                        <div id="obra-modal-title" class="text-2xl  text-black mb-4"></div>
+                                        <div class="text-lg text-black mb-2"><span class="">Ano:</span> <span
                                                 id="obra-modal-year"></span></div>
-                                        <div class="text-lg text-black mb-2"><span class="font-semibold">Técnica:</span>
+                                        <div class="text-lg text-black mb-2"><span class="">Técnica:</span>
                                             <span id="obra-modal-technique"></span></div>
-                                        <div class="text-lg text-black mb-2"><span class="font-semibold">Tamanho:</span>
+                                        <div class="text-lg text-black mb-2"><span class="">Tamanho:</span>
                                             <span id="obra-modal-size"></span></div>
                                         <div id="obra-modal-description" class="text-black text-base mb-6"></div>
                                     </div>
@@ -122,12 +122,12 @@
                                 <input type="hidden" name="obra_index" id="obra-index" value="">
                                 <button type="button" onclick="closeObraModal()"
                                     style="position:absolute; top:32px; right:48px; font-size:3rem; color:black; background:none; border:none; cursor:pointer;">&times;</button>
-                                <h2 class="text-2xl font-bold mb-8 text-black">FORMULÁRIO DE INTERESSE:</h2>
+                                <span class="text-2xl mb-8 text-black">FORMULÁRIO DE INTERESSE:</span>
                                 <div class="flex items-start mb-8">
                                     <img id="obra-form-img" src="" alt=""
                                         class="w-24 h-24 object-cover mr-6 border border-gray-300">
                                     <div>
-                                        <div class="font-bold text-black" id="obra-form-title"></div>
+                                        <div class=" text-black" id="obra-form-title"></div>
                                         <div class="text-black" id="obra-form-year"></div>
                                         <div class="text-black" id="obra-form-technique"></div>
                                         <div class="text-black" id="obra-form-size"></div>
@@ -135,25 +135,25 @@
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="obra-interest-name" class="block font-semibold mb-1 text-black">Nome
+                                    <label for="obra-interest-name" class="block mb-1 text-black">Nome
                                         *</label>
                                     <input type="text" id="obra-interest-name" name="name" required
                                         class="w-full border border-gray-400  px-3 py-2 text-black">
                                 </div>
                                 <div class="mb-4">
-                                    <label for="obra-interest-email" class="block font-semibold mb-1 text-black">E-mail
+                                    <label for="obra-interest-email" class="block mb-1 text-black">E-mail
                                         *</label>
                                     <input type="email" id="obra-interest-email" name="email" required
                                         class="w-full border border-gray-400  px-3 py-2 text-black">
                                 </div>
                                 <div class="mb-6">
                                     <label for="obra-interest-message"
-                                        class="block font-semibold mb-1 text-black">Mensagem *</label>
+                                        class="block mb-1 text-black">Mensagem *</label>
                                     <textarea id="obra-interest-message" name="message" required
                                         class="w-full border border-gray-400  px-3 py-2 min-h-[120px] text-black"></textarea>
                                 </div>
                                 <button type="submit"
-                                    class="w-full bg-[#D1D1D1] text-black py-3  font-semibold text-lg hover:brightness-95 transition">Enviar
+                                    class="w-full bg-[#D1D1D1] text-black py-3  text-lg hover:brightness-95 transition">Enviar
                                     interesse</button>
                             </form>
                         </div>
@@ -224,7 +224,7 @@
                     <div class="bg-zinc-900 -2xl p-8 md:p-10">
                         <div class="flex flex-col items-start">
                             @if ($exhibition->author_name)
-                                <h3 class="text-2xl md:text-3xl font-bold text-black mb-6">{{ $exhibition->author_name }}</h3>
+                                <h3 class="text-2xl md:text-3xl  text-black mb-6">{{ $exhibition->author_name }}</h3>
                             @endif
                             @if ($exhibition->author_description)
                                 <div class="prose prose-lg max-w-none prose-invert prose-p:text-gray-300">
@@ -239,15 +239,15 @@
             {{-- <!-- Galeria Lateral -->
             @if ($exhibition->gallery)
                 <div class="space-y-8">
-                    <h3 class="text-2xl font-bold text-gray-950">Obras</h3>
+                    <h3 class="text-2xl  text-gray-950">Obras</h3>
                     <div class="space-y-6">
                         @foreach ($exhibition->gallery as $item)
                             <div class="relative group border rounded-xl p-4 bg-white shadow">
-                                <img src="{{ asset('storage/' . $item['image']) }}" 
-                                     alt="{{ $item['name'] ?? '' }}" 
+                                <img src="{{ asset('storage/' . $item['image']) }}"
+                                     alt="{{ $item['name'] ?? '' }}"
                                      class="w-full aspect-[4/3] object-cover rounded-xl transition-transform duration-300 group-hover:scale-[1.02] mb-4">
                                 <div class="space-y-1">
-                                    <p class="text-lg font-bold text-gray-900">{{ $item['name'] ?? '' }}</p>
+                                    <p class="text-lg  text-gray-900">{{ $item['name'] ?? '' }}</p>
                                     <p class="text-sm text-gray-700">Ano: {{ $item['year'] ?? '' }}</p>
                                     <p class="text-sm text-gray-700">Técnica: {{ $item['technique'] ?? '' }}</p>
                                     <p class="text-sm text-gray-700">Tamanho: {{ $item['size_cm'] ?? '' }} cm</p>
@@ -262,7 +262,7 @@
         <div class="mt-10 pt-10">
             <livewire:newsletter-form />
         </div>
-        
+
     </div>
     <style>
         .description * {
@@ -282,7 +282,7 @@
             });
         </script>
     @endif
-   
+
 @endsection
 
 @push('styles')
