@@ -136,13 +136,15 @@ class ExhibitionsResource extends Resource
                             ->columns(2)
                             ->schema([
                                 RichEditor::make('description')
-                                    ->label('Descrição da exposição')
-
+                                    ->label('Descrição (PT)')
+                                    ->columnSpan(1),
+                                RichEditor::make('description_en')
+                                    ->label('Description (EN)')
                                     ->columnSpan(1),
                                 RichEditor::make('summary')
                                     ->disableToolbarButtons(['attachFiles'])
                                     ->label('Resumo da exposição')
-                                    ->columnSpan(1),
+                                    ->columnSpan(2),
                                 FileUpload::make('pdf')
                                     ->label('PDF para download')
                                     ->disk('public')

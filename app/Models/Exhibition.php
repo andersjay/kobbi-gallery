@@ -20,6 +20,7 @@ class Exhibition extends Model
         'author_name',
         'author_description',
         'description',
+        'description_en',
         'summary',
         'image',
         'banner',
