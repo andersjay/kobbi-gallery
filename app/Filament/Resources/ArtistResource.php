@@ -51,7 +51,7 @@ class ArtistResource extends Resource
                                     ->required()
                                     ->maxLength(255)
                                     ->label('Nome da Obra'),
-                                Forms\Components\Textarea::make('description')
+                                Forms\Components\RichEditor::make('description')
                                     ->nullable()
                                     ->label('Descrição da Obra'),
                                 Forms\Components\FileUpload::make('images')
