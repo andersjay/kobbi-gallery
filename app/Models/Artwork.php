@@ -17,11 +17,15 @@ class Artwork extends Model
         'images',
         'year',
         'technique',
-        'size_cm'
+        'size_cm',
+        'order',
+        'featured'
     ];
 
     protected $casts = [
-        'images' => 'array'
+        'images' => 'array',
+        'featured' => 'boolean',
+        'order' => 'integer'
     ];
 
     public function artist()

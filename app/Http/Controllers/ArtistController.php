@@ -9,19 +9,25 @@ class ArtistController extends Controller
 {
     public function index()
     {
-        $artists = Artist::with('artworks')->get();
+        $artists = Artist::with(['artworks' => function ($query) {
+            $query->orderByDesc('featured')->orderBy('order');
+        }])->get();
         return view('artists.index', compact('artists'));
     }
 
     public function show($id)
     {
-        $artist = Artist::with('artworks')->findOrFail($id);
+        $artist = Artist::with(['artworks' => function ($query) {
+            $query->orderByDesc('featured')->orderBy('order');
+        }])->findOrFail($id);
         return view('artists.show', compact('artist'));
     }
 
     public function images($id)
     {
-        $artist = Artist::with('artworks')->findOrFail($id);
+        $artist = Artist::with(['artworks' => function ($query) {
+            $query->orderByDesc('featured')->orderBy('order');
+        }])->findOrFail($id);
         $images = [];
         // Imagens principais do artista
         if (is_array($artist->image)) {

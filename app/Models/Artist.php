@@ -24,6 +24,8 @@ class Artist extends Model
 
     public function artworks()
     {
-        return $this->hasMany(Artwork::class);
+        return $this->hasMany(Artwork::class)
+            ->orderByDesc('featured')
+            ->orderBy('order');
     }
 }
