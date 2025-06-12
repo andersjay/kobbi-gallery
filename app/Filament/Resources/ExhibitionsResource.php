@@ -48,7 +48,7 @@ class ExhibitionsResource extends Resource
                             ->label('Ano da exposição')
                             ->placeholder('2025'),
                         Checkbox::make('is_collective')
-                            ->label('Exposição coletiva')
+                            ->label('EXPOSIÇÃO COLETIVA')
                             ->reactive(),
                         Select::make('photographers')
                             ->label('Fotógrafos')
