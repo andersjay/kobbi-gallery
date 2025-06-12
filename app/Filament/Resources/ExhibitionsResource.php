@@ -4,14 +4,14 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ExhibitionsResource\Pages;
 use App\Models\Exhibition;
+use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -22,8 +22,11 @@ class ExhibitionsResource extends Resource
     protected static ?string $model = Exhibition::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
     protected static ?string $navigationLabel = 'Exposição';
+
     protected static ?string $pluralLabel = 'Exposições';
+
     protected static ?string $slug = 'exhibitions';
 
     public static function form(Form $form): Form
@@ -58,10 +61,16 @@ class ExhibitionsResource extends Resource
                             ->createOptionForm([
                                 TextInput::make('name')->label('Nome do fotógrafo')->required(),
                             ])
-                            ->visible(fn($get) => $get('is_collective')),
+                            ->visible(fn ($get) => $get('is_collective')),
                         TextInput::make('author_name')
                             ->label('Nome do autor')
-                            ->visible(fn($get) => !$get('is_collective')),
+                            ->visible(fn ($get) => ! $get('is_collective')),
+                        Select::make('artist_id')
+                            ->label('Página de Artista')
+                            ->relationship('artist', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->visible(fn ($get) => ! $get('is_collective')),
                         Section::make('Imagens da exposição')
                             ->columnSpan(2)
                             ->columns(2)
@@ -129,7 +138,7 @@ class ExhibitionsResource extends Resource
                                     ->addActionLabel('Adicionar obra')
                                     ->reorderableWithButtons()
                                     ->collapsible()
-                                    ->itemLabel(fn(array $state): ?string => $state['name'] ?? 'Nova obra'),
+                                    ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Nova obra'),
                             ]),
                         Section::make('Descrições da exposição')
                             ->columnSpan(2)
@@ -159,8 +168,8 @@ class ExhibitionsResource extends Resource
                         RichEditor::make('author_description')
                             ->disableToolbarButtons(['attachFiles'])
                             ->label('Descrição do autor')
-                            ->columnSpan(2)
-                    ])
+                            ->columnSpan(2),
+                    ]),
             ]);
     }
 
@@ -175,6 +184,9 @@ class ExhibitionsResource extends Resource
                     ->label('Slug'),
                 Tables\Columns\TextColumn::make('author_name')
                     ->label('Autor'),
+                Tables\Columns\TextColumn::make('artist.name')
+                    ->label('Artista')
+                    ->toggleable(),
 
             ])
             ->filters([

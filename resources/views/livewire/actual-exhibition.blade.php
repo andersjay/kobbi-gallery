@@ -1,5 +1,8 @@
 <div class="container-kobbi px-8 mx-auto space-y-4">
-    <h2 class="mt-10 md:mt-8 md:mb-8 lg:mt-0 text-xl text-gray-950 font-bold">EXPOSIÇÃO ATUAL</h2>
+    <div class="flex items-center gap-2">
+        <span class="lg:mt-0 text-lg text-gray-950">ATUAL</span>
+        <div class="h-[1px] bg-[#d1d1d1] w-full"></div>
+    </div>
 
     <div class="w-full flex flex-col gap-2 md:grid md:grid-cols-[2fr_1fr] md:gap-4 lg:grid-cols-[1fr_1fr] lg:gap-8">
         <div class="flex justify-center md:justify-start hover:scale-105 transition-all duration-300">
@@ -12,7 +15,7 @@
         <div class="">
             <div class="md:h-auto flex flex-col gap-1">
                 <h2 class="text-xl text-gray-950 font-bold mt-4 md:mt-0">{{ $actualExhibition->title }}</h2>
-                <h4 class="text-md text-gray-500">Fotógrafo: {{ $actualExhibition->author_name }}</h4>
+                <h4 class="text-md text-gray-500 {{$actualExhibition->author_name === 'Exposição Coletiva' ? 'uppercase' : '' }}">{{ $actualExhibition->author_name }}</h4>
                 <div class="actual-exhibition-summary text-md w-full text-justify">
                     {!! $actualExhibition->summary !!}
                 </div>

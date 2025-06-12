@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Exhibition extends Model
 {
-    use SoftDeletes, HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'exhibitions';
 
@@ -18,6 +18,7 @@ class Exhibition extends Model
         'title',
         'slug',
         'author_name',
+        'artist_id',
         'author_description',
         'description',
         'summary',
@@ -37,11 +38,16 @@ class Exhibition extends Model
     protected $casts = [
         'start_date' => 'date',
         'end_date' => 'date',
-        'gallery' => 'array'
+        'gallery' => 'array',
     ];
 
     public function photographers()
     {
         return $this->belongsToMany(\App\Models\Artist::class, 'exhibition_photographer', 'exhibition_id', 'artist_id');
+    }
+
+    public function artist()
+    {
+        return $this->belongsTo(Artist::class);
     }
 }
