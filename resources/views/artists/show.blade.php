@@ -253,7 +253,7 @@
                         <span class="text-gray-600 text-base text-left w-full max-w-[200px]">SOBRE O ARTISTA</span>
                         <div class="h-[1px] bg-[#D1D1D1] w-full"></div>
                     </div>
-                    <p class="text-lg text-gray-600 mb-10 text-justify  mx-auto">{{ $artist->description }}</p>
+                    <p class="text-lg text-black mb-10 text-justify  mx-auto">{{ $artist->description }}</p>
                 </div>
             @else
                 <div class="mb-10"></div>
