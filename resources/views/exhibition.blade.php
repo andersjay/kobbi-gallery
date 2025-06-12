@@ -18,7 +18,7 @@
                                 <h3 class="text-white text-xl md:text-2xl font-light text-center">{{ $exhibition->author_name }}</h3>
                             @else
                                 <h3 class="text-white text-xl md:text-2xl font-light text-center">
-                                    Exposição coletiva
+                                    EXPOSIÇÃO COLETIVA
                                 </h3>
                             @endif
                             @if ($exhibition->year)
