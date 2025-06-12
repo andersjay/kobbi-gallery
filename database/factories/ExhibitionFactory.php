@@ -33,6 +33,7 @@ class ExhibitionFactory extends Factory
             'author_name' => $this->faker->name(),
             'author_description' => $this->faker->text(100),
             'description' => $this->faker->paragraph(5),
+            'description_en' => $this->faker->paragraph(5),
             'summary' => $this->faker->sentence(10),
             'image' => $imagePath,
             'banner' => $bannerPath,

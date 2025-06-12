@@ -60,9 +60,16 @@
                     @endif
                 </h3>
                 <!-- Conteúdo Principal -->
-                <div class="prose prose-lg max-w-none prose-invert columns-1 md:columns-2 w-full gap-x-10 description text-justify">
-                    {!! $exhibition->description !!}
-                </div>
+               <div class="grid grid-cols-2 gap-2 mt-2">
+
+                   <div class="prose prose-lg max-w-none prose-invert columns-1 w-full gap-x-10 description text-justify border-r px-2">
+                       {!! $exhibition->description !!}
+                   </div>
+
+                   <div class="prose prose-lg max-w-none prose-invert columns-1 w-full gap-x-10 description text-justify">
+                       {!! $exhibition->description_en !!}
+                   </div>
+               </div>
 
                 @if ($exhibition->pdf)
                     <div class="my-6 w-full flex items-center justify-end gap-2">

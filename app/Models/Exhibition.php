@@ -21,6 +21,7 @@ class Exhibition extends Model
         'artist_id',
         'author_description',
         'description',
+        'description_en',
         'summary',
         'image',
         'banner',
