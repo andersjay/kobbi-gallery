@@ -26,20 +26,14 @@
                     <tr>
                         <td style="padding-top: 24px;">
                             <h3 style="color: #444; margin-bottom: 8px;">Detalhes da Obra</h3>
+                            @if(isset($obra['artist']))
+                                <p><strong>Artista:</strong> {!! $obra['artist'] !!}</p>
+                            @endif
                             @if(isset($obra['name']))
-                                <p><strong>Nome:</strong> {{ $obra['name'] }}</p>
-                            @endif
-                            @if(isset($obra['year']))
-                                <p><strong>Ano:</strong> {{ $obra['year'] }}</p>
-                            @endif
-                            @if(isset($obra['technique']))
-                                <p><strong>Técnica:</strong> {{ $obra['technique'] }}</p>
-                            @endif
-                            @if(isset($obra['size']))
-                                <p><strong>Tamanho:</strong> {{ $obra['size'] }}</p>
+                                <p><strong>Título:</strong> {!! $obra['name'] !!}</p>
                             @endif
                             @if(isset($obra['description']))
-                                <p><strong>Descrição:</strong> {{ $obra['description'] }}</p>
+                                <p><strong>Descrição:</strong> {!! $obra['description'] !!}</p>
                             @endif
                             @if(isset($obra['image']))
                                 <p>
