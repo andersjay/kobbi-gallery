@@ -26,9 +26,6 @@
                                         <span class="text-gray-400 text-7xl">{{ substr($destaque->name, 0, 1) }}</span>
                                     </div>
                                 @endif
-                                <div class="mt-4 text-center">
-                                    <h2 class="text-2xl text-gray-950 mb-2">{{ $destaque->name }}</h2>
-                                </div>
                             </div>
 
                         </div>
@@ -238,9 +235,6 @@
                                                         class="text-gray-400 text-4xl">{{ substr($artwork->name, 0, 1) }}</span>
                                     </div>
                                 @endif
-                            </div>
-                            <div class="text-center">
-                                <span class=" text-gray-900">{{ $artwork->name }}</span>
                             </div>
                         </div>
                     @endforeach
