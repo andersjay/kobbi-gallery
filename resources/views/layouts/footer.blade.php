@@ -21,7 +21,7 @@
         @if ($footer && $footer->section1_title)
           <div class="flex flex-col text-start w-full max-w-[300px] items-center md:items-center ">
             <div class="flex flex-col md:items-start items-center">
-                <h3 class="text-lg font-bold text-gray-950 mb-2">{{ $footer->section1_title }}</h3>
+                <span class="text-lg text-gray-950 mb-2">{{ $footer->section1_title }}</span>
                 <div class="text-gray-950 p-0 m-0 text-center md:text-start">{!! $footer->section1_description !!}</div>
             </div>
           </div>
@@ -30,7 +30,7 @@
         @if ($footer && $footer->section2_title)
           <div class="flex flex-col text-start w-full max-w-[300px] items-center md:items-center ">
             <div class="flex flex-col md:items-start items-center">
-                <h3 class="text-lg font-bold text-gray-950 mb-2 text-start">{{ $footer->section2_title }}</h3>
+                <span class="text-lg text-gray-950 mb-2 text-start">{{ $footer->section2_title }}</span>
                 <div class="text-gray-950 p-0 m-0 text-center md:text-start">{!! $footer->section2_description !!}</div>
             </div>
           </div>
@@ -39,7 +39,7 @@
         @if ($footer && $footer->section3_title)
           <div class="flex flex-col text-start w-full max-w-[300px] items-center md:items-center mb-6 md:mb-0">
             <div class="flex flex-col md:items-start items-center">
-                <h3 class="text-lg font-bold text-gray-950 mb-2">{{ $footer->section3_title }}</h3>
+                <span class="text-lg text-gray-950 mb-2">{{ $footer->section3_title }}</span>
                 <div class="text-gray-950 p-0 m-0 text-center md:text-start">{!! $footer->section3_description !!}</div>
             </div>
           </div>
