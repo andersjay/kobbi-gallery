@@ -60,10 +60,17 @@ class ArtistResource extends Resource
                                     ->directory('artworks')
                                     ->maxSize(5120)
                                     ->label('Imagens da Obra'),
+                                Forms\Components\Toggle::make('featured')
+                                    ->label('Destaque')
+                                    ->default(false),
+                                Forms\Components\TextInput::make('order')
+                                    ->numeric()
+                                    ->default(0)
+                                    ->label('Ordem'),
                             ])
                             ->columns(2)
                             ->defaultItems(1)
-                            ->reorderable(true)
+                            ->reorderable('order')
                             ->collapsible()
                             ->cloneable()
                             ->label('Obras do Artista')
