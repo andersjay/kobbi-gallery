@@ -14,12 +14,18 @@
                     <div class="max-w-[1440px] w-full mx-auto flex items-center justify-center">
                         <div class="flex flex-col space-y-1">
                             <h2 class="text-white text-3xl md:text-5xl lg:text-6xl font-medium">{{ $exhibition->title }}</h2>
-                            @if ($exhibition->author_name && !$exhibition->is_collective)
-                                <h3 class="text-white text-xl md:text-2xl font-light text-center">{{ $exhibition->author_name }}</h3>
+                            @if (!$exhibition->is_collective)
+                                @if ($exhibition->artist)
+                                    <h3 class="text-white text-xl md:text-2xl font-light text-center">
+                                        <a href="{{ route('artists.show', $exhibition->artist->id) }}" class="hover:underline">
+                                            {{ $exhibition->artist->name }}
+                                        </a>
+                                    </h3>
+                                @elseif ($exhibition->author_name)
+                                    <h3 class="text-white text-xl md:text-2xl font-light text-center">{{ $exhibition->author_name }}</h3>
+                                @endif
                             @else
-                                <h3 class="text-white text-xl md:text-2xl font-light text-center">
-                                    Exposição coletiva
-                                </h3>
+                                <h3 class="text-white text-xl md:text-2xl font-light text-center">Exposição coletiva</h3>
                             @endif
                             @if ($exhibition->year)
                                 <p class="text-white text-lg md:text-2xl text-center font-light">{{ $exhibition->year }}</p>
@@ -42,7 +48,13 @@
                             return '<a href="' . route('artists.show', $photographer->id) . '" class="hover:underline font-medium">' . e($photographer->name) . '</a>';
                         })->implode(' - ') !!}
                     @else
-                        {{ $exhibition->author_name }}
+                        @if ($exhibition->artist)
+                            <a href="{{ route('artists.show', $exhibition->artist->id) }}" class="hover:underline font-medium">
+                                {{ $exhibition->artist->name }}
+                            </a>
+                        @else
+                            {{ $exhibition->author_name }}
+                        @endif
                     @endif
                 </h3>
                 <!-- Conteúdo Principal -->
