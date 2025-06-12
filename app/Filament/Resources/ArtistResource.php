@@ -31,10 +31,10 @@ class ArtistResource extends Resource
                     ->columnSpanFull()
                     ->maxLength(255)
                     ->label('Nome'),
-                Forms\Components\Textarea::make('description')
+                Forms\Components\RichEditor::make('description')
+                    ->label('Descrição')
                     ->nullable()
-                    ->columnSpanFull()
-                    ->label('Descrição'),
+                    ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->multiple()
