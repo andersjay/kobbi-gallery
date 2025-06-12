@@ -1,5 +1,8 @@
-<div class="container-kobbi  pt-4 mx-auto pb-10 border-t border-gray-300 mt-10">
-    <h2 class="header-title-spacing text-xl text-gray-950 font-light">EXPOSIÇÕES PASSADAS</h2>
+<div class="container-kobbi  pt-4 mx-auto pb-10 mt-10">
+    <div class="flex items-center gap-2">
+        <span class="header-title-spacing text-lg text-gray-950">ANTERIORES</span>
+        <div class="h-[1px] bg-[#d1d1d1] w-full"></div>
+    </div>
 
     <div class="flex flex-col gap-10 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         @foreach ($pastExhibitions as $pastExhibition)
@@ -13,8 +16,8 @@
                     </div>
                     <div class="w-full flex flex-col gap-2">
                         <div>
-                            <h3 class="text-lg text-gray-950 font-bold mt-0 p-0">{{ $pastExhibition->title }}</h3>
-                            <p class="text-sm text-gray-700 p-0 mt-0">{{ $pastExhibition->author_name }}</p>
+                            <span class="text-md text-gray-950 mt-0 p-0">{{ $pastExhibition->title }}</span>
+                            <p class="text-sm text-gray-700 p-0 mt-0 {{$pastExhibition->author_name === 'Exposição Coletiva' ? 'uppercase' : '' }}">{{ $pastExhibition->author_name }}</p>
                             <p class="text-sm text-gray-700 p-0 mt-0">
                             {{ \Carbon\Carbon::parse($pastExhibition->start_date)->format('d/m/Y') }}</p>
                         </div>

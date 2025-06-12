@@ -13,22 +13,22 @@
 
                     <div class="max-w-[1440px] w-full mx-auto flex items-center justify-center">
                         <div class="flex flex-col space-y-1">
-                            <h2 class="text-white text-3xl md:text-5xl lg:text-6xl font-medium">{{ $exhibition->title }}</h2>
+                            <span class="text-white text-3xl md:text-3xl lg:text-4xl">{{ $exhibition->title }}</span>
                             @if (!$exhibition->is_collective)
                                 @if ($exhibition->artist)
-                                    <h3 class="text-white text-xl md:text-2xl font-light text-center">
+                                    <span class="text-white text-xl md:text-xl text-center">
                                         <a href="{{ route('artists.show', $exhibition->artist->id) }}" class="hover:underline">
                                             {{ $exhibition->artist->name }}
                                         </a>
-                                    </h3>
+                                    </span>
                                 @elseif ($exhibition->author_name)
-                                    <h3 class="text-white text-xl md:text-2xl font-light text-center">{{ $exhibition->author_name }}</h3>
+                                    <span class="text-white text-xl md:text-xl text-center">{{ $exhibition->author_name }}</span>
                                 @endif
                             @else
-                                <h3 class="text-white text-xl md:text-2xl font-light text-center">Exposição coletiva</h3>
+                                <span class="text-white text-xl md:text-2xl text-center">Exposição coletiva</span>
                             @endif
                             @if ($exhibition->year)
-                                <p class="text-white text-lg md:text-2xl text-center font-light">{{ $exhibition->year }}</p>
+                                <p class="text-white text-lg md:text-xl text-center">{{ $exhibition->year }}</p>
                             @endif
                         </div>
                     </div>

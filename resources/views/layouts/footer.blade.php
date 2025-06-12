@@ -45,7 +45,6 @@
           </div>
         @endif
       </div>
-
       <x-social-media-links />
     </div>
 
