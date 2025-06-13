@@ -45,9 +45,11 @@
         <div class="w-full gap-14">
             <div class="w-full">
                 <h3 class="text-2xl md:text-3xl font-medium text-black {{$exhibition->is_collective ? 'text-center mb-4' : ''}}">
-                    @if ($exhibition->is_collective && $exhibition->photographers && $exhibition->photographers->count())
-                        {!! $exhibition->photographers->map(function($photographer) {
-                            return '<a href="' . route('artists.show', $photographer->id) . '" class="hover:underline font-medium">' . e($photographer->name) . '</a>';
+                    @if ($exhibition->is_collective && $exhibition->collective_artists)
+                        {!! collect($exhibition->collective_artists)->map(function ($artist) {
+                            $name = e($artist['name'] ?? '');
+                            $link = $artist['link'] ?? null;
+                            return $link ? '<a href="' . e($link) . '" class="hover:underline font-medium">' . $name . '</a>' : $name;
                         })->implode(' - ') !!}
                     @else
                         @if ($exhibition->artist)

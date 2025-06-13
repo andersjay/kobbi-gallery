@@ -4,7 +4,7 @@
         <h1 class="header-title-spacing text-3xl text-gray-950 font-light">CONTATO</h1>
 
         <div>
-            <h2 class="header-title-spacing text-2xl text-gray-950 font-normal">KOBBI GALLERY</h1>
+            <h2 class="header-title-spacing text-2xl text-gray-950 font-normal">KOBBI GALLERY</h2>
 
         </div>
         <div class="grid md:grid-cols-2 gap-12">
@@ -34,12 +34,8 @@
             </div>
 
             <!-- Mapa -->
-            <div class="h-[400px] bg-zinc-900 rounded-xl overflow-hidden">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2569026678584!2d-46.69007492375836!3d-23.556713060725434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce579d0a4e1c91%3A0x102f5571d311220!2sBeco%20do%20Batman!5e0!3m2!1spt-BR!2sbr!4v1709778622599!5m2!1spt-BR!2sbr"
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+            <div class="h-[400px] overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d306.4981110836952!2d-46.686229221082236!3d-23.556123530287405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce579576ede819%3A0x72411ec7188e8c53!2sKobbi%20Gallery!5e0!3m2!1spt-BR!2sbr!4v1749851985241!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
 

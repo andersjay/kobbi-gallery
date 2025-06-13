@@ -53,14 +53,15 @@ class ExhibitionsResource extends Resource
                         Checkbox::make('is_collective')
                             ->label('EXPOSIÇÃO COLETIVA')
                             ->reactive(),
-                        Select::make('photographers')
-                            ->label('Fotógrafos')
-                            ->multiple()
-                            ->preload()
-                            ->relationship('photographers', 'name')
-                            ->createOptionForm([
-                                TextInput::make('name')->label('Nome do fotógrafo')->required(),
+                        Repeater::make('collective_artists')
+                            ->label('Artistas')
+                            ->schema([
+                                TextInput::make('name')->label('Nome')->required(),
+                                TextInput::make('link')->label('Link')->url(),
                             ])
+                            ->columns(2)
+                            ->defaultItems(0)
+                            ->addActionLabel('Adicionar artista')
                             ->visible(fn ($get) => $get('is_collective')),
                         TextInput::make('author_name')
                             ->label('Nome do autor')
