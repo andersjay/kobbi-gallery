@@ -46,15 +46,11 @@ class ArtistResource extends Resource
                     ->schema([
                         Forms\Components\Repeater::make('artworks')
                             ->relationship()
-                            ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Nova Obra')
                             ->schema([
                                 Forms\Components\TextInput::make('name')
                                     ->required()
                                     ->maxLength(255)
                                     ->label('Nome da Obra'),
-                                Forms\Components\Toggle::make('featured')
-                                    ->label('Destaque')
-                                    ->default(false),
                                 Forms\Components\RichEditor::make('description')
                                     ->nullable()
                                     ->label('Descrição da Obra'),
@@ -64,6 +60,9 @@ class ArtistResource extends Resource
                                     ->directory('artworks')
                                     ->maxSize(5120)
                                     ->label('Imagens da Obra'),
+                                Forms\Components\Toggle::make('featured')
+                                    ->label('Destaque')
+                                    ->default(false),
                                 Forms\Components\TextInput::make('order')
                                     ->numeric()
                                     ->default(0)
@@ -71,7 +70,7 @@ class ArtistResource extends Resource
                             ])
                             ->columns(2)
                             ->defaultItems(1)
-                            ->orderColumn('order')
+                            ->reorderable('order')
                             ->collapsible()
                             ->cloneable()
                             ->label('Obras do Artista')
