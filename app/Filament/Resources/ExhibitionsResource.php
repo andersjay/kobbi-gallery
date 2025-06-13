@@ -116,18 +116,13 @@ class ExhibitionsResource extends Resource
                                         TextInput::make('name')
                                             ->label('Nome da obra')
                                             ->required(),
-                                        TextInput::make('year')
-                                            ->label('Ano')
+                                        TextInput::make('artist')
+                                            ->label('Nome do artista')
                                             ->required(),
-                                        TextInput::make('technique')
-                                            ->label('Técnica')
-                                            ->required(),
-                                        TextInput::make('size_cm')
-                                            ->label('Tamanho (cm)')
-                                            ->required(),
-                                        TextInput::make('description')
+                                        RichEditor::make('description')
                                             ->label('Descrição')
-                                            ->required(),
+                                            ->disableToolbarButtons(['attachFiles'])
+                                            ->columnSpan(2),
                                         FileUpload::make('image')
                                             ->label('Imagem da obra')
                                             ->image()

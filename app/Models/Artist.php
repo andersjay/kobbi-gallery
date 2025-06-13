@@ -16,6 +16,7 @@ class Artist extends Model
         'name',
         'description',
         'image',
+        'order'
     ];
 
     protected $casts = [
