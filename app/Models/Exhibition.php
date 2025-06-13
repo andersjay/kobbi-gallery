@@ -28,6 +28,7 @@ class Exhibition extends Model
         'banner_url',
         'gallery',
         'pdf',
+        'collective_artists',
         'is_collective',
         'banner_position',
         'year',
@@ -40,6 +41,7 @@ class Exhibition extends Model
         'start_date' => 'date',
         'end_date' => 'date',
         'gallery' => 'array',
+        'collective_artists' => 'array',
     ];
 
     public function photographers()
