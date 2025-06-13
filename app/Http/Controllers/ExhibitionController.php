@@ -14,7 +14,7 @@ class ExhibitionController extends Controller
     }
     public function exhibition($slug)
     {
-        $exhibition = \App\Models\Exhibition::with('photographers')->where('slug', $slug)->first();
+        $exhibition = \App\Models\Exhibition::where('slug', $slug)->first();
         return view('exhibition', compact('exhibition'));
     }
 }
