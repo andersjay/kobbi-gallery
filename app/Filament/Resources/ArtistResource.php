@@ -70,7 +70,7 @@ class ArtistResource extends Resource
                             ])
                             ->columns(2)
                             ->defaultItems(1)
-                            ->reorderable('order')
+                            ->orderColumn('order')
                             ->collapsible()
                             ->cloneable()
                             ->label('Obras do Artista')
