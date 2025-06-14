@@ -17,7 +17,7 @@
                     <div class="w-full flex flex-col gap-2">
                         <div>
                             <span class="text-md text-gray-950 mt-0 p-0">{{ $pastExhibition->title }}</span>
-                            <p class="text-sm text-gray-700 p-0 mt-0 {{$pastExhibition->author_name === 'Exposição Coletiva' ? 'uppercase' : '' }}">{{ $pastExhibition->author_name }}</p>
+                            <p class="text-sm text-gray-700 p-0 mt-0 {{$pastExhibition->is_collective ===  1 ? 'uppercase' : '' }}">{{ $pastExhibition->is_collective ===  1 ? 'EXPOSIÇÃO COLETIVA' : $pastExhibition->author_name }}</p>
                             <p class="text-sm text-gray-700 p-0 mt-0">
                             {{ \Carbon\Carbon::parse($pastExhibition->start_date)->format('d/m/Y') }}</p>
                         </div>

@@ -91,12 +91,12 @@
                 </div>
                 @if ($exhibition->gallery)
                     <div class="mt-10">
-                        <div class="flex gap-6 overflow-x-auto pb-4">
+                        <div class="flex items-center gap-6 overflow-x-auto pb-4 h-[300px]">
                             @foreach ($exhibition->gallery as $idx => $item)
                                 <div class="min-w-[320px] max-w-xs flex-shrink-0 p-4 cursor-pointer obra-card"
-                                    data-idx="{{ $idx }}">
+                                    data-idx="{{ $idx }}" style="width: 250px; height: 250px">
                                     <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] ?? '' }}"
-                                        class="w-full mb-4">
+                                        class="w-full h-full object-contain mb-4">
                                     <div class="space-y-1">
                                         <p class="text-lg  text-gray-900 capitalize">{{ $item['name'] ?? '' }}</p>
                                         <p class="text-lg text-gray-700 capitalize">{{ $item['artist'] ?? '' }}</p>

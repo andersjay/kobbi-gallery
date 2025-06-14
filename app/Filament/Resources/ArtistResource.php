@@ -6,6 +6,7 @@ use App\Filament\Resources\ArtistResource\Pages;
 use App\Filament\Resources\ArtistResource\RelationManagers;
 use App\Models\Artist;
 use Filament\Forms;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -46,31 +47,31 @@ class ArtistResource extends Resource
                     ->schema([
                         Forms\Components\Repeater::make('artworks')
                             ->relationship()
-                            ->schema([
-                                Forms\Components\TextInput::make('name')
-                                    ->required()
-                                    ->maxLength(255)
-                                    ->label('Nome da Obra'),
-                                Forms\Components\RichEditor::make('description')
-                                    ->nullable()
-                                    ->label('Descrição da Obra'),
-                                Forms\Components\FileUpload::make('images')
-                                    ->image()
-                                    ->multiple()
-                                    ->directory('artworks')
-                                    ->maxSize(5120)
-                                    ->label('Imagens da Obra'),
-                                Forms\Components\Toggle::make('featured')
-                                    ->label('Destaque')
-                                    ->default(false),
-                                Forms\Components\TextInput::make('order')
-                                    ->numeric()
-                                    ->default(0)
-                                    ->label('Ordem'),
-                            ])
+                            ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Nova Obra')
+                                    ->schema([
+                                        Forms\Components\Hidden::make('order'),
+                                        Forms\Components\TextInput::make('name')
+                                            ->required()
+                                            ->maxLength(255)
+                                            ->label('Nome da Obra'),
+                                        Forms\Components\Toggle::make('featured')
+                                            ->label('Destaque')
+                                            ->default(false),
+                                        Forms\Components\RichEditor::make('description')
+                                            ->nullable()
+                                            ->label('Descrição da Obra'),
+                                        Forms\Components\FileUpload::make('images')
+                                            ->image()
+                                            ->multiple()
+                                            ->directory('artworks')
+                                            ->maxSize(5120)
+                                            ->label('Imagens da Obra'),
+
+                                    ])
                             ->columns(2)
                             ->defaultItems(1)
-                            ->reorderable('order')
+                            ->orderColumn('order')
+                            ->reorderable()
                             ->collapsible()
                             ->cloneable()
                             ->label('Obras do Artista')

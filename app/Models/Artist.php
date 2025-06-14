@@ -15,8 +15,7 @@ class Artist extends Model
     protected $fillable = [
         'name',
         'description',
-        'image',
-        'order'
+        'image'
     ];
 
     protected $casts = [
