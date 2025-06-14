@@ -1,11 +1,15 @@
 import './bootstrap';
 
 var swiper = new Swiper(".mySwiper", {
+  loop: true,
+  freeMode: true,
+  freeModeMomentum: false,
+  slidesPerView: 1,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  autoplay:{
+  autoplay: {
     delay: 7000,
     disableOnInteraction: false,
   },
