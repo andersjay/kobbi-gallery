@@ -128,9 +128,9 @@
                 const artworkInfo = document.getElementById('artwork-info');
                 const artworkTitle = document.getElementById('artwork-title');
                 const artworkDescription = document.getElementById('artwork-description');
-                
+
                 if (currentImages[currentIndex]) {
-                    artworkTitle.textContent = currentImages[currentIndex].title || 'Sem título';
+                    // artworkTitle.textContent = currentImages[currentIndex].title || 'Sem título';
                     artworkDescription.textContent = currentImages[currentIndex].description || '';
                     artworkInfo.classList.remove('hidden');
                 } else {

@@ -14,7 +14,7 @@
         </div>
         <div class="">
             <div class="md:h-auto flex flex-col gap-1">
-                <h2 class="text-xl text-gray-950 font-bold mt-4 md:mt-0">{{ $actualExhibition->title }}</h2>
+                <span class="text-xl text-gray-950 mt-4 md:mt-0">{{ $actualExhibition->title }}</span>
                 <h4 class="text-md text-gray-500 {{$actualExhibition->is_collective === 1 ? 'uppercase' : '' }}">{{$actualExhibition->is_collective ===  1 ? 'EXPOSIÇÃO COLETIVA' : $actualExhibition->author_name}}</h4>
                 <div class="actual-exhibition-summary text-md w-full text-justify">
                     {!! $actualExhibition->summary !!}
