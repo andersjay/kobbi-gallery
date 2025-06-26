@@ -38,7 +38,7 @@
                             </button>
                             <div class="flex items-center justify-center w-full h-full" id="modal-overlay-bg">
                                 <div id="modal-content"
-                                     class="relative flex flex-col md:flex-row bg-white shadow-2xl w-full h-full overflow-hidden">
+                                     class="relative flex flex-col md:flex-row bg-white shadow-2xl max-w-6xl w-full min-h-[600px] max-h-[85vh] mx-8 overflow-hidden">
                                     <button id="modal-prev"
                                             class="hidden md:flex items-center justify-center bg-[#D1D1D1] hover:brightness-95 transition rounded-full w-12 h-12 absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer shadow z-10 border-none"
                                             style="background:none;">
@@ -54,7 +54,7 @@
                                              class="w-full h-full object-cover">
                                     </div>
                                     <div id="modal-info-content"
-                                         class="flex-1 flex flex-col justify-center items-start p-4 md:p-8 w-full bg-white">
+                                         class="flex-1 flex flex-col justify-center items-start p-8 w-full max-w-md bg-white">
                                         <div class="mb-6">
                                             <div id="artwork-modal-artist"
                                                  class="text-xl text-black mb-4"></div>
@@ -80,7 +80,7 @@
                                 <!-- Formulário de interesse -->
                                 <form id="interest-form" method="POST" action="{{ route('exhibition.interest') }}"
                                       style="display:none;"
-                                      class="absolute bg-white shadow-2xl w-full h-full flex flex-col md:flex-row overflow-hidden">
+                                      class="absolute bg-white shadow-2xl max-w-6xl w-full min-h-[600px] flex flex-row mx-8 overflow-hidden">
                                     @csrf
                                     <input type="hidden" name="artist_id" value="{{ $artist->id }}">
                                     <input type="hidden" name="obra_index" id="artist-obra-index" value="">
@@ -88,41 +88,41 @@
                                             style="position:absolute; top:32px; right:32px; font-size:3rem; color:black; background:none; border:none; cursor:pointer; z-index:10;">
                                         &times;
                                     </button>
-                                    
+
                                     <!-- Image section - left side -->
                                     <div class="flex-1 flex items-center justify-center bg-gray-100">
                                         <img id="form-artwork-img" src="" alt=""
                                              class="w-full h-full object-cover">
                                     </div>
-                                    
+
                                     <!-- Form section - right side -->
-                                    <div class="flex-1 flex flex-col justify-center p-4 md:p-8">
+                                    <div class="flex-1 flex flex-col justify-center p-8">
                                         <span class="text-2xl mb-8 text-black">CONSULTA DE INTERESSE:</span>
                                         <div class="mb-8">
                                             <div class="text-black text-lg font-semibold" id="form-artwork-artist"></div>
                                             <div class="text-black mt-2 text-base" id="form-artwork-title"></div>
                                             <div class="text-black text-sm mt-2" id="form-artwork-desc"></div>
                                         </div>
-                                    <div class="mb-4">
-                                        <label for="interest-name" class="block  mb-1 text-black">Nome
-                                            *</label>
-                                        <input type="text" id="interest-name" name="name" required
-                                               class="w-full border border-gray-400 px-3 py-2 text-black">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="interest-email" class="block  mb-1 text-black">E-mail
-                                            *</label>
-                                        <input type="email" id="interest-email" name="email" required
-                                               class="w-full border border-gray-400 px-3 py-2 text-black">
-                                    </div>
-                                    <div class="mb-6">
-                                        <label for="interest-message" class="block  mb-1 text-black">Mensagem
-                                            *</label>
-                                        <textarea id="interest-message" name="message" required
-                                                  class="w-full border border-gray-400 px-3 py-2 min-h-[120px] text-black"></textarea>
-                                    </div>
+                                        <div class="mb-4">
+                                            <label for="interest-name" class="block  mb-1 text-black">Nome
+                                                *</label>
+                                            <input type="text" id="interest-name" name="name" required
+                                                   class="w-full border border-gray-400 px-3 py-2 text-black">
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="interest-email" class="block  mb-1 text-black">E-mail
+                                                *</label>
+                                            <input type="email" id="interest-email" name="email" required
+                                                   class="w-full border border-gray-400 px-3 py-2 text-black">
+                                        </div>
+                                        <div class="mb-6">
+                                            <label for="interest-message" class="block  mb-1 text-black">Mensagem
+                                                *</label>
+                                            <textarea id="interest-message" name="message" required
+                                                      class="w-full border border-gray-400 px-3 py-2 min-h-[120px] text-black"></textarea>
+                                        </div>
                                         <button type="submit"
-                                            class="w-full bg-[#D1D1D1] text-black py-3  text-lg hover:brightness-95 transition">
+                                                class="w-full bg-[#D1D1D1] text-black py-3  text-lg hover:brightness-95 transition">
                                             Enviar interesse
                                         </button>
                                     </div>

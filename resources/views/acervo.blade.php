@@ -29,37 +29,50 @@
 </div>
 
 <div id="artwork-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center;">
-    {{-- <button onclick="closeArtworkModal()" style="position:absolute; top:32px; right:48px; font-size:3rem; color:white; background:none; border:none; cursor:pointer;" class="hidden md:flex">&times;</button> --}}
+    <button onclick="closeArtworkModal()" style="position:absolute; top:32px; right:48px; font-size:3rem; color:white; background:none; border:none; cursor:pointer;">&times;</button>
     <div class="flex items-center justify-center w-full h-full" id="modal-overlay-bg">
-        <div id="modal-content" class="relative flex flex-col md:flex-row items-center justify-center bg-white shadow-2xl p-8 max-w-5xl w-full min-h-[500px] max-h-[80vh] mx-8">
-            <div class="flex-1 flex items-center justify-center relative transition-all duration-300">
-                <img id="artwork-modal-img" src="" alt="" class="md:max-w-[32vw] max-h-[60vh] md:ml-8 shadow-lg">
+        <div id="modal-content" class="relative flex flex-col md:flex-row bg-white shadow-2xl max-w-6xl w-full min-h-[600px] max-h-[85vh] mx-8 overflow-hidden">
+            <button id="modal-prev" class="hidden md:flex items-center justify-center bg-[#D1D1D1] hover:brightness-95 transition rounded-full w-12 h-12 absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer shadow z-10 border-none" style="background:none;">
+                <svg width="32" height="32" viewBox="0 0 32 32">
+                    <polyline points="20,8 12,16 20,24" style="fill:none;stroke:black;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"></polyline>
+                </svg>
+            </button>
+            <div id="modal-main-content" class="flex-1 flex items-center justify-center relative bg-gray-100">
+                <img id="artwork-modal-img" src="" alt="" class="w-full h-full object-cover">
             </div>
-            <div class="flex-1 flex flex-col justify-center items-start md:pl-16 mt-8 md:mt-0 w-full max-w-md transition-all duration-300">
+            <div id="modal-info-content" class="flex-1 flex flex-col justify-center items-start p-8 w-full max-w-md bg-white">
                 <div class="mb-6">
-                    <div id="artwork-modal-artist" class="text-2xl  text-black mb-4"></div>
+                    <div id="artwork-modal-artist" class="text-xl text-black mb-4"></div>
                     <div id="artwork-modal-title" class="text-lg text-black mb-2"></div>
                     <div id="artwork-modal-desc" class="text-black text-base mb-6"></div>
                 </div>
                 <button id="modal-interest" class="bg-[#D1D1D1] text-black px-6 py-3 font-medium text-base hover:brightness-95 transition border-none" style="border:none;">Registrar interesse</button>
             </div>
+            <button id="modal-next" class="hidden md:flex items-center justify-center bg-[#D1D1D1] hover:brightness-95 transition rounded-full w-12 h-12 absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer shadow z-10 border-none" style="background:none;">
+                <svg width="32" height="32" viewBox="0 0 32 32">
+                    <polyline points="12,8 20,16 12,24" style="fill:none;stroke:black;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"></polyline>
+                </svg>
+            </button>
         </div>
         <!-- Formulário de interesse -->
-        <form id="interest-form" method="POST" action="{{ route('exhibition.interest') }}" style="display:none;" class="absolute bg-white shadow-2xl p-8 max-w-2xl w-full min-h-[500px flex flex-col justify-center mx-4">
+        <form id="interest-form" method="POST" action="{{ route('acervo.interesse') }}" style="display:none;" class="absolute bg-white shadow-2xl max-w-6xl w-full min-h-[600px] flex flex-row mx-8 overflow-hidden">
             @csrf
-            <input type="hidden" name="collection_id" value="1"><!-- Será ajustado via JS -->
-            <input type="hidden" name="obra_index" id="acervo-obra-index" value="">
-            <button type="button" onclick="closeArtworkModal()" style="position:absolute; top:32px; right:48px; font-size:3rem; color:black; background:none; border:none; cursor:pointer;">&times;</button>
-            <span class="text-2xl mb-8 text-black">FORMULÁRIO DE INTERESSE:</span>
-            <div class="flex items-start mb-8">
-                <img id="form-artwork-img" src="" alt="" class="w-24 h-24 object-cover mr-6 border border-gray-300">
-                <div>
-                    <div class=" text-black" id="form-artwork-artist"></div>
-                    <div class="text-black" id="form-artwork-title"></div>
-                    <div class="text-black" id="form-artwork-desc"></div>
-                    <div class="text-gray-700 mt-4" id="form-artwork-additional-text"></div>
-                </div>
+            <input type="hidden" name="artwork_id" id="acervo-artwork-id" value="">
+            <button type="button" onclick="closeArtworkModal()" style="position:absolute; top:32px; right:32px; font-size:3rem; color:black; background:none; border:none; cursor:pointer; z-index:10;">&times;</button>
+            
+            <!-- Image section - left side -->
+            <div class="flex-1 flex items-center justify-center bg-gray-100">
+                <img id="form-artwork-img" src="" alt="" class="w-full h-full object-cover">
             </div>
+            
+            <!-- Form section - right side -->
+            <div class="flex-1 flex flex-col justify-center p-8">
+                <span class="text-2xl mb-8 text-black">CONSULTA DE INTERESSE:</span>
+                <div class="mb-8">
+                    <div class="text-black text-lg font-semibold" id="form-artwork-artist"></div>
+                    <div class="text-black mt-2 text-base" id="form-artwork-title"></div>
+                    <div class="text-black text-sm mt-2" id="form-artwork-desc"></div>
+                </div>
             <div class="mb-4">
                 <label for="interest-name" class="block mb-1 text-black">Nome *</label>
                 <input type="text" id="interest-name" name="name" required class="w-full border border-gray-400 px-3 py-2 text-black">
@@ -72,7 +85,8 @@
                 <label for="interest-message" class="block mb-1 text-black">Mensagem *</label>
                 <textarea id="interest-message" name="message" required class="w-full border border-gray-400 px-3 py-2 min-h-[120px] text-black"></textarea>
             </div>
-            <button type="submit" class="w-full bg-[#D1D1D1] text-black py-3 text-lg hover:brightness-95 transition">Enviar interesse</button>
+                <button type="submit" class="w-full bg-[#D1D1D1] text-black py-3 text-lg hover:brightness-95 transition">Enviar interesse</button>
+            </div>
         </form>
     </div>
 </div>
@@ -100,15 +114,26 @@
         document.getElementById('artwork-modal-artist').textContent = obra.artist || '';
         document.getElementById('artwork-modal-title').textContent = obra.title || '';
         document.getElementById('artwork-modal-desc').textContent = (obra.year ? 'Ano: ' + obra.year + ' ' : '') + (obra.size_cm ? '| Tamanho: ' + obra.size_cm + ' cm' : '');
-        const additionalTextElement = document.getElementById('form-artwork-additional-text');
-        if (obra.additional_text) {
-            additionalTextElement.innerHTML = obra.additional_text;
-            additionalTextElement.style.display = 'block';
-        } else {
-            additionalTextElement.innerHTML = '';
-            additionalTextElement.style.display = 'none';
-        }
+        
+        // Update navigation buttons visibility
+        document.getElementById('modal-prev').style.visibility = currentModalIdx > 0 ? 'visible' : 'hidden';
+        document.getElementById('modal-next').style.visibility = currentModalIdx < acervo.length - 1 ? 'visible' : 'hidden';
     }
+    // Navigation buttons
+    document.getElementById('modal-prev').onclick = function() {
+        if (currentModalIdx > 0) {
+            currentModalIdx--;
+            renderArtworkModal();
+        }
+    };
+    
+    document.getElementById('modal-next').onclick = function() {
+        if (currentModalIdx < acervo.length - 1) {
+            currentModalIdx++;
+            renderArtworkModal();
+        }
+    };
+    
     document.querySelectorAll('.flex.flex-col.items-center.w-auto.cursor-pointer').forEach((el, idx) => {
         el.onclick = function() { openArtworkModal(idx); };
     });
@@ -122,6 +147,7 @@
         document.getElementById('form-artwork-artist').textContent = obra.artist || '';
         document.getElementById('form-artwork-title').textContent = obra.title || '';
         document.getElementById('form-artwork-desc').textContent = (obra.year ? 'Ano: ' + obra.year + ' ' : '') + (obra.size_cm ? '| Tamanho: ' + obra.size_cm + ' cm' : '');
+        document.getElementById('acervo-artwork-id').value = obra.id;
         lastObra = obra;
     };
     document.getElementById('interest-form').onsubmit = function(e) {
@@ -133,6 +159,14 @@
     document.addEventListener('keydown', function(e) {
         if(document.getElementById('artwork-modal').style.display === 'flex') {
             if(e.key === 'Escape') closeArtworkModal();
+            else if (e.key === 'ArrowLeft' && currentModalIdx > 0) {
+                currentModalIdx--;
+                renderArtworkModal();
+            }
+            else if (e.key === 'ArrowRight' && currentModalIdx < acervo.length - 1) {
+                currentModalIdx++;
+                renderArtworkModal();
+            }
         }
     });
 </script>
