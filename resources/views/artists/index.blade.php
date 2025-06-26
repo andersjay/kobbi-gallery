@@ -4,7 +4,7 @@
     <div class="container-kobbi  pt-14 mx-auto pb-10">
         <h2 class="header-title-spacing text-3xl text-gray-950 font-light">ARTISTAS</h2>
         <div class="lg:grid lg:grid-cols-[400px_1fr] pt-12">
-            <div class="w-full lg:p-4">
+            <div class="w-full lg:p-4 lg:sticky lg:top-4 lg:self-start">
                 <div class="lg:hidden w-full px-4">
                     <select id="artist-select-mobile"
                         class="w-full h-12 text-sm bg-transparent text-black border-2 border-gray-700 rounded-lg px-4 focus:outline-none focus:border-gray-950 focus:ring-2 focus:ring-gray-950">
@@ -21,9 +21,13 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="w-full text-gray-950 text-xl">
+            <div class="w-full text-gray-950 text-xl lg:sticky lg:top-4 lg:self-start">
                 <div id="container-gallery">
                     <div id="artist-carousel" class="flex flex-col items-center justify-center min-h-[400px]"></div>
+                    <div id="artwork-info" class="mt-4 text-center hidden">
+                        <h3 id="artwork-title" class="text-lg font-semibold text-gray-950"></h3>
+                        <p id="artwork-description" class="text-sm text-gray-600 mt-2"></p>
+                    </div>
                 </div>
             </div>
 
@@ -120,9 +124,18 @@
                     link.appendChild(img);
                     wrapper.appendChild(link);
                 });
-                // const title = document.createElement('div');
-                // title.className = 'mt-4 text-center text-lg font-semibold';
-                // title.textContent = currentImages[currentIndex].title;
+                // Update artwork info
+                const artworkInfo = document.getElementById('artwork-info');
+                const artworkTitle = document.getElementById('artwork-title');
+                const artworkDescription = document.getElementById('artwork-description');
+                
+                if (currentImages[currentIndex]) {
+                    artworkTitle.textContent = currentImages[currentIndex].title || 'Sem título';
+                    artworkDescription.textContent = currentImages[currentIndex].description || '';
+                    artworkInfo.classList.remove('hidden');
+                } else {
+                    artworkInfo.classList.add('hidden');
+                }
                 const nav = document.createElement('div');
                 nav.className = 'flex items-center justify-center gap-8 mt-6';
                 const prevBtn = document.createElement('button');
@@ -148,7 +161,6 @@
                 nav.appendChild(prevBtn);
                 nav.appendChild(nextBtn);
                 carousel.appendChild(wrapper);
-                carousel.appendChild(title);
                 carousel.appendChild(nav);
                 baguetteBox.run('.gallery-lightbox-wrapper', {
                     captions: true,

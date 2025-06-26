@@ -9,7 +9,7 @@ class GalleryController extends Controller
 {
     public function index()
     {
-        $galleryImages = Gallery::latest()
+        $galleryImages = Gallery::orderBy('order')
         ->get()
         ->map(function ($image){
             return [

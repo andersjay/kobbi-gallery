@@ -13,5 +13,6 @@ class Collection extends Model
         'year',
         'size_cm',
         'additional_text',
+        'order',
     ];
 }

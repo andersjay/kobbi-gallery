@@ -34,6 +34,11 @@ class GalleryResource extends Resource
                     ->label('Imagem')
                     ->image()
                     ->required(),
+                Forms\Components\TextInput::make('order')
+                    ->label('Ordem')
+                    ->numeric()
+                    ->default(0)
+                    ->helperText('Número para ordenação (menor = primeiro)'),
             ]);
     }
 
@@ -44,6 +49,9 @@ class GalleryResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('order')
+                    ->label('Ordem')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()
@@ -57,6 +65,7 @@ class GalleryResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->defaultSort('order')
             ->filters([
                 //
             ])

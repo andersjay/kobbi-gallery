@@ -9,7 +9,7 @@ class CollectionController extends Controller
 {
     public function index()
     {
-        $acervo = Collection::all();
+        $acervo = Collection::orderBy('order')->get();
         return view('acervo', compact('acervo'));
     }
 

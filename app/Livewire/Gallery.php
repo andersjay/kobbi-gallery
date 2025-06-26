@@ -11,7 +11,7 @@ class Gallery extends Component
     
     public function mount()
     {
-        $this->images = ModelsGallery::latest()
+        $this->images = ModelsGallery::orderBy('order')
             ->take(6)
             ->get()
             ->map(function ($image){

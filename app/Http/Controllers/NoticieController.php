@@ -8,7 +8,7 @@ class NoticieController extends Controller
 {
     public function index()
     {
-        $noticies = Noticies::latest()->get();
+        $noticies = Noticies::orderByDesc('date')->get();
         return view('noticies', compact('noticies'));
     }
 

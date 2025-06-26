@@ -3,34 +3,32 @@
     <div class="container-kobbi  pt-14 mx-auto pb-10">
         <h1 class="header-title-spacing text-3xl text-gray-950 font-light">CONTATO</h1>
 
-        <div>
-            <h2 class="header-title-spacing text-2xl text-gray-950 font-normal">KOBBI GALLERY</h2>
-
+        <div class="mt-8">
+            <h2 class="text-2xl text-gray-950 font-normal mb-8">KOBBI GALLERY</h2>
         </div>
-        <div class="grid md:grid-cols-2 gap-12">
+        <div class="grid md:grid-cols-2 gap-16 mt-12">
             <!-- Seções Personalizadas de Contato -->
-            <div class="space-y-10">
+            <div class="space-y-12">
                 @if ($contactSettings && $contactSettings->section1_title)
-                    <div class="mb-12">
-                        <h2 class="text-2xl text-gray-950 font-normal">{{ $contactSettings->section1_title }}</h2>
-                        <div class="text-gray-950">{!! $contactSettings->section1_description !!}</div>
+                    <div>
+                        <h2 class="text-xl text-gray-950 font-normal mb-4">{{ $contactSettings->section1_title }}</h2>
+                        <div class="text-gray-950 text-base leading-relaxed">{!! $contactSettings->section1_description !!}</div>
                     </div>
                 @endif
 
                 @if ($contactSettings && $contactSettings->section2_title)
-                    <div class="mb-12">
-                        <h2 class="text-2xl text-gray-950 font-normal">{{ $contactSettings->section2_title }}</h2>
-                        <div class="text-gray-950">{!! $contactSettings->section2_description !!}</div>
+                    <div>
+                        <h2 class="text-xl text-gray-950 font-normal mb-4">{{ $contactSettings->section2_title }}</h2>
+                        <div class="text-gray-950 text-base leading-relaxed">{!! $contactSettings->section2_description !!}</div>
                     </div>
                 @endif
 
                 @if ($contactSettings && $contactSettings->section3_title)
-                    <div class="mb-12">
-                        <h2 class="text-2xl text-gray-950 font-normal">{{ $contactSettings->section3_title }}</h2>
-                        <div class="text-gray-950">{!! $contactSettings->section3_description !!}</div>
+                    <div>
+                        <h2 class="text-xl text-gray-950 font-normal mb-4">{{ $contactSettings->section3_title }}</h2>
+                        <div class="text-gray-950 text-base leading-relaxed">{!! $contactSettings->section3_description !!}</div>
                     </div>
                 @endif
-
             </div>
 
             <!-- Mapa -->
@@ -39,11 +37,10 @@
             </div>
         </div>
 
-        <div class="mt-12 border-t border-gray-300 py-6">
-
+        <div class="mt-16 border-t border-gray-300 pt-12">
             <!-- Formulário de Contato -->
-            <div class="space-y-4">
-                <span class="text-2xl text-gray-950">ENVIE SUA MENSAGEM</span>
+            <div class="space-y-6">
+                <h2 class="text-xl text-gray-950 font-normal mb-6">ENVIE SUA MENSAGEM</h2>
                 <form id="contactForm" method="POST" action="{{ route('exhibition.interest') }}" class="space-y-4">
                     @csrf
                     <input type="hidden" name="contato" value="1">
@@ -74,20 +71,22 @@
         </div>
 
          <!-- Lista da Equipe -->
-         @if($teams && $teams->count() > 0)
-         <div class="space-y-4  pt-10">
-            <div class="flex items-center gap-4">
-                <h2 class="text-2xl text-gray-950 font-normal pb-2">EQUIPE</h2>
+        @if($teams && $teams->count() > 0)
+        <div class="mt-16 pt-12 border-t border-gray-300">
+            <div class="flex items-center gap-4 mb-8">
+                <h2 class="text-xl text-gray-950 font-normal">EQUIPE</h2>
                 <div class="h-[1px] w-full bg-gray-300"></div>
             </div>
-             @foreach($teams as $member)
-                 <div>
-                     <div class="text-black text-base tracking-widest uppercase">{{ $member->function }}</div>
-                     <div class="text-black text-sm mt-1">{{ $member->name }}</div>
-                 </div>
-             @endforeach
-         </div>
-       @endif
+            <div class="space-y-6">
+                @foreach($teams as $member)
+                    <div class="mb-8">
+                        <div class="text-gray-950 text-base font-medium tracking-wide uppercase mb-2">{{ $member->function }}</div>
+                        <div class="text-gray-700 text-base">{{ $member->name }}</div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        @endif
 
         <div class="mt-10 pt-10">
             <livewire:newsletter-form />

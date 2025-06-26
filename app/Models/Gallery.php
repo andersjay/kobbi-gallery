@@ -11,7 +11,7 @@ class Gallery extends Model
 
     protected $table = 'galleries';
 
-    protected $fillable = ['name', 'image'];
+    protected $fillable = ['name', 'image', 'order'];
 
     protected $casts = [
         'deleted_at' => 'datetime',

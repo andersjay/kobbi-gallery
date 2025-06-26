@@ -62,13 +62,16 @@
                     @endif
                 </h3>
                 <!-- Conteúdo Principal -->
-               <div class="grid grid-cols-2 gap-2 mt-2">
+               <div class="flex flex-col md:grid md:grid-cols-2 gap-8 mt-6 relative">
 
-                   <div class="prose prose-lg max-w-none prose-invert columns-1 w-full gap-x-10 description text-justify border-r px-2">
+                   <div class="prose prose-lg max-w-none prose-invert columns-1 w-full description text-justify md:pr-4">
                        {!! $exhibition->description !!}
                    </div>
 
-                   <div class="prose prose-lg max-w-none prose-invert columns-1 w-full gap-x-10 description text-justify">
+                   <!-- Linha divisória -->
+                   <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 transform -translate-x-1/2"></div>
+
+                   <div class="prose prose-lg max-w-none prose-invert columns-1 w-full description text-justify md:pl-4 mt-8 md:mt-0">
                        {!! $exhibition->description_en !!}
                    </div>
                </div>
@@ -93,14 +96,13 @@
                     <div class="mt-10">
                         <div class="flex items-center gap-6 overflow-x-auto pb-4 h-[300px]">
                             @foreach ($exhibition->gallery as $idx => $item)
-                                <div class="min-w-[320px] max-w-xs flex-shrink-0 p-4 cursor-pointer obra-card"
+                                <div class="min-w-[320px] max-w-xs flex-shrink-0 cursor-pointer obra-card relative"
                                     data-idx="{{ $idx }}" style="width: 250px; height: 250px">
                                     <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] ?? '' }}"
-                                        class="w-full h-full object-contain mb-4">
-                                    <div class="space-y-1">
-                                        <p class="text-lg  text-gray-900 capitalize">{{ $item['name'] ?? '' }}</p>
-                                        <p class="text-lg text-gray-700 capitalize">{{ $item['artist'] ?? '' }}</p>
-                                    </div>
+                                        class="w-full h-full object-contain">
+                                    <button class="absolute bottom-2 right-2 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 px-3 py-1 text-sm font-medium rounded shadow transition">
+                                        +INFO
+                                    </button>
                                 </div>
                             @endforeach
                         </div>
@@ -109,47 +111,73 @@
                     <!-- Modal de Obra -->
                     <div id="obra-modal"
                         style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center;">
-{{--                        <button onclick="closeObraModal()"--}}
-{{--                            style="position:absolute; top:32px; right:48px; font-size:3rem; color:white; background:none; border:none; cursor:pointer;">&times;</button>--}}
+                        <button onclick="closeObraModal()"
+                                style="position:absolute; top:32px; right:48px; font-size:3rem; color:white; background:none; border:none; cursor:pointer;">
+                            &times;
+                        </button>
                         <div class="flex items-center justify-center w-full h-full" id="obra-modal-overlay-bg">
                             <div id="obra-modal-content"
-                                class="relative flex flex-col md:flex-row items-center justify-center bg-white shadow-2xl p-8 max-w-5xl w-full min-h-[500px] max-h-[80vh]">
-                                <div class="flex-1 flex items-center justify-center relative transition-all duration-300">
+                                class="relative flex flex-col md:flex-row bg-white shadow-2xl max-w-6xl w-full min-h-[600px] max-h-[85vh] mx-8 overflow-hidden">
+                                <button id="obra-modal-prev"
+                                        class="hidden md:flex items-center justify-center bg-[#D1D1D1] hover:brightness-95 transition rounded-full w-12 h-12 absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer shadow z-10 border-none"
+                                        style="background:none;">
+                                    <svg width="32" height="32" viewBox="0 0 32 32">
+                                        <polyline points="20,8 12,16 20,24"
+                                                  style="fill:none;stroke:black;stroke-width:3;stroke-linecap:round;stroke-linejoin:round">
+                                        </polyline>
+                                    </svg>
+                                </button>
+                                <div id="obra-modal-main-content"
+                                     class="flex-1 flex items-center justify-center relative bg-gray-100">
                                     <img id="obra-modal-img" src="" alt=""
-                                        class="max-w-[32vw] max-h-[60vh] ml-8 shadow-lg bg-gray-200">
+                                         class="w-full h-full object-cover">
                                 </div>
-                                <div
-                                    class="flex-1 flex flex-col justify-center items-start md:pl-16 mt-8 md:mt-0 w-full max-w-md transition-all duration-300">
+                                <div id="obra-modal-info-content"
+                                     class="flex-1 flex flex-col justify-center items-start p-8 w-full max-w-md bg-white">
                                     <div class="mb-6">
-                                        <div id="obra-modal-title" class="text-2xl  text-black mb-4"></div>
-                                        <div class="text-lg text-black mb-2">
-                                            <span id="obra-modal-artist"></span>
-                                        </div>
+                                        <div id="obra-modal-artist" class="text-xl text-black mb-4"></div>
+                                        <div id="obra-modal-title" class="text-lg text-black mb-2"></div>
                                         <div id="obra-modal-description" class="text-black text-base mb-6"></div>
                                     </div>
                                     <button id="obra-modal-interest"
                                         class="bg-[#D1D1D1] text-black px-6 py-3 font-medium text-base hover:brightness-95 transition border-none"
                                         style="border:none;">Registrar interesse</button>
                                 </div>
+                                <button id="obra-modal-next"
+                                        class="hidden md:flex items-center justify-center bg-[#D1D1D1] hover:brightness-95 transition rounded-full w-12 h-12 absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer shadow z-10 border-none"
+                                        style="background:none;">
+                                    <svg width="32" height="32" viewBox="0 0 32 32">
+                                        <polyline points="12,8 20,16 12,24"
+                                                  style="fill:none;stroke:black;stroke-width:3;stroke-linecap:round;stroke-linejoin:round">
+                                        </polyline>
+                                    </svg>
+                                </button>
                             </div>
                             <!-- Formulário de interesse -->
                             <form id="obra-interest-form" method="POST" action="{{ route('exhibition.interest') }}" style="display:none;"
-                                class="absolute bg-white shadow-2xl p-8 max-w-2xl w-full min-h-[500px] flex flex-col justify-center">
+                                class="absolute bg-white shadow-2xl max-w-6xl w-full min-h-[600px] flex flex-row mx-8 overflow-hidden">
                                 @csrf
                                 <input type="hidden" name="exhibition_id" value="{{ $exhibition->id }}">
                                 <input type="hidden" name="obra_index" id="obra-index" value="">
                                 <button type="button" onclick="closeObraModal()"
-                                    style="position:absolute; top:32px; right:48px; font-size:3rem; color:black; background:none; border:none; cursor:pointer;">&times;</button>
-                                <span class="text-2xl mb-8 text-black">FORMULÁRIO DE INTERESSE:</span>
-                                <div class="flex items-start mb-8">
+                                        style="position:absolute; top:32px; right:32px; font-size:3rem; color:black; background:none; border:none; cursor:pointer; z-index:10;">
+                                    &times;
+                                </button>
+                                
+                                <!-- Image section - left side -->
+                                <div class="flex-1 flex items-center justify-center bg-gray-100">
                                     <img id="obra-form-img" src="" alt=""
-                                        class="w-24 h-24 object-cover mr-6 border border-gray-300">
-                                    <div>
-                                        <div class=" text-black" id="obra-form-title"></div>
-                                        <div class="text-black" id="obra-form-artist"></div>
-                                        <div class="text-black" id="obra-form-description"></div>
-                                    </div>
+                                         class="w-full h-full object-cover">
                                 </div>
+                                
+                                <!-- Form section - right side -->
+                                <div class="flex-1 flex flex-col justify-center p-8">
+                                    <span class="text-2xl mb-8 text-black">CONSULTA DE INTERESSE:</span>
+                                    <div class="mb-8">
+                                        <div class="text-black text-lg font-semibold" id="obra-form-artist"></div>
+                                        <div class="text-black mt-2 text-base" id="obra-form-title"></div>
+                                        <div class="text-black text-sm mt-2" id="obra-form-description"></div>
+                                    </div>
                                 <div class="mb-4">
                                     <label for="obra-interest-name" class="block mb-1 text-black">Nome
                                         *</label>
@@ -168,9 +196,11 @@
                                     <textarea id="obra-interest-message" name="message" required
                                         class="w-full border border-gray-400  px-3 py-2 min-h-[120px] text-black"></textarea>
                                 </div>
-                                <button type="submit"
-                                    class="w-full bg-[#D1D1D1] text-black py-3  text-lg hover:brightness-95 transition">Enviar
-                                    interesse</button>
+                                    <button type="submit"
+                                        class="w-full bg-[#D1D1D1] text-black py-3  text-lg hover:brightness-95 transition">
+                                        Enviar interesse
+                                    </button>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -198,12 +228,31 @@
                             document.getElementById('obra-modal-title').textContent = obra.name || '';
                             document.getElementById('obra-modal-artist').textContent = obra.artist || '';
                             document.getElementById('obra-modal-description').innerHTML = obra.description || '';
+                            
+                            // Update navigation buttons visibility
+                            document.getElementById('obra-modal-prev').style.visibility = obraModalIdx > 0 ? 'visible' : 'hidden';
+                            document.getElementById('obra-modal-next').style.visibility = obraModalIdx < obras.length - 1 ? 'visible' : 'hidden';
                         }
                         document.querySelectorAll('.obra-card').forEach((el, idx) => {
                             el.onclick = function() {
                                 openObraModal(idx);
                             };
                         });
+                        // Navigation buttons
+                        document.getElementById('obra-modal-prev').onclick = function() {
+                            if (obraModalIdx > 0) {
+                                obraModalIdx--;
+                                renderObraModal();
+                            }
+                        };
+                        
+                        document.getElementById('obra-modal-next').onclick = function() {
+                            if (obraModalIdx < obras.length - 1) {
+                                obraModalIdx++;
+                                renderObraModal();
+                            }
+                        };
+                        
                         document.getElementById('obra-modal-interest').onclick = function() {
                             document.getElementById('obra-modal-content').style.display = 'none';
                             document.getElementById('obra-interest-form').style.display = 'flex';
@@ -224,6 +273,14 @@
                         document.addEventListener('keydown', function(e) {
                             if (document.getElementById('obra-modal').style.display === 'flex') {
                                 if (e.key === 'Escape') closeObraModal();
+                                else if (e.key === 'ArrowLeft' && obraModalIdx > 0) {
+                                    obraModalIdx--;
+                                    renderObraModal();
+                                }
+                                else if (e.key === 'ArrowRight' && obraModalIdx < obras.length - 1) {
+                                    obraModalIdx++;
+                                    renderObraModal();
+                                }
                             }
                         });
                     </script>

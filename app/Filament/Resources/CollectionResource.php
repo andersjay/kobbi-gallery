@@ -46,6 +46,11 @@ class CollectionResource extends Resource
                     ->label('Informações Adicionais')
                     ->nullable()
                     ->columnSpanFull(),
+                Forms\Components\TextInput::make('order')
+                    ->label('Ordem')
+                    ->numeric()
+                    ->default(0)
+                    ->helperText('Número para ordenação (menor = primeiro)'),
             ]);
     }
 
@@ -67,7 +72,11 @@ class CollectionResource extends Resource
                     ->label('Ano'),
                 Tables\Columns\TextColumn::make('size_cm')
                     ->label('Tamanho (cm)'),
+                Tables\Columns\TextColumn::make('order')
+                    ->label('Ordem')
+                    ->sortable(),
             ])
+            ->defaultSort('order')
             ->filters([
                 //
             ])

@@ -67,6 +67,7 @@ class EventResource extends Resource
                     ->sortable(),
                 
             ])
+            ->defaultSort('date', 'desc')
             ->filters([
                 //
             ])

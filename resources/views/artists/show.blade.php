@@ -38,9 +38,9 @@
                             </button>
                             <div class="flex items-center justify-center w-full h-full" id="modal-overlay-bg">
                                 <div id="modal-content"
-                                     class="relative flex flex-col md:flex-row items-center justify-center bg-white shadow-2xl p-8 max-w-5xl w-full min-h-[500px] max-h-[80vh] mx-8">
+                                     class="relative flex flex-col md:flex-row bg-white shadow-2xl max-w-6xl w-full min-h-[600px] max-h-[85vh] mx-8 overflow-hidden">
                                     <button id="modal-prev"
-                                            class="hidden md:flex items-center justify-center bg-[#D1D1D1] hover:brightness-95 transition rounded-full w-12 h-12 absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer shadow z-10 border-none"
+                                            class="hidden md:flex items-center justify-center bg-[#D1D1D1] hover:brightness-95 transition rounded-full w-12 h-12 absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer shadow z-10 border-none"
                                             style="background:none;">
                                         <svg width="32" height="32" viewBox="0 0 32 32">
                                             <polyline points="20,8 12,16 20,24"
@@ -49,12 +49,12 @@
                                         </svg>
                                     </button>
                                     <div id="modal-main-content"
-                                         class="flex-1 flex items-center justify-center relative transition-all duration-300">
+                                         class="flex-1 flex items-center justify-center relative bg-gray-100">
                                         <img id="artwork-modal-img" src="" alt=""
-                                             class="md:max-w-[32vw] max-h-[60vh] md:ml-8 shadow-lg bg-gray-200">
+                                             class="w-full h-full object-cover">
                                     </div>
                                     <div id="modal-info-content"
-                                         class="flex-1 flex flex-col justify-center items-start md:pl-16 mt-8 md:mt-0 w-full max-w-md transition-all duration-300">
+                                         class="flex-1 flex flex-col justify-center items-start p-8 w-full max-w-md bg-white">
                                         <div class="mb-6">
                                             <div id="artwork-modal-artist"
                                                  class="text-xl text-black mb-4"></div>
@@ -68,7 +68,7 @@
                                         </button>
                                     </div>
                                     <button id="modal-next"
-                                            class="hidden md:flex items-center justify-center bg-[#D1D1D1] hover:brightness-95 transition rounded-full w-12 h-12 absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer shadow z-10 border-none"
+                                            class="hidden md:flex items-center justify-center bg-[#D1D1D1] hover:brightness-95 transition rounded-full w-12 h-12 absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer shadow z-10 border-none"
                                             style="background:none;">
                                         <svg width="32" height="32" viewBox="0 0 32 32">
                                             <polyline points="12,8 20,16 12,24"
@@ -80,24 +80,29 @@
                                 <!-- Formulário de interesse -->
                                 <form id="interest-form" method="POST" action="{{ route('exhibition.interest') }}"
                                       style="display:none;"
-                                      class="absolute bg-white shadow-2xl p-8 max-w-2xl w-full min-h-[500px] flex flex-col justify-center mx-7">
+                                      class="absolute bg-white shadow-2xl max-w-6xl w-full min-h-[600px] flex flex-row mx-8 overflow-hidden">
                                     @csrf
                                     <input type="hidden" name="artist_id" value="{{ $artist->id }}">
                                     <input type="hidden" name="obra_index" id="artist-obra-index" value="">
                                     <button type="button" onclick="closeArtworkModal()"
-                                            style="position:absolute; top:32px; right:48px; font-size:3rem; color:black; background:none; border:none; cursor:pointer;">
+                                            style="position:absolute; top:32px; right:32px; font-size:3rem; color:black; background:none; border:none; cursor:pointer; z-index:10;">
                                         &times;
                                     </button>
-                                    <span class="text-2xl mb-8 text-black">CONSULTA DE INTERESSE:</span>
-                                    <div class="flex items-start mb-8">
+                                    
+                                    <!-- Image section - left side -->
+                                    <div class="flex-1 flex items-center justify-center bg-gray-100">
                                         <img id="form-artwork-img" src="" alt=""
-                                             class="w-24 h-24 object-cover mr-6 border border-gray-300">
-                                        <div>
-                                            <div class="text-black" id="form-artwork-artist"></div>
-                                            <div class="text-black mt-2" id="form-artwork-title"></div>
-                                            <div class="text-black" id="form-artwork-desc"></div>
-                                        </div>
+                                             class="w-full h-full object-cover">
                                     </div>
+                                    
+                                    <!-- Form section - right side -->
+                                    <div class="flex-1 flex flex-col justify-center p-8">
+                                        <span class="text-2xl mb-8 text-black">CONSULTA DE INTERESSE:</span>
+                                        <div class="mb-8">
+                                            <div class="text-black text-lg font-semibold" id="form-artwork-artist"></div>
+                                            <div class="text-black mt-2 text-base" id="form-artwork-title"></div>
+                                            <div class="text-black text-sm mt-2" id="form-artwork-desc"></div>
+                                        </div>
                                     <div class="mb-4">
                                         <label for="interest-name" class="block  mb-1 text-black">Nome
                                             *</label>
@@ -116,11 +121,11 @@
                                         <textarea id="interest-message" name="message" required
                                                   class="w-full border border-gray-400 px-3 py-2 min-h-[120px] text-black"></textarea>
                                     </div>
-                                    <button type="submit"
+                                        <button type="submit"
                                             class="w-full bg-[#D1D1D1] text-black py-3  text-lg hover:brightness-95 transition">
-                                        Enviar
-                                        interesse
-                                    </button>
+                                            Enviar interesse
+                                        </button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -150,8 +155,8 @@
                                 document.getElementById('artwork-modal-img').alt = artwork.name || '';
                                 document.getElementById('artwork-modal-artist').textContent = artwork.artist?.name || '{{ $artist->name }}';
                                 document.getElementById('artwork-modal-title').textContent = artwork.name || '';
-                                document.getElementById('artwork-modal-desc').textContent = artwork.description || '';
-                                document.getElementById('artwork-modal-description').textContent = artwork.technical_details || '';
+                                document.getElementById('artwork-modal-desc').innerHTML = artwork.description || '';
+                                document.getElementById('artwork-modal-description').innerHTML = artwork.technical_details || '';
                                 document.getElementById('modal-prev').style.visibility = currentModalIdx > 0 ? 'visible' : 'hidden';
                                 document.getElementById('modal-next').style.visibility = currentModalIdx < artworks.length - 1 ? 'visible' :
                                     'hidden';
@@ -195,7 +200,7 @@
                                 document.getElementById('form-artwork-img').alt = artwork.name || '';
                                 document.getElementById('form-artwork-artist').textContent = artwork.artist?.name || '{{ $artist->name }}';
                                 document.getElementById('form-artwork-title').textContent = artwork.name || '';
-                                document.getElementById('form-artwork-desc').textContent = artwork.description || '';
+                                document.getElementById('form-artwork-desc').innerHTML = artwork.description || '';
                                 lastArtwork = artwork;
                             };
                             document.getElementById('interest-form').onsubmit = function (e) {
@@ -244,10 +249,10 @@
             @if ($artist->description)
                 <div class="w-full">
                     <div class=" w-full flex items-center justify-center my-5">
-                        <span class="text-gray-600 text-base text-left w-full max-w-[200px]">SOBRE O ARTISTA</span>
+                        <span class="text-gray-600 text-base text-left w-full max-w-[200px]">SOBRE</span>
                         <div class="h-[1px] bg-[#D1D1D1] w-full"></div>
                     </div>
-                    <p class="text-lg text-black mb-10 text-justify  mx-auto">{{ $artist->description }}</p>
+                    <div class="text-lg text-black mb-10 text-justify  mx-auto">{!! $artist->description !!} </div>
                 </div>
             @else
                 <div class="mb-10"></div>
