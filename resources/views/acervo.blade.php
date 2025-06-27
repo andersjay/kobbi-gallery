@@ -5,17 +5,19 @@
     <h2 class="header-title-spacing text-3xl text-gray-950 font-light border-b pb-2">OBRAS</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-start">
         @foreach($acervo as $obra)
-            <div class="flex flex-col items-center w-auto cursor-pointer relative" onclick="openArtworkModal({{ $obra->id }})">
-                <div class="flex items-center justify-center relative" style="width:250px; height:250px;">
+            <div class="flex flex-col items-center w-auto cursor-pointer" onclick="openArtworkModal({{ $obra->id }})">
+                <div class="flex items-center justify-center" style="width:250px; height:250px;">
                     @if($obra->image)
                         <img src="{{ asset('storage/' . $obra->image) }}" alt="{{ $obra->title }}" class="object-contain w-full h-full" />
                     @else
                         <div class="bg-[#7cc0e6] w-full h-full flex items-center justify-center text-white text-2xl font-bold">OBRA</div>
                     @endif
-                    <button class="absolute bottom-2 right-2 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 px-3 py-1 text-sm font-medium rounded shadow transition">
-                        +INFO
-                    </button>
                 </div>
+               <div class="w-full">
+                   <button class="mt-2 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 px-3 py-1 text-sm font-medium rounded shadow transition">
+                       +INFO
+                   </button>
+               </div>
             </div>
         @endforeach
     </div>
@@ -55,12 +57,12 @@
             @csrf
             <input type="hidden" name="artwork_id" id="acervo-artwork-id" value="">
             <button type="button" onclick="closeArtworkModal()" style="position:absolute; top:32px; right:32px; font-size:3rem; color:black; background:none; border:none; cursor:pointer; z-index:10;">&times;</button>
-            
+
             <!-- Image section - left side -->
             <div class="flex-1 flex items-center justify-center bg-gray-100">
                 <img id="form-artwork-img" src="" alt="" class="w-full h-full object-cover">
             </div>
-            
+
             <!-- Form section - right side -->
             <div class="flex-1 flex flex-col justify-center p-8">
                 <span class="text-2xl mb-8 text-black">CONSULTA DE INTERESSE:</span>
@@ -110,7 +112,7 @@
         document.getElementById('artwork-modal-artist').textContent = obra.artist || '';
         document.getElementById('artwork-modal-title').textContent = obra.title || '';
         document.getElementById('artwork-modal-desc').innerHTML = obra.additional_text || '';
-        
+
         // Update navigation buttons visibility
         document.getElementById('modal-prev').style.visibility = currentModalIdx > 0 ? 'visible' : 'hidden';
         document.getElementById('modal-next').style.visibility = currentModalIdx < acervo.length - 1 ? 'visible' : 'hidden';
@@ -122,14 +124,14 @@
             renderArtworkModal();
         }
     };
-    
+
     document.getElementById('modal-next').onclick = function() {
         if (currentModalIdx < acervo.length - 1) {
             currentModalIdx++;
             renderArtworkModal();
         }
     };
-    
+
     document.querySelectorAll('.flex.flex-col.items-center.w-auto.cursor-pointer').forEach((el, idx) => {
         el.onclick = function() { openArtworkModal(idx); };
     });

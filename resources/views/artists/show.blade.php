@@ -49,9 +49,9 @@
                                         </svg>
                                     </button>
                                     <div id="modal-main-content"
-                                         class="flex-1 flex items-center justify-center relative bg-gray-100">
+                                         class="flex-1 flex items-center justify-center relative">
                                         <img id="artwork-modal-img" src="" alt=""
-                                             class="w-full h-full object-cover">
+                                             class="max-w-full max-h-full object-contain">
                                     </div>
                                     <div id="modal-info-content"
                                          class="flex-1 flex flex-col justify-center items-start p-8 w-full max-w-md bg-white">
@@ -92,7 +92,7 @@
                                     <!-- Image section - left side -->
                                     <div class="flex-1 flex items-center justify-center bg-gray-100">
                                         <img id="form-artwork-img" src="" alt=""
-                                             class="w-full h-full object-cover">
+                                             class="max-w-full max-h-full object-contain">
                                     </div>
 
                                     <!-- Form section - right side -->

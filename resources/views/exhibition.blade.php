@@ -96,7 +96,7 @@
                 </div>
                 @if ($exhibition->gallery)
                     <div class="mt-10">
-                        <div class="flex items-center gap-6 overflow-x-auto pb-4 h-[300px]">
+                        <div class="flex items-center gap-6 overflow-x-hidden pb-4 h-[300px]">
                             @foreach ($exhibition->gallery as $idx => $item)
                                 <div class="min-w-[320px] max-w-xs flex-shrink-0 cursor-pointer obra-card relative"
                                     data-idx="{{ $idx }}" style="width: 250px; height: 250px">
