@@ -19,11 +19,13 @@
                             {{ $artist->name }}
                         </li>
                     @endforeach
+
+
                 </ul>
             </div>
             <div class="w-full text-gray-950 text-xl lg:sticky lg:top-4 lg:self-start">
                 <div id="container-gallery">
-                    <div id="artist-carousel" class="flex flex-col items-center justify-center min-h-[400px]"></div>
+                    <div id="artist-carousel" class="flex flex-col items-center justify-center min-h-[500px] py-8"></div>
                     <div id="artwork-info" class="mt-4 text-center hidden">
                         <h3 id="artwork-title" class="text-lg font-semibold text-gray-950"></h3>
                         <p id="artwork-description" class="text-sm text-gray-600 mt-2"></p>
@@ -136,32 +138,7 @@
                 } else {
                     artworkInfo.classList.add('hidden');
                 }
-                const nav = document.createElement('div');
-                nav.className = 'flex items-center justify-center gap-8 mt-6';
-                const prevBtn = document.createElement('button');
-                prevBtn.innerHTML = '⟨';
-                prevBtn.className = 'text-3xl px-4 py-2 rounded hover:bg-gray-200 disabled:opacity-30';
-                prevBtn.disabled = currentIndex === 0;
-                prevBtn.onclick = function() {
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                        renderCarousel();
-                    }
-                };
-                const nextBtn = document.createElement('button');
-                nextBtn.innerHTML = '⟩';
-                nextBtn.className = 'text-3xl px-4 py-2 rounded hover:bg-gray-200 disabled:opacity-30';
-                nextBtn.disabled = currentIndex === currentImages.length - 1;
-                nextBtn.onclick = function() {
-                    if (currentIndex < currentImages.length - 1) {
-                        currentIndex++;
-                        renderCarousel();
-                    }
-                };
-                nav.appendChild(prevBtn);
-                nav.appendChild(nextBtn);
                 carousel.appendChild(wrapper);
-                carousel.appendChild(nav);
                 baguetteBox.run('.gallery-lightbox-wrapper', {
                     captions: true,
                     buttons: 'auto',

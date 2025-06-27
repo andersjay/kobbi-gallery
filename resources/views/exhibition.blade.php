@@ -13,6 +13,7 @@
 
                     <div class="max-w-[1440px] w-full mx-auto flex items-center justify-center">
                         <div class="flex flex-col space-y-1">
+
                             <span class="text-white text-3xl md:text-3xl lg:text-4xl">{{ $exhibition->title }}</span>
                             @if (!$exhibition->is_collective)
                                 @if ($exhibition->artist)
@@ -62,7 +63,7 @@
                     @endif
                 </h3>
                 <!-- Conteúdo Principal -->
-               <div class="flex flex-col md:grid md:grid-cols-2 gap-8 mt-6 relative">
+               <div class="flex flex-col md:grid md:grid-cols-2 gap-12 mt-10 relative">
 
                    <div class="prose prose-lg max-w-none prose-invert columns-1 w-full description text-justify md:pr-4">
                        {!! $exhibition->description !!}
@@ -163,13 +164,13 @@
                                         style="position:absolute; top:32px; right:32px; font-size:3rem; color:black; background:none; border:none; cursor:pointer; z-index:10;">
                                     &times;
                                 </button>
-                                
+
                                 <!-- Image section - left side -->
                                 <div class="flex-1 flex items-center justify-center bg-gray-100">
                                     <img id="obra-form-img" src="" alt=""
                                          class="w-full h-full object-cover">
                                 </div>
-                                
+
                                 <!-- Form section - right side -->
                                 <div class="flex-1 flex flex-col justify-center p-8">
                                     <span class="text-2xl mb-8 text-black">CONSULTA DE INTERESSE:</span>
@@ -228,7 +229,7 @@
                             document.getElementById('obra-modal-title').textContent = obra.name || '';
                             document.getElementById('obra-modal-artist').textContent = obra.artist || '';
                             document.getElementById('obra-modal-description').innerHTML = obra.description || '';
-                            
+
                             // Update navigation buttons visibility
                             document.getElementById('obra-modal-prev').style.visibility = obraModalIdx > 0 ? 'visible' : 'hidden';
                             document.getElementById('obra-modal-next').style.visibility = obraModalIdx < obras.length - 1 ? 'visible' : 'hidden';
@@ -245,14 +246,14 @@
                                 renderObraModal();
                             }
                         };
-                        
+
                         document.getElementById('obra-modal-next').onclick = function() {
                             if (obraModalIdx < obras.length - 1) {
                                 obraModalIdx++;
                                 renderObraModal();
                             }
                         };
-                        
+
                         document.getElementById('obra-modal-interest').onclick = function() {
                             document.getElementById('obra-modal-content').style.display = 'none';
                             document.getElementById('obra-interest-form').style.display = 'flex';

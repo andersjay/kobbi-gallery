@@ -17,7 +17,7 @@
           <a href="#" class=" text-sm md:text-sm lg:text-sm">LOJA</a> --}}
         {{-- </nav> --}}
 
-      <div class="flex flex-col gap-8 items-center w-full md:flex-row md:justify-center md:items-start md:gap-8">
+      <div class="flex flex-col gap-4 items-center w-full md:flex-row md:justify-center md:items-start md:gap-6">
         @if ($footer && $footer->section1_title)
           <div class="flex flex-col text-start w-full max-w-[300px] items-center md:items-center ">
             <div class="flex flex-col md:items-start items-center">
