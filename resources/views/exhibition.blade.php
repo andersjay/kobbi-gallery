@@ -50,7 +50,8 @@
                         {!! collect($exhibition->collective_artists)->map(function ($artist) {
                             $name = e($artist['name'] ?? '');
                             $link = $artist['link'] ?? null;
-                            return $link ? '<a href="' . e($link) . '" class="hover:underline font-medium">' . $name . '</a>' : $name;
+                            $wrappedName = '<span style="white-space: nowrap;">' . $name . '</span>';
+                            return $link ? '<a href="' . e($link) . '" class="hover:underline font-medium">' . $wrappedName . '</a>' : $wrappedName;
                         })->implode(' - ') !!}
                     @else
                         @if ($exhibition->artist)
@@ -101,7 +102,7 @@
                                     data-idx="{{ $idx }}" style="width: 250px; height: 250px">
                                     <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] ?? '' }}"
                                         class="w-full h-full object-contain">
-                                    <button class="absolute bottom-2 right-2 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 px-3 py-1 text-sm font-medium rounded shadow transition">
+                                    <button class="bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 px-3 py-1 m-0 text-sm font-medium rounded shadow transition">
                                         +INFO
                                     </button>
                                 </div>

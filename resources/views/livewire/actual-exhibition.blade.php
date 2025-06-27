@@ -15,7 +15,18 @@
         <div class="">
             <div class="md:h-auto flex flex-col gap-1">
                 <span class="text-xl text-gray-950 mt-4 md:mt-0">{{ $actualExhibition->title }}</span>
-                <h4 class="text-md text-gray-500 {{$actualExhibition->is_collective === 1 ? 'uppercase' : '' }}">{{$actualExhibition->is_collective ===  1 ? 'EXPOSIÇÃO COLETIVA' : $actualExhibition->author_name}}</h4>
+                <h4 class="text-md text-gray-500">
+                    @if ($actualExhibition->is_collective && $actualExhibition->collective_artists)
+                        {!! collect($actualExhibition->collective_artists)->map(function ($artist) {
+                            $name = e($artist['name'] ?? '');
+                            $link = $artist['link'] ?? null;
+                            $wrappedName = '<span style="white-space: nowrap;">' . $name . '</span>';
+                            return $link ? '<a href="' . e($link) . '" class="hover:underline">' . $wrappedName . '</a>' : $wrappedName;
+                        })->implode(' - ') !!}
+                    @else
+                        {{ $actualExhibition->author_name }}
+                    @endif
+                </h4>
                 <div class="actual-exhibition-summary text-md w-full text-justify">
                     {!! $actualExhibition->summary !!}
                 </div>
