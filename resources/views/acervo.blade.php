@@ -5,20 +5,16 @@
     <h2 class="header-title-spacing text-3xl text-gray-950 font-light border-b pb-2">OBRAS</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-start">
         @foreach($acervo as $obra)
-            <div class="flex flex-col items-center w-auto cursor-pointer" onclick="openArtworkModal({{ $obra->id }})">
-                <div class="flex items-center justify-center" style="width:250px; height:250px;">
+            <div class="flex flex-col items-center w-auto cursor-pointer relative" onclick="openArtworkModal({{ $obra->id }})">
+                <div class="flex items-center justify-center relative" style="width:250px; height:250px;">
                     @if($obra->image)
                         <img src="{{ asset('storage/' . $obra->image) }}" alt="{{ $obra->title }}" class="object-contain w-full h-full" />
                     @else
                         <div class="bg-[#7cc0e6] w-full h-full flex items-center justify-center text-white text-2xl font-bold">OBRA</div>
                     @endif
-                </div>
-                <div class="mt-4 text-center">
-                    <div class="text-black text-base tracking-widest uppercase">{{ $obra->artist ?? 'FOTÓGRAFO' }}</div>
-                    <div class="text-black text-sm mt-1">
-                        {{ $obra->title ?? '' }}@if($obra->year), {{ $obra->year }}@endif<br>
-                        @if($obra->size_cm){{ $obra->size_cm }} cm @endif
-                    </div>
+                    <button class="absolute bottom-2 right-2 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 px-3 py-1 text-sm font-medium rounded shadow transition">
+                        +INFO
+                    </button>
                 </div>
             </div>
         @endforeach
@@ -113,7 +109,7 @@
         document.getElementById('artwork-modal-img').alt = obra.title || '';
         document.getElementById('artwork-modal-artist').textContent = obra.artist || '';
         document.getElementById('artwork-modal-title').textContent = obra.title || '';
-        document.getElementById('artwork-modal-desc').textContent = (obra.year ? 'Ano: ' + obra.year + ' ' : '') + (obra.size_cm ? '| Tamanho: ' + obra.size_cm + ' cm' : '');
+        document.getElementById('artwork-modal-desc').innerHTML = obra.additional_text || '';
         
         // Update navigation buttons visibility
         document.getElementById('modal-prev').style.visibility = currentModalIdx > 0 ? 'visible' : 'hidden';
@@ -146,7 +142,7 @@
         document.getElementById('form-artwork-img').alt = obra.title || '';
         document.getElementById('form-artwork-artist').textContent = obra.artist || '';
         document.getElementById('form-artwork-title').textContent = obra.title || '';
-        document.getElementById('form-artwork-desc').textContent = (obra.year ? 'Ano: ' + obra.year + ' ' : '') + (obra.size_cm ? '| Tamanho: ' + obra.size_cm + ' cm' : '');
+        document.getElementById('form-artwork-desc').innerHTML = obra.additional_text || '';
         document.getElementById('acervo-artwork-id').value = obra.id;
         lastObra = obra;
     };

@@ -28,24 +28,20 @@ class CollectionResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('artist')
-                    ->label('Artista/Fotógrafo')
+                    ->label('Nome do Artista')
                     ->required(),
                 Forms\Components\TextInput::make('title')
-                    ->label('Título')
+                    ->label('Título da Obra')
                     ->required(),
-                Forms\Components\TextInput::make('year')
-                    ->label('Ano'),
-                Forms\Components\TextInput::make('size_cm')
-                    ->label('Tamanho (cm)'),
+                Forms\Components\RichEditor::make('additional_text')
+                    ->label('Descrição')
+                    ->nullable()
+                    ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
                     ->label('Imagem')
                     ->image()
                     ->directory('acervo')
                     ->required(),
-                Forms\Components\RichEditor::make('additional_text')
-                    ->label('Informações Adicionais')
-                    ->nullable()
-                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('order')
                     ->label('Ordem')
                     ->numeric()
@@ -63,15 +59,11 @@ class CollectionResource extends Resource
                     ->disk('public')
                     ->square(),
                 Tables\Columns\TextColumn::make('artist')
-                    ->label('Artista/Fotógrafo')
+                    ->label('Nome do Artista')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('title')
-                    ->label('Título')
+                    ->label('Título da Obra')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('year')
-                    ->label('Ano'),
-                Tables\Columns\TextColumn::make('size_cm')
-                    ->label('Tamanho (cm)'),
                 Tables\Columns\TextColumn::make('order')
                     ->label('Ordem')
                     ->sortable(),

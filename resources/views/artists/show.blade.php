@@ -51,7 +51,7 @@
                                     <div id="modal-main-content"
                                          class="flex-1 flex items-center justify-center relative bg-gray-100">
                                         <img id="artwork-modal-img" src="" alt=""
-                                             class="max-w-full max-h-full object-contain">
+                                             class="w-full h-full object-cover">
                                     </div>
                                     <div id="modal-info-content"
                                          class="flex-1 flex flex-col justify-center items-start p-8 w-full max-w-md bg-white">
@@ -92,7 +92,7 @@
                                     <!-- Image section - left side -->
                                     <div class="flex-1 flex items-center justify-center bg-gray-100">
                                         <img id="form-artwork-img" src="" alt=""
-                                             class="max-w-full max-h-full object-contain">
+                                             class="w-full h-full object-cover">
                                     </div>
 
                                     <!-- Form section - right side -->
@@ -228,7 +228,7 @@
                     @foreach ($artist->artworks as $i => $artwork)
                         @continue($i === 0)
                         <div class="flex flex-col items-center">
-                            <div class="w-full bg-gray-100 mb-2 flex items-center justify-center p-2">
+                            <div class="w-full mb-2 flex items-center justify-center p-2">
                                 @if (is_array($artwork->images) && count($artwork->images) > 0)
                                     <img src="{{ asset('storage/' . $artwork->images[0]) }}"
                                          alt="{{ $artwork->name }}"
