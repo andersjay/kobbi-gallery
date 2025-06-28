@@ -36,7 +36,7 @@
                 </svg>
             </button>
             <div id="modal-main-content" class="flex-1 flex items-center justify-center relative bg-gray-100">
-                <img id="artwork-modal-img" src="" alt="" class="w-full h-full object-cover">
+                <img id="artwork-modal-img" src="" alt="" class="max-w-full max-h-full object-contain">
             </div>
             <div id="modal-info-content" class="flex-1 flex flex-col justify-center items-start p-8 w-full max-w-md bg-white">
                 <div class="mb-6">
@@ -60,7 +60,7 @@
 
             <!-- Image section - left side -->
             <div class="flex-1 flex items-center justify-center bg-gray-100">
-                <img id="form-artwork-img" src="" alt="" class="w-full h-full object-cover">
+                <img id="form-artwork-img" src="" alt="" class="max-w-full max-h-full object-contain">
             </div>
 
             <!-- Form section - right side -->
@@ -97,8 +97,6 @@
         currentModalIdx = idx;
         renderArtworkModal();
         document.getElementById('artwork-modal').style.display = 'flex';
-        document.getElementById('acervo-obra-index').value = idx;
-        document.querySelector('input[name=collection_id]').value = 1; // Ajuste se tiver mais de uma coleção
     }
     function closeArtworkModal() {
         document.getElementById('artwork-modal').style.display = 'none';
@@ -106,7 +104,9 @@
         document.getElementById('interest-form').style.display = 'none';
     }
     function renderArtworkModal() {
-        const obra = acervo[currentModalIdx] || acervo.find(a => a.id === currentModalIdx) || acervo[0];
+        const obra = acervo[currentModalIdx];
+        if (!obra) return;
+        
         document.getElementById('artwork-modal-img').src = obra.image ? '/storage/' + obra.image : '';
         document.getElementById('artwork-modal-img').alt = obra.title || '';
         document.getElementById('artwork-modal-artist').textContent = obra.artist || '';
@@ -139,7 +139,9 @@
         document.getElementById('modal-content').style.display = 'none';
         document.getElementById('interest-form').style.display = 'flex';
         // Preencher dados da obra no formulário
-        const obra = acervo[currentModalIdx] || acervo.find(a => a.id === currentModalIdx) || acervo[0];
+        const obra = acervo[currentModalIdx];
+        if (!obra) return;
+        
         document.getElementById('form-artwork-img').src = obra.image ? '/storage/' + obra.image : '';
         document.getElementById('form-artwork-img').alt = obra.title || '';
         document.getElementById('form-artwork-artist').textContent = obra.artist || '';

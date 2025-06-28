@@ -96,7 +96,7 @@
                 </div>
                 @if ($exhibition->gallery)
                     <div class="mt-10">
-                        <div class="flex items-center gap-6 overflow-x-hidden pb-4 h-[300px]">
+                        <div class="flex items-center gap-6 overflow-x-auto overflow-y-hidden pb-4 h-[300px]">
                             @foreach ($exhibition->gallery as $idx => $item)
                                 <div class="min-w-[320px] max-w-xs flex-shrink-0 cursor-pointer obra-card relative"
                                     data-idx="{{ $idx }}" style="width: 250px; height: 250px">
@@ -132,7 +132,7 @@
                                 <div id="obra-modal-main-content"
                                      class="flex-1 flex items-center justify-center relative bg-gray-100">
                                     <img id="obra-modal-img" src="" alt=""
-                                         class="w-full h-full object-cover">
+                                         class="max-w-full max-h-full object-contain">
                                 </div>
                                 <div id="obra-modal-info-content"
                                      class="flex-1 flex flex-col justify-center items-start p-8 w-full max-w-md bg-white">
@@ -169,7 +169,7 @@
                                 <!-- Image section - left side -->
                                 <div class="flex-1 flex items-center justify-center bg-gray-100">
                                     <img id="obra-form-img" src="" alt=""
-                                         class="w-full h-full object-cover">
+                                         class="max-w-full max-h-full object-contain">
                                 </div>
 
                                 <!-- Form section - right side -->

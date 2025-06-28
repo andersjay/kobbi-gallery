@@ -26,7 +26,7 @@ class ExhibitionInterestController extends Controller
         if ($request->filled('contato')) {
             // Contato geral
             Mail::send([], [], function($message) use ($data) {
-                $message->to('contato@sua-galeria.com')
+                $message->to(env('GALLERY_CONTACT_EMAIL', 'contato@sua-galeria.com'))
                     ->subject('Nova mensagem de contato')
                     ->html(
                         '<p><strong>Nome:</strong> ' . $data['name'] . '</p>' .
@@ -83,7 +83,7 @@ class ExhibitionInterestController extends Controller
                 'artista' => 'Novo interesse em obra do artista: ' . ($obra->name ?? 'Obra'),
                 'acervo' => 'Novo interesse em obra do acervo: ' . ($obra->title ?? 'Obra'),
             };
-            $message->to('contato@sua-galeria.com')->subject($subject);
+            $message->to(env('GALLERY_CONTACT_EMAIL', 'contato@sua-galeria.com'))->subject($subject);
         });
 
         return back()->with('success', 'Interesse registrado com sucesso! Em breve entraremos em contato.');

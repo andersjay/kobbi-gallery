@@ -32,7 +32,7 @@ class CollectionController extends Controller
         ];
 
         Mail::send('emails.interesse-acervo', $emailData, function($message) use ($obra) {
-            $message->to('contato@sua-galeria.com') // Troque para o e-mail da galeria
+            $message->to(env('GALLERY_CONTACT_EMAIL', 'contato@sua-galeria.com'))
                     ->subject('Novo interesse em obra do acervo: ' . $obra->title);
         });
 
