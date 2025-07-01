@@ -130,7 +130,7 @@
                                     </svg>
                                 </button>
                                 <div id="obra-modal-main-content"
-                                     class="flex-1 flex items-center justify-center relative bg-gray-100">
+                                     class="flex-1 flex items-center justify-center relative">
                                     <img id="obra-modal-img" src="" alt=""
                                          class="max-w-full max-h-full object-contain">
                                 </div>

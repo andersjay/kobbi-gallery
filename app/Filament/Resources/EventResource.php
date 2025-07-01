@@ -39,7 +39,7 @@ class EventResource extends Resource
                     ->label('Imagem de capa')
                     ->image()
                     ->directory('events/covers'),
-                Forms\Components\Textarea::make('description')
+                Forms\Components\RichEditor::make('description')
                     ->label('Descrição/Info'),
                 Forms\Components\Repeater::make('images')
                     ->relationship('images')

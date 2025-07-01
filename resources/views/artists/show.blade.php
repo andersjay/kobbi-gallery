@@ -249,7 +249,7 @@
             @if ($artist->description)
                 <div class="w-full">
                     <div class=" w-full flex items-center justify-center my-5">
-                        <span class="text-gray-600 text-base text-left w-full max-w-[200px]">SOBRE</span>
+                        <span class="text-gray-600 text-base text-left w-full max-w-[80px]">SOBRE</span>
                         <div class="h-[1px] bg-[#D1D1D1] w-full"></div>
                     </div>
                     <div class="text-lg text-black mb-10 text-justify  mx-auto">{!! $artist->description !!} </div>

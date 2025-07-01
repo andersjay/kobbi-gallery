@@ -35,7 +35,7 @@
                     <polyline points="20,8 12,16 20,24" style="fill:none;stroke:black;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"></polyline>
                 </svg>
             </button>
-            <div id="modal-main-content" class="flex-1 flex items-center justify-center relative bg-gray-100">
+            <div id="modal-main-content" class="flex-1 flex items-center justify-center relative">
                 <img id="artwork-modal-img" src="" alt="" class="max-w-full max-h-full object-contain">
             </div>
             <div id="modal-info-content" class="flex-1 flex flex-col justify-center items-start p-8 w-full max-w-md bg-white">
@@ -106,7 +106,7 @@
     function renderArtworkModal() {
         const obra = acervo[currentModalIdx];
         if (!obra) return;
-        
+
         document.getElementById('artwork-modal-img').src = obra.image ? '/storage/' + obra.image : '';
         document.getElementById('artwork-modal-img').alt = obra.title || '';
         document.getElementById('artwork-modal-artist').textContent = obra.artist || '';
@@ -141,7 +141,7 @@
         // Preencher dados da obra no formulário
         const obra = acervo[currentModalIdx];
         if (!obra) return;
-        
+
         document.getElementById('form-artwork-img').src = obra.image ? '/storage/' + obra.image : '';
         document.getElementById('form-artwork-img').alt = obra.title || '';
         document.getElementById('form-artwork-artist').textContent = obra.artist || '';

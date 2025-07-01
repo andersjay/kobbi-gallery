@@ -1,4 +1,4 @@
-<div class="container-kobbi pt-6 py-4 w-full border-[#D1D1D1] border">
+<div class="container-kobbi pt-6 py-4 w-full border-[#D1D1D1] border mx-4 md:mx-0">
     <h2 class="text-xl text-center md:text-left text-gray-800 font-light ">ASSINE A NOSSA NEWSLETTER</h2>
     <form wire:submit.prevent="subscribe" class="w-full mx-auto py-4 flex flex-col md:items-center md:flex-row gap-4">
         @csrf
