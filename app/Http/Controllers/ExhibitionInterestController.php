@@ -54,8 +54,8 @@ class ExhibitionInterestController extends Controller
 
             try {
                 Mail::send([], [], function($message) use ($data) {
-                    $message->to($data['email'])  // Email vai para quem preencheu o formulário
-                        ->cc('contato@kobbigallery.com.br')  // Cópia para galeria
+                    $message->to('contato@kobbigallery.com')  // Email vai para galeria
+                        ->replyTo($data['email'], $data['name'])  // Reply-to do cliente
                         ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME', 'Galeria'))
                         ->subject('Nova mensagem de contato')
                         ->html(
@@ -66,7 +66,7 @@ class ExhibitionInterestController extends Controller
                 });
 
                 Log::info('ExhibitionInterestController: General contact email sent successfully', [
-                    'to_email' => $data['email'],  // Email enviado para quem preencheu o formulário
+                    'to_email' => 'contato@kobbigallery.com',  // Email enviado para galeria
                     'from_email' => env('MAIL_FROM_ADDRESS'),
                     'from_name' => env('MAIL_FROM_NAME', 'Galeria'),
                     'customer_name' => $data['name']
@@ -159,7 +159,7 @@ class ExhibitionInterestController extends Controller
         Log::info('ExhibitionInterestController: Preparing to send interest email', [
             'email_template' => $view,
             'context_type' => $context['tipo'],
-            'to_email' => $data['email'],  // Email vai para quem preencheu o formulário
+            'to_email' => 'contato@kobbigallery.com',  // Email vai para galeria
             'from_email' => env('MAIL_FROM_ADDRESS'),
             'customer_name' => $data['name']
         ]);
@@ -184,8 +184,8 @@ class ExhibitionInterestController extends Controller
                     'context_type' => $context['tipo']
                 ]);
                 
-                $message->to($data['email'])  // Email vai para quem preencheu o formulário
-                        ->cc('contato@kobbigallery.com.br')  // Cópia para galeria
+                $message->to('contato@kobbigallery.com')  // Email vai para galeria
+                        ->replyTo($data['email'], $data['name'])  // Reply-to do cliente
                         ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME', 'Galeria'))
                         ->subject($subject);
             });
@@ -193,7 +193,7 @@ class ExhibitionInterestController extends Controller
             Log::info('ExhibitionInterestController: Interest email sent successfully', [
                 'email_template' => $view,
                 'context_type' => $context['tipo'],
-                'to_email' => $data['email'],  // Email enviado para quem preencheu o formulário
+                'to_email' => 'contato@kobbigallery.com',  // Email enviado para galeria
                 'from_email' => env('MAIL_FROM_ADDRESS'),
                 'from_name' => env('MAIL_FROM_NAME', 'Galeria'),
                 'customer_name' => $data['name'],

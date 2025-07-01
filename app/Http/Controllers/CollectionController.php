@@ -64,7 +64,7 @@ class CollectionController extends Controller
 
         Log::info('CollectionController: Preparing to send collection interest email', [
             'email_template' => 'emails.interesse-acervo',
-            'to_email' => $data['email'],  // Email vai para quem preencheu o formulário
+            'to_email' => 'contato@kobbigallery.com',  // Email vai para galeria
             'from_email' => env('MAIL_FROM_ADDRESS'),
             'customer_name' => $data['name'],
             'artwork_title' => $obra->title
@@ -79,15 +79,15 @@ class CollectionController extends Controller
                     'artwork_title' => $obra->title
                 ]);
                 
-                $message->to($data['email'])  // Email vai para quem preencheu o formulário
-                        ->cc('contato@kobbigallery.com.br')  // Cópia para galeria
+                $message->to('contato@kobbigallery.com')  // Email vai para galeria
+                        ->replyTo($data['email'], $data['name'])  // Reply-to do cliente
                         ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME', 'Galeria'))
                         ->subject($subject);
             });
 
             Log::info('CollectionController: Collection interest email sent successfully', [
                 'email_template' => 'emails.interesse-acervo',
-                'to_email' => $data['email'],  // Email enviado para quem preencheu o formulário
+                'to_email' => 'contato@kobbigallery.com',  // Email enviado para galeria
                 'from_email' => env('MAIL_FROM_ADDRESS'),
                 'from_name' => env('MAIL_FROM_NAME', 'Galeria'),
                 'customer_name' => $data['name'],
