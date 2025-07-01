@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use Newsletter;
+use Spatie\Newsletter\Facades\Newsletter;
 use Illuminate\Support\Facades\Log;
 
 class NewsletterForm extends Component
