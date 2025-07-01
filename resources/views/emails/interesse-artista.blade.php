@@ -1,10 +1,21 @@
 @php
+    $imageUrl = null;
+    if(isset($obra->image) && $obra->image) {
+        $imageUrl = url('storage/' . $obra->image);
+    } elseif(isset($obra->images) && is_array($obra->images) && count($obra->images) > 0) {
+        $imageUrl = url('storage/' . $obra->images[0]);
+    } elseif(isset($obra['image']) && $obra['image']) {
+        $imageUrl = url('storage/' . $obra['image']);
+    }
+
     Log::info('Email Template: interesse-artista rendering started', [
         'template' => 'interesse-artista',
         'customer_email' => $email ?? 'N/A',
         'customer_name' => $nome ?? 'N/A',
         'artwork_name' => $obra->name ?? 'N/A',
-        'artist_name' => $artist->name ?? 'N/A'
+        'artist_name' => $artist->name ?? 'N/A',
+        'image_url' => $imageUrl,
+        'has_image' => $imageUrl !== null
     ]);
 @endphp
 <!DOCTYPE html>
@@ -52,15 +63,15 @@
                             @endif
                             @if(isset($obra->image) && $obra->image)
                                 <p>
-                                    <img src="{{ asset('storage/' . $obra->image) }}" alt="Imagem da obra" style="max-width: 100%; border-radius: 4px; margin-top: 8px;">
+                                    <img src="{{ url('storage/' . $obra->image) }}" alt="Imagem da obra" style="max-width: 100%; height: auto; border-radius: 4px; margin-top: 8px; display: block;">
                                 </p>
                             @elseif(isset($obra->images) && is_array($obra->images) && count($obra->images) > 0)
                                 <p>
-                                    <img src="{{ asset('storage/' . $obra->images[0]) }}" alt="Imagem da obra" style="max-width: 100%; border-radius: 4px; margin-top: 8px;">
+                                    <img src="{{ url('storage/' . $obra->images[0]) }}" alt="Imagem da obra" style="max-width: 100%; height: auto; border-radius: 4px; margin-top: 8px; display: block;">
                                 </p>
                             @elseif(isset($obra['image']) && $obra['image'])
                                 <p>
-                                    <img src="{{ asset('storage/' . $obra['image']) }}" alt="Imagem da obra" style="max-width: 100%; border-radius: 4px; margin-top: 8px;">
+                                    <img src="{{ url('storage/' . $obra['image']) }}" alt="Imagem da obra" style="max-width: 100%; height: auto; border-radius: 4px; margin-top: 8px; display: block;">
                                 </p>
                             @endif
                         </td>

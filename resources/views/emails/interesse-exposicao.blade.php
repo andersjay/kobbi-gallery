@@ -1,10 +1,17 @@
 @php
+    $imageUrl = null;
+    if(isset($obra['image']) && $obra['image']) {
+        $imageUrl = url('storage/' . $obra['image']);
+    }
+
     Log::info('Email Template: interesse-exposicao rendering started', [
         'template' => 'interesse-exposicao',
         'customer_email' => $email ?? 'N/A',
         'customer_name' => $nome ?? 'N/A',
         'artwork_name' => $obra['name'] ?? 'N/A',
-        'exhibition_title' => $exhibition->title ?? 'N/A'
+        'exhibition_title' => $exhibition->title ?? 'N/A',
+        'image_url' => $imageUrl,
+        'has_image' => $imageUrl !== null
     ]);
 @endphp
 <!DOCTYPE html>
@@ -46,7 +53,7 @@
                             @endif
                             @if(isset($obra['image']))
                                 <p>
-                                    <img src="{{ asset('storage/' . $obra['image']) }}" alt="Imagem da obra" style="max-width: 100%; border-radius: 4px; margin-top: 8px;">
+                                    <img src="{{ url('storage/' . $obra['image']) }}" alt="Imagem da obra" style="max-width: 100%; height: auto; border-radius: 4px; margin-top: 8px; display: block;">
                                 </p>
                             @endif
                         </td>
