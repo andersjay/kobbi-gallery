@@ -288,7 +288,7 @@
         </script>
     @endif
 
-    <div class="pt-6">
+    <div class="pt-6 container-kobbi flex items-center justify-center">
         <livewire:newsletter-form />
     </div>
 @endsection
