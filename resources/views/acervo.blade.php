@@ -59,7 +59,7 @@
             <button type="button" onclick="closeArtworkModal()" style="position:absolute; top:32px; right:32px; font-size:3rem; color:black; background:none; border:none; cursor:pointer; z-index:10;">&times;</button>
 
             <!-- Image section - left side -->
-            <div class="flex-1 flex items-center justify-center bg-gray-100">
+            <div class="flex-1 flex items-center justify-center">
                 <img id="form-artwork-img" src="" alt="" class="max-w-full max-h-full object-contain">
             </div>
 

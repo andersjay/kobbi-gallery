@@ -167,7 +167,7 @@
                                 </button>
 
                                 <!-- Image section - left side -->
-                                <div class="flex-1 flex items-center justify-center bg-gray-100">
+                                <div class="flex-1 flex items-center justify-center">
                                     <img id="obra-form-img" src="" alt=""
                                          class="max-w-full max-h-full object-contain">
                                 </div>
