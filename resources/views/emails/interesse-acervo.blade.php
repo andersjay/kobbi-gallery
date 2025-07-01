@@ -1,3 +1,12 @@
+@php
+    Log::info('Email Template: interesse-acervo rendering started', [
+        'template' => 'interesse-acervo',
+        'customer_email' => $email ?? 'N/A',
+        'customer_name' => $nome ?? 'N/A',
+        'artwork_title' => $obra->title ?? 'N/A',
+        'artwork_artist' => $obra->artist ?? 'N/A'
+    ]);
+@endphp
 <p><strong>Nome:</strong> {{ $nome }}</p>
 <p><strong>E-mail:</strong> {{ $email }}</p>
 <p><strong>Mensagem:</strong> {{ $mensagem }}</p>

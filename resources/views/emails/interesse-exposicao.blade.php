@@ -1,3 +1,12 @@
+@php
+    Log::info('Email Template: interesse-exposicao rendering started', [
+        'template' => 'interesse-exposicao',
+        'customer_email' => $email ?? 'N/A',
+        'customer_name' => $nome ?? 'N/A',
+        'artwork_name' => $obra['name'] ?? 'N/A',
+        'exhibition_title' => $exhibition->title ?? 'N/A'
+    ]);
+@endphp
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
