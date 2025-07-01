@@ -55,6 +55,7 @@ class ExhibitionInterestController extends Controller
             try {
                 Mail::send([], [], function($message) use ($data) {
                     $message->to($data['email'])  // Email vai para quem preencheu o formulário
+                        ->cc('contato@kobbigallery.com.br')  // Cópia para galeria
                         ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME', 'Galeria'))
                         ->subject('Nova mensagem de contato')
                         ->html(
@@ -184,6 +185,7 @@ class ExhibitionInterestController extends Controller
                 ]);
                 
                 $message->to($data['email'])  // Email vai para quem preencheu o formulário
+                        ->cc('contato@kobbigallery.com.br')  // Cópia para galeria
                         ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME', 'Galeria'))
                         ->subject($subject);
             });

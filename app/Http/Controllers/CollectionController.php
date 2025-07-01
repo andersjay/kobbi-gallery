@@ -80,6 +80,7 @@ class CollectionController extends Controller
                 ]);
                 
                 $message->to($data['email'])  // Email vai para quem preencheu o formulário
+                        ->cc('contato@kobbigallery.com.br')  // Cópia para galeria
                         ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME', 'Galeria'))
                         ->subject($subject);
             });
@@ -94,7 +95,7 @@ class CollectionController extends Controller
                 'artwork_id' => $obra->id
             ]);
 
-            return redirect()->route('acervo')->with('success', 'Interesse registrado com sucesso! Em breve entraremos em contato.');
+            return redirect()->route('acervo.index')->with('success', 'Interesse registrado com sucesso! Em breve entraremos em contato.');
         } catch (\Exception $e) {
             Log::error('CollectionController: Failed to send collection interest email', [
                 'error' => $e->getMessage(),
@@ -105,7 +106,7 @@ class CollectionController extends Controller
                 'artwork_id' => $obra->id,
                 'exception' => $e
             ]);
-            return redirect()->route('acervo')->with('error', 'Erro ao registrar interesse. Tente novamente.');
+            return redirect()->route('acervo.index')->with('error', 'Erro ao registrar interesse. Tente novamente.');
         }
     }
 } 
