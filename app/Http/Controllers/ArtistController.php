@@ -11,7 +11,9 @@ class ArtistController extends Controller
     {
         $artists = Artist::with(['artworks' => function ($query) {
             $query->orderByDesc('featured')->orderBy('order');
-        }])->get();
+        }])
+            ->orderBy('name')
+            ->get();
         return view('artists.index', compact('artists'));
     }
 

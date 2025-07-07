@@ -12,7 +12,7 @@ class ArtistGallery extends Component
 
     public function mount()
     {
-        $this->artists = Artist::all();
+        $this->artists = Artist::orderBy('name')->get();
     }
 
     public function selectArtist($index)
