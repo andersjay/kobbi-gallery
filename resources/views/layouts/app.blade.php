@@ -41,5 +41,62 @@
         @include('layouts.footer')
         @livewireScripts
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Google Translate -->
+        <div id="google_translate_element" style="display: none;"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'pt',
+                    includedLanguages: 'pt,en,es',
+                    autoDisplay: false
+                }, 'google_translate_element');
+            }
+
+            function changeLanguage(lang) {
+                var select = document.querySelector('#google_translate_element select');
+                if (select) {
+                    select.value = lang;
+                    select.dispatchEvent(new Event('change'));
+                }
+            }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+        <style>
+            /* Esconder a barra do Google Translate */
+            .goog-te-banner-frame, .skiptranslate {
+                display: none !important;
+            }
+            body {
+                top: 0 !important;
+            }
+            .goog-te-gadget {
+                font-size: 0 !important;
+            }
+            /* Estilo do seletor de idioma personalizado */
+            .language-selector {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .language-selector button {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.875rem;
+                font-weight: 300;
+                transition: all 0.2s;
+                border-bottom: 1px solid transparent;
+            }
+            .language-selector button:hover {
+                border-bottom: 1px solid currentColor;
+            }
+            .language-selector button.active {
+                border-bottom: 1px solid currentColor;
+            }
+            .language-divider {
+                opacity: 0.5;
+            }
+        </style>
     </body>
 </html>

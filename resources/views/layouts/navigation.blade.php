@@ -36,6 +36,16 @@
 
             {{-- <a href="#" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b' : 'text-gray-950'}} transition-all text-lg font-light">LOJA</a> --}}
 
+            <!-- Language Selector -->
+            <div class="language-selector {{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100' : 'text-gray-950' }}">
+                <span class="language-divider">|</span>
+                <button onclick="changeLanguage('pt')" class="hover:opacity-70" title="Português">PT</button>
+                <span class="language-divider">/</span>
+                <button onclick="changeLanguage('en')" class="hover:opacity-70" title="English">EN</button>
+                <span class="language-divider">/</span>
+                <button onclick="changeLanguage('es')" class="hover:opacity-70" title="Español">ES</button>
+            </div>
+
         </nav>
     </div>
 
@@ -114,6 +124,16 @@
                     </li>
                     <li>
                         {{-- <a href="#" class="block px-6 py-4 text-gray-950 text-2xl hover:text-gray-700 transition-colors">LOJA</a> --}}
+                    </li>
+                    <!-- Language Selector Mobile -->
+                    <li class="pt-4">
+                        <div class="flex justify-center gap-4 text-gray-950">
+                            <button onclick="changeLanguage('pt')" class="px-3 py-2 text-lg font-light hover:opacity-70 transition-opacity" title="Português">PT</button>
+                            <span class="py-2 opacity-50">/</span>
+                            <button onclick="changeLanguage('en')" class="px-3 py-2 text-lg font-light hover:opacity-70 transition-opacity" title="English">EN</button>
+                            <span class="py-2 opacity-50">/</span>
+                            <button onclick="changeLanguage('es')" class="px-3 py-2 text-lg font-light hover:opacity-70 transition-opacity" title="Español">ES</button>
+                        </div>
                     </li>
                 </ul>
 
