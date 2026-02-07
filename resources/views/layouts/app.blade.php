@@ -6,6 +6,15 @@
 
         <title>Kobbi Gallery</title>
 
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0KVWEBBCLT"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0KVWEBBCLT');
+        </script>
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -41,5 +50,32 @@
         @include('layouts.footer')
         @livewireScripts
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Google Translate -->
+        <div id="google_translate_element" style="display: none;"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'pt',
+                    includedLanguages: 'pt,en,es',
+                    autoDisplay: false
+                }, 'google_translate_element');
+            }
+
+            function changeLanguage(lang) {
+                var select = document.querySelector('#google_translate_element select');
+                if (select) {
+                    select.value = lang;
+                    select.dispatchEvent(new Event('change'));
+                }
+            }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+        <style>
+            .goog-te-banner-frame, .skiptranslate { display: none !important; }
+            body { top: 0 !important; }
+            .goog-te-gadget { font-size: 0 !important; }
+        </style>
     </body>
 </html>
