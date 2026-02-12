@@ -10,7 +10,14 @@
                         <img src="{{ $notice->image_url }}" alt="{{ $notice->title }}" class="w-full max-w-[160px] aspect-square object-cover border border-gray-200 bg-[#7cc0e6] mx-auto">
                     </div>
                     <div class="w-full md:w-3/4">
-                        <h6 class="text-lg text-gray-950 mb-1">{{ $notice->title }}</h6>
+                        <div class="flex items-center gap-2 mb-1">
+                            <h6 class="text-lg text-gray-950">{{ $notice->title }}</h6>
+                            @if($notice->is_pinned)
+                                <svg class="w-4 h-4 text-gray-700" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5.2v6h1.6v-6H18v-2l-2-2z"/>
+                                </svg>
+                            @endif
+                        </div>
                         @if($notice->date)
                         <span class="block text-gray-700 mb-2">{{ \Carbon\Carbon::parse($notice->date)->format('d/m/Y') }}</span>
                         @endif

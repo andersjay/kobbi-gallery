@@ -19,9 +19,17 @@ class ArtistController extends Controller
 
     public function show($id)
     {
-        $artist = Artist::with(['artworks' => function ($query) {
-            $query->orderByDesc('featured')->orderBy('order');
-        }])->findOrFail($id);
+        $artist = Artist::with([
+            'artworks' => function ($query) {
+                $query->orderByDesc('featured')->orderBy('order');
+            },
+            'projects' => function ($query) {
+                $query->orderBy('order');
+            },
+            'projects.artworks' => function ($query) {
+                $query->orderByDesc('featured')->orderBy('order');
+            }
+        ])->findOrFail($id);
         return view('artists.show', compact('artist'));
     }
 

@@ -15,11 +15,13 @@ class Artist extends Model
     protected $fillable = [
         'name',
         'description',
-        'image'
+        'image',
+        'is_represented',
     ];
 
     protected $casts = [
         'image' => 'array',
+        'is_represented' => 'boolean',
     ];
 
     public function artworks()
@@ -27,5 +29,10 @@ class Artist extends Model
         return $this->hasMany(Artwork::class)
             ->orderByDesc('featured')
             ->orderBy('order');
+    }
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class)->orderBy('order');
     }
 }

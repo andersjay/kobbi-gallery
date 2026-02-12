@@ -42,17 +42,14 @@ class CollectionResource extends Resource
                     ->image()
                     ->directory('acervo')
                     ->required(),
-                Forms\Components\TextInput::make('order')
-                    ->label('Ordem')
-                    ->numeric()
-                    ->default(0)
-                    ->helperText('Número para ordenação (menor = primeiro)'),
             ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
+            ->reorderable('order')
+            ->defaultSort('order')
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Imagem')
@@ -68,7 +65,6 @@ class CollectionResource extends Resource
                     ->label('Ordem')
                     ->sortable(),
             ])
-            ->defaultSort('order')
             ->filters([
                 //
             ])

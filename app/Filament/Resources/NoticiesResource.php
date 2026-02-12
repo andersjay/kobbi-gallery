@@ -6,7 +6,6 @@ use App\Filament\Resources\NoticiesResource\Pages;
 use App\Models\Noticies;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Forms\Components\DatePicker;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -45,6 +44,10 @@ class NoticiesResource extends Resource
                 Forms\Components\DatePicker::make('date')
                     ->label('Data')
                     ->columns(1),
+                Forms\Components\Toggle::make('is_pinned')
+                    ->label('Fixar no topo')
+                    ->helperText('Notícias fixadas aparecem primeiro na página de notícias.')
+                    ->default(false),
                 Forms\Components\TextInput::make('author_name')
                     ->label('Autor')
                     ->columns(1)
@@ -64,7 +67,12 @@ class NoticiesResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->reorderable('sort_order')
+            ->defaultSort('sort_order')
             ->columns([
+                Tables\Columns\IconColumn::make('is_pinned')
+                    ->label('Fixada')
+                    ->boolean(),
                 Tables\Columns\TextColumn::make('title')
                     ->label('Título')
                     ->searchable(),
@@ -79,6 +87,9 @@ class NoticiesResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('image_url')
                     ->label('URL da Imagem'),
+                Tables\Columns\TextColumn::make('sort_order')
+                    ->label('Ordem')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()
@@ -92,7 +103,6 @@ class NoticiesResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->defaultSort('date', 'desc')
             ->filters([
                 //
             ])

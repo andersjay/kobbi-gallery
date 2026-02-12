@@ -83,6 +83,11 @@
                     <div class="mb-6">
                         <div class="text-gray-950 text-base font-medium tracking-wide uppercase mb-2">{{ $member->function }}</div>
                         <div class="text-gray-700 text-base">{{ $member->name }}</div>
+                        @if($member->email)
+                            <div class="text-gray-700 text-sm mt-1">
+                                <a href="mailto:{{ $member->email }}" class="hover:underline">{{ $member->email }}</a>
+                            </div>
+                        @endif
                     </div>
                 @endforeach
             </div>

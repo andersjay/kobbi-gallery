@@ -6,14 +6,19 @@
             <div class="md:grid md:grid-cols-[400px_1fr] md:items-start w-full flex flex-col items-center gap-2">
                 <h1 class="md:text-3xl text-2xl my-2 text-gray-950 font-light mb-2">{{ $artist->name }}</h1>
                 <div class="">
-                    @if ($artist->artworks->count() > 0)
+                    @php
+                        $mainArtworks = $artist->artworks->whereNull('project_id');
+                        $projects = $artist->projects;
+                        $hasProjects = $projects->count() > 0;
+                    @endphp
+                    @if ($artist->artworks->count() > 0 || $hasProjects)
                         @php
-                            $destaque = $artist->artworks->first();
-                            $outras = $artist->artworks->slice(1);
-                            $allArtworks = $artist->artworks->values();
+                            $destaque = $mainArtworks->first();
+                            $outras = $mainArtworks->slice(1);
+                            $allArtworks = $mainArtworks->values();
                         @endphp
+                        @if($destaque)
                         <div class="flex flex-col items-center mb-12">
-
                             <div class="w-full max-w-xl mx-auto mb-8">
                                 @if (is_array($destaque->images) && count($destaque->images) > 0)
                                     <img src="{{ asset('storage/' . $destaque->images[0]) }}"
@@ -21,14 +26,13 @@
                                          class="w-full h-[500px] object-contain mx-auto cursor-pointer"
                                          onclick="openArtworkModal(0)">
                                 @else
-                                    <div
-                                        class="w-full aspect-square flex items-center justify-center bg-gray-200 rounded-lg">
+                                    <div class="w-full aspect-square flex items-center justify-center bg-gray-200 rounded-lg">
                                         <span class="text-gray-400 text-7xl">{{ substr($destaque->name, 0, 1) }}</span>
                                     </div>
                                 @endif
                             </div>
-
                         </div>
+                        @endif
                         <!-- Modal navegável -->
                         <div id="artwork-modal"
                              style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center;">
@@ -84,6 +88,8 @@
                                     @csrf
                                     <input type="hidden" name="artist_id" value="{{ $artist->id }}">
                                     <input type="hidden" name="obra_index" id="artist-obra-index" value="">
+                                    <input type="hidden" name="artwork_id" id="artwork-id" value="">
+                                    <input type="hidden" name="artwork_name" id="artwork-name" value="">
                                     <button type="button" onclick="closeArtworkModal()"
                                             style="position:absolute; top:32px; right:32px; font-size:3rem; color:black; background:none; border:none; cursor:pointer; z-index:10;">
                                         &times;
@@ -219,31 +225,74 @@
                 </div>
             </div>
 
-            <div class="w-full flex items-center justify-center my-5">
-                <span class="text-gray-600 text-base text-left w-full max-w-[200px]">OBRAS EM DESTAQUE</span>
+            <div class="w-full flex items-center my-5 gap-4">
+                <button class="project-tab text-gray-950 font-semibold text-base text-left whitespace-nowrap" data-project="main">OBRAS EM DESTAQUE</button>
                 <div class="h-[1px] bg-[#D1D1D1] w-full"></div>
-            </div>
-            @if ($outras->count() > 0)
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                    @foreach ($artist->artworks as $i => $artwork)
-                        @continue($i === 0)
-                        <div class="flex flex-col items-center">
-                            <div class="w-full mb-2 flex items-center justify-center p-2">
-                                @if (is_array($artwork->images) && count($artwork->images) > 0)
-                                    <img src="{{ asset('storage/' . $artwork->images[0]) }}"
-                                         alt="{{ $artwork->name }}"
-                                         class="max-w-full max-h-[200px] object-contain cursor-pointer"
-                                         onclick="openArtworkModal({{ $i }})">
-                                @else
-                                    <div class="w-full h-32 flex items-center justify-center">
-                                                    <span
-                                                        class="text-gray-400 text-4xl">{{ substr($artwork->name, 0, 1) }}</span>
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
+                @if($hasProjects)
+                    @foreach($projects as $project)
+                        <button class="project-tab text-gray-400 text-base whitespace-nowrap hover:text-gray-600" data-project="{{ $project->id }}">{{ strtoupper($project->name) }}</button>
                     @endforeach
+                @endif
+            </div>
+
+            {{-- Obras em Destaque --}}
+            <div id="content-main" class="project-content">
+                @if ($outras->count() > 0)
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                        @foreach ($mainArtworks as $i => $artwork)
+                            @continue($loop->first)
+                            <div class="flex flex-col items-center">
+                                <div class="w-full mb-2 flex items-center justify-center p-2">
+                                    @if (is_array($artwork->images) && count($artwork->images) > 0)
+                                        <img src="{{ asset('storage/' . $artwork->images[0]) }}"
+                                             alt="{{ $artwork->name }}"
+                                             class="max-w-full max-h-[200px] object-contain cursor-pointer"
+                                             onclick="openArtworkModal({{ $loop->index }})">
+                                    @else
+                                        <div class="w-full h-32 flex items-center justify-center">
+                                            <span class="text-gray-400 text-4xl">{{ substr($artwork->name, 0, 1) }}</span>
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                @else
+                    <p class="text-gray-400 text-center py-8">Nenhuma obra em destaque.</p>
+                @endif
+            </div>
+
+            {{-- Conteúdo dos Projetos --}}
+            @if($hasProjects)
+                @foreach($projects as $project)
+                <div id="content-{{ $project->id }}" class="project-content" style="display:none;">
+                    @if($project->description)
+                    <div class="mb-6 text-gray-700 text-base">{!! $project->description !!}</div>
+                    @endif
+                    @if($project->artworks->count() > 0)
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                            @foreach ($project->artworks as $artwork)
+                                <div class="flex flex-col items-center">
+                                    <div class="w-full mb-2 flex items-center justify-center p-2">
+                                        @if (is_array($artwork->images) && count($artwork->images) > 0)
+                                            <img src="{{ asset('storage/' . $artwork->images[0]) }}"
+                                                 alt="{{ $artwork->name }}"
+                                                 class="max-w-full max-h-[200px] object-contain cursor-pointer"
+                                                 onclick="openProjectModal('{{ $project->id }}', {{ $loop->index }})">
+                                        @else
+                                            <div class="w-full h-32 flex items-center justify-center">
+                                                <span class="text-gray-400 text-4xl">{{ substr($artwork->name, 0, 1) }}</span>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    @else
+                        <p class="text-gray-400 text-center py-8">Nenhuma obra neste projeto.</p>
+                    @endif
                 </div>
+                @endforeach
             @endif
 
             @if ($artist->description)
@@ -291,4 +340,121 @@
     <div class="pt-6 container-kobbi flex items-center justify-center">
         <livewire:newsletter-form />
     </div>
+
+    @if($hasProjects)
+    <script>
+        // Dados dos projetos
+        const projectsData = {
+            @foreach($projects as $project)
+            '{{ $project->id }}': @json($project->artworks->values()),
+            @endforeach
+        };
+
+        let currentProjectId = null;
+        let currentProjectIdx = 0;
+
+        // Controle das abas
+        document.querySelectorAll('.project-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const projectId = this.getAttribute('data-project');
+
+                // Atualiza estilos das abas
+                document.querySelectorAll('.project-tab').forEach(t => {
+                    t.classList.remove('text-gray-950', 'font-semibold');
+                    t.classList.add('text-gray-400');
+                });
+                this.classList.remove('text-gray-400');
+                this.classList.add('text-gray-950', 'font-semibold');
+
+                // Mostra/esconde conteúdo
+                document.querySelectorAll('.project-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                document.getElementById('content-' + projectId).style.display = 'block';
+            });
+        });
+
+        // Modal para projetos
+        function openProjectModal(projectId, idx) {
+            currentProjectId = projectId;
+            currentProjectIdx = idx;
+            renderProjectModal();
+            document.getElementById('artwork-modal').style.display = 'flex';
+        }
+
+        function renderProjectModal() {
+            const projectArtworks = projectsData[currentProjectId];
+            const artwork = projectArtworks[currentProjectIdx];
+            document.getElementById('artwork-modal-img').src = artwork.images && artwork.images.length > 0 ? '/storage/' + artwork.images[0] : '';
+            document.getElementById('artwork-modal-img').alt = artwork.name || '';
+            document.getElementById('artwork-modal-artist').textContent = '{{ $artist->name }}';
+            document.getElementById('artwork-modal-title').textContent = artwork.name || '';
+            document.getElementById('artwork-modal-desc').innerHTML = artwork.description || '';
+            document.getElementById('artwork-modal-description').innerHTML = artwork.technical_details || '';
+            document.getElementById('modal-prev').style.visibility = currentProjectIdx > 0 ? 'visible' : 'hidden';
+            document.getElementById('modal-next').style.visibility = currentProjectIdx < projectArtworks.length - 1 ? 'visible' : 'hidden';
+
+            // Atualiza dados para o formulário de interesse
+            document.getElementById('artist-obra-index').value = 'project-' + currentProjectId + '-' + currentProjectIdx;
+        }
+
+        // Sobrescreve os handlers de navegação quando está em modo projeto
+        const originalPrevClick = document.getElementById('modal-prev').onclick;
+        const originalNextClick = document.getElementById('modal-next').onclick;
+        const originalInterestClick = document.getElementById('modal-interest').onclick;
+
+        document.getElementById('modal-prev').onclick = function() {
+            if (currentProjectId !== null) {
+                if (currentProjectIdx > 0) {
+                    currentProjectIdx--;
+                    renderProjectModal();
+                }
+            } else {
+                originalPrevClick.call(this);
+            }
+        };
+
+        document.getElementById('modal-next').onclick = function() {
+            if (currentProjectId !== null) {
+                const projectArtworks = projectsData[currentProjectId];
+                if (currentProjectIdx < projectArtworks.length - 1) {
+                    currentProjectIdx++;
+                    renderProjectModal();
+                }
+            } else {
+                originalNextClick.call(this);
+            }
+        };
+
+        document.getElementById('modal-interest').onclick = function() {
+            document.getElementById('modal-content').style.display = 'none';
+            document.getElementById('interest-form').style.display = 'flex';
+
+            let artwork;
+            if (currentProjectId !== null) {
+                const projectArtworks = projectsData[currentProjectId];
+                artwork = projectArtworks[currentProjectIdx];
+            } else {
+                artwork = artworks[currentModalIdx];
+            }
+
+            document.getElementById('form-artwork-img').src = artwork.images && artwork.images.length > 0 ? '/storage/' + artwork.images[0] : '';
+            document.getElementById('form-artwork-img').alt = artwork.name || '';
+            document.getElementById('form-artwork-artist').textContent = '{{ $artist->name }}';
+            document.getElementById('form-artwork-title').textContent = artwork.name || '';
+            document.getElementById('form-artwork-desc').innerHTML = artwork.description || '';
+
+            // Preenche campos hidden com dados da obra
+            document.getElementById('artwork-id').value = artwork.id || '';
+            document.getElementById('artwork-name').value = artwork.name || '';
+        };
+
+        // Reset currentProjectId quando abre modal de obras principais
+        const originalOpenArtworkModal = window.openArtworkModal;
+        window.openArtworkModal = function(idx) {
+            currentProjectId = null;
+            originalOpenArtworkModal(idx);
+        };
+    </script>
+    @endif
 @endsection

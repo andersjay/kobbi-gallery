@@ -15,12 +15,12 @@
                 </div>
                 <ul id="artist-list" class="hidden lg:block">
                     @foreach ($artists as $artist)
-                        <li class="cursor-pointer text-xl p-2 text-gray-400 uppercase tracking-wide" data-id="{{ $artist->id }}">
+                        <li class="cursor-pointer text-xl p-2 uppercase tracking-wide {{ $artist->is_represented ? 'text-gray-600 font-semibold' : 'text-gray-400' }}"
+                            data-id="{{ $artist->id }}"
+                            data-represented="{{ $artist->is_represented ? '1' : '0' }}">
                             {{ $artist->name }}
                         </li>
                     @endforeach
-
-
                 </ul>
             </div>
             <div class="w-full text-gray-950 text-xl lg:sticky lg:top-4 lg:self-start">
@@ -59,8 +59,8 @@
                         let firstArtist = document.querySelector("#artist-list li");
                         if (firstArtist) {
                             let firstArtistId = firstArtist.getAttribute("data-id");
-                            firstArtist.classList.remove("text-gray-400");
-                            firstArtist.classList.add("text-gray-950");
+                            firstArtist.classList.remove("text-gray-400", "text-gray-600", "font-semibold");
+                            firstArtist.classList.add("text-gray-950", "font-bold");
                             selectArtist(firstArtistId);
                         }
                     }
@@ -90,13 +90,19 @@
                         currentImages = data.images || [];
                         currentIndex = 0;
                         document.querySelectorAll("#artist-list li").forEach(li => {
-                            li.classList.remove("text-gray-950");
-                            li.classList.add("text-gray-400");
+                            li.classList.remove("text-gray-950", "font-bold");
+                            const isRepresented = li.getAttribute('data-represented') === '1';
+                            if (isRepresented) {
+                                li.classList.add("text-gray-600", "font-semibold");
+                            } else {
+                                li.classList.add("text-gray-400");
+                                li.classList.remove("font-semibold");
+                            }
                         });
                         let selectedArtist = document.querySelector(`[data-id='${artistId}']`);
                         if (selectedArtist) {
-                            selectedArtist.classList.remove("text-gray-400");
-                            selectedArtist.classList.add("text-gray-950");
+                            selectedArtist.classList.remove("text-gray-400", "text-gray-600", "font-semibold");
+                            selectedArtist.classList.add("text-gray-950", "font-bold");
                         }
                         renderCarousel();
                     });
