@@ -15,11 +15,14 @@ class Noticies extends Model
         'image_url',
         'summary',
         'is_active',
+        'is_pinned',
+        'sort_order',
         'url',
         'date',
     ];
     protected $casts = [
         'is_active' => 'boolean',
+        'is_pinned' => 'boolean',
         'date' => 'date',
     ];
     protected $dates = [

@@ -8,7 +8,11 @@ class NoticieController extends Controller
 {
     public function index()
     {
-        $noticies = Noticies::orderByDesc('date')->get();
+        $noticies = Noticies::query()
+            ->orderByDesc('is_pinned')
+            ->orderBy('sort_order')
+            ->orderByDesc('date')
+            ->get();
         return view('noticies', compact('noticies'));
     }
 

@@ -3,15 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TeamResource\Pages;
-use App\Filament\Resources\TeamResource\RelationManagers;
 use App\Models\Team;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TeamResource extends Resource
 {
@@ -35,6 +32,10 @@ class TeamResource extends Resource
                     ->label('Função')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('email')
+                    ->label('E-mail de Contato')
+                    ->email()
+                    ->maxLength(255),
             ]);
     }
 
@@ -48,6 +49,11 @@ class TeamResource extends Resource
                 Tables\Columns\TextColumn::make('function')
                     ->label('Função')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->label('E-mail')
+                    ->searchable()
+                    ->copyable()
+                    ->placeholder('-'),
             ])
             ->filters([
                 //

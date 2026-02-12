@@ -10,7 +10,12 @@
                         <img src="{{ $notice->image_url }}" alt="{{ $notice->title }}" class="w-full max-w-[160px] aspect-square object-cover border border-gray-200 bg-[#7cc0e6] mx-auto">
                     </div>
                     <div class="w-full md:w-3/4">
-                        <h6 class="text-lg text-gray-950 mb-1">{{ $notice->title }}</h6>
+                        <div class="flex items-center gap-2 mb-1">
+                            <h6 class="text-lg text-gray-950">{{ $notice->title }}</h6>
+                            @if($notice->is_pinned)
+                                <span class="text-[11px] uppercase tracking-wide bg-gray-900 text-white px-2 py-1 rounded">Fixada</span>
+                            @endif
+                        </div>
                         @if($notice->date)
                         <span class="block text-gray-700 mb-2">{{ \Carbon\Carbon::parse($notice->date)->format('d/m/Y') }}</span>
                         @endif
