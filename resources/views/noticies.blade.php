@@ -13,7 +13,9 @@
                         <div class="flex items-center gap-2 mb-1">
                             <h6 class="text-lg text-gray-950">{{ $notice->title }}</h6>
                             @if($notice->is_pinned)
-                                <span class="text-[11px] uppercase tracking-wide bg-gray-900 text-white px-2 py-1 rounded">Fixada</span>
+                                <svg class="w-4 h-4 text-gray-700" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5.2v6h1.6v-6H18v-2l-2-2z"/>
+                                </svg>
                             @endif
                         </div>
                         @if($notice->date)
