@@ -32,6 +32,11 @@ class ArtistResource extends Resource
                     ->columnSpanFull()
                     ->maxLength(255)
                     ->label('Nome'),
+                Forms\Components\Toggle::make('is_represented')
+                    ->label('Representado pela galeria')
+                    ->helperText('Artistas representados aparecem em destaque na lista')
+                    ->default(false)
+                    ->columnSpanFull(),
                 Forms\Components\RichEditor::make('description')
                     ->label('Descrição')
                     ->nullable()
@@ -76,7 +81,63 @@ class ArtistResource extends Resource
                             ->cloneable()
                             ->label('Obras do Artista')
                     ])
+                    ->collapsible(),
+                Forms\Components\Section::make('Projetos')
+                    ->schema([
+                        Forms\Components\Repeater::make('projects')
+                            ->relationship()
+                            ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Novo Projeto')
+                            ->schema([
+                                Forms\Components\Hidden::make('order'),
+                                Forms\Components\TextInput::make('name')
+                                    ->required()
+                                    ->maxLength(255)
+                                    ->label('Nome do Projeto'),
+                                Forms\Components\RichEditor::make('description')
+                                    ->nullable()
+                                    ->label('Descrição do Projeto')
+                                    ->columnSpanFull(),
+                                Forms\Components\Repeater::make('artworks')
+                                    ->relationship()
+                                    ->itemLabel(fn (array $state): ?string => $state['name'] ?? 'Nova Obra')
+                                    ->schema([
+                                        Forms\Components\Hidden::make('order'),
+                                        Forms\Components\TextInput::make('name')
+                                            ->required()
+                                            ->maxLength(255)
+                                            ->label('Nome da Obra'),
+                                        Forms\Components\Toggle::make('featured')
+                                            ->label('Destaque')
+                                            ->default(false),
+                                        Forms\Components\RichEditor::make('description')
+                                            ->nullable()
+                                            ->label('Descrição da Obra'),
+                                        Forms\Components\FileUpload::make('images')
+                                            ->image()
+                                            ->multiple()
+                                            ->directory('artworks')
+                                            ->maxSize(5120)
+                                            ->label('Imagens da Obra'),
+                                    ])
+                                    ->columns(2)
+                                    ->defaultItems(0)
+                                    ->orderColumn('order')
+                                    ->reorderable()
+                                    ->collapsible()
+                                    ->cloneable()
+                                    ->label('Obras do Projeto')
+                                    ->columnSpanFull(),
+                            ])
+                            ->columns(2)
+                            ->defaultItems(0)
+                            ->orderColumn('order')
+                            ->reorderable()
+                            ->collapsible()
+                            ->cloneable()
+                            ->label('Projetos do Artista')
+                    ])
                     ->collapsible()
+                    ->collapsed()
             ]);
     }
 
@@ -85,7 +146,11 @@ class ArtistResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
+                    ->searchable()
+                    ->label('Nome'),
+                Tables\Columns\IconColumn::make('is_represented')
+                    ->boolean()
+                    ->label('Representado'),
                 Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()
