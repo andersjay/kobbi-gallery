@@ -76,6 +76,36 @@
             .goog-te-banner-frame, .skiptranslate { display: none !important; }
             body { top: 0 !important; }
             .goog-te-gadget { font-size: 0 !important; }
+
+            /* Prevent image dragging and selection */
+            img {
+                -webkit-user-drag: none;
+                -khtml-user-drag: none;
+                -moz-user-drag: none;
+                -o-user-drag: none;
+                user-drag: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                pointer-events: auto;
+            }
         </style>
+
+        <script>
+            // Disable right-click on images
+            document.addEventListener('contextmenu', function(e) {
+                if (e.target.tagName === 'IMG' || e.target.closest('img')) {
+                    e.preventDefault();
+                }
+            });
+
+            // Disable drag on images
+            document.addEventListener('dragstart', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+        </script>
     </body>
 </html>
