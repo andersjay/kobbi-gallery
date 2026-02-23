@@ -31,7 +31,7 @@
 
             <a href="{{ route('acervo.index') }}"
                 class="{{ request()->routeIs('acervo.index') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b border-gray-100' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light notranslate"
-                data-pt="ACERVO" data-en="ACERVO" data-es="COLECCIÓN">ACERVO</a>
+                data-pt="ACERVO" data-en="COLLECTION" data-es="COLECCIÓN">ACERVO</a>
 
             <a href="{{ route('contact') }}"
                 class="{{ request()->routeIs('contact') ? (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 border-b border-gray-100' : 'text-gray-950 border-b border-gray-950') : (request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b' : 'text-gray-950 hover:border-b border-gray-950') }} transition-all text-lg font-light">CONTATO</a>
@@ -119,7 +119,7 @@
                     <li>
                         <a href="{{ route('acervo.index') }}"
                             class="block px-6 py-4 text-2xl transition-colors {{ request()->routeIs('acervo.index') ? 'text-gray-950 border-b border-gray-950' : 'text-gray-950 hover:text-gray-700' }} notranslate"
-                            data-pt="ACERVO" data-en="ACERVO" data-es="COLECCIÓN">ACERVO</a>
+                            data-pt="ACERVO" data-en="COLLECTION" data-es="COLECCIÓN">ACERVO</a>
                     </li>
 
                     <li>
