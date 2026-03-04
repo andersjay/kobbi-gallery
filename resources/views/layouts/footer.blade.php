@@ -2,12 +2,29 @@
     $footer = \App\Models\FooterSetting::first();
     $footerTitleTranslations = function ($title) {
         $text = trim((string) $title);
+        $normalized = preg_replace('/[^\p{L}\p{N}]/u', '', mb_strtoupper($text));
 
-        if (preg_match('/^(HOR[ÁA]RIOS|SCHEDULES|HOURS)$/iu', $text)) {
+        if (in_array($normalized, ['HORARIOS', 'SCHEDULES', 'HOURS'], true)) {
             return [
                 'pt' => 'HORÁRIOS',
                 'en' => 'HOURS',
                 'es' => 'HORARIOS',
+            ];
+        }
+
+        if (in_array($normalized, ['ENDERECO', 'ADDRESS', 'DIRECCION'], true)) {
+            return [
+                'pt' => 'ENDEREÇO',
+                'en' => 'ADDRESS',
+                'es' => 'DIRECCIÓN',
+            ];
+        }
+
+        if (in_array($normalized, ['CONTATO', 'CONTACT', 'CONTACTO'], true)) {
+            return [
+                'pt' => 'CONTATO',
+                'en' => 'CONTACT',
+                'es' => 'CONTACTO',
             ];
         }
 
