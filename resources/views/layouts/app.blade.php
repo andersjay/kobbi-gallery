@@ -72,16 +72,6 @@
                 document.querySelectorAll('[data-pt][data-en][data-es]').forEach(function(el) {
                     el.textContent = el.getAttribute('data-' + lang) || el.getAttribute('data-pt');
                 });
-                // Fix footer after Google Translate processes
-                if (lang === 'en') {
-                    setTimeout(function() {
-                        document.querySelectorAll('footer span').forEach(function(el) {
-                            if (el.textContent.trim() === 'Schedules') {
-                                el.textContent = 'Hours';
-                            }
-                        });
-                    }, 1500);
-                }
             }
         </script>
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

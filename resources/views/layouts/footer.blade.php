@@ -1,5 +1,22 @@
 @php
     $footer = \App\Models\FooterSetting::first();
+    $footerTitleTranslations = function ($title) {
+        $text = trim((string) $title);
+
+        if (preg_match('/^(HOR[ÁA]RIOS|SCHEDULES|HOURS)$/iu', $text)) {
+            return [
+                'pt' => 'HORÁRIOS',
+                'en' => 'Hours',
+                'es' => 'Horarios',
+            ];
+        }
+
+        return [
+            'pt' => $text,
+            'en' => $text,
+            'es' => $text,
+        ];
+    };
 @endphp
 <footer class="bg-white text-black w-full">
   <div class="container-kobbi pt-14 pb-10 flex flex-col items-center md:flex-row">
@@ -19,27 +36,30 @@
 
       <div class="flex flex-col gap-4 items-center w-full md:flex-row md:justify-center md:items-start md:gap-6">
         @if ($footer && $footer->section1_title)
+          @php $section1Title = $footerTitleTranslations($footer->section1_title); @endphp
           <div class="flex flex-col text-start w-full max-w-[300px] items-center md:items-center ">
             <div class="flex flex-col md:items-start items-center">
-                <span class="text-lg text-gray-950 mb-2">{{ $footer->section1_title }}</span>
+                <span class="text-lg text-gray-950 mb-2 notranslate" data-pt="{{ $section1Title['pt'] }}" data-en="{{ $section1Title['en'] }}" data-es="{{ $section1Title['es'] }}">{{ $section1Title['pt'] }}</span>
                 <div class="text-gray-950 p-0 m-0 text-center md:text-start">{!! $footer->section1_description !!}</div>
             </div>
           </div>
         @endif
 
         @if ($footer && $footer->section2_title)
+          @php $section2Title = $footerTitleTranslations($footer->section2_title); @endphp
           <div class="flex flex-col text-start w-full max-w-[300px] items-center md:items-center ">
             <div class="flex flex-col md:items-start items-center">
-                <span class="text-lg text-gray-950 mb-2 text-start">{{ $footer->section2_title }}</span>
+                <span class="text-lg text-gray-950 mb-2 text-start notranslate" data-pt="{{ $section2Title['pt'] }}" data-en="{{ $section2Title['en'] }}" data-es="{{ $section2Title['es'] }}">{{ $section2Title['pt'] }}</span>
                 <div class="text-gray-950 p-0 m-0 text-center md:text-start">{!! $footer->section2_description !!}</div>
             </div>
           </div>
         @endif
 
         @if ($footer && $footer->section3_title)
+          @php $section3Title = $footerTitleTranslations($footer->section3_title); @endphp
           <div class="flex flex-col text-start w-full max-w-[300px] items-center md:items-center">
             <div class="flex flex-col md:items-start items-center">
-                <span class="text-lg text-gray-950 mb-2">{{ $footer->section3_title }}</span>
+                <span class="text-lg text-gray-950 mb-2 notranslate" data-pt="{{ $section3Title['pt'] }}" data-en="{{ $section3Title['en'] }}" data-es="{{ $section3Title['es'] }}">{{ $section3Title['pt'] }}</span>
                 <div class="text-gray-950 p-0 m-0 text-center md:text-start">{!! $footer->section3_description !!}</div>
             </div>
           </div>
