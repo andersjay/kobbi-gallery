@@ -6,8 +6,8 @@
         if (preg_match('/^(HOR[ÁA]RIOS|SCHEDULES|HOURS)$/iu', $text)) {
             return [
                 'pt' => 'HORÁRIOS',
-                'en' => 'Hours',
-                'es' => 'Horarios',
+                'en' => 'HOURS',
+                'es' => 'HORARIOS',
             ];
         }
 
