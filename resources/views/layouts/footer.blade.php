@@ -2,9 +2,13 @@
     $footer = \App\Models\FooterSetting::first();
     $footerTitleTranslations = function ($title) {
         $text = trim((string) $title);
-        $normalized = preg_replace('/[^\p{L}\p{N}]/u', '', mb_strtoupper($text));
+        $normalized = mb_strtoupper($text);
+        $normalizedAscii = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $normalized);
+        $normalized = $normalizedAscii !== false
+            ? preg_replace('/[^A-Z0-9]/', '', $normalizedAscii)
+            : preg_replace('/[^\p{L}\p{N}]/u', '', $normalized);
 
-        if (in_array($normalized, ['HORARIOS', 'SCHEDULES', 'HOURS'], true)) {
+        if (in_array($normalized, ['HORARIO', 'HORARIOS', 'SCHEDULE', 'SCHEDULES', 'HOUR', 'HOURS'], true)) {
             return [
                 'pt' => 'HORÁRIOS',
                 'en' => 'HOURS',
@@ -12,7 +16,7 @@
             ];
         }
 
-        if (in_array($normalized, ['ENDERECO', 'ADDRESS', 'DIRECCION'], true)) {
+        if (in_array($normalized, ['ENDERECO', 'ENDERECOS', 'ADDRESS', 'ADDRESSES', 'DIRECCION', 'DIRECCIONES'], true)) {
             return [
                 'pt' => 'ENDEREÇO',
                 'en' => 'ADDRESS',
@@ -20,7 +24,7 @@
             ];
         }
 
-        if (in_array($normalized, ['CONTATO', 'CONTACT', 'CONTACTO'], true)) {
+        if (in_array($normalized, ['CONTATO', 'CONTATOS', 'CONTACT', 'CONTACTS', 'CONTACTO', 'CONTACTOS'], true)) {
             return [
                 'pt' => 'CONTATO',
                 'en' => 'CONTACT',
