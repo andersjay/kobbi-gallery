@@ -39,13 +39,13 @@
             {{-- <a href="#" class="{{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100 hover:border-b' : 'text-gray-950'}} transition-all text-lg font-light">LOJA</a> --}}
 
             <!-- Language Selector -->
-            <div class="flex items-center gap-1 ml-4 {{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100' : 'text-gray-950' }}">
+            <div class="flex items-center gap-1 ml-4 notranslate {{ request()->routeIs('home') || request()->routeIs('exhibition') ? 'text-gray-100' : 'text-gray-950' }}" translate="no">
                 <span class="opacity-50">|</span>
-                <button onclick="changeLanguage('pt')" class="px-1 text-sm font-light hover:opacity-70 transition-opacity">PT</button>
+                <button onclick="changeLanguage('pt')" class="px-1 text-sm font-light hover:opacity-70 transition-opacity notranslate" translate="no">PT</button>
                 <span class="opacity-50">/</span>
-                <button onclick="changeLanguage('en')" class="px-1 text-sm font-light hover:opacity-70 transition-opacity">EN</button>
+                <button onclick="changeLanguage('en')" class="px-1 text-sm font-light hover:opacity-70 transition-opacity notranslate" translate="no">EN</button>
                 <span class="opacity-50">/</span>
-                <button onclick="changeLanguage('es')" class="px-1 text-sm font-light hover:opacity-70 transition-opacity">ES</button>
+                <button onclick="changeLanguage('es')" class="px-1 text-sm font-light hover:opacity-70 transition-opacity notranslate" translate="no">ES</button>
             </div>
 
         </nav>
@@ -131,12 +131,12 @@
                     </li>
                     <!-- Language Selector Mobile -->
                     <li class="pt-4">
-                        <div class="flex justify-center gap-4 text-gray-950">
-                            <button onclick="changeLanguage('pt')" class="px-3 py-2 text-lg font-light hover:opacity-70">PT</button>
+                        <div class="flex justify-center gap-4 text-gray-950 notranslate" translate="no">
+                            <button onclick="changeLanguage('pt')" class="px-3 py-2 text-lg font-light hover:opacity-70 notranslate" translate="no">PT</button>
                             <span class="py-2 opacity-50">/</span>
-                            <button onclick="changeLanguage('en')" class="px-3 py-2 text-lg font-light hover:opacity-70">EN</button>
+                            <button onclick="changeLanguage('en')" class="px-3 py-2 text-lg font-light hover:opacity-70 notranslate" translate="no">EN</button>
                             <span class="py-2 opacity-50">/</span>
-                            <button onclick="changeLanguage('es')" class="px-3 py-2 text-lg font-light hover:opacity-70">ES</button>
+                            <button onclick="changeLanguage('es')" class="px-3 py-2 text-lg font-light hover:opacity-70 notranslate" translate="no">ES</button>
                         </div>
                     </li>
                 </ul>
