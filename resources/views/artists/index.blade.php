@@ -15,7 +15,7 @@
                 </div>
                 <ul id="artist-list" class="hidden lg:block">
                     @foreach ($artists as $artist)
-                        <li class="cursor-pointer text-xl p-2 uppercase tracking-wide {{ $artist->is_represented ? 'text-gray-600 font-semibold' : 'text-gray-400' }}"
+                        <li class="cursor-pointer text-xl p-2 font-normal uppercase tracking-wide {{ $artist->is_represented ? 'underline underline-offset-4' : 'text-gray-400' }}"
                             data-id="{{ $artist->id }}"
                             data-represented="{{ $artist->is_represented ? '1' : '0' }}">
                             {{ $artist->name }}
@@ -27,7 +27,7 @@
                 <div id="container-gallery">
                     <div id="artist-carousel" class="flex flex-col items-center justify-center min-h-[500px] py-8"></div>
                     <div id="artwork-info" class="mt-4 text-center hidden">
-                        <h3 id="artwork-title" class="text-lg font-semibold text-gray-950"></h3>
+                        <h3 id="artwork-title" class="text-lg font-semibold text-gray-500">qu</h3>
                         <p id="artwork-description" class="text-sm text-gray-600 mt-2"></p>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                             li.classList.remove("text-gray-950", "font-bold");
                             const isRepresented = li.getAttribute('data-represented') === '1';
                             if (isRepresented) {
-                                li.classList.add("text-gray-600", "font-semibold");
+                                li.classList.add("text-gray-400", "font-normal");
                             } else {
                                 li.classList.add("text-gray-400");
                                 li.classList.remove("font-semibold");
@@ -101,10 +101,16 @@
                         });
                         let selectedArtist = document.querySelector(`[data-id='${artistId}']`);
                         if (selectedArtist) {
-                            selectedArtist.classList.remove("text-gray-400", "text-gray-600", "font-semibold");
-                            selectedArtist.classList.add("text-gray-950", "font-bold");
+                            selectedArtist.classList.remove("text-gray-400", "text-gray-600");
+                            selectedArtist.classList.add("text-gray-950");
                         }
                         renderCarousel();
+                        const artworkTitle = document.getElementById('artwork-title');
+                        if (selectedArtist && selectedArtist.getAttribute('data-represented') === '1') {
+                            artworkTitle.textContent = 'representação exclusiva Kobbi Gallery';
+                        } else {
+                            artworkTitle.textContent = '';
+                        }
                     });
             };
 
