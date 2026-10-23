@@ -25,8 +25,9 @@ class ExhibitionInterestController extends Controller
                 'artist_id' => 'nullable|exists:artists,id',
                 'collection_id' => 'nullable|exists:collections,id',
                 'obra_index' => 'nullable|integer',
-                'name' => 'required|string',
-                'email' => 'required|email',
+                // Bloqueia CRLF: name/email vão para o cabeçalho Reply-To
+                'name' => ['required', 'string', 'max:255', 'not_regex:/[\r\n]/'],
+                'email' => 'required|email:filter|max:255',
                 'message' => 'required|string',
                 'contato' => 'nullable',
             ]);
@@ -59,8 +60,8 @@ class ExhibitionInterestController extends Controller
                         ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME', 'Galeria'))
                         ->subject('Nova mensagem de contato')
                         ->html(
-                            '<p><strong>Nome:</strong> ' . $data['name'] . '</p>' .
-                            '<p><strong>E-mail:</strong> ' . $data['email'] . '</p>' .
+                            '<p><strong>Nome:</strong> ' . e($data['name']) . '</p>' .
+                            '<p><strong>E-mail:</strong> ' . e($data['email']) . '</p>' .
                             '<p><strong>Mensagem:</strong> ' . nl2br(e($data['message'])) . '</p>'
                         );
                 });
